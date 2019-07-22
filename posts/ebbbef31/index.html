@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>设计模式-3 | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="《设计模式》笔记">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/ebbbef31/">
+        设计模式-3
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-12-18</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/编程之路/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>编程之路</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+</blockquote>
+<h2 id="三-结构性模式"><a href="#三-结构性模式" class="headerlink" title="三 结构性模式"></a>三 结构性模式</h2><p>结构型模式涉及到如何组合类和对象以获得更大的结构，采用继承机制来组合接口或实现。一个简单的例子是采用多重继承方法将两个以上的类组合成一个类，结果是这个类包含了所有父类的性质。</p>
+<p>这一模式尤其有助于多个独立开发的类库协同工作。</p>
+<h3 id="三点一-Adapter-适配器"><a href="#三点一-Adapter-适配器" class="headerlink" title="三点一 Adapter 适配器"></a>三点一 Adapter 适配器</h3><h4 id="意图"><a href="#意图" class="headerlink" title="意图"></a>意图</h4><p>将一个类的接口转换成客户希望的另一个接口。</p>
+<h4 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h4><p>包装器 Wrapper</p>
+<h4 id="适用性"><a href="#适用性" class="headerlink" title="适用性"></a>适用性</h4><ul>
+<li>你想使用一个已经存在的类，而它的接口不符合你的需求；</li>
+<li>你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作；</li>
+<li>你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口，对象适配器可以适配它的父亲接口。</li>
+</ul>
+<h4 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Target：定义Client使用的与特定领域相关的接口；</li>
+<li>Client：与符合Target接口的对象协同；</li>
+<li>Adaptee：定义一个已经存在的接口，这个接口需要适配；</li>
+<li>Adapter：对Adaptee的接口与Target接口进行适配。</li>
+</ul>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>类适配器和对象适配器有不同的权衡，类适配器：</p>
+<ul>
+<li>用一个具体的Adapter类对Adaptee和Target进行匹配。结果是当我们想要匹配一个类以及所有它的子类时，它将不能胜任工作；</li>
+<li>使得Adapter可以重定义Adaptee的部分行为；</li>
+<li>仅仅引入了一个对象，并不需要额外的指针以间接得到Adaptee。</li>
+</ul>
+<p>对象适配器则：</p>
+<ul>
+<li>允许一个Adapter与多个Adaptee同时工作；</li>
+<li>使得重定义Adaptee的行为比较困难。</li>
+</ul>
+<p>同时需要考虑的其他因素还有：</p>
+<ol>
+<li>Adapter的匹配程度：工作量取决与两个接口的相似程度；</li>
+<li>可插入的Adapter：减少假定条件，提升可复用性。</li>
+<li>使用双向适配器提供透明操作。</li>
+</ol>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ol>
+<li>使用C++实现适配器类时，应该采用公共方式继承接口类，采用私有方式继承接口实现类；</li>
+<li>可插入的适配器：使用“窄”接口，即可用于适配的最小操作集：<ol>
+<li>使用抽象操作；</li>
+<li>使用代理对象；</li>
+<li>参数化的适配器。</li>
+</ol>
+</li>
+</ol>
+<h4 id="代码示例一"><a href="#代码示例一" class="headerlink" title="代码示例一"></a>代码示例一</h4><p>假定Shape有一个边框，这个边框由它相对的两角定义。而TextView则由原点、宽度和高度定义。Shape同时定义了CreateManipulator操作用于创建一个Manipulator对象。当用户操作一个图形时，Manipulator知道如何驱动这个图形，TextView没有等同的操作。TextShape类是适配器。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Shape();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">BoundingBox</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            Point &amp;bottomLeft, Point &amp;topRight</span></span></span><br><span class="line"><span class="function"><span class="params">    )</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Manipulator *<span class="title">CreateManipulator</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextView</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TextView();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetOrigin</span><span class="params">(Coord &amp;x, Coord &amp;y)</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">GetExtent</span><span class="params">(Coord &amp;width, Coord &amp;height)</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextShape</span> :</span> <span class="keyword">public</span> Shape, <span class="keyword">private</span> TextView &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TextShape();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">BoundingBox</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            Point &amp;bottomLeft, Point &amp;topRight</span></span></span><br><span class="line"><span class="function"><span class="params">    )</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Manipulator *<span class="title">CreateManipulator</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> TextShape::BoundingBox(</span><br><span class="line">        Point &amp;bottomLeft, Point &amp;topRight</span><br><span class="line">) <span class="keyword">const</span> &#123;</span><br><span class="line">    Coord bottom, left, width, height;</span><br><span class="line">    GetOrigin(bottom, left);</span><br><span class="line">    GetExtent(width, height);</span><br><span class="line">    bottomLeft = Point(bottom, left);</span><br><span class="line">    topRight = Point(bottom + height, left + width);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接转发请求</span></span><br><span class="line"><span class="keyword">bool</span> TextShape::IsEmpty() <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> TextView::IsEmpty();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Manipulator *TextShape::CreateManipulator() <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TextManipulator(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对象适配器采用对象组合的方法将具有不同接口的类组合在一起。在该方法中，适配器TextShape维护一个指向TextView的指针。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextShape</span> :</span> <span class="keyword">public</span> Shape &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TextShape(TextView *);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">BoundingBox</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            Point &amp;bottomLeft, Point &amp;topRight</span></span></span><br><span class="line"><span class="function"><span class="params">    )</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Manipulator *<span class="title">CreateManipulator</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    TextView *_text;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TextShape::TextShape(TextView *t) &#123;</span><br><span class="line">    _text = t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> TextShape::BoundingBox(</span><br><span class="line">        Point &amp;bottomLeft, Point &amp;topRight</span><br><span class="line">) <span class="keyword">const</span> &#123;</span><br><span class="line">    Coord bottom, left, width, height;</span><br><span class="line">    _text-&gt;GetOrigin(bottom, left);</span><br><span class="line">    _text-&gt;GetExtent(width, height);</span><br><span class="line">    bottomLeft = Point(bottom, left);</span><br><span class="line">    topRight = Point(bottom + height, left + width);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> TextShape::IsEmpty() <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> _text-&gt;IsEmpty();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Manipulator *TextShape::CreateManipulator() <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TextManipulator(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二"><a href="#代码示例二" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Target::Request..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">virtual</span> ~Target() &#123; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SpecificRequest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Adaptee::SpecificRequest..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> :</span><span class="keyword">public</span> Target, <span class="keyword">private</span> Adaptee &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Adapter(Adaptee* ade) &#123;</span><br><span class="line">        _ade = ade;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _ade-&gt;SpecificRequest();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Adaptee *_ade;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Adaptee *adaptee = <span class="keyword">new</span> Adaptee();</span><br><span class="line">    Target *adapter = <span class="keyword">new</span> Adapter(adaptee);</span><br><span class="line"></span><br><span class="line">    adapter-&gt;Request();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> adapter;</span><br><span class="line">    <span class="keyword">delete</span> adaptee;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点二-Bridge-桥接"><a href="#三点二-Bridge-桥接" class="headerlink" title="三点二 Bridge 桥接"></a>三点二 Bridge 桥接</h3><h4 id="意图-1"><a href="#意图-1" class="headerlink" title="意图"></a>意图</h4><p>将抽象部分与它的实现部分分离，使他们都可以独立地变化。</p>
+<h4 id="别名-1"><a href="#别名-1" class="headerlink" title="别名"></a>别名</h4><p>Handle/Body</p>
+<h4 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h4><p>继承机制有两个不足：</p>
+<ul>
+<li>扩展Window抽象使之适用于不同种类的窗口或新的系统平台很不方便；</li>
+<li>继承机制使得客户代码与平台相关。</li>
+</ul>
+<h4 id="适用性-1"><a href="#适用性-1" class="headerlink" title="适用性"></a>适用性</h4><ul>
+<li>你不希望在抽象和它的实现部分之间有一个固定的绑定关系；</li>
+<li>类的抽象以及它的实现部分之间都应该可以通过生成子类的方法加以扩充；</li>
+<li>对一个抽象的实现部分的修改应对客户不产生影响，即客户的代码不必重新编译；</li>
+<li>你想对客户完全隐藏抽象的实现部分；</li>
+<li>你想在多个对象间共享实现，但同时要求客户并不知道。</li>
+</ul>
+<h4 id="参与者-1"><a href="#参与者-1" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Abstraction：定义抽象类的接口，维护一个指向Implementor类型对象的指针；</li>
+<li>RefinedAbstraction：扩充由Abstraction定义的接口；</li>
+<li>Implementor：定义实现类的接口，一般来讲，Implementor接口仅提供基本操作，而Abstraction则定义了基于这些基本操作的较高层次的操作；</li>
+<li>ConcreteImplementor：实现Implementor接口并定义它的具体实现。</li>
+</ul>
+<h4 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h4><ol>
+<li>分离接口及其实现部分；</li>
+<li>提高可扩充性；</li>
+<li>实现细节对客户透明。</li>
+</ol>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><ol>
+<li>仅有一个Implementor：在C++中，Implementor类接口可以在一个私有的头文件中定义；</li>
+<li>创建正确的Implementor对象；</li>
+<li>共享Implementor对象，下面将共享程序体赋给句柄的代码；</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Handle &amp;Handle::<span class="keyword">operator</span>=(<span class="keyword">const</span> Handle &amp;other) &#123;</span><br><span class="line">    other._body-&gt;Ref();</span><br><span class="line">    _body-&gt;Unref();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (_body-&gt;RefCount() == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">delete</span> _body;</span><br><span class="line">    &#125;</span><br><span class="line">    _body = other._body;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>采用多重继承机制：不可能使用C++的多重继承方法实现真正的Bridge模式。</li>
+</ol>
+<h4 id="代码示例一-1"><a href="#代码示例一-1" class="headerlink" title="代码示例一"></a>代码示例一</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面的代码实现了Window/WindowImp的例子，其中Window类为客户应用程序定义了窗口抽象类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Window(View* contents);</span><br><span class="line"><span class="comment">// requests handled by window</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawContents</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Open</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Close</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Iconify</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Deiconify</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">// requests forwarded to implementation</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetOrigin</span><span class="params">(<span class="keyword">const</span> Point&amp; at)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetExtent</span><span class="params">(<span class="keyword">const</span> Point&amp; extent)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Raise</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Lower</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawLine</span><span class="params">(<span class="keyword">const</span> Point&amp;, <span class="keyword">const</span> Point&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawRect</span><span class="params">(<span class="keyword">const</span> Point&amp;, <span class="keyword">const</span> Point&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawPolygon</span><span class="params">(<span class="keyword">const</span> Point[], <span class="keyword">int</span> n)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawText</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*, <span class="keyword">const</span> Point&amp;)</span></span>;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function">WindowImp* <span class="title">GetWindowImp</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">View* <span class="title">GetView</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    WindowImp* _imp;</span><br><span class="line">    View* _contents; <span class="comment">// the window's contents</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Window维护一个队WindowImp的引用，WindowImp抽象类定义了一个对底层窗口系统的接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WindowImp</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">ImpTop</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">ImpBottom</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">ImpSetExtent</span><span class="params">(<span class="keyword">const</span> Point&amp;)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">ImpSetOrigin</span><span class="params">(<span class="keyword">const</span> Point&amp;)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DeviceRect</span><span class="params">(Coord, Coord, Coord, Coord)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DeviceText</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*, Coord, Coord)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DeviceBitmap</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*, Coord, Coord)</span> </span>= <span class="number">0</span>;</span><br><span class="line"><span class="comment">// lots more functions for drawing on windows...</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    WindowImp();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Window的子类定义了应用程序可能用到的不同类型的窗口</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationWindow</span> :</span> <span class="keyword">public</span> Window &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawContents</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> ApplicationWindow::DrawContents () &#123;</span><br><span class="line">    GetView()-&gt;DrawOn(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IconWindow</span> :</span> <span class="keyword">public</span> Window &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DrawContents</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span>* _bitmapName;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> IconWindow::DrawContents() &#123;</span><br><span class="line">    WindowImp* imp = GetWindowImp();</span><br><span class="line">    <span class="keyword">if</span> (imp != <span class="number">0</span>) &#123;</span><br><span class="line">        imp-&gt;DeviceBitmap(_bitmapName, <span class="number">0.0</span>, <span class="number">0.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> Window::DrawRect (<span class="keyword">const</span> Point&amp; p1, <span class="keyword">const</span> Point&amp; p2) &#123;</span><br><span class="line">    WindowImp* imp = GetWindowImp();</span><br><span class="line">    imp-&gt;DeviceRect(p1.X(), p1.Y(), p2.X(), p2.Y());</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XWindowImp</span> :</span> <span class="keyword">public</span> WindowImp &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    XWindowImp();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DeviceRect</span><span class="params">(Coord, Coord, Coord, Coord)</span></span>;</span><br><span class="line"><span class="comment">// remainder of public interface...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="comment">// lots of X window system-specific state, including:</span></span><br><span class="line">    Display* _dpy;</span><br><span class="line">    Drawable _winid; <span class="comment">// window id</span></span><br><span class="line">    GC _gc; <span class="comment">// window graphic context</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PMWindowImp</span> :</span> <span class="keyword">public</span> WindowImp &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    PMWindowImp();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DeviceRect</span><span class="params">(Coord, Coord, Coord, Coord)</span></span>;</span><br><span class="line"><span class="comment">// remainder of public interface...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"><span class="comment">// lots of PM window system-specific state, including:</span></span><br><span class="line">    HPS _hps;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> XWindowImp::DeviceRect (</span><br><span class="line">        Coord x0, Coord y0, Coord x1, Coord y1</span><br><span class="line">) &#123;</span><br><span class="line">    <span class="keyword">int</span> x = round(min(x0, x1));</span><br><span class="line">    <span class="keyword">int</span> y = round(min(y0, y1));</span><br><span class="line">    <span class="keyword">int</span> w = round(<span class="built_in">abs</span>(x0 - x1));</span><br><span class="line">    <span class="keyword">int</span> h = round(<span class="built_in">abs</span>(y0 - y1));</span><br><span class="line">    XDrawRectangle(_dpy, _winid, _gc, x, y, w, h);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> PMWindowImp::DeviceRect (</span><br><span class="line">        Coord x0, Coord y0, Coord x1, Coord y1</span><br><span class="line">) &#123;</span><br><span class="line">    Coord left = min(x0, x1);</span><br><span class="line">    Coord right = max(x0, x1);</span><br><span class="line">    Coord bottom = min(y0, y1);</span><br><span class="line">    Coord top = max(y0, y1);</span><br><span class="line">    PPOINTL point[<span class="number">4</span>];</span><br><span class="line">    point[<span class="number">0</span>].x = left; point[<span class="number">0</span>].y = top;</span><br><span class="line">    point[<span class="number">1</span>].x = right; point[<span class="number">1</span>].y = top;</span><br><span class="line">    point[<span class="number">2</span>].x = right; point[<span class="number">2</span>].y = bottom;</span><br><span class="line">    point[<span class="number">3</span>].x = left; point[<span class="number">3</span>].y = bottom;</span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">            (GpiBeginPath(_hps, <span class="number">1L</span>) == <span class="literal">false</span>) ||</span><br><span class="line">            (GpiSetCurrentPosition(_hps, &amp;point[<span class="number">3</span>]) == <span class="literal">false</span>) ||</span><br><span class="line">            (GpiPolyLine(_hps, <span class="number">4L</span>, point) == GPI_ERROR) ||</span><br><span class="line">            (GpiEndPath(_hps) == <span class="literal">false</span>)</span><br><span class="line">            ) &#123;</span><br><span class="line"><span class="comment">// report error</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        GpiStrokePath(_hps, <span class="number">1L</span>, <span class="number">0L</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">WindowImp* Window::GetWindowImp () &#123;</span><br><span class="line">    <span class="keyword">if</span> (_imp == <span class="number">0</span>) &#123;</span><br><span class="line">        _imp = WindowSystemFactory::Instance()-&gt;MakeWindowImp();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _imp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二-1"><a href="#代码示例二-1" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Abstraction</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Abstraction</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">virtual</span> ~Abstraction() &#123; &#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    Abstraction() &#123; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// AbstractionImp</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AbstractionImp</span> :</span><span class="keyword">public</span> Abstraction &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">virtual</span> ~AbstractionImp() &#123; &#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    AbstractionImp() &#123; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteAbstractionImp</span> :</span><span class="keyword">public</span> AbstractionImp &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"ConcreteAbstractionImp Operation..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RefinedAbstraction</span> :</span><span class="keyword">public</span> Abstraction &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    RefinedAbstraction(AbstractionImp *imp) &#123;</span><br><span class="line">        _imp = imp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        _imp-&gt;Operation();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    AbstractionImp *_imp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    AbstractionImp *imp = <span class="keyword">new</span> ConcreteAbstractionImp();</span><br><span class="line"></span><br><span class="line">    Abstraction *<span class="built_in">abs</span> = <span class="keyword">new</span> RefinedAbstraction(imp);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">abs</span>-&gt;Operation();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> imp;</span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">abs</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点三-Composite-组合"><a href="#三点三-Composite-组合" class="headerlink" title="三点三 Composite 组合"></a>三点三 Composite 组合</h3><h4 id="意图-2"><a href="#意图-2" class="headerlink" title="意图"></a>意图</h4><p>将对象组合成树形结构以表示“部分-整体”的层次结构。Composite使得用户对单个对象和组合对象的使用具有一致性。</p>
+<h4 id="适用性-2"><a href="#适用性-2" class="headerlink" title="适用性"></a>适用性</h4><ol>
+<li>你想表示对象的部分-整体层次结构；</li>
+<li>你希望用户忽略组合对象和单个对象的不同。</li>
+</ol>
+<h4 id="参与者-2"><a href="#参与者-2" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Component：为组合中的对象声明接口；在适当的情况下，实现所有类共有接口的缺省行为；（可选）在递归结构中定义一个接口，用于访问一个父部件。</li>
+<li>Leaf：在组合中表示叶节点对象，叶节点没有子节点；在组合中定义图元对象的行为；</li>
+<li>Composite：定义有子部件的那些部件的行为；存储子部件；在Component接口中实现与子部件有关的操作；</li>
+<li>Client：通过Component接口操纵组合部件的对象。</li>
+</ul>
+<h4 id="效果-2"><a href="#效果-2" class="headerlink" title="效果"></a>效果</h4><ul>
+<li>定义了包含基本对象和组合对象的类层次结构；</li>
+<li>简化客户代码；</li>
+<li>使得更容易增加新类型的组件；</li>
+<li>使你的设计变得一般化。</li>
+</ul>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><ol>
+<li>显式的父部件引用：保持从子部件到父部件的引用能简化组合结构的遍历和管理；</li>
+<li>共享组件：可以减少对存贮的需求，但是当一个组件只有一个父部件时，很难共享组件；</li>
+<li>最大化Component接口：Composite类应为Leaf和Composite类尽可能多定义一些公共操作；</li>
+<li><p>声明管理子部件的操作：需要在安全性和透明性之间作出权衡：</p>
+<ul>
+<li>在类层次结构的根部定义子节点管理接口的方法具有良好的透明性，因为你可以一致地使用所有的组件，但是这一方法是以安全性为代价的，因为客户有可能做一些无意义的事情；</li>
+<li><p>在Composite类中定义管理子部件的方法具有良好的安全性，因为（C++）在编译时任何无意义的操作都将被发现。但这又损失了透明性。</p>
+<p><strong>在这一模式中，相对于安全性，我们比较强调透明性。</strong></p>
+</li>
+</ul>
+</li>
+<li><p>Component是否应该实现一个Component列表：只有在结构中子类数目相对较少时，才值得使用这种做法；</p>
+</li>
+<li>子部件排序；</li>
+<li>使用高速缓冲存贮改善性能：你需要定义一个接口来通知组合组件它们所缓冲存贮的信息无效。</li>
+<li>存贮组件最好用哪一种数据结构：事实上，使用通用数据结构没有必要。</li>
+</ol>
+<h4 id="代码示例一-2"><a href="#代码示例一-2" class="headerlink" title="代码示例一"></a>代码示例一</h4><p>以下代码说明计算机与其周边设备。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Equipment</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~Equipment();</span><br><span class="line">    <span class="function"><span class="keyword">const</span> <span class="keyword">char</span>* <span class="title">Name</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> _name; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Watt <span class="title">Power</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">NetPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">DiscountPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(Equipment*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Remove</span><span class="params">(Equipment*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Iterator* <span class="title">CreateIterator</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    Equipment(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span>* _name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FloppyDisk</span> :</span> <span class="keyword">public</span> Equipment &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    FloppyDisk(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line">    <span class="keyword">virtual</span> ~FloppyDisk();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Watt <span class="title">Power</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">NetPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">DiscountPrice</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CompositeEquipment</span> :</span> <span class="keyword">public</span> Equipment &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~CompositeEquipment();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Watt <span class="title">Power</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">NetPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">DiscountPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(Equipment*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Remove</span><span class="params">(Equipment*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Iterator* <span class="title">CreateIterator</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    CompositeEquipment(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    List _equipment;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Currency CompositeEquipment::NetPrice()</span><br><span class="line">&#123;</span><br><span class="line">    Iterator* i = CreateIterator();</span><br><span class="line">    Currency total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i-&gt;First(); !i-&gt;IsDone(); i-&gt;Next()) &#123;</span><br><span class="line">        total += i-&gt;CurrentItem()-&gt;NetPrice();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> i;</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chassis</span> :</span> <span class="keyword">public</span> CompositeEquipment &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Chassis(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line">    <span class="keyword">virtual</span> ~Chassis();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Watt <span class="title">Power</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">NetPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Currency <span class="title">DiscountPrice</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Cabinet* cabinet = <span class="keyword">new</span> Cabinet(<span class="string">"PC Cabinet"</span>);</span><br><span class="line">Chassis* chassis = <span class="keyword">new</span> Chassis(<span class="string">"PC Chassis"</span>);</span><br><span class="line"></span><br><span class="line">cabinet-&gt;Add(chassis);</span><br><span class="line"></span><br><span class="line">Bus* bus = <span class="keyword">new</span> Bus(<span class="string">"MCA Bus"</span>);</span><br><span class="line">bus-&gt;Add(<span class="keyword">new</span> Card(<span class="string">"16Mbs Token Ring"</span>));</span><br><span class="line">chassis-&gt;Add(bus);</span><br><span class="line"></span><br><span class="line">chassis-&gt;Add(<span class="keyword">new</span> FloppyDisk(<span class="string">"3.5in Floppy"</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"The net price is "</span> &lt;&lt; chassis-&gt;NetPrice() &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二-2"><a href="#代码示例二-2" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">const</span> Component&amp; com)</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Remove</span><span class="params">(<span class="keyword">const</span> Component&amp; com)</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Component* <span class="title">GetChild</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">virtual</span> ~Component() &#123; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Composite</span> :</span><span class="keyword">public</span> Component &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(Component* com)</span> </span>&#123;</span><br><span class="line">        _coms.push_back(com);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> com : _coms)</span><br><span class="line">            com-&gt;Operation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Remove</span><span class="params">(Component* com)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//_coms.erase(&amp;com);</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">Component* <span class="title">GetChild</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _coms[index];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Component*&gt; _coms;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Leaf</span> :</span><span class="keyword">public</span> Component &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Operation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Leaf::Operation..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Leaf *leaf = <span class="keyword">new</span> Leaf();</span><br><span class="line">    leaf-&gt;Operation();</span><br><span class="line">    Composite *com = <span class="keyword">new</span> Composite();</span><br><span class="line">    com-&gt;Add(leaf);</span><br><span class="line">    com-&gt;Operation();</span><br><span class="line">    Component *leaf_ = com-&gt;GetChild(<span class="number">0</span>);</span><br><span class="line">    leaf_-&gt;Operation();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> leaf;</span><br><span class="line">    <span class="keyword">delete</span> com;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点四-Decorator-装饰"><a href="#三点四-Decorator-装饰" class="headerlink" title="三点四 Decorator 装饰"></a>三点四 Decorator 装饰</h3><h4 id="意图-3"><a href="#意图-3" class="headerlink" title="意图"></a>意图</h4><p><strong>动态</strong>地给一个对象添加一些额外的责任。</p>
+<h4 id="别名-2"><a href="#别名-2" class="headerlink" title="别名"></a>别名</h4><p>包装器 Wrapper</p>
+<h4 id="适用性-3"><a href="#适用性-3" class="headerlink" title="适用性"></a>适用性</h4><ul>
+<li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责；</li>
+<li>处理那些可以撤销的职责；</li>
+<li>当不能采用生成子类的方法进行扩充时。</li>
+</ul>
+<h4 id="参与者-3"><a href="#参与者-3" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Component：定义一个对象接口，可以动态给对象添加职责；</li>
+<li>ConcreteComponent：定义一个对象，可以给这个对象添加一些职责；</li>
+<li>Decorator：维持一个指向Component对象的指针，并定义一个与Component接口一致的接口；</li>
+<li>ConcreteDecorator：向组件添加职责。</li>
+</ul>
+<h4 id="效果-3"><a href="#效果-3" class="headerlink" title="效果"></a>效果</h4><ul>
+<li>比静态继承更灵活：可以添加和分离，可以重复添加；</li>
+<li>避免在层次结构高层的类有太多的特征；</li>
+<li>Decorator与它的Component不一样；</li>
+<li>有许多小对象。</li>
+</ul>
+<h4 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h4><ul>
+<li>接口的一致性：所有的ConcreteDecorator类都必须有一个公共的父类；</li>
+<li>省略抽象的Decorator类；</li>
+<li>保持Component类的简单性；</li>
+<li>改变对象外壳（Decorator）与改变对象内核（Strategy）。</li>
+</ul>
+<h4 id="代码示例一-3"><a href="#代码示例一-3" class="headerlink" title="代码示例一"></a>代码示例一</h4><p>以下代码说明如何实现用户接口装饰。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">VisualComponent</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    VisualComponent();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Resize</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> :</span> <span class="keyword">public</span> VisualComponent &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Decorator(VisualComponent*);</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Resize</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    VisualComponent* _component;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Decorator::Draw()</span><br><span class="line">&#123;</span><br><span class="line">    _component-&gt;Draw();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> Decorator::Resize()</span><br><span class="line">&#123;</span><br><span class="line">    _component-&gt;Resize();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BorderDecorator</span> :</span> <span class="keyword">public</span> Decorator &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BorderDecorator(VisualComponent*, <span class="keyword">int</span> borderWidth);</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DrawBorder</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> _width;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> BorderDecorator::Draw()</span><br><span class="line">&#123;</span><br><span class="line">    Decorator::Draw();</span><br><span class="line">    DrawBorder(_width);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Window::SetContents(VisualComponent* contents)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Window* window = <span class="keyword">new</span> Window;</span><br><span class="line">TextView* textView = <span class="keyword">new</span> TextView;</span><br><span class="line"></span><br><span class="line">window-&gt;SetContents(textView);</span><br><span class="line"></span><br><span class="line">window-&gt;SetContents(</span><br><span class="line">    <span class="keyword">new</span> BorderDecorator(</span><br><span class="line">        <span class="keyword">new</span> ScrollDecorator(textView), <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二-3"><a href="#代码示例二-3" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">装饰着模式：动态的将责任加到对象上。想要扩展对象，装饰者提供有利于继承的另一种选择。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Beverage</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> description_;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> description_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CondimentDecorator</span> :</span> <span class="keyword">public</span> Beverage &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Espresso</span> :</span> <span class="keyword">public</span> Beverage &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Espresso() &#123; description_ = <span class="string">"Espresso"</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">1.99</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DarkRoast</span> :</span> <span class="keyword">public</span> Beverage &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    DarkRoast() &#123; description_ = <span class="string">"DarkRoast coffee"</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">1.00</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HouseBlend</span> :</span> <span class="keyword">public</span> Beverage &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    HouseBlend() &#123; description_ = <span class="string">"HouseBlend coffee"</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="number">0.89</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mocha</span> :</span> <span class="keyword">public</span> CondimentDecorator &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Mocha(Beverage* pBeverage)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;pBeverage_ = pBeverage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pBeverage_-&gt;GetDescription() + <span class="string">", Mocha "</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.20</span> + pBeverage_-&gt;Cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Beverage* pBeverage_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Whip</span> :</span> <span class="keyword">public</span> CondimentDecorator &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Whip(Beverage* pBeverage)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;pBeverage_ = pBeverage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pBeverage_-&gt;GetDescription() + <span class="string">", Whip "</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.10</span> + pBeverage_-&gt;Cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Beverage* pBeverage_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Soy</span> :</span> <span class="keyword">public</span> CondimentDecorator &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Soy(Beverage* pBeverage)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;pBeverage_ = pBeverage;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">GetDescription</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> pBeverage_-&gt;GetDescription() + <span class="string">", Soy "</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">Cost</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.30</span> + pBeverage_-&gt;Cost();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Beverage* pBeverage_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Beverage* pBeverage = <span class="keyword">new</span> Espresso;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pBeverage-&gt;GetDescription() &lt;&lt; <span class="string">" $"</span> &lt;&lt; pBeverage-&gt;Cost() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    Beverage* pBeverage2 = <span class="keyword">new</span> DarkRoast;</span><br><span class="line">    pBeverage2 = <span class="keyword">new</span> Mocha(pBeverage2);</span><br><span class="line">    pBeverage2 = <span class="keyword">new</span> Whip(pBeverage2);</span><br><span class="line">    pBeverage2 = <span class="keyword">new</span> Whip(pBeverage2);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pBeverage2-&gt;GetDescription() &lt;&lt; <span class="string">" $"</span> &lt;&lt; pBeverage2-&gt;Cost() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    Beverage* pBeverage3 = <span class="keyword">new</span> HouseBlend;</span><br><span class="line">    pBeverage3 = <span class="keyword">new</span> Mocha(pBeverage3);</span><br><span class="line">    pBeverage3 = <span class="keyword">new</span> Soy(pBeverage3);</span><br><span class="line">    pBeverage3 = <span class="keyword">new</span> Whip(pBeverage3);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pBeverage3-&gt;GetDescription() &lt;&lt; <span class="string">" $"</span> &lt;&lt; pBeverage3-&gt;Cost() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点五-Facade-外观"><a href="#三点五-Facade-外观" class="headerlink" title="三点五 Facade 外观"></a>三点五 Facade 外观</h3><h4 id="意图-4"><a href="#意图-4" class="headerlink" title="意图"></a>意图</h4><p>为子系统中的一组接口提供了一个一致的界面，Facade模式定义了一个高层接口，这一接口使得这椅子系统更加容易使用。</p>
+<h4 id="适用性-4"><a href="#适用性-4" class="headerlink" title="适用性"></a>适用性</h4><ul>
+<li>当你要为一个复杂子系统提供一个简单接口时；</li>
+<li>客户程序与抽象类的实现部分之间存在着很大的依赖性；</li>
+<li>当你需要构建一个层次结构的子系统时，使用Facade模式定义子系统中每层的入口点。</li>
+</ul>
+<h4 id="参与者-4"><a href="#参与者-4" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Facade：知道哪些子系统类负责处理请求；将客户的请求代理给适当的子系统对象；</li>
+<li>Subsystem classes：实现子系统功能；处理由Facade对象指派的任务；没有Facade的任何信息。</li>
+</ul>
+<h4 id="代码示例一-4"><a href="#代码示例一-4" class="headerlink" title="代码示例一"></a>代码示例一</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Scanner</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Scanner(istream&amp;);</span><br><span class="line">    <span class="keyword">virtual</span> ~Scanner();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Token&amp; <span class="title">Scan</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    istream&amp; _inputStream;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parser</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Parser();</span><br><span class="line">    <span class="keyword">virtual</span> ~Parser();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Parse</span><span class="params">(Scanner&amp;, ProgramNodeBuilder&amp;)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProgramNodeBuilder</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ProgramNodeBuilder();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> ProgramNode* <span class="title">NewVariable</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        <span class="keyword">const</span> <span class="keyword">char</span>* variableName)</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> ProgramNode* <span class="title">NewAssignment</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        ProgramNode* variable, ProgramNode* expression)</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> ProgramNode* <span class="title">NewReturnStatement</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        ProgramNode* value)</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> ProgramNode* <span class="title">NewCondition</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        ProgramNode* condition,</span></span></span><br><span class="line"><span class="function"><span class="params">        ProgramNode* truePart, ProgramNode* falsePart)</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="function">ProgramNode* <span class="title">GetRootNode</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    ProgramNode* _node;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProgramNode</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// program node manipulation</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">GetSourcePosition</span><span class="params">(<span class="keyword">int</span>&amp; line, <span class="keyword">int</span>&amp; index)</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">// child manipulation</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(ProgramNode*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Remove</span><span class="params">(ProgramNode*)</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Traverse</span><span class="params">(CodeGenerator&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    ProgramNode();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CodeGenerator</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Visit</span><span class="params">(StatementNode*)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Visit</span><span class="params">(ExpressionNode*)</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    CodeGenerator(BytecodeStream&amp;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    BytecodeStream&amp; _output;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> ExpressionNode::Traverse(CodeGenerator&amp; cg)</span><br><span class="line">&#123;</span><br><span class="line">    cg.Visit(<span class="keyword">this</span>);</span><br><span class="line">    <span class="function">ListIterator <span class="title">i</span><span class="params">(_children)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (i.First(); !i.IsDone(); i.Next()) &#123;</span><br><span class="line">        i.CurrentItem()-&gt;Traverse(cg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Compiler</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Compiler();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Compile</span><span class="params">(istream&amp;, BytecodeStream&amp;)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> Compiler::Compile(</span><br><span class="line">    istream&amp; input, BytecodeStream&amp; output)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Scanner <span class="title">scanner</span><span class="params">(input)</span></span>;</span><br><span class="line">    ProgramNodeBuilder builder;</span><br><span class="line">    Parser parser;</span><br><span class="line">    parser.Parse(scanner, builder);</span><br><span class="line">    <span class="function">RISCCodeGenerator <span class="title">generator</span><span class="params">(output)</span></span>;</span><br><span class="line">    ProgramNode* parseTree = builder.GetRootNode();</span><br><span class="line">    parseTree-&gt;Traverse(generator);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点六-Flyweight-享元"><a href="#三点六-Flyweight-享元" class="headerlink" title="三点六 Flyweight 享元"></a>三点六 Flyweight 享元</h3><h4 id="意图-5"><a href="#意图-5" class="headerlink" title="意图"></a>意图</h4><p>运用共享技术有效地支持大量细粒度的对象。</p>
+<h4 id="适用性-5"><a href="#适用性-5" class="headerlink" title="适用性"></a>适用性</h4><ul>
+<li>一个应用程序使用了大量的对象；</li>
+<li>完全由于使用大量的对象，造成很大的存储开销；</li>
+<li>对象的大多数状态都可变为外部状态；</li>
+<li>应用程序不依赖于对象标识。</li>
+</ul>
+<h4 id="参与者-5"><a href="#参与者-5" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Flyweight：描述一个接口，通过这个接口可以接受并作用于外部状态；</li>
+<li>ConcreteFlyweight：实现接口，并为内部状态增加存储空间；ConcreteFlyweight对象必须是可共享的；它所存储的状态必须是内部的；</li>
+<li>UnsharedConcreteFlyweight：不共享，将ConcreteFlyweight作为子节点；</li>
+<li>FlyweightFactory：创建并管理Flyweight对象；确保合理共享；</li>
+<li>Client：维持一个对Flyweight的引用；计算或存储一个Flyweight的外部状态。</li>
+</ul>
+<h4 id="代码示例一-5"><a href="#代码示例一-5" class="headerlink" title="代码示例一"></a>代码示例一</h4><p>Glyph是一些Composite类，它有图形化属性，并可以绘制自己，这里重点讨论字体属性。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Glyph</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~Glyph();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">(Window*, GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetFont</span><span class="params">(Font*, GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Font* <span class="title">GetFont</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">First</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Next</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">IsDone</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Glyph* <span class="title">Current</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Insert</span><span class="params">(Glyph*, GlyphContext&amp;)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Remove</span><span class="params">(GlyphContext&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    Glyph();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符代码</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Character</span> :</span> <span class="keyword">public</span> Glyph &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Character(<span class="keyword">char</span>);</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">(Window*, GlyphContext&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">char</span> _charcode;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 外部状态存储库</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlyphContext</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    GlyphContext();</span><br><span class="line">    <span class="keyword">virtual</span> ~GlyphContext();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Next</span><span class="params">(<span class="keyword">int</span> step = <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> quantity = <span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Font* <span class="title">GetFont</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">SetFont</span><span class="params">(Font*, <span class="keyword">int</span> span = <span class="number">1</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> _index;</span><br><span class="line">    BTree* _fonts;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">GlyphContext gc;</span><br><span class="line">Font* times12 = <span class="keyword">new</span> Font(<span class="string">"Times-Roman-12"</span>);</span><br><span class="line">Font* timesItalic12 = <span class="keyword">new</span> Font(<span class="string">"Times-Italic-12"</span>);</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">gc.SetFont(times12, <span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">gc.Insert(<span class="number">6</span>);</span><br><span class="line">gc.SetFont(timesItalic12, <span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NCHARCODES = <span class="number">128</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlyphFactory</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    GlyphFactory();</span><br><span class="line">    <span class="keyword">virtual</span> ~GlyphFactory();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Character* <span class="title">CreateCharacter</span><span class="params">(<span class="keyword">char</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Row* <span class="title">CreateRow</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Column* <span class="title">CreateColumn</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Character* _character[NCHARCODES];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">GlyphFactory::GlyphFactory()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NCHARCODES; ++i) &#123;</span><br><span class="line">        _character[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Character* GlyphFactory::CreateCharacter(<span class="keyword">char</span> c)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!_character[c]) &#123;</span><br><span class="line">        _character[c] = <span class="keyword">new</span> Character(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _character[c];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Row* GlyphFactory::CreateRow()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Row;</span><br><span class="line">&#125;</span><br><span class="line">Column* GlyphFactory::CreateColumn()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二-4"><a href="#代码示例二-4" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flyweight</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Flyweight(<span class="built_in">string</span> state):_state(state) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Operation</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp;state)</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">GetState</span><span class="params">()</span><span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> _state; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">virtual</span> ~Flyweight() &#123; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">string</span> _state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteFlyweight</span> :</span><span class="keyword">public</span> Flyweight &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ConcreteFlyweight(<span class="built_in">string</span> state)</span><br><span class="line">        :Flyweight(state) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"ConcreteFlyweight Build..."</span> &lt;&lt; state &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Operation</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span>&amp; state)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"ConcreteFlyweight "</span> &lt;&lt; GetState() &lt;&lt; <span class="string">" \\ "</span> &lt;&lt; state &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyweightFactory</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Flyweight *<span class="title">GetFlyweight</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">string</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> fly : _flys) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fly-&gt;GetState() == key) &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"already created by users..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">return</span> fly;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        Flyweight *fn = <span class="keyword">new</span> ConcreteFlyweight(key);</span><br><span class="line">        _flys.push_back(fn);</span><br><span class="line">        <span class="keyword">return</span> fn;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Flyweight*&gt; _flys;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    FlyweightFactory *fc = <span class="keyword">new</span> FlyweightFactory();</span><br><span class="line">    Flyweight *fw1 = fc-&gt;GetFlyweight(<span class="string">"hello"</span>);</span><br><span class="line">    Flyweight *fw2 = fc-&gt;GetFlyweight(<span class="string">"world"</span>);</span><br><span class="line">    Flyweight *fw3 = fc-&gt;GetFlyweight(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> fw1;</span><br><span class="line">    <span class="keyword">delete</span> fw2;</span><br><span class="line">    <span class="comment">//delete fw3;</span></span><br><span class="line">    <span class="keyword">delete</span> fc;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三点七-Proxy-代理"><a href="#三点七-Proxy-代理" class="headerlink" title="三点七 Proxy 代理"></a>三点七 Proxy 代理</h3><h4 id="意图-6"><a href="#意图-6" class="headerlink" title="意图"></a>意图</h4><p>为其他对象提供一种代理以控制对这个对象的访问。</p>
+<h4 id="别名-3"><a href="#别名-3" class="headerlink" title="别名"></a>别名</h4><p>Surrogate</p>
+<h4 id="适用性-6"><a href="#适用性-6" class="headerlink" title="适用性"></a>适用性</h4><ol>
+<li>远程代理Remote Proxy；</li>
+<li>虚代理Virtual Proxy：需要创建开销很大的对象；</li>
+<li>保护代理Protection Proxy：控制对原始对象的访问；</li>
+<li>智能指引Smart Reference：取代简单的指针，可以自动释放，也称智能指针。</li>
+</ol>
+<h4 id="参与者-6"><a href="#参与者-6" class="headerlink" title="参与者"></a>参与者</h4><ul>
+<li>Proxy：保存一个引用使得代理可以访问实体；提供一个与Subject接口相同的接口；控制对实体的存取；</li>
+<li>Subject：定义RealSubject和Proxy的接口；</li>
+<li>RealSubject：定义Proxy所代表的实体。</li>
+</ul>
+<h4 id="效果-4"><a href="#效果-4" class="headerlink" title="效果"></a>效果</h4><p>copy-on-write：用代理延迟拷贝一个庞大而复杂的对象，降低开销。</p>
+<h4 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h4><p>可以利用的语言特性：重载C++中的存取运算符：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Image</span>;</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> Image* <span class="title">LoadAnImageFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*)</span></span>;</span><br><span class="line"><span class="comment">// external function</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ImagePtr</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ImagePtr(<span class="keyword">const</span> <span class="keyword">char</span>* imageFile);</span><br><span class="line">    <span class="keyword">virtual</span> ~ImagePtr();</span><br><span class="line">    <span class="keyword">virtual</span> Image* <span class="keyword">operator</span>-&gt;();</span><br><span class="line">    <span class="keyword">virtual</span> Image&amp; <span class="keyword">operator</span>*();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">Image* <span class="title">LoadImage</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Image* _image;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span>* _imageFile;</span><br><span class="line">&#125;;</span><br><span class="line">ImagePtr::ImagePtr(<span class="keyword">const</span> <span class="keyword">char</span>* theImageFile)</span><br><span class="line">&#123;</span><br><span class="line">    _imageFile = theImageFile;</span><br><span class="line">    _image = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">Image* ImagePtr::LoadImage()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_image == <span class="number">0</span>) &#123;</span><br><span class="line">        _image = LoadAnImageFile(_imageFile);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _image;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Image* ImagePtr::<span class="keyword">operator</span>-&gt;()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> LoadImage();</span><br><span class="line">&#125;</span><br><span class="line">Image&amp; ImagePtr::<span class="keyword">operator</span>*()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> *LoadImage();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ImagePtr interface : ImagePtr image = ImagePtr(<span class="string">"anImageFileName"</span>);</span><br><span class="line">image-&gt;Draw(Point(<span class="number">50</span>, <span class="number">100</span>));</span><br><span class="line"><span class="comment">// (image.operator-&gt;())-&gt;Draw(Point(50, 100))</span></span><br></pre></td></tr></table></figure>
+<h4 id="代码示例一-6"><a href="#代码示例一-6" class="headerlink" title="代码示例一"></a>代码示例一</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graphic</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~Graphic();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">(<span class="keyword">const</span> Point&amp; at)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandleMouse</span><span class="params">(Event&amp; event)</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">const</span> Point&amp; <span class="title">GetExtent</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Load</span><span class="params">(istream&amp; from)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Save</span><span class="params">(ostream&amp; to)</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    Graphic();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Image</span> :</span> <span class="keyword">public</span> Graphic &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Image(<span class="keyword">const</span> <span class="keyword">char</span>* file); <span class="comment">// loads image from a file</span></span><br><span class="line">    <span class="keyword">virtual</span> ~Image();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">(<span class="keyword">const</span> Point&amp; at)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandleMouse</span><span class="params">(Event&amp; event)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">const</span> Point&amp; <span class="title">GetExtent</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Load</span><span class="params">(istream&amp; from)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Save</span><span class="params">(ostream&amp; to)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ImageProxy</span> :</span> <span class="keyword">public</span> Graphic &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ImageProxy(<span class="keyword">const</span> <span class="keyword">char</span>* imageFile);</span><br><span class="line">    <span class="keyword">virtual</span> ~ImageProxy();</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Draw</span><span class="params">(<span class="keyword">const</span> Point&amp; at)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandleMouse</span><span class="params">(Event&amp; event)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">const</span> Point&amp; <span class="title">GetExtent</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Load</span><span class="params">(istream&amp; from)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Save</span><span class="params">(ostream&amp; to)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function">Image* <span class="title">GetImage</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Image* _image;</span><br><span class="line">    Point _extent;</span><br><span class="line">    <span class="keyword">char</span>* _fileName;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ImageProxy::ImageProxy(<span class="keyword">const</span> <span class="keyword">char</span>* fileName)</span><br><span class="line">&#123;</span><br><span class="line">    _fileName = strdup(fileName);</span><br><span class="line">    _extent = Point::Zero; <span class="comment">// don't know extent yet</span></span><br><span class="line">    _image = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">Image* ImageProxy::GetImage()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_image == <span class="number">0</span>) &#123;</span><br><span class="line">        _image = <span class="keyword">new</span> Image(_fileName);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _image;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Point&amp; ImageProxy::GetExtent()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (_extent == Point::Zero) &#123;</span><br><span class="line">        _extent = GetImage()-&gt;GetExtent();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _extent;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> ImageProxy::Draw(<span class="keyword">const</span> Point&amp; at)</span><br><span class="line">&#123;</span><br><span class="line">    GetImage()-&gt;Draw(at);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> ImageProxy::HandleMouse(Event&amp; event)</span><br><span class="line">&#123;</span><br><span class="line">    GetImage()-&gt;HandleMouse(event);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> ImageProxy::Save(ostream&amp; to)</span><br><span class="line">&#123;</span><br><span class="line">    to &lt;&lt; _extent &lt;&lt; _fileName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> ImageProxy::Load(istream&amp; from)</span><br><span class="line">&#123;</span><br><span class="line">    from &gt;&gt; _extent &gt;&gt; _fileName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextDocument</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TextDocument();</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(Graphic*)</span></span>;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">TextDocument* text = <span class="keyword">new</span> TextDocument;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">text-&gt;Insert(<span class="keyword">new</span> ImageProxy(<span class="string">"anImageFileName"</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例二-5"><a href="#代码示例二-5" class="headerlink" title="代码示例二"></a>代码示例二</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Subject</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">virtual</span> ~Subject() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteSubject</span> :</span> <span class="keyword">public</span> Subject &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"ConcreteSubject::Request..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Proxy(Subject* subject)</span><br><span class="line">    &#123;</span><br><span class="line">        _sub = subject;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Reuqest</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Proxy::Request..."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        _sub-&gt;Request();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Subject* _sub;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Subject* sub = <span class="keyword">new</span> ConcreteSubject();</span><br><span class="line">    Proxy* p = <span class="keyword">new</span> Proxy(sub);</span><br><span class="line">    p-&gt;Reuqest();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> sub;</span><br><span class="line">    <span class="keyword">delete</span> p;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:46:49+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/编程/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>编程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/笔记/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>笔记</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/设计模式/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>设计模式</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/内功/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>内功</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aSY7DMAxEUd//0m6gt2nTVUWlAVFfq0AZrJcFwUHXJa/7dz3tf777uX9/rKfff3rWggUDBoxtGXe56uPWv1AD6n39bDBgwDiHUQfZOiAqn1RCc016OTMMGDBgCIldZ9UJJQwYMGC4DCWA6sEXBgwYMHSGnqJlxW3WvPtKLQ4DBowNGe5g4D9ff3G+AQMGjE0YqwpOvcR196XzwIABYzSj01brlKxZ0+0lKMOAAWM0ox5MuhcvVl040xt/MGDAOIfROXoWprPrFxIeBgwYBzD0nSxZ1NPNLEDDgAFjEsNNuTKkEsrdJPWPriEMGDBGM9x2v/utteOHa9UdDRgwYGzC0DPHTjjW97NQDgMGjBMYWZusP550k8iXd2HAgDGUUbfA9AsZytjAHULohTEMGDBmM7LrXNkh3H096MOAAeMchj5KdNv6netidqMNBgwY4xh6AHUL1+xCmH4F7THDhQEDxjiGOwfMGvp6eHXT03CcCQMGjK0YWYPeLTvXIh8bbTBgwBjK6ARNt33fSTrdoA8DBoxJDDfV64wqs3RQKlxhwIAxmtFv+isPc6+OdU4IAwaMeYzbXHra12nh6ank5f5PMGDA2JDRb3gpj3GLVTsRhAEDxgGMzrWJLHHU/yAj4MKAAeMAht5o00vQbCCqRFQYMGDA6DTr+yWxm2jCgAEDRhYW174O62wYMGCMY7hFbCe86iWxXuLCgAFjNqMTlLMhpRtelw0yYcCAsR/jB+0f9RvfIGuIAAAAAElFTkSuQmCC'>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/ebbbef31/&title=设计模式-3 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/ebbbef31/&title=设计模式-3 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/ebbbef31/&title=设计模式-3 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/75df7a92/" rel="prev" title="设计模式-4">
+                                  
+                                      设计模式-4
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/编程/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编程</a> <a class="tag" href="/tags/笔记/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>笔记</a> <a class="tag" href="/tags/设计模式/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>设计模式</a> <a class="tag" href="/tags/内功/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>内功</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/9cbcdfa7/" rel="prev" title="设计模式-2">
+                                    
+                                        设计模式-2
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/编程/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编程</a> <a class="tag" href="/tags/笔记/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>笔记</a> <a class="tag" href="/tags/设计模式/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>设计模式</a> <a class="tag" href="/tags/内功/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>内功</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '设计模式-3',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#三-结构性模式"><span class="toc-text">三 结构性模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三点一-Adapter-适配器"><span class="toc-text">三点一 Adapter 适配器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别名"><span class="toc-text">别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二"><span class="toc-text">代码示例二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点二-Bridge-桥接"><span class="toc-text">三点二 Bridge 桥接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-1"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别名-1"><span class="toc-text">别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-1"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-1"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果-1"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现-1"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-1"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二-1"><span class="toc-text">代码示例二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点三-Composite-组合"><span class="toc-text">三点三 Composite 组合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-2"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-2"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-2"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果-2"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现-2"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-2"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二-2"><span class="toc-text">代码示例二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点四-Decorator-装饰"><span class="toc-text">三点四 Decorator 装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-3"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别名-2"><span class="toc-text">别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-3"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-3"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果-3"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现-3"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-3"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二-3"><span class="toc-text">代码示例二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点五-Facade-外观"><span class="toc-text">三点五 Facade 外观</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-4"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-4"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-4"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-4"><span class="toc-text">代码示例一</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点六-Flyweight-享元"><span class="toc-text">三点六 Flyweight 享元</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-5"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-5"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-5"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-5"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二-4"><span class="toc-text">代码示例二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三点七-Proxy-代理"><span class="toc-text">三点七 Proxy 代理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图-6"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别名-3"><span class="toc-text">别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性-6"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者-6"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果-4"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现-4"><span class="toc-text">实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例一-6"><span class="toc-text">代码示例一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例二-5"><span class="toc-text">代码示例二</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\72b2be8b\" title="设计模式-0" rel="bookmark">设计模式-0</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5b58e1d\" title="设计模式-1" rel="bookmark">设计模式-1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\9cbcdfa7\" title="设计模式-2" rel="bookmark">设计模式-2</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\75df7a92\" title="设计模式-4" rel="bookmark">设计模式-4</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a67471c7\" title="网络 - TCP学习" rel="bookmark">网络 - TCP学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebf9ee07\" title="C-Cpp-Cpp标准库学习笔记" rel="bookmark">C-Cpp-Cpp标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f6d74cc5\" title="C-Cpp-C标准库学习笔记" rel="bookmark">C-Cpp-C标准库学习笔记</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

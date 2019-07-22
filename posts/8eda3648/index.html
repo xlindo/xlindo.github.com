@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>数据库 - Redis学习笔记 | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="网红数据库Redis的学习笔记。">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/8eda3648/">
+        数据库 - Redis学习笔记
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-05-05</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/编程之路/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>编程之路</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+</blockquote>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="Redis优点"><a href="#Redis优点" class="headerlink" title="Redis优点"></a>Redis优点</h3><ol>
+<li><strong>快</strong>：每秒110000次SET，每秒81000次GET；</li>
+<li><strong>支持丰富的数据类型</strong>：列表、集合、排列集和散列等；</li>
+<li><strong>操作具有原子性</strong>：确保多个客户端访问时，Redis接收最新的值；</li>
+<li><strong>多实用工具</strong>：缓存、消息队列、短期数据等。</li>
+</ol>
+<h3 id="与其他键值存储系统对比"><a href="#与其他键值存储系统对比" class="headerlink" title="与其他键值存储系统对比"></a>与其他键值存储系统对比</h3><ol>
+<li>Redis是内存数据库，但在磁盘数据库上是持久的；</li>
+<li>Redis可以将数据复制到任意数量的从机。</li>
+</ol>
+<h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><ul>
+<li>安装<code>redis-server</code>，安装<code>redis-cli</code>，运行<code>ping</code>。</li>
+<li>远程连接<code>redis-cli -h host -p port -a password</code>。</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>命令不区分大小写。</li>
+</ol>
+<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">set</span> <span class="selector-tag">name</span> "<span class="selector-tag">kai</span><span class="selector-class">.com</span>"</span><br><span class="line"><span class="selector-tag">OK</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">get</span> <span class="selector-tag">name</span></span><br><span class="line">"<span class="selector-tag">kai</span><span class="selector-class">.com</span>"</span><br></pre></td></tr></table></figure>
+<h3 id="散列-哈希"><a href="#散列-哈希" class="headerlink" title="散列/哈希"></a>散列/哈希</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">HMSET</span> <span class="selector-tag">ukey</span> <span class="selector-tag">username</span> "<span class="selector-tag">xlindo</span>" <span class="selector-tag">password</span> "1234,<span class="selector-tag">abcd</span>" <span class="selector-tag">points</span> 100</span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">HGETALL</span></span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lpush</span> <span class="selector-tag">alist</span> <span class="selector-tag">redis</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lpush</span> <span class="selector-tag">alist</span> <span class="selector-tag">mongodb</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">lrange</span> <span class="selector-tag">alist</span> 0 10</span><br></pre></td></tr></table></figure>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">aset</span> <span class="selector-tag">redis</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">aset</span> <span class="selector-tag">mongodb</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">sadd</span> <span class="selector-tag">aset</span> <span class="selector-tag">mongodb</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">smembers</span> <span class="selector-tag">aset</span></span><br></pre></td></tr></table></figure>
+<h3 id="可排序集合"><a href="#可排序集合" class="headerlink" title="可排序集合"></a>可排序集合</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">asortset</span> 0 <span class="selector-tag">redis</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">asortset</span> 0 <span class="selector-tag">mongodb</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">asortset</span> 1 <span class="selector-tag">sqlite</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">zadd</span> <span class="selector-tag">asortset</span> 1 <span class="selector-tag">sqlite</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">ZRANGEBYSCORE</span> <span class="selector-tag">asortset</span> 0 1000</span><br></pre></td></tr></table></figure>
+<h2 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h2><h3 id="键命令"><a href="#键命令" class="headerlink" title="键命令"></a>键命令</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">DEL key</td>
+<td style="text-align:center">删除指定键（如果存在）</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">DUMP key</td>
+<td style="text-align:center">返回存储在指定键的值的序列化版本</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">EXISTS key</td>
+<td style="text-align:center">检查键是否存在</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">EXPIRE key seconds</td>
+<td style="text-align:center">设置键在指定秒数后过期</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">PERSIST key</td>
+<td style="text-align:center">永久化键</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">PTTL key</td>
+<td style="text-align:center">获取键的剩余到期（毫秒）</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">TYPE key</td>
+<td style="text-align:center">返回存储在键中的值的数据类型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="发送订阅pub-sub"><a href="#发送订阅pub-sub" class="headerlink" title="发送订阅pub/sub"></a>发送订阅<code>pub/sub</code></h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>订阅名为“redisChat”的信道：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SUBSCRIBE</span> <span class="selector-tag">redisChat</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，两个客户端在名称为”redisChat”的相同信道上发布消息，并且上述订阅客户端接收消息：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">PUBLISH</span> <span class="selector-tag">redisChat</span> "<span class="selector-tag">Redis</span> <span class="selector-tag">is</span> <span class="selector-tag">a</span> <span class="selector-tag">great</span> <span class="selector-tag">caching</span> <span class="selector-tag">technique</span>"</span><br></pre></td></tr></table></figure></p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务由命令<code>MULTI</code>启动，然后需要传递一个应该在事务中执行的命令列表，然后整个事务由<code>EXEC</code>命令执行。</p>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">MULTI</span></span><br><span class="line"><span class="selector-tag">OK</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">SET</span> <span class="selector-tag">mykey</span> "<span class="selector-tag">redis</span>"</span><br><span class="line"><span class="selector-tag">QUEUED</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">GET</span> <span class="selector-tag">mykey</span></span><br><span class="line"><span class="selector-tag">QUEUED</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">INCR</span> <span class="selector-tag">visitors</span></span><br><span class="line"><span class="selector-tag">QUEUED</span></span><br><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt; <span class="selector-tag">EXEC</span></span><br><span class="line">1) <span class="selector-tag">OK</span></span><br><span class="line">2) "<span class="selector-tag">redis</span>"</span><br><span class="line">3) (<span class="selector-tag">integer</span>) 1</span><br></pre></td></tr></table></figure>
+<h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3><p>Redis脚本用于使用Lua解释器来执行脚本。使用脚本的命令是<code>EVAL</code>。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt; EVAL<span class="built_in"> script </span>numkeys key [key <span class="built_in">..</span>.] arg [arg <span class="built_in">..</span>.]</span><br></pre></td></tr></table></figure></p>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>连接命令基本用于管理与Redis服务器的客户端连接。</p>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><p>以下示例说明客户端如何向Redis服务器验证自身，并检查服务器是否正在运行。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt; AUTH <span class="string">"password"</span></span><br><span class="line">OK</span><br><span class="line">redis 127.0.0.1:6379&gt;<span class="built_in"> PING </span></span><br><span class="line">PONG</span><br></pre></td></tr></table></figure></p>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>用命令<code>info</code>说明了如何获取有关服务器的所有统计信息。</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>Redis可以使用安全的方案，使得进行连接的任何客户端在执行命令之前都需要进行身份验证。要保护Redis安全，需要在配置文件中设置密码。</p>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><p>以下示例为保护Redis实例的步骤：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt;<span class="built_in"> CONFIG </span><span class="builtin-name">set</span> requirepass <span class="string">"xlindo"</span></span><br><span class="line">OK</span><br><span class="line">redis 127.0.0.1:6379&gt;<span class="built_in"> CONFIG </span><span class="builtin-name">get</span> requirepass</span><br><span class="line">1) <span class="string">"requirepass"</span></span><br><span class="line">2) <span class="string">"xlindo"</span></span><br></pre></td></tr></table></figure></p>
+<p>默认情况下，<code>xlindo</code>此属性为空，这表示还没有为此实例设置密码。你可以通过执行以下命令更改此属性。</p>
+<h3 id="客户端连接"><a href="#客户端连接" class="headerlink" title="客户端连接"></a>客户端连接</h3><p>在配置的监听TCP端口和Unix套接字上等待和接受客户端的连接（如果已启用）。当接受新的客户端连接时，执行以下操作：</p>
+<ul>
+<li>由于Redis使用复用和非阻塞IO，因此客户端套接字处于非阻塞状态；</li>
+<li>设置TCP_NODELAY选项是为了确保连接不延迟；</li>
+<li>创建可读文件事件，以便Redis能够在套接字上读取新数据时收集客户端查询。</li>
+</ul>
+<h4 id="设置最大客户数"><a href="#设置最大客户数" class="headerlink" title="设置最大客户数"></a>设置最大客户数</h4><p><code>redis 127.0.0.1:6379&gt; CONFIG get maxclients</code><br>设置<br><code>redis 127.0.0.1:6379&gt; redis-server --maxclients 100000</code></p>
+<h4 id="客户端命令"><a href="#客户端命令" class="headerlink" title="客户端命令"></a>客户端命令</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">CLIENT LIST</td>
+<td style="text-align:center">返回连接到服务器的客户端列表</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">CLIENT KILL</td>
+<td style="text-align:center">关闭指定的客户端连接</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>Redis是一个TCP服务器，支持请求/响应协议，通过以下步骤完成：</p>
+<ul>
+<li>客户端向服务器发送请求，通常以阻塞的方式;</li>
+<li>服务器处理命令并将响应发送到客户端。</li>
+</ul>
+<h4 id="意义及示例"><a href="#意义及示例" class="headerlink" title="意义及示例"></a>意义及示例</h4><p>客户端可以向服务器发送多个请求，而不必等待回复，并最终在一个步骤中读取回复。<br>要检查Redis管道，只需启动实例，并键入以下命令:<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(echo -en "PING<span class="symbol">\r</span><span class="symbol">\n</span> SET tutorial redis<span class="symbol">\r</span><span class="symbol">\n</span>GET tutorial<span class="symbol">\r</span><span class="symbol">\n</span>INCR visitor<span class="symbol">\r</span><span class="symbol">\n</span>INCR visitor<span class="symbol">\r</span><span class="symbol">\n</span>INCR visitor<span class="symbol">\r</span><span class="symbol">\n</span>";sleep10) | nc localhost 6379</span><br><span class="line">+PONG</span><br><span class="line">+OK</span><br><span class="line">redis</span><br><span class="line">:1</span><br><span class="line">:2</span><br><span class="line">:3</span><br></pre></td></tr></table></figure></p>
+<p>该例将使用<code>PING</code>命令检查Redis连接。这里设置了一个<code>tutorial</code>的字符串，值为<code>redis</code>。然后得到键值，并增加<code>visitor</code>三次。在结果中，可以看到所有命令都提交到Redis一次，Redis在一个步骤中提供所有命令的输出。<br><strong>好处</strong>是大大提高了协议性能，通过管道从连接到本地主机速度增加5倍，因特网连接至少快100倍。</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p>分区是将数据拆分为多个Redis实例的过程，因此每个实例只包含一部分键。</p>
+<ul>
+<li><strong>范围分区</strong>：将对象的范围映射到特定的Redis实例；</li>
+<li><strong>哈希分区</strong>：使用散列函数（如模函数）将键转为数字，然后将数据存储在不同的Redis实例。</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:47:24+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/编程/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>编程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/redis/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>redis</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3a226EMAxF0fn/n6avlRjSfUyohL15qoDSrFSy4svng6/j13W+kz49f3l9Z9slQ4aM1zKO5UUYV3fOy7p6mm7HF6oMGTIGMNahsLbc9eJ4WCdhWoYMGTJ4EKyFaR6gZciQIaPG4GF07zdlyJAxjcEPc+vyWZqaku3bnIvLkCHjhQxedf//nx/pb8iQIeNVjCO80uBIlpWmx1/+igwZMlozeIDjSyRtgzhBBS0EGTJkTGPcKf2nDYBdmyJDhozejPsfTTPNWqsy+J/IkCGjKSNtEvDhsFqV7FYFUYYMGe0YdxqE6bAF+U4xxZUhQ0ZrRi195Ye/2h1S7JMhQ8YERi1N3fU0bTZcfk2GDBkDGHuHIdI0tXY8vZwZkSFDxkhGrc15/6wa/K4MGTJaM3ihnzcJ0uI+H90IerAyZMhoxFiPPqQh74lyG1qhDBkyWjPSxiQPvrUEtfamDBkyejPutxKfaFjyTUGnSxkyZLycwQcv0qDMRzHSqQkZMmTMZKSLSAtwPLjXQrwMGTLmMDggPbqlwxPp4IUMGTLmMGpDpbwYR8Yp+Hajo6EMGTJaMI7w4qlpmqDWtlKGDBkTGLVgx8N0Wm7bPGwhQ4aMRgxeRCPHO75DvMQmQ4YMGWngS9/cm9Ci/oYMGTLGM9KxMN6S5LA/qoYyZMgYz9gbjkkajIp6MmTIGMDgw161dLT2ZpAAy5AhozWjljry8j3frL1UGTJktGD8APn40T+uEXyAAAAAAElFTkSuQmCC'>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/8eda3648/&title=数据库 - Redis学习笔记 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/8eda3648/&title=数据库 - Redis学习笔记 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/8eda3648/&title=数据库 - Redis学习笔记 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/f6d74cc5/" rel="prev" title="C-Cpp-C标准库学习笔记">
+                                  
+                                      C-Cpp-C标准库学习笔记
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/c-cpp/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>c-cpp</a> <a class="tag" href="/tags/编程/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编程</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/db2abc56/" rel="prev" title="关于新能源">
+                                    
+                                        关于新能源
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/随笔/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>随笔</a> <a class="tag" href="/tags/新能源/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>新能源</a> <a class="tag" href="/tags/核能/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>核能</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '数据库 - Redis学习笔记',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#预备知识"><span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis优点"><span class="toc-text">Redis优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与其他键值存储系统对比"><span class="toc-text">与其他键值存储系统对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装配置"><span class="toc-text">安装配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis数据类型"><span class="toc-text">Redis数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串"><span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#散列-哈希"><span class="toc-text">散列/哈希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合"><span class="toc-text">集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可排序集合"><span class="toc-text">可排序集合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis命令"><span class="toc-text">Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#键命令"><span class="toc-text">键命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发送订阅pub-sub"><span class="toc-text">发送订阅pub/sub</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务"><span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-1"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#脚本"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接"><span class="toc-text">连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-2"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器"><span class="toc-text">服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备份"><span class="toc-text">备份</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-3"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端连接"><span class="toc-text">客户端连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#设置最大客户数"><span class="toc-text">设置最大客户数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端命令"><span class="toc-text">客户端命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道"><span class="toc-text">管道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意义及示例"><span class="toc-text">意义及示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分区"><span class="toc-text">分区</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebf9ee07\" title="C-Cpp-Cpp标准库学习笔记" rel="bookmark">C-Cpp-Cpp标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f6d74cc5\" title="C-Cpp-C标准库学习笔记" rel="bookmark">C-Cpp-C标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d1132df8\" title="C-Cpp-public_private_protected" rel="bookmark">C-Cpp-public_private_protected</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1415d286\" title="C-Cpp-CPP的STL学习" rel="bookmark">C-Cpp-CPP的STL学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a67471c7\" title="网络 - TCP学习" rel="bookmark">网络 - TCP学习</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

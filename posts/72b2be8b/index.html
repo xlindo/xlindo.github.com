@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>设计模式-0 | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="《设计模式》笔记">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/72b2be8b/">
+        设计模式-0
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-12-18</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/编程之路/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>编程之路</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+</blockquote>
+<h2 id="零零-使用点拨"><a href="#零零-使用点拨" class="headerlink" title="零零 使用点拨"></a>零零 使用点拨</h2><p>援引自知乎用户：</p>
+<blockquote>
+<p>其实GoF的《设计模式》一书，一共有三个层面的内容: </p>
+</blockquote>
+<ol>
+<li>指出编程开发活动中存在模式，提出总结设计模式需要关注的四要素 “名称-问题-解决方案-效果“ ，并给出描述一套模式的格式模板；</li>
+<li>提出了面向对象开发中”针对接口编程优于针对实现编程”，”组合优于继承”的总体设计思路；</li>
+<li>选取了现实开发中基于上述设计思路所形成的23种常见设计模式作为例子详细描述。</li>
+</ol>
+<p>虽然第3点包括的多个具体的设计模式实例占据了最多的篇幅，但事实上第1,2点才是纲。实际上《设计模式》一书最划时代的意义，在于第1点。</p>
+<h3 id="一句话总结设计模式："><a href="#一句话总结设计模式：" class="headerlink" title="一句话总结设计模式："></a>一句话总结设计模式：</h3><h4 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h4><p>这些设计模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用新的运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。</p>
+<ul>
+<li><strong>工厂模式与抽象工厂模式 （Factory Pattern）（Abstract Factory Pattern）：</strong> 不同条件下创建不同实例</li>
+<li><strong>单例模式 （Singleton Pattern）：</strong> 保证一个类仅有一个实例</li>
+<li><strong>建造者模式 （Builder Pattern）：</strong> 将一个复杂的构建过程与其具表示细节相分离，使得同样的构建过程可以创建不同的表示</li>
+<li><strong>原型模式 （Prototype Pattern）：</strong> 通过拷贝原型创建新的对象</li>
+</ul>
+<h4 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h4><p>这些设计模式关注类和对象的组合。</p>
+<ul>
+<li><strong>适配器模式 （Adapter Pattern）：</strong> 使得原本由于接口不兼容而不能一起工作的那些类可以一起工作</li>
+<li><strong>装饰器模式 （Decorator Pattern）：</strong> 保持接口，增强性能：修饰类继承被修饰对象的抽象父类，依赖被修饰对象的实例（被修饰对象依赖注入），以实现接口扩展</li>
+<li><strong>桥接模式 （Bridge Pattern）：</strong> 两个维度独立变化，依赖方式实现抽象与实现分离：需要一个作为桥接的接口/抽象类，多个角度的实现类依赖注入到抽象类，使它们在抽象层建立一个关联关系</li>
+<li><strong>外观模式 （Facade Pattern）：</strong> 在客户端和复杂系统之间再加一层，这一次将调用顺序、依赖关系等处理好。即封装底层实现，隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的高层接口</li>
+<li><strong>代理模式 （Proxy Pattern）：</strong> 为其他对象提供一种代理以控制对这个对象的访问：增加中间层（代理层），代理类与底层实现类实现共同接口，并创建底层实现类对象（底层实现类对象依赖注入代理类），以便向外界提供功能接口</li>
+<li><strong>过滤器模式 （Filter、Criteria Pattern）：</strong> 使用不同的标准来过滤一组对象，通过逻辑运算以解耦的方式把它们连接起来</li>
+<li><strong>组合模式 （Composite Pattern）：</strong> 用户对单个对象和组合对象的使用具有一致性的统一接口</li>
+<li><strong>享元模式 （Flyweight Pattern）：</strong> 享元工厂类控制；HashMap实现缓冲池重用现有的同类对象，如果未找到匹配的对象，则创建新对象</li>
+</ul>
+<h4 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h4><p>这些设计模式特别关注对象之间的通信。</p>
+<ul>
+<li><strong>责任链模式（Chain of Responsibility Pattern）：</strong> 拦截的类都实现统一接口，每个接收者都包含对下一个接收者的引用。将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</li>
+<li><strong>观察者模式（Observer Pattern）：</strong> 一对多的依赖关系，在观察目标类里有一个 ArrayList 存放观察者们。当观察目标对象的状态发生改变，所有依赖于它的观察者都将得到通知，使这些观察者能够自动更新（即使用推送方式）</li>
+<li><strong>模板模式（Template Pattern）：</strong> 将这些通用算法抽象出来，在一个抽象类中公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行</li>
+<li><strong>命令模式（Command Pattern）：</strong> 将”行为请求者”与”行为实现者”解耦：调用者依赖命令，命令依赖接收者，调用者Invoker→命令Command→接收者Receiver</li>
+<li><strong>解释器模式（Interpreter Pattern）：</strong> 给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子</li>
+<li><strong>迭代器模式（Iterator Pattern）：</strong> 集合中含有迭代器：分离了集合对象的遍历行为，抽象出一个迭代器类来负责，无须暴露该对象的内部表示</li>
+<li><strong>中介者模式（Mediator Pattern）：</strong> 对象与对象之间存在大量的关联关系，将对象之间的通信关联关系封装到一个中介类中单独处理，从而使其耦合松散，可以独立地改变它们之间的交互</li>
+<li><strong>策略模式（Strategy Pattern）：</strong> 策略对象依赖注入到context对象，context对象根据它的策略改变而改变它的相关行为(可通过调用内部的策略对象实现相应的具体策略行为)</li>
+<li><strong>状态模式（State Pattern）：</strong> 状态对象依赖注入到context对象，context对象根据它的状态改变而改变它的相关行为(可通过调用内部的状态对象实现相应的具体行为)</li>
+<li><strong>备忘录模式（Memento Pattern）：</strong> 通过一个备忘录类专门存储对象状态。客户通过备忘录管理类管理备忘录类。</li>
+<li><strong>空对象模式（Null Object Pattern）：</strong> 创建一个未对该类做任何实现的空对象类，该空对象类将无缝地使用在需要检查空值的地方。不要为了屏蔽null而使用空对象，应保持用null，远比用非null的值来替代“无值”要好。（慎用）</li>
+</ul>
+<h2 id="零-常用术语"><a href="#零-常用术语" class="headerlink" title="零 常用术语"></a>零 常用术语</h2><h3 id="零点一-基于目的准则的分类："><a href="#零点一-基于目的准则的分类：" class="headerlink" title="零点一 基于目的准则的分类："></a>零点一 基于目的准则的分类：</h3><ul>
+<li>创建型Creational：与对象的创建有关；</li>
+<li>结构性Structural：处理类或对象的组合；</li>
+<li>行为型Behavior：对类或对象怎样交互和怎样分配职责进行描述。</li>
+</ul>
+<h3 id="零点二-描述对象的实现"><a href="#零点二-描述对象的实现" class="headerlink" title="零点二 描述对象的实现"></a>零点二 描述对象的实现</h3><h4 id="意图"><a href="#意图" class="headerlink" title="意图"></a>意图</h4><p>是回答下列问题的简单描述：设计模式是做什么的？它的基本原理和意图是什么？它解决的问题是什么样的特定问题？</p>
+<h4 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h4><p>模式的其他名称。</p>
+<h4 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h4><p>用以说明一个设计问题以及如何用设计模式中的类、对象来解决该问题的特定场景。该情景会帮助你理解随后对设计模式更抽象的描述。</p>
+<h4 id="适用性"><a href="#适用性" class="headerlink" title="适用性"></a>适用性</h4><p>什么情况下可以使用该设计模式？该模式可用来改进哪些不良设计？你怎样识别这些情况？</p>
+<h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><p>采用基于对象建模技术<code>OMT</code>的表示法对模式中的类进行图形描述。</p>
+<h4 id="参与者"><a href="#参与者" class="headerlink" title="参与者"></a>参与者</h4><p>指设计模式中的类或对象以及他们各自的职责。</p>
+<h4 id="协作"><a href="#协作" class="headerlink" title="协作"></a>协作</h4><p>模式的参与者怎样协作以事项他们的职责。</p>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p>模式怎样支持它的目标？使用模式的效果和所需做的权衡取舍？系统结构的哪些方面可以独立改变？</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>实现模式时需要知道的一些提示、技术要点及应避免的缺陷，以及是否存在某些特定于实现语言的问题。</p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:46:18+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/编程/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>编程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/笔记/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>笔记</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/设计模式/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>设计模式</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/内功/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>内功</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS46EMAxF0dr/pulpS60K99mhJZybUQlBkcPA8iefD17Xr0WurO/8+8/rK9uWDBkyXsu4lqt2z/oKeTt/rwwZMs5hrEMhCYLk9eSN/E4ZMmTIIIEyTQp5CJYhQ4aMDoP8Xid/6YeQIUOGDF6gplvsN+AeqcVlyJDxQgbvuv//70fmGzJkyHgV4woXae6n2+Lh9euuZMiQMZqRNv37Ry7S4pkf/pAhQ8ZsBknU1gVk50oaym+oMmTIGM0gj6XlJR9e9seoMmTImMrgbf1+Epl2yYLWmwwZMo5hpHE6LUp50611zEKGDBlDGf30jhTAtX9AQVyGDBmHMWrFJP80j4wQZMiQMZqRlrKdQxhktFArgGXIkDGbkTa5eAq4qxmHnpUhQ8YBDB52awlf7dmgSpUhQ8ZoBglttWHnrnZbEOJlyJAxlMHb+nygmJa+tVL2a4YrQ4aMcQweBGuHKmoDS5Im3lTkMmTIGM3oHJXgwZSXpsEnliFDxgEM/rs2Kkg/EPlMN71DGTJkjGPUEkESOtPDE+loQYYMGecw+OY4LD1O0TqoIUOGjKGMK1y1plt6zIskgjJkyDiHsStmk62nI4E0AZUhQ8ZsBgmyfIu8+EyHlDeppwwZMg5gpA01PsLcW9CiWlyGDBnHM3i52z+cEbBlyJAhA6SG/UEpD9nbUkMZMmS8isFDJ7meFre8GSdDhowzGbx05CQ+YEjHDK1BpgwZMt7H+AHqQNE/H0nAIwAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/72b2be8b/&title=设计模式-0 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/72b2be8b/&title=设计模式-0 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/72b2be8b/&title=设计模式-0 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/5b58e1d/" rel="prev" title="设计模式-1">
+                                  
+                                      设计模式-1
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/编程/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编程</a> <a class="tag" href="/tags/笔记/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>笔记</a> <a class="tag" href="/tags/设计模式/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>设计模式</a> <a class="tag" href="/tags/内功/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>内功</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/a67471c7/" rel="prev" title="网络 - TCP学习">
+                                    
+                                        网络 - TCP学习
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/编程/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>编程</a> <a class="tag" href="/tags/程序/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>程序</a> <a class="tag" href="/tags/web/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>web</a> <a class="tag" href="/tags/TCP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>TCP</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '设计模式-0',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#零零-使用点拨"><span class="toc-text">零零 使用点拨</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一句话总结设计模式："><span class="toc-text">一句话总结设计模式：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建型模式"><span class="toc-text">创建型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构型模式"><span class="toc-text">结构型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#行为型模式"><span class="toc-text">行为型模式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#零-常用术语"><span class="toc-text">零 常用术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#零点一-基于目的准则的分类："><span class="toc-text">零点一 基于目的准则的分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#零点二-描述对象的实现"><span class="toc-text">零点二 描述对象的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#意图"><span class="toc-text">意图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#别名"><span class="toc-text">别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用性"><span class="toc-text">适用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者"><span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#协作"><span class="toc-text">协作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5b58e1d\" title="设计模式-1" rel="bookmark">设计模式-1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebbbef31\" title="设计模式-3" rel="bookmark">设计模式-3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\9cbcdfa7\" title="设计模式-2" rel="bookmark">设计模式-2</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\75df7a92\" title="设计模式-4" rel="bookmark">设计模式-4</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a67471c7\" title="网络 - TCP学习" rel="bookmark">网络 - TCP学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebf9ee07\" title="C-Cpp-Cpp标准库学习笔记" rel="bookmark">C-Cpp-Cpp标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f6d74cc5\" title="C-Cpp-C标准库学习笔记" rel="bookmark">C-Cpp-C标准库学习笔记</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

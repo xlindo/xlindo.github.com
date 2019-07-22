@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>集体智慧编程-Ch3-Clustering | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="《集体智慧编程》刷书笔记，Ch3，分级聚类，K-Means.">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/e3d825c6/">
+        集体智慧编程-Ch3-Clustering
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-21</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/机器学习/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+<p>代码库 <a href="https://github.com/xlindo/pci-notes" target="_blank" rel="noopener">https://github.com/xlindo/pci-notes</a></p>
+<p>《集体智慧编程》刷书笔记，Ch3.</p>
+</blockquote>
+<h2 id="3-Discovering-Groups"><a href="#3-Discovering-Groups" class="headerlink" title="3 Discovering Groups"></a>3 Discovering Groups</h2><p>第二章可以使我们能找到与自己在某方面品味相似的人。拓展此思想，引入<strong>数据聚类data clustering</strong>的概念。本章将学到以下内容：</p>
+<ul>
+<li>从不同来源中构造算法所需数据；</li>
+<li>两种聚类算法；</li>
+<li>更多有关距离度量distance metrics的知识；</li>
+<li>简单的图形可视化代码；</li>
+<li>如何将异常复杂的数据集投影到二维空间。</li>
+</ul>
+<p>聚类常被用于数据量很大<strong>data-intensive</strong>的应用中。如消费者购买行为；计量生物学<strong>computational biology</strong>中寻找相似行为的基因组等。</p>
+<p>本书讨论集体智慧，故例子所涉及的都是多人贡献的不同信息的问题：</p>
+<ol>
+<li>考察博客用户所讨论的话题，以及实用的特殊词汇，借此说明，可以由此产生分组方式；</li>
+<li>考察社区网站，人们可以在这类网站上列举拥有和希望拥有的物品，我们将利用这些信息来示范，如何对人的意愿进行分组。</li>
+</ol>
+<h3 id="3-1-Supervised-versus-Unsupervised-Learning-监督学习和无监督学习"><a href="#3-1-Supervised-versus-Unsupervised-Learning-监督学习和无监督学习" class="headerlink" title="3.1 Supervised versus Unsupervised Learning 监督学习和无监督学习"></a>3.1 Supervised versus Unsupervised Learning 监督学习和无监督学习</h3><p>利用样本输入和期望输出来学习如何预测的技术被称为<strong>监督学习supervised learning</strong>，如：</p>
+<ul>
+<li>神经网络 neural networks, </li>
+<li>决策树 decision trees, </li>
+<li>支持向量机 support-vector machines, </li>
+<li>贝叶斯过滤器 Bayesian filtering.</li>
+</ul>
+<p>聚类是<strong>无监督学习unsupervised learning</strong>的一个例子，它不利用带有正确答案的样本数据进行训练<strong>training</strong>。其<strong>目的</strong>是在数据中找到某种<strong>结构</strong>，而答案<strong>并非数据本身</strong>。比如，聚类的结果不会说某位顾客会买什么，而是预测其适合某种时尚。其他非监督学习算法还有：</p>
+<ul>
+<li>非负矩阵因式分解 non-negative matrix factorization,</li>
+<li>自组织映射 self-organizing maps.</li>
+</ul>
+<h3 id="3-2-Word-Vector-单词向量"><a href="#3-2-Word-Vector-单词向量" class="headerlink" title="3.2 Word Vector 单词向量"></a>3.2 Word Vector 单词向量</h3><p>为聚类算法准备数据的常见做法是定义一组<strong>公共的数值型属性</strong>，然后利用这些属性对数据项进行比较。</p>
+<h4 id="3-2-1-Pigeonholing-the-Bloggers-对博客用户分类"><a href="#3-2-1-Pigeonholing-the-Bloggers-对博客用户分类" class="headerlink" title="3.2.1 Pigeonholing the Bloggers 对博客用户分类"></a>3.2.1 Pigeonholing the Bloggers 对博客用户分类</h4><p>本章对两个示例数据集进行处理。第一个数据集被用来聚类的是排名在前120的一系列博客，为此，我们需要聚类一组指定的词汇在每个博客订阅源中出现的次数。下面是该数据集的一个子集，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190719193000.png" alt="Subset of blog word frequencies"></p>
+<p>该聚类方法或许可以确定一系列频繁写<strong>类似主题</strong>的或者有着类似<strong>写作风格</strong>的博客。这样的分析结果有益于搜索，归类cataloging,，以及当前大量博客的数据挖掘。</p>
+<p>为构造该数据集，可能需要下载一系列博客，从中提取文本，并据此简历单词频度表，这里可以直接下载一个</p>
+<h4 id="3-2-2-Counting-the-Words-in-a-Feed-对订阅源的单词计数"><a href="#3-2-2-Counting-the-Words-in-a-Feed-对订阅源的单词计数" class="headerlink" title="3.2.2 Counting the Words in a Feed 对订阅源的单词计数"></a>3.2.2 Counting the Words in a Feed 对订阅源的单词计数</h4><p><strong><u>！而我直接下载好了数据文件，没有通过下述程序。</u></strong></p>
+<p><strong>RSS订阅 RSS feed</strong> 是一个包含博客所有文章条目信息的简单XML文档。为了计数，首先要解析这些订阅源。可以使用python库<a href="https://pypi.org/project/feedparser/" target="_blank" rel="noopener">feedparser</a>。</p>
+<p>由于我选择了直接下载这些数据，所以这一节的代码<code>generate_feed_vector.py</code>我放到了一个程序文件里。</p>
+<p>每个订阅源都会包含一个标题和一组文章条目，通常都有相应的标签说明。函数<code>get_word_counts</code>将文章摘要传给函数<code>get_words</code>，后者将通过正则式处理，剥离标签并以非字母字符作为分隔符拆分出单词，在以列表形式返回结果，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> feedparser</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns title and dictionary of word counts for an RSS feed</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_word_counts</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="comment"># Parse the feed</span></span><br><span class="line">    d = feedparser.parse(url)</span><br><span class="line">    wc = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Loop over all the entries</span></span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> d.entries:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'summary'</span> <span class="keyword">in</span> e:</span><br><span class="line">            summary = e.summary</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            summary = e.description</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Extract a list of words</span></span><br><span class="line">        words = get_words(e.title+<span class="string">' '</span>+summary)</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            wc.setdefault(word, <span class="number">0</span>)</span><br><span class="line">            wc[word] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> d.feed.title, wc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_words</span><span class="params">(html)</span>:</span></span><br><span class="line">    <span class="comment"># Remove all the HTML tags</span></span><br><span class="line">    txt = re.compile(<span class="string">r'&lt;[^&gt;]+&gt;'</span>).sub(<span class="string">''</span>, html)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Split words by all non-alpha characters</span></span><br><span class="line">    words = re.compile(<span class="string">r'[^A-Z^a-z]+'</span>).split(txt)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert to lowercase</span></span><br><span class="line">    <span class="keyword">return</span> [word.lower() <span class="keyword">for</span> word <span class="keyword">in</span> words <span class="keyword">if</span> word != <span class="string">''</span>]</span><br></pre></td></tr></table></figure>
+<p>然后我们下载一个包含订阅源URL的列表<code>feedlist.txt</code>。上面的代码遍历该列表的订阅源生成数据集。代码的第一部分遍历列表每一行，并生成每个博客的单词哦统计，以及出现这些单词的博客数量，添加下面的代码，<strong><u>经测试，订阅源已不可用</u></strong>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">apcount = &#123;&#125;</span><br><span class="line">wordcounts = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'feedlist.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    filelist = [l <span class="keyword">for</span> l <span class="keyword">in</span> f]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> feedurl <span class="keyword">in</span> filelist:</span><br><span class="line">    title, wc = get_word_counts(feedurl)</span><br><span class="line">    wordcounts[title] = wc</span><br><span class="line">    <span class="keyword">for</span> word, count <span class="keyword">in</span> wc.items():</span><br><span class="line">        apcount.setdefault(word, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> count &gt; <span class="number">1</span>:</span><br><span class="line">            apcount[word] += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>然后，我们通过选取一个单词出现次数的比例来剔除重复率特别极端的单词，也减少了要考查的单词总量，这里设为10%~50%，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wordlist = []</span><br><span class="line"><span class="keyword">for</span> w, bc <span class="keyword">in</span> apcount.items():</span><br><span class="line">    frac = float(bc)/len(feedlist)</span><br><span class="line">    <span class="keyword">if</span> frac &gt; <span class="number">0.1</span> <span class="keyword">and</span> frac &lt; <span class="number">0.5</span>:</span><br><span class="line">        wordlist.append(w)</span><br></pre></td></tr></table></figure>
+<p>最后利用上述单词列表和博客列表来建立一个文本文件，其中包含一个大矩阵，记录着针对每个博客的所有单词统计情况，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">out = open(<span class="string">'blogdata.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">out.write(<span class="string">'Blog'</span>)</span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> wordlist:</span><br><span class="line">    out.write(<span class="string">'\t%s'</span> % word) </span><br><span class="line">out.write(<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> blog, wc <span class="keyword">in</span> wordcounts.items():</span><br><span class="line">    out.write(blog)</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> wordlist:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> wc:</span><br><span class="line">            out.write(<span class="string">'\t%d'</span> % wc[word])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            out.write(<span class="string">'\t0'</span>)</span><br><span class="line">    out.write(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行程序，生成单词计数文件<code>blogdata.txt</code>。</p>
+<p><strong>而我直接下载好了，没有通过上述程序。</strong></p>
+<h3 id="3-3-Hierarchical-Clustering-分级聚类"><a href="#3-3-Hierarchical-Clustering-分级聚类" class="headerlink" title="3.3 Hierarchical Clustering 分级聚类"></a>3.3 Hierarchical Clustering 分级聚类</h3><p>分级聚类通过<strong>连续不断合并最为相似的群组</strong>，来构造一个<strong>层级结构</strong>。其中每个群组都是<strong>从单一元素开始</strong>的，在本章的例子中，这个单一元素就是博客。</p>
+<p>在每次迭代过程中，分级聚类算法会<strong>计算每两个群组间的距离</strong>，并<strong>合并</strong>距离最近的两个群组。该过程重复进行，<strong>直到只剩一个</strong>。</p>
+<p>可以使用树状图<strong>dendrogram</strong>来展现结果，这种绘制方式可以确定元素间的相似程度，并以此指示聚类的紧密程度。</p>
+<p>下面开始编码，以实现按主题对博客进行分组。首先，构建方法来加载数据文件，新建文件<code>read_file.py</code>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(filename)</span>:</span></span><br><span class="line"></span><br><span class="line">    lines = [line <span class="keyword">for</span> line <span class="keyword">in</span> open(filename)]</span><br><span class="line">    <span class="comment"># First line is the column titles</span></span><br><span class="line">    colnames = lines[<span class="number">0</span>].strip().split(<span class="string">'\t'</span>)[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">    rownames = []</span><br><span class="line">    data = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines[<span class="number">1</span>:]:</span><br><span class="line">        p = line.strip().split(<span class="string">'\t'</span>)</span><br><span class="line">        <span class="comment"># First column in each row is the rowname</span></span><br><span class="line">        rownames.append(p[<span class="number">0</span>])</span><br><span class="line">        <span class="comment"># The data for this row is the remainder of the row</span></span><br><span class="line">        data.append([float(x) <span class="keyword">for</span> x <span class="keyword">in</span> p[<span class="number">1</span>:]])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rownames, colnames, data</span><br></pre></td></tr></table></figure>
+<p>下面定义<strong>修改过后</strong>的皮尔逊相似度计算函数来定义紧密度<strong>closeness</strong>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pearson_r_02</span><span class="params">(v1, v2)</span>:</span></span><br><span class="line">    <span class="comment"># Simple sums</span></span><br><span class="line">    sum1 = sum(v1)</span><br><span class="line">    sum2 = sum(v2)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sums of the squares</span></span><br><span class="line">    sum1Sq = sum([pow(v, <span class="number">2</span>) <span class="keyword">for</span> v <span class="keyword">in</span> v1])</span><br><span class="line">    sum2Sq = sum([pow(v, <span class="number">2</span>) <span class="keyword">for</span> v <span class="keyword">in</span> v2])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sum of the products</span></span><br><span class="line">    pSum = sum([v1[i]*v2[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(v1))])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calculate r (Pearson score)</span></span><br><span class="line">    num = pSum-(sum1*sum2/len(v1))</span><br><span class="line">    den = sqrt((sum1Sq-pow(sum1, <span class="number">2</span>)/len(v1))*(sum2Sq-pow(sum2, <span class="number">2</span>)/len(v1)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> den == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>-num/den</span><br></pre></td></tr></table></figure>
+<p>用$1$减去原公式的$[-1,1]$的计算结果，新结果为$[0,2]$，这使得相似度越大时返回皮尔逊相似距离计算结果越小。即现在取值为$2$时为完全负相关，取值为$0$时完全正相关。</p>
+<p>分级聚类算法中的每一个聚类，可以是书中的枝节点，也可以是与实际数据的行相对应的叶节点。每一个聚类还包含了指示其位置的信息，这可以是来自叶节点的行数据，也可以是枝节点经合并的数据。现在构造一个类<code>BiCluster</code>来描述这颗层级数，新建一个文件<code>BiCluster.py</code>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BiCluster</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vec, left=None, right=None, distance=<span class="number">0.0</span>, id=None)</span>:</span></span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line">        self.vec = vec </span><br><span class="line">        self.id = id</span><br><span class="line">        self.distance = distance</span><br></pre></td></tr></table></figure>
+<p>分级聚类算法以一组对应于原始数据项的聚类开始，函数主循环部分遍历计算所有配对相似度，找出最佳，并将其合并。新生成的聚类中包含的数据，等于旧聚类数据的均值。计算过程保存每个配对的相似度。下面添加<code>h_cluster</code>函数，并在文件开头引入<code>pearson_r_02</code>函数，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pearson_r_02 <span class="keyword">import</span> pearson_r_02</span><br><span class="line"><span class="keyword">from</span> BiCluster <span class="keyword">import</span> BiCluster</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">h_cluster</span><span class="params">(rows, distance=pearson_r_02)</span>:</span></span><br><span class="line">    distances = &#123;&#125;</span><br><span class="line">    current_clust_id = <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clusters are initially just the rows</span></span><br><span class="line">    clust = [BiCluster(rows[i], id=i) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(rows))]</span><br><span class="line">    <span class="keyword">while</span> len(clust) &gt; <span class="number">1</span>:</span><br><span class="line">        lowest_pair = (<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        closest = distance(clust[<span class="number">0</span>].vec, clust[<span class="number">1</span>].vec)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># loop through every pair looking for the smallest distance</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(clust)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(clust)):</span><br><span class="line">                <span class="comment"># distances is the cache of distance calculations</span></span><br><span class="line">                <span class="keyword">if</span> (clust[i].id, clust[j].id) <span class="keyword">not</span> <span class="keyword">in</span> distances:</span><br><span class="line">                    distances[(clust[i].id, clust[j].id)] = \</span><br><span class="line">                        distance(clust[i].vec, clust[j].vec)</span><br><span class="line">                d = distances[(clust[i].id, clust[j].id)]</span><br><span class="line">                <span class="keyword">if</span> d &lt; closest:</span><br><span class="line">                    closest = d</span><br><span class="line">                    lowest_pair = (i, j)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># calculate the average of the two clusters</span></span><br><span class="line">        mergevec = [(clust[lowest_pair[<span class="number">0</span>]].vec[i] +</span><br><span class="line">                     clust[lowest_pair[<span class="number">1</span>]].vec[i])/<span class="number">2.0</span></span><br><span class="line">                    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(clust[<span class="number">0</span>].vec))]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># create the new cluster</span></span><br><span class="line">        new_cluster = BiCluster(mergevec,</span><br><span class="line">                                left=clust[lowest_pair[<span class="number">0</span>]</span><br><span class="line">                                           ], right=clust[lowest_pair[<span class="number">1</span>]],</span><br><span class="line">                                distance=closest, id=current_clust_id)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># cluster ids that weren't in the original set are negative</span></span><br><span class="line">        current_clust_id -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">del</span> clust[lowest_pair[<span class="number">1</span>]]</span><br><span class="line">        <span class="keyword">del</span> clust[lowest_pair[<span class="number">0</span>]]</span><br><span class="line">        clust.append(new_cluster)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> clust[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>因为每个聚类都指向被合并的聚类，故可以递归搜索实现聚类的重建。下面测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> h_cluster <span class="keyword">import</span> h_cluster</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">from</span> read_file <span class="keyword">import</span> read_file</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: blognames, words, data = read_file(<span class="string">'blogdata.txt'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: clust = h_cluster(data)</span><br></pre></td></tr></table></figure>
+<p>为了检视结果，编写函数<code>print_clust.py</code>打印聚类数，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_clust</span><span class="params">(clust, labels=None, n=<span class="number">0</span>)</span>:</span></span><br><span class="line">    <span class="comment"># indent to make a hierarchy layout</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">        print(<span class="string">' '</span>,end=<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">if</span> clust.id &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># negative id means that this is branch</span></span><br><span class="line">        print(<span class="string">'-'</span>*n,end=<span class="string">''</span>)</span><br><span class="line">        print(<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># positive id means that this is an endpoint</span></span><br><span class="line">        <span class="keyword">if</span> labels != <span class="literal">None</span>:</span><br><span class="line">            print(labels[clust.id])            </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(clust.id)</span><br><span class="line">            </span><br><span class="line">    <span class="comment"># now print the right and left branches</span></span><br><span class="line">    <span class="keyword">if</span> clust.left != <span class="literal">None</span>:</span><br><span class="line">        print_clust(clust.left, labels=labels, n=n+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">if</span> clust.right != <span class="literal">None</span>:</span><br><span class="line">        print_clust(clust.right, labels=labels, n=n+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">5</span>]: <span class="keyword">from</span> print_clust <span class="keyword">import</span> print_clust</span><br><span class="line"></span><br><span class="line">In [<span class="number">6</span>]: print_clust(clust, labels = blognames)</span><br><span class="line">...etc...</span><br><span class="line"> SpikedHumor - Today<span class="string">'s Videos and Pictures</span></span><br><span class="line"><span class="string"> -</span></span><br><span class="line"><span class="string">  Online Marketing Report</span></span><br><span class="line"><span class="string">  --</span></span><br><span class="line"><span class="string">   Dave Shea'</span>s mezzoblue</span><br><span class="line">   ---</span><br><span class="line">    ----</span><br><span class="line">     Joel on Software</span><br><span class="line">     -----</span><br><span class="line">      The Unofficial Apple Weblog (TUAW)</span><br><span class="line">...etc...</span><br></pre></td></tr></table></figure>
+<p>由于输出较多，大致上是这个样子。</p>
+<h3 id="3-4-Drawing-the-Dendrogen-绘制树状图"><a href="#3-4-Drawing-the-Dendrogen-绘制树状图" class="headerlink" title="3.4 Drawing the Dendrogen 绘制树状图"></a>3.4 Drawing the Dendrogen 绘制树状图</h3><p>借助树状图，我们可以更侵袭的理解聚类。本节借助<strong>Pillow</strong>库绘制图片格式的树状图。<strong>Pillow</strong>是PIL(Python Imaging Library)的一个分支，兼容绝大多数PIL语法，<strong>而PIL不支持Python3</strong>。</p>
+<p><strong>注，这里是横着的树，可先后看后文，这树长什么样。</strong></p>
+<p><strong>注，该函数很有复用的价值</strong></p>
+<p>创建<code>draw_dendrogram.py</code>文件以绘制<code>BiCluster</code>对象的树状图，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_height</span><span class="params">(clust)</span>:</span></span><br><span class="line">    <span class="comment"># Is this an endpoint? Then the height is just 1</span></span><br><span class="line">    <span class="keyword">if</span> clust.left == <span class="literal">None</span> <span class="keyword">and</span> clust.right == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="comment"># Otherwise the height is the same of the heights of</span></span><br><span class="line">    <span class="comment"># # each branch</span></span><br><span class="line">    <span class="keyword">return</span> get_height(clust.left)+get_height(clust.right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_depth</span><span class="params">(clust)</span>:</span></span><br><span class="line">    <span class="comment"># The distance of an endpoint is 0.0</span></span><br><span class="line">    <span class="keyword">if</span> clust.left == <span class="literal">None</span> <span class="keyword">and</span> clust.right == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="comment"># The distance of a branch is the greater of its two sides</span></span><br><span class="line">    <span class="comment"># # plus its own distance</span></span><br><span class="line">    <span class="keyword">return</span> max(get_depth(clust.left), get_depth(clust.right))+clust.distance</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_node</span><span class="params">(draw, clust, x, y, scaling, labels)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> clust.id &lt; <span class="number">0</span>:</span><br><span class="line">        h1 = get_height(clust.left)*<span class="number">20</span></span><br><span class="line">        h2 = get_height(clust.right)*<span class="number">20</span></span><br><span class="line">        top = y-(h1+h2)/<span class="number">2</span></span><br><span class="line">        bottom = y+(h1+h2)/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Line length</span></span><br><span class="line">        ll = clust.distance*scaling</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Vertical line from this cluster to children</span></span><br><span class="line">        draw.line((x, top+h1/<span class="number">2</span>, x, bottom-h2/<span class="number">2</span>), fill=(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Horizontal line to left item</span></span><br><span class="line">        draw.line((x, top+h1/<span class="number">2</span>, x+ll, top+h1/<span class="number">2</span>), fill=(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Horizontal line to right item</span></span><br><span class="line">        draw.line((x, bottom-h2/<span class="number">2</span>, x+ll, bottom-h2/<span class="number">2</span>), fill=(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Call the function to draw the left and right nodes</span></span><br><span class="line">        draw_node(draw, clust.left, x+ll, top+h1/<span class="number">2</span>, scaling, labels)</span><br><span class="line">        draw_node(draw, clust.right, x+ll, bottom-h2/<span class="number">2</span>, scaling, labels)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># If this is an endpoint, draw the item label</span></span><br><span class="line">        draw.text((x+<span class="number">5</span>, y<span class="number">-7</span>), labels[clust.id], (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawdendrogram</span><span class="params">(clust, labels, jpeg=<span class="string">'clusters.jpg'</span>)</span>:</span></span><br><span class="line">    <span class="comment"># height and width</span></span><br><span class="line">    h = get_height(clust)*<span class="number">20</span></span><br><span class="line">    w = <span class="number">1200</span></span><br><span class="line">    depth = get_depth(clust)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># width is fixed, so scale distances accordingly</span></span><br><span class="line">    scaling = float(w<span class="number">-150</span>)/depth</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a new image with a white background</span></span><br><span class="line">    img = Image.new(<span class="string">'RGB'</span>, (w, h), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">    draw = ImageDraw.Draw(img)</span><br><span class="line"></span><br><span class="line">    draw.line((<span class="number">0</span>, h/<span class="number">2</span>, <span class="number">10</span>, h/<span class="number">2</span>), fill=(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Draw the first node</span></span><br><span class="line">    draw_node(draw, clust, <span class="number">10</span>, (h/<span class="number">2</span>), scaling, labels)</span><br><span class="line">    img.save(jpeg, <span class="string">'JPEG'</span>)</span><br></pre></td></tr></table></figure>
+<p>测试一下作图功能，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">38</span>]: <span class="keyword">from</span> draw_dendrogram <span class="keyword">import</span> draw_dendrogram</span><br><span class="line"></span><br><span class="line">In [<span class="number">39</span>]: draw_dendrogram(clust,blognames,jpeg=<span class="string">'blogclust.jpg'</span>)</span><br></pre></td></tr></table></figure>
+<p>打开图片如下，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/blogclust.jpg" alt="blogclust"></p>
+<h5 id="函数讲解"><a href="#函数讲解" class="headerlink" title="函数讲解"></a>函数讲解</h5><ul>
+<li><p><code>get_height(clust)</code></p>
+<p>返回总体高度，每个叶节点为1个高度。图片上下。</p>
+</li>
+<li><p><code>get_depth(clust)</code></p>
+<p>返回总体深度，即总体误差，后面回根据该误差值生成线条长度缩放因子scaling factor。图片左右。</p>
+</li>
+<li><p><code>draw_node(draw, clust, x, y, scaling, labels)</code></p>
+<p>最重要。接受<code>BiCluster</code>对象及其位置作为输入参数。函数获取子节点的高度，计算这些节点的位置，然后用一条垂直线与两条水平线连接他们。</p>
+</li>
+<li><p><code>draw_dendrogram(clust, labels, jpeg=&#39;clusters.jpg&#39;)</code></p>
+<p>创建一个图片，调用<code>draw_node</code>函数绘制。</p>
+</li>
+</ul>
+<h5 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h5><p>给函数以<code>BiCluster</code>对象，相应数量标签，文件名。函数生成高度为20像素，宽度固定的图片。</p>
+<h3 id="3-5-Column-Clustering-列聚类"><a href="#3-5-Column-Clustering-列聚类" class="headerlink" title="3.5 Column Clustering 列聚类"></a>3.5 Column Clustering 列聚类</h3><p>同时在行和列上对数据进行聚类常常很有必要。该例中，<strong>列聚类可表示哪些单词经常被放到一起使用</strong>。</p>
+<p>在前文基础上，只需要对矩阵进行转置操作就可以实现，编写转置功能函数<code>rotate_matrix.py</code>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate_matrix</span><span class="params">(data)</span>:</span></span><br><span class="line">    new_data = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data[<span class="number">0</span>])):</span><br><span class="line">        new_row = [data[j][i] <span class="keyword">for</span> j <span class="keyword">in</span> range(len(data))]</span><br><span class="line">        new_data.append(new_row)</span><br><span class="line">    <span class="keyword">return</span> new_data</span><br></pre></td></tr></table></figure>
+<p>测试一下，由于需要比较的向量增加了十倍多，所以计算时间很长，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">43</span>]: <span class="keyword">from</span> rotate_matrix <span class="keyword">import</span> rotate_matrix</span><br><span class="line"></span><br><span class="line">In [<span class="number">44</span>]: new_d = rotate_matrix(data)</span><br><span class="line"></span><br><span class="line">In [<span class="number">45</span>]: new_c = h_cluster(new_d)</span><br><span class="line">    </span><br><span class="line">In [<span class="number">46</span>]: drawdendrogram(new_c,labels=words,jpeg=<span class="string">'wordclust.jpg'</span>)</span><br></pre></td></tr></table></figure>
+<p>由于标签增加，这是一张巨大的图，就不贴在这里了。</p>
+<h3 id="3-6-K-Means-Clustering-K-均值聚类"><a href="#3-6-K-Means-Clustering-K-均值聚类" class="headerlink" title="3.6 K-Means Clustering K-均值聚类"></a>3.6 K-Means Clustering K-均值聚类</h3><p><strong>分级聚类有两个缺点</strong>，结果并没有进行分组，而且计算量很大。</p>
+<p>本节学习 <strong>K-均值聚类</strong>，该方法将有事先定义的数量聚类：该算法首先<strong>随机确定$k$个中心</strong> <strong>centroids</strong>位置，然后将各个数据项<strong>分配给最邻近的中心点</strong>。分配完成后，聚类<strong>中心将移到</strong>该聚类的所有节点的<strong>平均位置</strong>，然后又重复之前的分配过程，<strong>直到分配过程不再变化</strong>。如下图，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190721171106.png" alt="K-Means"></p>
+<p>下面开始构建算法代码<code>k_cluster.py</code>，其也接受数据行输入，另外还需指定期望的聚类数$k$，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">k_means</span><span class="params">(rows, distance=pearson, k=<span class="number">4</span>)</span>:</span></span><br><span class="line">    <span class="comment"># Determine the minimum and maximum values for each point</span></span><br><span class="line">    ranges = [(min([row[i] <span class="keyword">for</span> row <span class="keyword">in</span> rows]), max([row[i] <span class="keyword">for</span> row <span class="keyword">in</span> rows]))</span><br><span class="line">              <span class="keyword">for</span> i <span class="keyword">in</span> range(len(rows[<span class="number">0</span>]))]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create k randomly placed centroids</span></span><br><span class="line">    clusters = [[random.random()*(ranges[i][<span class="number">1</span>]-ranges[i][<span class="number">0</span>])+ranges[i][<span class="number">0</span>]</span><br><span class="line">                 <span class="keyword">for</span> i <span class="keyword">in</span> range(len(rows[<span class="number">0</span>]))] <span class="keyword">for</span> j <span class="keyword">in</span> range(k)]</span><br><span class="line"></span><br><span class="line">    lastmatches = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        print(<span class="string">'Iteration %d'</span> % t)</span><br><span class="line">        bestmatches = [[] <span class="keyword">for</span> i <span class="keyword">in</span> range(k)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Find which centroid is the closest for each row</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(rows)):</span><br><span class="line">            row = rows[j]</span><br><span class="line">            bestmatch = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">                d = distance(clusters[i], row)</span><br><span class="line">                <span class="keyword">if</span> d &lt; distance(clusters[bestmatch], row):</span><br><span class="line">                    bestmatch = i</span><br><span class="line">            bestmatches[bestmatch].append(j)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># If the results are the same as last time, this is complete</span></span><br><span class="line">        <span class="keyword">if</span> bestmatches == lastmatches:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        lastmatches = bestmatches</span><br><span class="line">        <span class="comment"># Move the centroids to the average of their members</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">            avgs = [<span class="number">0.0</span>]*len(rows[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">if</span> len(bestmatches[i]) &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">for</span> rowid <span class="keyword">in</span> bestmatches[i]:</span><br><span class="line">                    <span class="keyword">for</span> m <span class="keyword">in</span> range(len(rows[rowid])):</span><br><span class="line">                        avgs[m] += rows[rowid][m]</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(len(avgs)):</span><br><span class="line">                    avgs[j] /= len(bestmatches[i])</span><br><span class="line">                clusters[i] = avgs</span><br><span class="line">    <span class="keyword">return</span> bestmatches</span><br></pre></td></tr></table></figure>
+<p>函数最终返回$k$组序列，每个序列代表一个聚类，下面测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">48</span>]: <span class="keyword">from</span> k_means <span class="keyword">import</span> k_means</span><br><span class="line"></span><br><span class="line">In [<span class="number">49</span>]: k_clusters = k_means(data,k=<span class="number">10</span>)</span><br><span class="line">Iteration <span class="number">0</span></span><br><span class="line">Iteration <span class="number">1</span></span><br><span class="line">Iteration <span class="number">2</span></span><br><span class="line">Iteration <span class="number">3</span></span><br><span class="line">Iteration <span class="number">4</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">50</span>]: [blognames[r] <span class="keyword">for</span> r <span class="keyword">in</span> k_clusters[<span class="number">0</span>]]</span><br><span class="line">Out[<span class="number">50</span>]: [<span class="string">'bogus data'</span>, <span class="string">"SpikedHumor - Today's Videos and Pictures"</span>, <span class="string">'Bloglines | News'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="3-7-Clusters-for-Preferences-针对偏好的聚类"><a href="#3-7-Clusters-for-Preferences-针对偏好的聚类" class="headerlink" title="3.7 Clusters for Preferences 针对偏好的聚类"></a>3.7 Clusters for Preferences 针对偏好的聚类</h3><p>Zebo是一个用户用来发布已经拥有的和希望拥有的物品的网站，本节处理这些数据。<strong>由于网站已经失效，所以获取数据阶段程序不能用！目录下<code>zebo.txt</code>为下载好了的数据文件。</strong></p>
+<h4 id="3-7-1-Beautiful-Soup"><a href="#3-7-1-Beautiful-Soup" class="headerlink" title="3.7.1 Beautiful Soup"></a>3.7.1 Beautiful Soup</h4><p>Beautiful Soup 是一个解析网页和构造结构化数据表达形式的优秀函数库。借助该库，我们可以使用各种属性标签访问网页内容。对应Python3可以下载 <strong>beautifulsoup4</strong>以及<strong>urllib3</strong>。下面是使用示例，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">56</span>]: http = urllib3.PoolManager()</span><br><span class="line"></span><br><span class="line">In [<span class="number">57</span>]: response = http.request(<span class="string">'GET'</span>, <span class="string">'http://kiwitobes.com/wiki/Programming_language.html'</span>)</span><br><span class="line">    </span><br><span class="line">In [<span class="number">58</span>]: soup = BeautifulSoup(response.data.decode(<span class="string">'utf-8'</span>))</span><br><span class="line">    </span><br><span class="line">In [<span class="number">60</span>]: links = soup(<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">61</span>]: links[<span class="number">10</span>]</span><br><span class="line">Out[61]: &lt;a href="http://twitter.com/moubarak" rel="nofollow"&gt;Mohamed Moubarak (@m…&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">In [<span class="number">62</span>]: links[<span class="number">10</span>][<span class="string">'href'</span>]</span><br><span class="line">Out[<span class="number">62</span>]: <span class="string">'http://twitter.com/moubarak'</span></span><br></pre></td></tr></table></figure>
+<p>下面这段<strong>不可用</strong>的代码<code>download_zebo_data.py</code>用以下载数据，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> BeautifulSoup <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">chare = re.compile(<span class="string">r'[!-\.&amp;]'</span>)</span><br><span class="line">itemowners = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Words to remove</span></span><br><span class="line">dropwords = [<span class="string">'a'</span>, <span class="string">'new'</span>, <span class="string">'some'</span>, <span class="string">'more'</span>, <span class="string">'my'</span>,</span><br><span class="line">             <span class="string">'own'</span>, <span class="string">'the'</span>, <span class="string">'many'</span>, <span class="string">'other'</span>, <span class="string">'another'</span>]</span><br><span class="line"></span><br><span class="line">currentuser = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">51</span>):</span><br><span class="line">    <span class="comment"># URL for the want search page</span></span><br><span class="line">    c = urllib2.urlopen(</span><br><span class="line">        <span class="string">'http://member.zebo.com/Main?event_key=USERSEARCH&amp;wiowiw=wiw&amp;keyword=car&amp;page=%d'</span> % (i))</span><br><span class="line">    soup = BeautifulSoup(c.read())</span><br><span class="line">    <span class="keyword">for</span> td <span class="keyword">in</span> soup(<span class="string">'td'</span>):</span><br><span class="line">        <span class="comment"># Find table cells of bgverdanasmall class</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">'class'</span> <span class="keyword">in</span> dict(td.attrs) <span class="keyword">and</span> td[<span class="string">'class'</span>] == <span class="string">'bgverdanasmall'</span>):</span><br><span class="line">            items = [re.sub(chare, <span class="string">''</span>, a.contents[<span class="number">0</span>].lower()).strip()</span><br><span class="line">                     <span class="keyword">for</span> a <span class="keyword">in</span> td(<span class="string">'a'</span>)]</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">                <span class="comment"># Remove extra words</span></span><br><span class="line">                txt = <span class="string">' '</span>.join(</span><br><span class="line">                    [t <span class="keyword">for</span> t <span class="keyword">in</span> item.split(<span class="string">' '</span>) <span class="keyword">if</span> t <span class="keyword">not</span> <span class="keyword">in</span> dropwords])</span><br><span class="line">                <span class="keyword">if</span> len(txt) &lt; <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                itemowners.setdefault(txt, &#123;&#125;)</span><br><span class="line">                itemowners[txt][currentuser] = <span class="number">1</span></span><br><span class="line">            currentuser += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>上述代码的参考价值在于网页数据的清理工作。在用户希望拥有的物品中，要去掉包括’a’, ‘some’这样的单词、标点符号，以及将所有文本转换成小写。</p>
+<p>完成上述工作后，构造一个列表，列表包含超过5个人想拥有的物品。然后构造一个匿名用户为列，物品为行的矩阵写入文件，添加下面代码，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">out = file(<span class="string">'zebo.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">out.write(<span class="string">'Item'</span>)</span><br><span class="line"><span class="keyword">for</span> user <span class="keyword">in</span> range(<span class="number">0</span>, currentuser):</span><br><span class="line">    out.write(<span class="string">'\tU%d'</span> % user)</span><br><span class="line">out.write(<span class="string">'\n'</span>)</span><br><span class="line"><span class="keyword">for</span> item, owners <span class="keyword">in</span> itemowners.items():</span><br><span class="line">    <span class="keyword">if</span> len(owners) &gt; <span class="number">10</span>:</span><br><span class="line">        out.write(item)</span><br><span class="line">        <span class="keyword">for</span> user <span class="keyword">in</span> range(<span class="number">0</span>, currentuser):</span><br><span class="line">            <span class="keyword">if</span> user <span class="keyword">in</span> owners:</span><br><span class="line">                out.write(<span class="string">'\t1'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                out.write(<span class="string">'\t0'</span>)</span><br><span class="line">        out.write(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<p>运行程序，获取的数据文件与前面博客数据集类似。区别是这里<strong>没有计数</strong>，仅仅标记希望拥有的物品为1，否则为0。数据如下，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Item	U0	U1	U2	U3	U4	U5	U6	U7	...etc...</span><br><span class="line">bike	0	0	0	0	0	0	0	0	...etc...</span><br><span class="line">clothes	0	0	0	0	1	0	0	0	...etc...</span><br><span class="line">dvd player	0	0	0	1	0	0	0	0	...etc...</span><br><span class="line">...etc...</span><br></pre></td></tr></table></figure>
+<h4 id="3-7-2-Defining-a-Distance-Metric-定义距离度量标准"><a href="#3-7-2-Defining-a-Distance-Metric-定义距离度量标准" class="headerlink" title="3.7.2 Defining a Distance Metric 定义距离度量标准"></a>3.7.2 Defining a Distance Metric 定义距离度量标准</h4><p><strong>Pearson</strong>相关度适合用于博客数据集，该数据集包含单词实际统计值，<strong>而此处为二值</strong>。这里更有意义的是，度量同时希望拥有某物品的人的重叠程度。于是，我们采用 <strong>Tanimoto系数 Tanimoto Coefficient</strong>，其表示两者<strong>交集项与并集项的比率</strong>。代码<code>tanimoto.py</code>实现如下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tanamoto</span><span class="params">(v1, v2)</span>:</span></span><br><span class="line">    c1, c2, shr = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(v1)):</span><br><span class="line">        <span class="keyword">if</span> v1[i] != <span class="number">0</span>:</span><br><span class="line">            c1 += <span class="number">1</span>  <span class="comment"># in v1</span></span><br><span class="line">        <span class="keyword">if</span> v2[i] != <span class="number">0</span>:</span><br><span class="line">            c2 += <span class="number">1</span>  <span class="comment"># in v2</span></span><br><span class="line">        <span class="keyword">if</span> v1[i] != <span class="number">0</span> <span class="keyword">and</span> v2[i] != <span class="number">0</span>:</span><br><span class="line">            shr += <span class="number">1</span>  <span class="comment"># in both</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>-(float(shr)/(c1+c2-shr))</span><br></pre></td></tr></table></figure>
+<p>函数返回[0, 1]之间的值，1表示不存在同时夏欢的物品，0表示完全一致喜欢。</p>
+<h4 id="3-7-4-Clustering-Resuts-对结果聚类"><a href="#3-7-4-Clustering-Resuts-对结果聚类" class="headerlink" title="3.7.4 Clustering Resuts 对结果聚类"></a>3.7.4 Clustering Resuts 对结果聚类</h4><p>利用前面的函数进行计算和绘图，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">64</span>]: wants, people, data = read_file(<span class="string">'zebo.txt'</span>)</span><br><span class="line">    </span><br><span class="line">In [<span class="number">66</span>]: <span class="keyword">from</span> tanimoto <span class="keyword">import</span> tanimoto</span><br><span class="line"></span><br><span class="line">In [<span class="number">67</span>]: clust = h_cluster(data, distance=tanimoto)</span><br><span class="line"></span><br><span class="line">In [<span class="number">68</span>]: drawdendrogram(clust, wants,jpeg=<span class="string">'wants.jpg'</span>)</span><br></pre></td></tr></table></figure>
+<p>得到希望的物品的相似度，如下图，可以看出一些简单的结论，例如喜欢ps3、xbox、psp的是同一类人等。</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/wants.jpg" alt="wants"></p>
+<h3 id="3-8-Viewing-Data-in-Two-Dimensions-以二维形式展现数据"><a href="#3-8-Viewing-Data-in-Two-Dimensions-以二维形式展现数据" class="headerlink" title="3.8 Viewing Data in Two Dimensions 以二维形式展现数据"></a>3.8 Viewing Data in Two Dimensions 以二维形式展现数据</h3><p>由于现实中需要聚类的内容一般不只两个数值，于是，我们利用<strong>MDS多维缩放multidimensional scaling</strong>的二维形式来表达相似程度。为此，需计算出所有项之间的距离，例如博客数据集中的Pearson相关度，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190721201049.png" alt="sampledistancematrix"></p>
+<p>然后将所有数据项随机放置在二维的图上，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190721201159.png" alt="2D"></p>
+<p>所有数据项之间的距离取自距离计算结果，这里是差的平方和。</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190721201414.png" alt="2dwithdistance"></p>
+<p>将目标距离与实际距离比较，获取的差值作为比例因子。例如图中A与B距离0.5，但目标距离仅为0.2，因此缩短A与B的距离，同时推离C和D。</p>
+<p>实现这一功能的函数接受一个数据向量，返回一个只包含两列的向量，即数据项的二维坐标，下面建立<code>draw2d.py</code>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pearson_r_02 <span class="keyword">import</span> pearson_r_02</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scale_down</span><span class="params">(data, distance=pearson_r_02, rate=<span class="number">0.01</span>)</span>:</span></span><br><span class="line">    n = len(data)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># The real distances between every pair of items</span></span><br><span class="line">    real_dist = [[distance(data[i], data[j]) <span class="keyword">for</span> j <span class="keyword">in</span> range(n)]</span><br><span class="line">                 <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, n)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Randomly initialize the starting points of the locations in 2D</span></span><br><span class="line">    loc = [[random.random(), random.random()] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    fake_dist = [[<span class="number">0.0</span> <span class="keyword">for</span> j <span class="keyword">in</span> range(n)] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">    last_error = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">1000</span>):</span><br><span class="line">        <span class="comment"># Find projected distances</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                fake_dist[i][j] = sqrt(</span><br><span class="line">                    sum([pow(loc[i][x]-loc[j][x], <span class="number">2</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(len(loc[i]))]))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Move points</span></span><br><span class="line">        grad = [[<span class="number">0.0</span>, <span class="number">0.0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line">        total_error = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> j == k:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="comment"># The error is percent difference between the distances</span></span><br><span class="line">                <span class="keyword">if</span> real_dist[j][k] != <span class="number">0</span>:</span><br><span class="line">                    error_term = (fake_dist[j][k]-real_dist[j][k])/real_dist[j][k]</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    error_term = fake_dist[j][k]</span><br><span class="line">                <span class="comment"># Each point needs to be moved away from or towards the other</span></span><br><span class="line">                <span class="comment"># point in proportion to how much error it has</span></span><br><span class="line">                grad[k][<span class="number">0</span>] += ((loc[k][<span class="number">0</span>]-loc[j][<span class="number">0</span>]) /</span><br><span class="line">                               fake_dist[j][k])*error_term</span><br><span class="line">                grad[k][<span class="number">1</span>] += ((loc[k][<span class="number">1</span>]-loc[j][<span class="number">1</span>]) /</span><br><span class="line">                               fake_dist[j][k])*error_term</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Keep track of the total error</span></span><br><span class="line">                total_error += abs(error_term)</span><br><span class="line">        print(total_error)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># If the answer got worse by moving the points, we are done</span></span><br><span class="line">        <span class="keyword">if</span> last_error <span class="keyword">and</span> last_error &lt; total_error:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        last_error = total_error</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Move each of the points by the learning rate times the gradient</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">            loc[k][<span class="number">0</span>] -= rate*grad[k][<span class="number">0</span>]</span><br><span class="line">            loc[k][<span class="number">1</span>] -= rate*grad[k][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> loc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw2d</span><span class="params">(data, labels, jpeg=<span class="string">'mds2d.jpg'</span>)</span>:</span></span><br><span class="line">    img = Image.new(<span class="string">'RGB'</span>, (<span class="number">2000</span>, <span class="number">2000</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">    draw = ImageDraw.Draw(img)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">        x = (data[i][<span class="number">0</span>]+<span class="number">0.5</span>)*<span class="number">1000</span></span><br><span class="line">        y = (data[i][<span class="number">1</span>]+<span class="number">0.5</span>)*<span class="number">1000</span></span><br><span class="line">        draw.text((x, y), labels[i], (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">    img.save(jpeg, <span class="string">'JPEG'</span>)</span><br></pre></td></tr></table></figure>
+<p>结果如下图，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/mds2d.jpg" alt="mds2d"></p>
+<h3 id="3-9-Other-Things-to-Cluster-有关聚类的其他事宜"><a href="#3-9-Other-Things-to-Cluster-有关聚类的其他事宜" class="headerlink" title="3.9 Other Things to Cluster 有关聚类的其他事宜"></a>3.9 Other Things to Cluster 有关聚类的其他事宜</h3><p>本章的思路可以扩展到许多不同的领域，并从中挖掘富有价值的结论，如好友关系、书评者排行等等。</p>
+<p>参数信息的绘制可以通过MDS，虽然在缩放过程中可能丢失信息。</p>
+<h3 id="练习里提到的概念"><a href="#练习里提到的概念" class="headerlink" title="练习里提到的概念"></a>练习里提到的概念</h3><ul>
+<li>实际距离(毕达哥拉斯Pythagorean)</li>
+<li>曼哈顿(Manhattan)距离</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:46:01+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/机器学习/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>机器学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/集体智慧/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>集体智慧</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3au27DQAxEUf//T8tNCgPySjNDJoi4dytD1uuoIMglXy95HR/r88j5nPP552tXV62OtC0YMGA8lnFcrtU5yuvqePf+X6gwYMDYgHEdCvXwqr9cFtaXx2HAgAHjMl1zA677gWDAgAHDZVTCaO89YcCAsRtDT+ZWZWSluHXvAwMGjN0Y+q773//+lf4GDBgwHsU4zJU1OJVrs/f5uRYGDBijGXqAc3nKCIVRoAofDgYMGLMZbhhVAO6YhX6OnT7CgAHj4Yx6yHNbC276KDU7YcCAMZqRNSzdorSSboZbbzBgwBjH0JO2bJzLxYf5HgwYMIYy3BQwC5ddI6030yIwYMAYzXCblJUMNBtavQm+MGDAGM3QN8KyW+uNz/p4BwwYMKYyusYd6oHbLa2bW5gwYMD4x4xs28ttIWQDrNlmHAwYMOYx3JEvI99s2m6TElYYMGBswOgds6gUqO6ZdhUOAwaMhzPcTbHrgFhpWOpp4rK/AQMGjEGMLFDalbE5VOF+CBgwYOzDcIcklMdkV+nJotTlgAEDxlCGHhbdkYusISpt/8GAAWMDhl5eKvlYlghm7wkDBozZjMNc7rBFJUIanxUGDBijGZVxikry56aV2RNhwIAxidEVZN2wq2+xSQEXBgwYGzDqzQD3dbOC9qaUhQEDBgwzu1TCsfJ06V8YMGDAaAq4SiMhHA6DAQPGBgyliNXP0a9qSzdhwIAxmqGXjte/s+CrkDIqDBgwRjDehkhLqY4sFKQAAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/e3d825c6/&title=集体智慧编程-Ch3-Clustering | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/e3d825c6/&title=集体智慧编程-Ch3-Clustering | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/e3d825c6/&title=集体智慧编程-Ch3-Clustering | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/10b80194/" rel="prev" title="统计学习方法-Ch1-概论">
+                                  
+                                      统计学习方法-Ch1-概论
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/统计学习方法/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>统计学习方法</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/c7711d38/" rel="prev" title="集体智慧编程-Ch1-2-Recommendation">
+                                    
+                                        集体智慧编程-Ch1-2-Recommendation
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/集体智慧/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>集体智慧</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '集体智慧编程-Ch3-Clustering',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Discovering-Groups"><span class="toc-text">3 Discovering Groups</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Supervised-versus-Unsupervised-Learning-监督学习和无监督学习"><span class="toc-text">3.1 Supervised versus Unsupervised Learning 监督学习和无监督学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Word-Vector-单词向量"><span class="toc-text">3.2 Word Vector 单词向量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-Pigeonholing-the-Bloggers-对博客用户分类"><span class="toc-text">3.2.1 Pigeonholing the Bloggers 对博客用户分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-Counting-the-Words-in-a-Feed-对订阅源的单词计数"><span class="toc-text">3.2.2 Counting the Words in a Feed 对订阅源的单词计数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Hierarchical-Clustering-分级聚类"><span class="toc-text">3.3 Hierarchical Clustering 分级聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Drawing-the-Dendrogen-绘制树状图"><span class="toc-text">3.4 Drawing the Dendrogen 绘制树状图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数讲解"><span class="toc-text">函数讲解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用方式"><span class="toc-text">使用方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-Column-Clustering-列聚类"><span class="toc-text">3.5 Column Clustering 列聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-K-Means-Clustering-K-均值聚类"><span class="toc-text">3.6 K-Means Clustering K-均值聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-Clusters-for-Preferences-针对偏好的聚类"><span class="toc-text">3.7 Clusters for Preferences 针对偏好的聚类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-1-Beautiful-Soup"><span class="toc-text">3.7.1 Beautiful Soup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-2-Defining-a-Distance-Metric-定义距离度量标准"><span class="toc-text">3.7.2 Defining a Distance Metric 定义距离度量标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-4-Clustering-Resuts-对结果聚类"><span class="toc-text">3.7.4 Clustering Resuts 对结果聚类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-Viewing-Data-in-Two-Dimensions-以二维形式展现数据"><span class="toc-text">3.8 Viewing Data in Two Dimensions 以二维形式展现数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-Other-Things-to-Cluster-有关聚类的其他事宜"><span class="toc-text">3.9 Other Things to Cluster 有关聚类的其他事宜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习里提到的概念"><span class="toc-text">练习里提到的概念</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

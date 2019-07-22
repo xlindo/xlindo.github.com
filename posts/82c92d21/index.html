@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>DL-book 5 Machine Learning Basics | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="The notes of deep learning book. Chapter 5.">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/82c92d21/">
+        DL-book 5 Machine Learning Basics
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-17</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/机器学习/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+</blockquote>
+<ul>
+<li><strong>hyperparameters</strong><ul>
+<li>The settings of machine learning algorithms</li>
+</ul>
+</li>
+<li><strong>Machine learning</strong> <ul>
+<li>is essentially a form of <strong>applied statistics</strong> with <strong>increased emphasis on the use of computers to statistically estimate complicated functions</strong> and a <strong>decreased emphasis on proving confidence intervals</strong> around these functions。</li>
+</ul>
+</li>
+<li>two central approaches to statistics: <ul>
+<li>frequentist estimators </li>
+<li>Bayesian inference</li>
+</ul>
+</li>
+<li><strong>Most machine learning algorithms</strong> can be divided into the categories of <strong>supervised learning</strong> and <strong>unsupervised learning</strong></li>
+<li>Most <strong>deep learning algorithms are based on</strong> an optimization algorithm called <strong>stochastic gradient descent</strong>.</li>
+</ul>
+<h2 id="5-1-Learning-Algorithms"><a href="#5-1-Learning-Algorithms" class="headerlink" title="5.1 Learning Algorithms"></a>5.1 Learning Algorithms</h2><ul>
+<li><strong>learning</strong>, a succinct definition<ul>
+<li>A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$ , if its performance at tasks in $T$ , as measured by $P$, improves with experience $E$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-1-1-The-Task-T"><a href="#5-1-1-The-Task-T" class="headerlink" title="5.1.1 The Task, $T$"></a>5.1.1 The Task, $T$</h3><ul>
+<li><strong>Machine learning tasks</strong> are usually described in terms of <strong>how</strong> the machine learning system <strong>should process</strong> an <strong>example</strong> 样本.</li>
+<li>An <strong>example</strong> is a collection of <strong>features</strong> that have been quantitatively measured from some object or event that we want the machine learning system to process. <ul>
+<li>example vector $\boldsymbol{x} \in \mathbb{R}^{n}$ for each entry $x_{i}$ of the vector is another feature.</li>
+</ul>
+</li>
+<li>Some of the <strong>most common machine learning tasks</strong> include the following:<ul>
+<li>Classification</li>
+<li>Classification with missing inputs</li>
+<li>Regression</li>
+<li>Transcription</li>
+<li>Machine translation</li>
+<li>Structured output</li>
+<li>Anomaly detection</li>
+<li>Synthesis and sampling</li>
+<li>Imputation of missing values</li>
+<li>Denoising</li>
+<li>Density estimation or probability mass function estimation</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-1-2-The-Performance-Measure-P"><a href="#5-1-2-The-Performance-Measure-P" class="headerlink" title="5.1.2 The Performance Measure, $P$"></a>5.1.2 The Performance Measure, $P$</h3><ul>
+<li>For tasks such as <strong>classification, classification with missing inputs, and transcription</strong>, we often measure the <strong>accuracy</strong> of the model.<ul>
+<li>the proportion of <strong>examples</strong> for which the model produces the <strong>correct output</strong></li>
+<li>We can also obtain equivalent information by measuring the <strong>error rate</strong> <ul>
+<li>We often refer to the <strong>error rate</strong> as the expected <strong>0-1 loss</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>accuracy, error rate do not make sense for tasks such as density estimation<ul>
+<li>Instead, we must use a <strong>different performance metric</strong> that gives the model a <strong>continuous-valued score for each example</strong>. </li>
+<li>The most common approach is to report the <strong>average log-probability</strong> the model assigns to some examples.</li>
+</ul>
+</li>
+<li>evaluate these performance measures using a <strong>test set</strong> of data </li>
+</ul>
+<h3 id="5-1-3-The-Experience-E"><a href="#5-1-3-The-Experience-E" class="headerlink" title="5.1.3 The Experience, $E$"></a>5.1.3 The Experience, $E$</h3><ul>
+<li>Machine learning algorithms can be broadly categorized as <strong>unsupervised</strong> or <strong>supervised</strong></li>
+<li>Most of the learning algorithms in this book can be understood as being allowed to experience an entire <strong>dataset</strong> .</li>
+<li>Sometimes we call <strong>examples</strong> <strong>data points</strong>.</li>
+<li><strong>Unsupervised</strong> learning algorithms experience a dataset containing many features, then learn useful properties of the structure of this dataset.</li>
+<li><strong>Supervised</strong> learning algorithms experience a dataset containing features, but each example is also associated with a <strong>label or target</strong> .</li>
+<li>Roughly speaking, <strong>unsupervised learning</strong> learns $p(\mathbf{x})$ from $\mathbf{x}$, while <strong>supervised learning</strong> involves leaning to predict $\mathbf{y}$ from $\mathbf{x}$, usually by estimating $p(\mathbf{y} | \mathbf{x})$</li>
+</ul>
+<h3 id="5-1-4-Example-Linear-Regression"><a href="#5-1-4-Example-Linear-Regression" class="headerlink" title="5.1.4 Example: Linear Regression"></a>5.1.4 Example: Linear Regression</h3><ul>
+<li>$\hat{y}=\boldsymbol{w}^{\top} \boldsymbol{x}$<ul>
+<li>input $\boldsymbol{x} \in \mathbb{R}^{n}$</li>
+<li>output $y \in \mathbb{R}$</li>
+<li>desired output $\hat{y}$</li>
+<li>weights $\boldsymbol{w}\in \mathbb{R}^{n}$</li>
+</ul>
+</li>
+<li>We refer to the design matrix of inputs as $\boldsymbol{X}^{(\text { test })}$ and the vector of regression targets as $\boldsymbol{y}^{(\text { test })}$ .</li>
+<li>One way of <strong>measuring the performance</strong> of the model is to compute the <strong>mean squared error</strong> of the model on the test set.<ul>
+<li>$\mathrm{MSE}_{\mathrm{test}}=\frac{1}{m} \sum_{i}\left(\hat{\boldsymbol{y}}^{(\mathrm{test})}-\boldsymbol{y}^{(\mathrm{test})}\right)_{i}^{2}$</li>
+<li>$\mathrm{MSE}_{\mathrm{test}}=\frac{1}{m}\left|\hat{\boldsymbol{y}}^{(\text { test })}-\boldsymbol{y}^{(\text { test })}\right|_{2}^{2}$</li>
+</ul>
+</li>
+<li>$\Rightarrow \boldsymbol{w}=\left(\boldsymbol{X}^{(\operatorname{train}) \top} \boldsymbol{X}^{(\operatorname{train})}\right)^{-1} \boldsymbol{X}^{(\operatorname{train}) \top} \boldsymbol{y}^{(\text { train })}$<ul>
+<li>The system of equations whose solution is given by equation 5.12 is known as the <strong>normal equations</strong> .</li>
+</ul>
+</li>
+<li><strong>linear regression</strong>, affine function (linear, but need not pass through the origin)<ul>
+<li>$\hat{y}=\boldsymbol{w}^{\top} \boldsymbol{x}+b$</li>
+<li>augment $\boldsymbol{x}$ with an extra entry that is always set to $1$.</li>
+<li><strong>bias</strong> parameter, $b$</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-2-Capacity-Overﬁtting-and-Underﬁtting"><a href="#5-2-Capacity-Overﬁtting-and-Underﬁtting" class="headerlink" title="5.2 Capacity, Overﬁtting and Underﬁtting"></a>5.2 Capacity, Overﬁtting and Underﬁtting</h2><ul>
+<li>The ability to perform well on <strong>new, previously unseen</strong> inputs is called <strong>generalization</strong>.</li>
+<li>we can compute some error measure on the <strong>training set</strong>, called the <strong>training error</strong></li>
+<li>we want the <strong>generalization error</strong> , also called the <strong>test error</strong> , to be <strong>low</strong> as well.<ul>
+<li>we trained the model by minimizing the training error $\frac{1}{m^{(\operatorname{train})}}\left|\boldsymbol{X}^{(\operatorname{train})} \boldsymbol{w}-\boldsymbol{y}^{(\operatorname{train})}\right|_{2}^{2}$, but actually care about the test error $\frac{1}{m^{(\text { test })}}\left|\boldsymbol{X}^{(\text { test })} \boldsymbol{w}-\boldsymbol{y}^{(\text { test })}\right|_{2}^{2}$</li>
+</ul>
+</li>
+<li><strong>statistical learning theory</strong>, How can we affect performance on the test set when we can observe only the training set? <strong>assumptions</strong>:<ul>
+<li>The training and test data are generated by a probability distribution over datasets called the <strong>data-generating process</strong> .</li>
+<li>We typically make a set of assumptions known collectively as the <strong>i.i.d. assumptions</strong> .<ul>
+<li>This <strong>assumption enables</strong> us to describe the data-generating process with a probability distribution over a single example.<ul>
+<li>The same distribution is then used to generate every train example and every test example.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>that shared underlying distribution the <strong>data-generating distribution</strong> , denoted $p_{\text { data }}$ .</li>
+</ul>
+</li>
+<li>One immediate connection we can <strong>observe between training error and test error</strong> is that the <strong>expected training error of a randomly selected model is equal to the expected test error</strong> of that model.<ul>
+<li>Make the training error small. <ul>
+<li><strong>Underfitting</strong> occurs when the model is not able to obtain a <strong>sufficiently low</strong> error value on the training set. </li>
+</ul>
+</li>
+<li>Make the gap between training and test error small.<ul>
+<li><strong>Overfitting</strong> occurs when the gap between the training error and test error is <strong>too large</strong>.</li>
+<li><strong>generalization error</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>capacity</strong><ul>
+<li>Models with low capacity may <strong>struggle to fit</strong> the training set. </li>
+<li>Models with high capacity can <strong>overfit</strong> by memorizing properties of the training set that do not serve them well on the test set.</li>
+</ul>
+</li>
+<li>One way to control the capacity of a learning algorithm is by choosing its <strong>hypothesis space</strong>,<ul>
+<li><strong>the set of functions</strong> that the learning algorithm <strong>is allowed to select</strong> as being the solution.</li>
+</ul>
+</li>
+<li><strong>representational capacity</strong> of the model: The model specifies which family of functions the learning algorithm can choose from when varying the parameters in order to reduce a training objective. <ul>
+<li><strong>effective capacity</strong> may be less than the representational capacity of the model family.</li>
+</ul>
+</li>
+<li><strong>Occam’s razor</strong><ul>
+<li>a principle of parsimony</li>
+<li>This principle states that among competing hypotheses that explain known observations <strong>equally well</strong>, we should <strong>choose the “simplest”</strong> one.</li>
+</ul>
+</li>
+<li><strong>Vapnik-Chervonenkis dimension , or VC dimension</strong><ul>
+<li>measures the <strong>capacity</strong> of a <strong>binary</strong> classifier.</li>
+</ul>
+</li>
+<li>Quantifying the capacity of the model enables <strong>statistical learning theory</strong> to make quantitative predictions.<ul>
+<li>The most important results in statistical learning theory show that the <strong>discrepancy between training error and generalization error</strong> is <strong>bounded from above</strong> by a quantity that <strong>grows as the model capacity grows</strong> but <strong>shrinks as the number of training examples increases</strong> .</li>
+</ul>
+</li>
+<li>We must remember that while simpler functions are more likely to <strong>generalize</strong> (to have a small gap between training and test error), we must still choose a <strong>sufficiently complex hypothesis</strong> to achieve low training error.<ul>
+<li><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190716171804.png" alt="capacity and error"></li>
+</ul>
+</li>
+<li><strong>nonparametric models</strong> <ul>
+<li>we can also design practical nonparametric models by making their <strong>complexity</strong> a function of the <strong>training set size</strong>.</li>
+<li>e.g. <strong>nearest neighbor regression</strong></li>
+</ul>
+</li>
+<li>we can also create a nonparametric learning algorithm by wrapping a <strong>parametric learning algorithm inside</strong> another <strong>algorithm that increases the number of parameters</strong> as needed.</li>
+<li>The <strong>ideal model</strong> is an oracle that <strong>simply knows the true probability distribution</strong> that generates the data.<ul>
+<li>The error incurred by an oracle making predictions from the true distribution $p(\boldsymbol{x}, y)$ is called the <strong>Bayes error</strong>.</li>
+</ul>
+</li>
+<li><strong>Any fixed parametric model</strong> with less than optimal capacity will <strong>asymptote</strong> to an error value that exceeds the <strong>Bayes error</strong>.</li>
+<li><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190716173005.png" alt="The effect of the training dataset size"></li>
+</ul>
+<h3 id="5-2-1-The-No-Free-Lunch-Theorem"><a href="#5-2-1-The-No-Free-Lunch-Theorem" class="headerlink" title="5.2.1 The No Free Lunch Theorem"></a>5.2.1 The No Free Lunch Theorem</h3><ul>
+<li>Machine learning promises to find rules that are <strong>probably</strong> correct about <strong>most</strong> members of the set they concern.</li>
+<li>The <strong>no free lunch theorem</strong> for machine learning states that, averaged over all possible data-generating distributions, every classification algorithm has the <strong>same error rate when classifying previously unobserved points</strong>.</li>
+<li>This means that the goal of machine learning research is not to seek a universal learning algorithm or the absolute best learning algorithm. <ul>
+<li>Instead, <strong>our goal</strong> is <strong>to understand</strong> what kinds of distributions are relevant to the “real world” that an AI agent experiences, and <strong>what kinds of machine learning algorithms</strong> perform well <strong>on data drawn from</strong> the kinds of data-generating distributions <strong>we care about</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-2-Regularization-正则化"><a href="#5-2-2-Regularization-正则化" class="headerlink" title="5.2.2 Regularization 正则化"></a>5.2.2 Regularization 正则化</h3><ul>
+<li>We can thus <strong>control the performance of our algorithms</strong> by <ul>
+<li><strong>choosing</strong> what kind of <strong>functions</strong> we allow them to draw solutions from, as well as by </li>
+<li><strong>controlling</strong> the <strong>amount</strong> of these <strong>functions</strong>.</li>
+</ul>
+</li>
+<li>For example, we can modify the training criterion for linear regression to include <strong>weight decay</strong> .<ul>
+<li>$J(\boldsymbol{w})=\operatorname{MSE}_{\operatorname{train}}+\lambda \boldsymbol{w}^{\top} \boldsymbol{w}$</li>
+<li>where $λ$ is a value chosen ahead of time that <strong>controls the strength</strong> of <strong>our preference for smaller weights</strong>.</li>
+</ul>
+</li>
+<li>More generally, we can <strong>regularize a model</strong> that learns a function $f(\boldsymbol{x} ; \boldsymbol{\theta})$ by <strong>adding a penalty</strong> called a <strong>regularizer</strong> to the cost function. the regularizer is<ul>
+<li>$\Omega(\boldsymbol{w})=\boldsymbol{w}^{\top} \boldsymbol{w}$</li>
+</ul>
+</li>
+<li><strong><strong>Regularization is any modification we make to a learning algorithm that is intended to reduce its generalization error but not its training error.</strong></strong> </li>
+</ul>
+<h2 id="5-3-Hyperparameters-and-Validation-Sets"><a href="#5-3-Hyperparameters-and-Validation-Sets" class="headerlink" title="5.3 Hyperparameters and Validation Sets"></a>5.3 Hyperparameters and Validation Sets</h2><ul>
+<li>we need a <strong>validation set</strong> of examples that the training algorithm does not observe</li>
+<li>Specifically, we split the training data into <strong>two disjoint subsets</strong>. One of these subsets is used to learn the parameters. The other subset is our validation set<ul>
+<li>8:2</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-3-1-Cross-Validation"><a href="#5-3-1-Cross-Validation" class="headerlink" title="5.3.1 Cross-Validation"></a>5.3.1 Cross-Validation</h3><ul>
+<li><strong>$k$-fold cross-validation</strong></li>
+<li>One problem is that no unbiased estimators of the variance of such average error estimators exist</li>
+</ul>
+<h2 id="5-4-Estimators-Bias-and-Variance"><a href="#5-4-Estimators-Bias-and-Variance" class="headerlink" title="5.4 Estimators, Bias and Variance"></a>5.4 Estimators, Bias and Variance</h2><h3 id="5-4-1-Point-Estimation"><a href="#5-4-1-Point-Estimation" class="headerlink" title="5.4.1 Point Estimation"></a>5.4.1 Point Estimation</h3><ul>
+<li>is the attempt to provide the single “best” prediction of some quantity of interest.</li>
+<li>Let ${\boldsymbol{x}^{(1)}, \ldots, \boldsymbol{x}^{(m)}}$be a set of $m$ i.i.d. data points. A <strong>point estimator</strong> or <strong>statistic</strong> is any function of the data:<ul>
+<li>$\hat{\boldsymbol{\theta}}_{m}=g\left(\boldsymbol{x}^{(1)}, \ldots, \boldsymbol{x}^{(m)}\right)$</li>
+</ul>
+</li>
+<li><strong>Function Estimation</strong>, Point estimation can also refer to the estimation of the relationship between input and target variables.</li>
+</ul>
+<h3 id="5-4-2-Bias"><a href="#5-4-2-Bias" class="headerlink" title="5.4.2 Bias"></a>5.4.2 Bias</h3><ul>
+<li>of an estimator is defined as<ul>
+<li>$\operatorname{bias}\left(\hat{\boldsymbol{\theta}}_{m}\right)=\mathbb{E}\left(\hat{\boldsymbol{\theta}}_{m}\right)-\boldsymbol{\theta}$</li>
+</ul>
+</li>
+<li><strong>unbiased</strong> if $\operatorname{bias}\left(\hat{\boldsymbol{\theta}}_{m}\right)=\mathbf{0}$</li>
+<li><strong>asymptotically unbiased</strong> if $\lim _{m \rightarrow \infty} \operatorname{bias}\left(\hat{\boldsymbol{\theta}}_{m}\right)=\mathbf{0}$</li>
+</ul>
+<h3 id="5-4-3-Variance-and-Standard-Error"><a href="#5-4-3-Variance-and-Standard-Error" class="headerlink" title="5.4.3 Variance and Standard Error"></a>5.4.3 Variance and Standard Error</h3><ul>
+<li>For example, the 95 percent confidence interval centered on the mean $\hat{\mu}_{m}$ is<ul>
+<li>$\left(\hat{\mu}_{m}-1.96 \mathrm{SE}\left(\hat{\mu}_{m}\right), \hat{\mu}_{m}+1.96 \mathrm{SE}\left(\hat{\mu}_{m}\right)\right)$</li>
+</ul>
+</li>
+<li>In machine learning experiments, it is common to say that algorithm $A$ is better than algorithm $B$ if the upper bound of the 95 percent confidence interval for the error of algorithm $A$ is less than the lower bound of the 95 percent confidence interval for the error of algorithm $B$.</li>
+</ul>
+<h3 id="5-4-4-Trading-off-Bias-and-Variance-to-Minimize-Mean-Squared-Error"><a href="#5-4-4-Trading-off-Bias-and-Variance-to-Minimize-Mean-Squared-Error" class="headerlink" title="5.4.4 Trading off Bias and Variance to Minimize Mean Squared Error"></a>5.4.4 Trading off Bias and Variance to <strong>Minimize Mean Squared Error</strong></h3><ul>
+<li>The <strong>most common way</strong> to negotiate this trade-off is to <strong>use cross-validation</strong>.</li>
+<li>Alternatively, we can also <strong>compare the mean squared error (MSE)</strong> of the estimates:<ul>
+<li>$\begin{aligned} \mathrm{MSE} &amp;=\mathbb{E}\left[\left(\hat{\theta}_{m}-\theta\right)^{2}\right] \ &amp;=\operatorname{Bias}\left(\hat{\theta}_{m}\right)^{2}+\operatorname{Var}\left(\hat{\theta}_{m}\right) \end{aligned}$</li>
+<li>$\operatorname{Bias}(\hat{\theta}_{m}) = \mathbb{E}(\hat{\theta}_{m}) -\theta$</li>
+<li>$\operatorname{Var}\left(\hat{\theta}_{m}\right) =  \mathbb{E}[\hat{\theta}_{m}^2]-( \mathbb{E}[\hat{\theta}_{m}])^2$</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-4-5-Consistency"><a href="#5-4-5-Consistency" class="headerlink" title="5.4.5 Consistency"></a>5.4.5 Consistency</h3><ul>
+<li><strong>consistency</strong>, we would like that $\operatorname{plim}_{m \rightarrow \infty} \hat{\theta}_{m}=\theta$<ul>
+<li>The symbol $\operatorname{plim}$ indicates convergence in probability, meaning that for any $\epsilon&gt;0$, $P\left( |\hat{\theta}_{m}-\theta |&gt;\epsilon\right) \rightarrow 0$ as $m \rightarrow \infty$</li>
+<li>It is sometimes referred to as <strong>weak consistency</strong>, with <strong>strong consistency</strong> referring to the almost sure convergence of $\hat{\theta}$ to $\theta$.</li>
+<li><strong>Almost sure convergence</strong> of a sequence of random variables $\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \ldots$ to a value $\boldsymbol{x}$ occurs when $p\left(\lim _{m \rightarrow \infty} \mathbf{x}^{(m)}=\boldsymbol{x}\right)=1$</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-5-Maximum-Likelihood-Estimation"><a href="#5-5-Maximum-Likelihood-Estimation" class="headerlink" title="5.5 Maximum Likelihood Estimation"></a>5.5 Maximum Likelihood Estimation</h2><ul>
+<li>Consider a set of $m$ examples $\mathbb{X}={\boldsymbol{x}^{(1)}, \ldots, \boldsymbol{x}^{(m)}}$ drawn independently from the true but unknown data-generating distribution $p_{\text { data }}(\mathbf{x})$ .</li>
+<li>Let $p_{\operatorname{model}}(\mathbf{x} ; \boldsymbol{\theta})$ be a parametric family of probability distributions over the same space indexed by $\boldsymbol{\theta}$ .</li>
+<li>The maximum likelihood estimator for $\boldsymbol{\theta}$ is then defined as<ul>
+<li>$\begin{aligned} \boldsymbol{\theta}_{\mathrm{ML}} &amp;=\underset{\boldsymbol{\theta}}{\arg \max } p_{\mathrm{model}}(\mathbb{X} ; \boldsymbol{\theta}) \ &amp;=\underset{\boldsymbol{\theta}}{\arg \max } \prod_{i=1}^{m} p_{\mathrm{model}}\left(\boldsymbol{x}^{(i)} ; \boldsymbol{\theta}\right) \end{aligned}$</li>
+<li>it is prone to numerical underflow, then </li>
+<li>$\boldsymbol{\theta}_{\mathrm{ML}}=\underset{\boldsymbol{\theta}}{\arg \max } \sum_{i=1}^{m} \log p_{\mathrm{model}}\left(\boldsymbol{x}^{(i)} ; \boldsymbol{\theta}\right)$</li>
+<li>also with respect to the empirical distribution</li>
+<li>$\boldsymbol{\theta}_{\mathrm{ML}}=\underset{\boldsymbol{\theta}}{\arg \max } \mathbb{E}_{\mathbf{x} \sim \hat{p}_{\text { data }}} \log p_{\text { model }}(\boldsymbol{x} ; \boldsymbol{\theta})$</li>
+</ul>
+</li>
+<li>One way to <strong>interpret</strong> MLE is to view it as minimizing the dissimilarity between the empirical distribution $\hat{p}_{\text { data }}$ , defined by the training set and the model distribution, with the degree of dissimilarity between the two measured by the KL divergence.<ul>
+<li>$D_{\mathrm{KL}}\left(\hat{p}_{\mathrm{data}} | p_{\mathrm{model}}\right)=\mathbb{E}_{\mathbf{x} \sim \hat{p}_{\mathrm{data}}}\left[\log \hat{p}_{\mathrm{data}}(\boldsymbol{x})-\log p_{\mathrm{model}}(\boldsymbol{x})\right]$</li>
+<li>The term on the left is a function only of the data-generating process, not the model. then we need only minimize<ul>
+<li>$-\mathbb{E}_{\mathbf{x} \sim \hat{p}_{\text { data }}}\left[\log p_{\text { model }}(\boldsymbol{x})\right]$</li>
+</ul>
+</li>
+<li>Any loss consisting of a negative log-likelihood is a crossentropy between the empirical distribution defined by the training set and the probability distribution defined by model.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-5-1-Conditional-Log-Likelihood-and-Mean-Squared-Error"><a href="#5-5-1-Conditional-Log-Likelihood-and-Mean-Squared-Error" class="headerlink" title="5.5.1 Conditional Log-Likelihood and Mean Squared Error"></a>5.5.1 Conditional Log-Likelihood and Mean Squared Error</h3><ul>
+<li>If $\boldsymbol{X}$ represents all our inputs and $\boldsymbol{Y}$ all our observed targets, then the <strong>conditional maximum likelihood estimator</strong> is<ul>
+<li>$\boldsymbol{\theta}_{\mathrm{ML}}=\underset{\boldsymbol{\theta}}{\arg \max } P(\boldsymbol{Y} | \boldsymbol{X} ; \boldsymbol{\theta})$</li>
+<li>if the examples are assumed to be i.i.d., then this can be decomposed into</li>
+<li>$\boldsymbol{\theta}_{\mathrm{ML}}=\underset{\boldsymbol{\theta}}{\arg \max } \sum_{i=1}^{m} \log P\left(\boldsymbol{y}^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{\theta}\right)$</li>
+</ul>
+</li>
+<li>e.g. linear regression as MLE<ul>
+<li>we define <ul>
+<li>$p(y | \boldsymbol{x})=\mathcal{N}\left(y ; \hat{y}(\boldsymbol{x} ; \boldsymbol{w}), \sigma^{2}\right)$<ul>
+<li>the function $\hat{y}(\boldsymbol{x} ; \boldsymbol{w})$ gives <strong>the prediction of the mean</strong> of the Gaussian</li>
+<li>we assume that the variance is fixed to some constant</li>
+</ul>
+</li>
+<li>then<ul>
+<li>$\sum_{i=1}^{m} \log p\left(y^{(i)} | \boldsymbol{x}^{(i)} ; \boldsymbol{\theta}\right)$<ul>
+<li>$=-m \log \sigma-\frac{m}{2} \log (2 \pi)-\sum_{i=1}^{m}  \frac{|\hat{y}^{(i)}-y^{(i)} |^2}{2 \sigma^{2}} $</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Comparing the log-likelihood with the <strong>mean squared error</strong>,<ul>
+<li>$\operatorname{MSE}_{\mathrm{train}}=\frac{1}{m} \sum_{i=1}^{m}\left|\hat{y}^{(i)}-y^{(i)}\right|^{2}$</li>
+</ul>
+</li>
+<li><strong>The two criteria have different values but the same location of the optimum.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-5-2-Properties-of-Maximum-Likelihood"><a href="#5-5-2-Properties-of-Maximum-Likelihood" class="headerlink" title="5.5.2 Properties of Maximum Likelihood"></a>5.5.2 Properties of Maximum Likelihood</h3><ul>
+<li>Under appropriate conditions, the maximum likelihood estimator has the property of <strong>consistency</strong>.<ul>
+<li>The true distribution $p_{\text { data}}$ must lie within the model family $p_{\text { model }}(\cdot ; \boldsymbol{\theta})$.</li>
+<li>The true distribution $p_{\text { data}}$ must correspond to exactly one value of $\boldsymbol{\theta}$ . </li>
+</ul>
+</li>
+<li><strong>Statistical efficiency</strong> is typically studied in the <strong>parametric case</strong>, where our goal is to estimate the value of a <strong>parameter</strong> (assuming it is possible to identify the true parameter), <strong>not the value of a function</strong>.</li>
+<li>For these reasons (<strong>consistency and efficiency</strong>), maximum likelihood is often considered the <strong>preferred estimator to use for machine learning</strong>.</li>
+<li>When <strong>the number of examples is small enough</strong> to yield <strong>overfitting</strong> behavior, <strong>regularization strategies</strong> such as weight decay may be used to obtain a biased version of maximum likelihood that has less variance when training data is limited.</li>
+</ul>
+<h2 id="5-6-Bayesian-Statistics"><a href="#5-6-Bayesian-Statistics" class="headerlink" title="5.6 Bayesian Statistics"></a>5.6 Bayesian Statistics</h2><ul>
+<li>So far we have discussed <strong>frequentist statistics</strong> and approaches based on estimating a single value of $\boldsymbol{\theta}$ , then making all predictions thereafter based on that one estimate.<ul>
+<li>the frequentist perspective is that the <strong>true parameter</strong> value $\boldsymbol{\theta}$ is <strong>fixed</strong> but <strong>unknown</strong>,</li>
+<li>while the <strong>point estimate</strong> $\hat \boldsymbol{\theta}$ is <strong>a random variable</strong> on account of it being a function of the <strong>dataset</strong> (which is seen as random).</li>
+</ul>
+</li>
+<li>Another approach is to consider all possible values of $\boldsymbol{\theta}$ when making a prediction. The latter is the domain of <strong>Bayesian statistics</strong>.<ul>
+<li>The Bayesian <strong>uses probability to reflect degrees of certainty</strong> in states of knowledge.</li>
+<li>The <strong>dataset</strong> is directly observed and so is <strong>not random</strong>.</li>
+<li>On the other hand, the <strong>true parameter</strong> $\boldsymbol{\theta}$ is <strong>unknown</strong> or uncertain and thus is represented as a <strong>random</strong> variable.</li>
+</ul>
+</li>
+<li><strong>Before observing the data</strong>, we represent our knowledge of $\boldsymbol{\theta}$ using the <strong>prior probability distribution</strong>, $p(\boldsymbol{\theta})$ (sometimes referred to as simply “the prior”).</li>
+<li>Now consider that we have a set of data <strong>samples</strong> ${x^{(1)}, \ldots, x^{(m)}}$. We can recover <strong>the effect of data on our belief</strong> about $\boldsymbol{\theta}$ by combining the data likelihood $p\left(x^{(1)}, \ldots, x^{(m)} | \boldsymbol{\theta}\right)$ with the prior via Bayes’ rule:<ul>
+<li>$p\left(\boldsymbol{\theta} | x^{(1)}, \ldots, x^{(m)}\right)=\frac{p\left(x^{(1)}, \ldots, x^{(m)} | \boldsymbol{\theta}\right) p(\boldsymbol{\theta})}{p\left(x^{(1)}, \ldots, x^{(m)}\right)}$</li>
+</ul>
+</li>
+<li>In the scenarios where Bayesian estimation is typically used, <strong>the prior begins as</strong> a relatively <strong>uniform</strong> or <strong>Gaussian distribution with high entropy,</strong> and the observation of the data usually causes <strong>the posterior to lose entropy</strong> and <strong>concentrate</strong> around a few <strong>highly likely values</strong> of the parameters.</li>
+<li><strong>Relative to MLE</strong>, Bayesian estimation offers two important differences.<ul>
+<li>First, unlike the maximum likelihood approach that makes predictions using a <strong>point estimate</strong> of $\boldsymbol{\theta}$ , the Bayesian approach is to make predictions using a <strong>full distribution</strong> over $\boldsymbol{\theta}$ . e.g. next data sample $x^{(m+1)}$ is given by<ul>
+<li>$p\left(x^{(m+1)} | x^{(1)}, \ldots, x^{(m)}\right)=\int p\left(x^{(m+1)} | \boldsymbol{\theta}\right) p\left(\boldsymbol{\theta} | x^{(1)}, \ldots, x^{(m)}\right) d \boldsymbol{\theta}$</li>
+</ul>
+</li>
+<li>The second important difference between the Bayesian approach to estimation and the maximum likelihood approach is due to the contribution of the <strong>Bayesian prior distribution</strong>. The prior has an influence by shifting probability mass density towards regions of the parameter space that are preferred a priori.</li>
+</ul>
+</li>
+<li>E.g. <strong>Bayesian Linear Regression</strong><ul>
+<li>$\hat{y}=\boldsymbol{w}^{\top} \boldsymbol{x}$</li>
+<li>$\hat{\boldsymbol{y}}^{(\text { train })}=\boldsymbol{X}^{(\text { train })} \boldsymbol{w}$</li>
+<li>Expressed as a <strong>Gaussian conditional distribution</strong> on ${\boldsymbol{y}}^{(\text { train })}$ , we have <ul>
+<li>$p\left(\boldsymbol{y}^{(\operatorname{train})} | \boldsymbol{X}^{(\operatorname{train})}, \boldsymbol{w}\right)=\mathcal{N}\left(\boldsymbol{y}^{(\operatorname{train})} ; \boldsymbol{X}^{(\operatorname{train})} \boldsymbol{w}, \boldsymbol{I}\right)$<ul>
+<li>$\propto \exp \left(-\frac{1}{2}\left(\boldsymbol{y}^{(\text { train })}-\boldsymbol{X}^{(\text { train })} \boldsymbol{w}\right)^{\top}\left(\boldsymbol{y}^{(\text { train })}-\boldsymbol{X}^{(\operatorname{train})} \boldsymbol{w}\right)\right)$</li>
+<li>assumed the variance as $1$</li>
+<li>refer to $\left(\boldsymbol{X}^{(\text { train })}, \boldsymbol{y}^{(\text { train })}\right)$ as simply $(\boldsymbol{X}, \boldsymbol{y})$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>first, specify <strong>a prior distribution</strong><ul>
+<li>in practice we typically assume <strong>a fairly broad distribution</strong>, expressing a <strong>high degree of uncertainty about $\boldsymbol{\theta}$</strong> . For real-valued parameters it is common to use a Gaussian as a prior distribution,<ul>
+<li>$p(\boldsymbol{w})=\mathcal{N}\left(\boldsymbol{w} ; \boldsymbol{\mu}_{0}, \mathbf{\Lambda}_{0}\right) \propto \exp \left(-\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{\mu}_{0}\right)^{\top} \mathbf{\Lambda}_{0}^{-1}\left(\boldsymbol{w}-\boldsymbol{\mu}_{0}\right)\right)$</li>
+<li>where $\mu_{0}$ and $\Lambda_{0}$ are the prior distribution <strong>mean</strong> vector and <strong>covariance</strong> matrix respectively.<ul>
+<li>Unless there is a reason to use a particular <strong>covariance</strong> structure, we typically <strong>assume a diagonal covariance matrix</strong>  $\mathbf{\Lambda}_{0}=\operatorname{diag}\left(\boldsymbol{\lambda}_{0}\right)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>we can now proceed in determining the <strong>posterior</strong> distribution over the model parameters:<ul>
+<li>$p(\boldsymbol{w} | \boldsymbol{X}, \boldsymbol{y}) \propto p(\boldsymbol{y} | \boldsymbol{X}, \boldsymbol{w}) p(\boldsymbol{w})$<ul>
+<li>$\propto \exp \left(-\frac{1}{2}(\boldsymbol{y}-\boldsymbol{X} \boldsymbol{w})^{\top}(\boldsymbol{y}-\boldsymbol{X} \boldsymbol{w})\right) \exp \left(-\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{\mu}_{0}\right)^{\top} \boldsymbol{\Lambda}_{0}^{-1}\left(\boldsymbol{w}-\boldsymbol{\mu}_{0}\right)\right)$</li>
+<li>$\propto \exp \left(-\frac{1}{2}\left(-2 \boldsymbol{y}^{\top} \boldsymbol{X} \boldsymbol{w}+\boldsymbol{w}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{w}+\boldsymbol{w}^{\top} \mathbf{\Lambda}_{0}^{-1} \boldsymbol{w}-2 \boldsymbol{\mu}_{0}^{\top} \mathbf{\Lambda}_{0}^{-1} \boldsymbol{w}\right)\right)$</li>
+</ul>
+</li>
+<li>We now define $\mathbf{\Lambda}_{m}=\left(\boldsymbol{X}^{\top} \boldsymbol{X}+\mathbf{\Lambda}_{0}^{-1}\right)^{-1}$ and $\boldsymbol{\mu}_{m}=\mathbf{\Lambda}_{m}\left(\boldsymbol{X}^{\top} \boldsymbol{y}+\mathbf{\Lambda}_{0}^{-1} \boldsymbol{\mu}_{0}\right)$, then the posterior may be <strong>rewritten as a Gaussian distribution</strong><ul>
+<li>$\begin{aligned} p(\boldsymbol{w} | \boldsymbol{X}, \boldsymbol{y}) &amp; \propto \exp \left(-\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{\mu}_{m}\right)^{\top} \mathbf{\Lambda}_{m}^{-1}\left(\boldsymbol{w}-\boldsymbol{\mu}_{m}\right)+\frac{1}{2} \boldsymbol{\mu}_{m}^{\top} \mathbf{\Lambda}_{m}^{-1} \boldsymbol{\mu}_{m}\right) \ &amp; \propto \exp \left(-\frac{1}{2}\left(\boldsymbol{w}-\boldsymbol{\mu}_{m}\right)^{\top} \mathbf{\Lambda}_{m}^{-1}\left(\boldsymbol{w}-\boldsymbol{\mu}_{m}\right)\right) \end{aligned}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The more important difference is that the Bayesian estimate provides a <strong>covariance matrix</strong>, <strong>showing how likely</strong> all the different values of $\boldsymbol{w}$ are, rather than providing only the estimate $\boldsymbol{\mu}_m$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-6-1-Maximum-a-Posteriori-MAP-Estimation"><a href="#5-6-1-Maximum-a-Posteriori-MAP-Estimation" class="headerlink" title="5.6.1 Maximum a Posteriori (MAP) Estimation"></a>5.6.1 <strong>Maximum a Posteriori (MAP) Estimation</strong></h3><ul>
+<li>One common <strong>reason</strong> for desiring a <strong>point estimate</strong> is that most operations involving the Bayesian posterior for most interesting models are <strong>intractable</strong>, and a point estimate offers a <strong>tractable</strong> approximation. </li>
+<li>One rational way to do this is to choose the <strong>maximum a posteriori (MAP) point estimate</strong>.<ul>
+<li>The MAP estimate chooses the point of maximal posterior probability</li>
+<li>$\boldsymbol{\theta}_{\mathrm{MAP}}=\underset{\boldsymbol{\theta}}{\arg \max } p(\boldsymbol{\theta} | \boldsymbol{x})=\underset{\boldsymbol{\theta}}{\arg \max } \log p(\boldsymbol{x} | \boldsymbol{\theta})+\log p(\boldsymbol{\theta})$</li>
+<li>$\log p(\boldsymbol{x} | \boldsymbol{\theta})$, the standard loglikelihood term</li>
+<li>$\log p(\boldsymbol{\theta})$ , corresponding to the <strong>prior distribution</strong>.</li>
+</ul>
+</li>
+<li>As with full Bayesian inference, MAP Bayesian inference has the <strong>advantage</strong> of <strong>leveraging information</strong> that is brought by the prior and cannot be found in the training data. <ul>
+<li>This additional information helps to <strong>reduce the variance</strong> in the MAP point estimate (in comparison to the ML estimate). </li>
+<li>However, it does so at the price of <strong>increased bias</strong>.</li>
+</ul>
+</li>
+<li><strong>Many regularized estimation strategies, such as maximum likelihood learning regularized with weight decay, can be interpreted as making the MAP approximation to Bayesian inference.</strong><ul>
+<li>This view applies when the regularization consists of adding an <strong>extra term</strong> to the objective function that corresponds to $\log p(\boldsymbol{\theta})$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-7-Supervised-Learning-Algorithms"><a href="#5-7-Supervised-Learning-Algorithms" class="headerlink" title="5.7 Supervised Learning Algorithms"></a>5.7 Supervised Learning Algorithms</h2><h3 id="5-7-1-Probabilistic-Supervised-Learning"><a href="#5-7-1-Probabilistic-Supervised-Learning" class="headerlink" title="5.7.1 Probabilistic Supervised Learning"></a>5.7.1 Probabilistic Supervised Learning</h3><ul>
+<li>Most supervised learning algorithms in this book are based on estimating a <strong>probability distribution</strong> $p(y | \boldsymbol{x})$<ul>
+<li>We can do this simply by using <strong>maximum likelihood estimation</strong> to find the best parameter vector $\boldsymbol{\theta}$ for a parametric family of distributions $p(y | \boldsymbol{x} ; \boldsymbol{\theta})$</li>
+</ul>
+</li>
+<li>We have already seen that linear regression corresponds to the family <ul>
+<li>$p(y | \boldsymbol{x} ; \boldsymbol{\theta})=\mathcal{N}\left(y ; \boldsymbol{\theta}^{\top} \boldsymbol{x}, \boldsymbol{I}\right)$</li>
+</ul>
+</li>
+<li>We can <strong>generalize</strong> linear regression to the classification scenario by defining <strong>a different family of probability distributions</strong>.</li>
+<li>A distribution over a binary variable is slightly more complicated, because its mean must <strong>always be between 0 and 1</strong>.<ul>
+<li><strong>logistic regression</strong>, One way to solve this problem is to use the <strong>logistic sigmoid function</strong> to squash the output of the linear function into the interval $(0, 1)$ and interpret that value as a probability:<ul>
+<li>$p(y=1 | \boldsymbol{x} ; \boldsymbol{\theta})=\sigma\left(\boldsymbol{\theta}^{\top} \boldsymbol{x}\right)$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This same strategy can be applied to essentially <strong>any supervised learning problem</strong>, by <strong>writing down a parametric family of conditional probability distributions</strong> over the right kind of input and output variables.</li>
+</ul>
+<h3 id="5-7-2-Support-Vector-Machines"><a href="#5-7-2-Support-Vector-Machines" class="headerlink" title="5.7.2 Support Vector Machines"></a>5.7.2 Support Vector Machines</h3><ul>
+<li>Unlike logistic regression, the <strong>support vector machine</strong> does <strong>not provide probabilities</strong>, but <strong>only outputs a class identity</strong>.</li>
+<li>One key innovation associated with support vector machines is the <strong>kernel trick</strong> .<ul>
+<li>The kernel trick consists of observing that <strong>many machine learning algorithms</strong> can be written exclusively in terms of <strong>dot products between examples</strong>. e.g.<ul>
+<li>$\boldsymbol{w}^{\top} \boldsymbol{x}+b=b+\sum_{i=1}^{m} \alpha_{i} \boldsymbol{x}^{\top} \boldsymbol{x}^{(i)}$</li>
+<li>where $\boldsymbol{x}^{(i)}$ is attraining example, and $\boldsymbol{\alpha}$ is a vector of coefficients.</li>
+</ul>
+</li>
+<li>Rewriting the learning algorithm this way enables us to replace $\boldsymbol{x}$ with the output of a given feature function $\phi(\boldsymbol{x})$ and the dot product with a function $k\left(\boldsymbol{x}, \boldsymbol{x}^{(i)}\right)=\phi(\boldsymbol{x}) \cdot \phi(\boldsymbol{x}^{(i)})$ called a <strong>kernel</strong> .<ul>
+<li>The $\cdot$ operator represents an inner product analogous to $\phi(\boldsymbol{x})^{\top} \phi\left(\boldsymbol{x}^{(i)}\right)$.</li>
+</ul>
+</li>
+<li>After replacing dot products with kernel evaluations<ul>
+<li>$f(\boldsymbol{x})=b+\sum_{i} \alpha_{i} k\left(\boldsymbol{x}, \boldsymbol{x}^{(i)}\right)$</li>
+<li>This function is nonlinear with respect to $\boldsymbol{x}$ , but the relationship between $\phi(\boldsymbol{x})$ and $f(\boldsymbol{x})$ is linear.</li>
+<li>The kernel-based function is exactly <strong>equivalent to preprocessing the data</strong> by applying $\phi(\boldsymbol{x})$ to all inputs, then learning a linear model in the new transformed space.</li>
+<li>The kernel trick is powerful for two reasons<ul>
+<li>First, it enables us to learn models that are <strong>nonlinear</strong> as a function of $\boldsymbol{x}$ using <strong>convex optimization techniques</strong> that are guaranteed to <strong>converge efficiently</strong>.</li>
+<li>Second, the kernel function $k$ often admits an implementation that is <strong>significantly more computationally efficient</strong> than naively constructing two $\phi(\boldsymbol{x})$ vectors and explicitly taking their dot product.</li>
+</ul>
+</li>
+<li>The most commonly used kernel is the <strong>Gaussian kernel</strong>,<ul>
+<li>$k(\boldsymbol{u}, \boldsymbol{v})=\mathcal{N}\left(\boldsymbol{u}-\boldsymbol{v} ; 0, \sigma^{2} \boldsymbol{I}\right)$</li>
+<li>where $\mathcal{N}(\boldsymbol{x} ; \boldsymbol{\mu}, \mathbf{\Sigma})$ is the standard normal density.</li>
+<li>This kernel is also known as the <strong>radial basis function (RBF)</strong> kernel, because its value decreases along lines in $\boldsymbol{v}$ space radiating outward from $\boldsymbol{u}$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We can think of the Gaussian kernel as performing a kind of <strong>template matching</strong> . </li>
+<li>The category of algorithms that employ the kernel trick is known as <strong>kernel machines</strong>, or <strong>kernel methods</strong>.</li>
+<li>A <strong>major drawback</strong> to kernel machines is that the cost of evaluating the decision function is linear in the number of training examples, because the $i$-th example contributes a term $\alpha_{i} k\left(\boldsymbol{x}, \boldsymbol{x}^{(i)}\right)$ to the decision function.<ul>
+<li>Support vector machines are able to mitigate this by learning an $\boldsymbol{\alpha}$ vector that contains <strong>mostly zeros</strong>.</li>
+<li><strong>Classifying a new example</strong> then requires evaluating the kernel function only for the <strong>training examples that have nonzero</strong> $\alpha_{i}$ . These training examples are known as <strong>support vectors</strong>.</li>
+</ul>
+</li>
+<li>The current deep learning renaissance began when Hinton et al. (2006) demonstrated that a <strong>neural network could outperform the RBF kernel SVM on the MNIST benchmark</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-7-3-Other-Simple-Supervised-Learning-Algorithms"><a href="#5-7-3-Other-Simple-Supervised-Learning-Algorithms" class="headerlink" title="5.7.3 Other Simple Supervised Learning Algorithms"></a>5.7.3 Other Simple Supervised Learning Algorithms</h3><ul>
+<li><strong>$k$-nearest neighbors</strong> is a family of techniques that can be used for classification or regression.<ul>
+<li>a nonparametric learning algorithm</li>
+<li>can achieve very high capacity<ul>
+<li>The high capacity of k -nearest neighbors enables it to obtain high accuracy given a large training set.</li>
+</ul>
+</li>
+<li>One weakness of k -nearest neighbors is that it cannot learn that one feature is more discriminative than another.</li>
+</ul>
+</li>
+<li><strong>decision tree</strong><ul>
+<li>also breaks the input space into regions and has separate parameters for each region</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-8-Unsupervised-Learning-Algorithms"><a href="#5-8-Unsupervised-Learning-Algorithms" class="headerlink" title="5.8 Unsupervised Learning Algorithms"></a>5.8 Unsupervised Learning Algorithms</h2><ul>
+<li>Informally, <strong>unsupervised learning</strong> refers to most attempts to extract information from a distribution that do not require human labor to annotate examples. <ul>
+<li>The term is usually associated with <strong>density estimation</strong>, <strong>learning to draw samples from a distribution</strong>, <strong>learning to denoise data from some distribution</strong>, <strong>finding a manifold that the data lies near</strong>, or <strong>clustering the data into groups of related examples</strong>.</li>
+</ul>
+</li>
+<li>A classic unsupervised learning task is to find the “best” representation of the data.<ul>
+<li><strong>Low-dimensional representations</strong> attempt to compress as much information about $x$ as possible in a smaller representation.</li>
+<li><strong>Sparse representations</strong> embed the dataset into a representation whose entries are mostly zeros for most inputs.</li>
+<li><strong>Independent representations</strong> attempt to <strong>disentangle</strong> the sources of variation underlying the data distribution such that the dimensions of the representation are statistically independent.</li>
+</ul>
+</li>
+<li>Of course these three criteria are certainly not mutually exclusive.</li>
+</ul>
+<h3 id="5-8-1-Principal-Components-Analysis"><a href="#5-8-1-Principal-Components-Analysis" class="headerlink" title="5.8.1 Principal Components Analysis"></a>5.8.1 <strong>Principal Components Analysis</strong></h3><ul>
+<li>provides a means of compressing data.<ul>
+<li>PCA learns a representation that has <strong>lower dimensionality</strong> than the original input. </li>
+<li>It also learns a representation <strong>whose elements have no linear correlation</strong> with each other.<ul>
+<li>To achieve full independence, a representation learning algorithm must also <strong>remove the nonlinear relationships</strong> between variables.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PCA learns an <strong>orthogonal, linear transformation</strong> of the data.</li>
+<li>Derivation<ul>
+<li>$\boldsymbol{X}^{\top} \boldsymbol{X}=\left(\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{W}^{\top}\right)^{\top} \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{W}^{\top}=\boldsymbol{W} \boldsymbol{\Sigma}^{2} \boldsymbol{W}^{\top}$</li>
+<li>$\begin{aligned} \operatorname{Var}[\boldsymbol{x}] &amp;=\frac{1}{m-1} \boldsymbol{X}^{\top} \boldsymbol{X} \ &amp;=\frac{1}{m-1}\left(\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{W}^{\top}\right)^{\top} \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{W}^{\top} \ &amp;=\frac{1}{m-1} \boldsymbol{W} \boldsymbol{\Sigma}^{\top} \boldsymbol{U}^{\top} \boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{W}^{\top} \ &amp;=\frac{1}{m-1} \boldsymbol{W} \boldsymbol{\Sigma}^{2} \boldsymbol{W}^{\top} \end{aligned}$</li>
+<li>$\begin{aligned} \operatorname{Var}[\boldsymbol{z}] &amp;=\frac{1}{m-1} \boldsymbol{Z}^{\top} \boldsymbol{Z} \ &amp;=\frac{1}{m-1} \boldsymbol{W}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{W} \&amp;=\frac{1}{m-1} \boldsymbol{W}^{\top} \boldsymbol{W} \boldsymbol{\Sigma}^{2} \boldsymbol{W}^{\top} \boldsymbol{W}\ &amp;=\frac{1}{m-1} \mathbf{\Sigma}^{2}\end{aligned}$</li>
+<li>diagonal covariance matrix $\mathbf{\Sigma}^{2}$ implies that the individual elements of z are mutually uncorrelated.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-8-2-k-means-Clustering"><a href="#5-8-2-k-means-Clustering" class="headerlink" title="5.8.2 $k$-means Clustering"></a>5.8.2 $k$-means Clustering</h3><ul>
+<li>The one-hot code provided by $k$-means clustering is an example of a sparse representation</li>
+<li>The $k$-means algorithmworks by initializing $k$ different centroids ${\boldsymbol{\mu}^{(1)}, \ldots, \boldsymbol{\mu}^{(k)}}$ to different values, then alternating between two different steps until convergence. <ul>
+<li>In one step, each training example is assigned to cluster $i$ , where $i$ is the index of the nearest centroid ${\boldsymbol{\mu}^{(i)}}$</li>
+<li>In the other step, each centroid ${\boldsymbol{\mu}^{(i)}}$ is updated to the mean of all training examples ${\boldsymbol{x}^{(j)}}$ assigned to cluster </li>
+</ul>
+</li>
+<li><strong>One difficulty</strong> pertaining to clustering is that the clustering problem is inherently <strong>ill posed</strong>, <ul>
+<li>in the sense that there is <strong>no single criterion</strong> that measures how well a clustering of the <strong>data corresponds to the real world</strong>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-9-Stochastic-Gradient-Descent"><a href="#5-9-Stochastic-Gradient-Descent" class="headerlink" title="5.9 Stochastic Gradient Descent"></a>5.9 <strong>Stochastic Gradient Descent</strong></h2><ul>
+<li>is an extension of the gradient descent algorithm</li>
+<li>The <strong>cost function</strong> used by a machine learning algorithm o<strong>ften decomposes as a sum</strong> over training examples of some <strong>per-example loss function</strong>.  e.g.<ul>
+<li>$J(\boldsymbol{\theta})=\mathbb{E}_{\mathbf{x}, \mathbf{y} \sim \hat{p}_{\mathrm{data}}} L(\boldsymbol{x}, y, \boldsymbol{\theta})=\frac{1}{m} \sum_{i=1}^{m} L\left(\boldsymbol{x}^{(i)}, y^{(i)}, \boldsymbol{\theta}\right)$</li>
+<li>where $L$ is the per-example loss $L(\boldsymbol{x}, y, \boldsymbol{\theta})=-\log p(y | \boldsymbol{x} ; \boldsymbol{\theta})$</li>
+</ul>
+</li>
+<li>GD requires computing <ul>
+<li>$\nabla_{\boldsymbol{\theta}} J(\boldsymbol{\theta})=\frac{1}{m} \sum_{i=1}^{m} \nabla_{\boldsymbol{\theta}} L\left(\boldsymbol{x}^{(i)}, y^{(i)}, \boldsymbol{\theta}\right)$</li>
+<li>whose computioncal cost of this opration is $O(m)$</li>
+</ul>
+</li>
+<li>The insight of SGD is that the <strong>gradient is an expectation</strong>.<ul>
+<li>The expectation may be <strong>approximately estimated</strong> using a <strong>small set</strong> of samples.</li>
+<li>on <strong>each step</strong> of the algorithm, we can sample a <strong>minibatch</strong> of examples $\mathbb{B}={\boldsymbol{x}^{(1)}, \ldots, \boldsymbol{x}^{\left(m^{\prime}\right)}}$ drawn uniformly from the training set. ($m’$ from one to hundred)</li>
+<li>The <strong>estimate of the gradient</strong> is formed as<ul>
+<li>$\boldsymbol{g}=\frac{1}{m^{\prime}} \nabla_{\boldsymbol{\theta}} \sum_{i=1}^{m^{\prime}} L\left(\boldsymbol{x}^{(i)}, y^{(i)}, \boldsymbol{\theta}\right)$</li>
+</ul>
+</li>
+<li>then follows the estimated <strong>gradient downhill</strong>:<ul>
+<li>$\boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\epsilon \boldsymbol{g}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SGD is the main way to <strong>train large linear models on very large datasets</strong>.</li>
+</ul>
+<h2 id="5-10-Building-a-Machine-Learning-Algorithm"><a href="#5-10-Building-a-Machine-Learning-Algorithm" class="headerlink" title="5.10 Building a Machine Learning Algorithm"></a>5.10 Building a Machine Learning Algorithm</h2><ul>
+<li>Nearly all deep learning algorithms can be described as particular instances of a fairly simple recipe: <strong>combine</strong> <ul>
+<li>a specification of a dataset, </li>
+<li>a cost function, </li>
+<li>an optimization procedure and </li>
+<li>a model.</li>
+</ul>
+</li>
+<li>The <strong>cost function</strong> typically includes at least one term that causes the learning process to perform statistical estimation.<ul>
+<li>The most common cost function is the <strong>negative log-likelihood</strong>, so that <strong>minimizing the cost function causes maximum likelihood estimation</strong>.</li>
+<li>The cost function may also include additional terms, such as <strong>regularization terms</strong>. e.g. the weight decay<ul>
+<li>$J(\boldsymbol{w}, b)=\lambda|\boldsymbol{w}|_{2}^{2}-\mathbb{E}_{\mathbf{x}, \mathbf{y} \sim \hat{p}_{\text { data }}} \log p_{\text { model }}(y | \boldsymbol{x})$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If we change the model to be <strong>nonlinear</strong>, then most cost functions can no longer be optimized in closed form. <ul>
+<li>This requires us to choose an <strong>iterative numerical optimization</strong> procedure, such as gradient descent.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-11-Challenges-Motivating-Deep-Learning"><a href="#5-11-Challenges-Motivating-Deep-Learning" class="headerlink" title="5.11 Challenges Motivating Deep Learning"></a>5.11 Challenges Motivating Deep Learning</h2><ul>
+<li>The simple machine learning algorithms have not succeeded, however, in solving the central problems in AI, such as <strong>recognizing speech</strong> or <strong>recognizing objects</strong>.</li>
+<li>how the challenge of <ul>
+<li>generalizing to new examples becomes exponentially more difficult when <strong>working with high-dimensional data</strong>, and </li>
+<li>how the mechanisms used to achieve generalization in traditional machine learning are insufficient to learn <strong>complicated functions in high-dimensional spaces</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-11-1-The-Curse-of-Dimensionality"><a href="#5-11-1-The-Curse-of-Dimensionality" class="headerlink" title="5.11.1 The Curse of Dimensionality"></a>5.11.1 <strong>The Curse of Dimensionality</strong></h3><ul>
+<li>Many machine learning problems become <strong>exceedingly difficult</strong> when the number of <strong>dimensions</strong> in the data is <strong>high</strong>.</li>
+<li>Many <strong>traditional</strong> machine learning algorithms simply assume that the output at a <strong>new point</strong> should be <strong>approximately</strong> the <strong>same</strong> as the output at the <strong>nearest training point</strong>.</li>
+</ul>
+<h3 id="5-11-2-Local-Constancy-and-Smoothness-Regularization-局部不变性和平滑正则化"><a href="#5-11-2-Local-Constancy-and-Smoothness-Regularization-局部不变性和平滑正则化" class="headerlink" title="5.11.2 Local Constancy and Smoothness Regularization 局部不变性和平滑正则化"></a>5.11.2 Local Constancy and Smoothness Regularization 局部不变性和平滑正则化</h3><ul>
+<li>To generalize well, machine learning algorithms need to be guided by <strong>prior beliefs</strong> about what kind of function they should learn.</li>
+<li>Among the most widely used of these implicit “priors” is the <strong>smoothness prior</strong> , or <strong>local constancy prior</strong> .<ul>
+<li>This prior states that the function we learn should <strong>not change very much within a small region.</strong></li>
+<li>they <strong>fail to</strong> scale to the statistical challenges involved in solving AI-level tasks.</li>
+</ul>
+</li>
+<li>The smoothness assumption and the associated nonparametric learning algorithms <strong>work extremely well</strong> as long as there are enough examples for the learning algorithm to observe <strong>high points on most peak</strong>s and <strong>low points on most valleys</strong> of the <strong>true underlying function</strong> to be learned.</li>
+<li>The key insight is that a very large number of regions, such as $O\left(2^{k}\right)$ can be defined with $O(k)$ examples, so long as we <strong>introduce some dependencies</strong> between the <strong>regions</strong> through additional assumptions about the underlying data-generating <strong>distribution</strong>.</li>
+<li>The <strong>core idea in deep learning</strong> is that we assume that the <strong>data was generated</strong> by the <strong>composition of factors</strong>, or features, <strong>potentially at multiple levels in a hierarchy</strong>. </li>
+</ul>
+<h3 id="5-11-3-Manifold-Learning"><a href="#5-11-3-Manifold-Learning" class="headerlink" title="5.11.3 Manifold Learning"></a>5.11.3 Manifold Learning</h3><ul>
+<li>A <strong>manifold</strong> is a connected region. <ul>
+<li>Mathematically, it is a set of points associated with a neighborhood around each point. From any given point, the manifold locally appears to be a Euclidean space. In everyday life, we experience the surface of the world as a 2-D plane, but it is in fact a spherical manifold in 3-D space.</li>
+</ul>
+</li>
+<li>Many machine learning problems seem hopeless if we expect the machine learning algorithm to learn functions with interesting variations across all of $\mathbb{R}^{n}$.</li>
+<li><strong>Manifold learning</strong> algorithms <strong>surmount this obstacle</strong> by assuming that most of $\mathbb{R}^{n}$ consists of invalid inputs, and that <strong>interesting inputs occur only along a collection of manifolds containing a small subset of points</strong>, with interesting variations in the output of the learned function occurring only along directions that lie on the manifold, or with interesting variations happening only when we move from one manifold to another. </li>
+<li>We argue that in the context of AI tasks, such as those that involve processing images, sounds, or text, the manifold assumption is <strong>at least approximately correct</strong>.<ul>
+<li>The first observation in favor of the <strong>manifold hypothesis</strong> is that the probability distribution over images, text strings, and sounds that occur in real life is <strong>highly concentrated</strong>.<ul>
+<li>We must also establish that the examples we encounter are connected to each other by other examples, <strong>with each example surrounded by other highly similar examples</strong> that can be reached by applying transformations to traverse the manifold.</li>
+</ul>
+</li>
+<li>The second argument in favor of the <strong>manifold hypothesis</strong> is that we can <strong>imagine such neighborhoods and transformations, at least informally</strong>.</li>
+</ul>
+</li>
+<li>When the data lies on a <strong>low-dimensional manifold</strong>, it can be most <strong>natural</strong> for machine learning algorithms to <strong>represent the data</strong> in terms of coordinates on the manifold, rather than in terms of coordinates in  $\mathbb{R}^{n}$ .</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:48:04+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/机器学习/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>机器学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/inEnglish/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>inEnglish</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQW6EMAwF0Ln/pem21Qzo285UIjxWFZNCHgvLdvx6xdfx63q//77m7P7Zk6/vLLswMDBuyzgur7OtnL1+8l/XTzhbg4GB8RzGdSi8DoL565M35isxMDAwzh5X3W4vBGNgYGDMA24vjOafAwMDA6NXxFbZ8wbcV2pxDAyMGzLyrvv///2V8w0MDIxbMY7iNQmv+Qcq7woDA2NrRh7gEkxvZVSgJvvBwMDYlFEtF/OQ+r01H1ZiYGBszVhVJ1afMGnhjTAYGBg3Z1yHtklROvk0o++NgYGxESPfeq/FloTmBSUuBgbGpozeSESv0V+9c71PDAyMpzHm4xdzZK/m/nAwgIGBsR2jV1LmLbPq6EbeyFswjYuBgXErRjV0JiNieYut1z0rJIgYGBhbMPLUrVdwTore5hksBgbGdowk1csTu1UNuHw/GBgYT2DM22HVQYpr8CR9xMDA2I8RFYStltzkwDJJE//8ioGBsTUjb+5XC91kW/m7oqQQAwPjMYzq2ERv09URtChJxcDAeAwjf/0kQVxV9Ja7ehgYGDdnTBLEVeMU1RIaAwPjCYyjeFUDaG/Mq3wggYGBsTWjF+yqB5m9I4HRsAUGBsZ2jGpRmiN7Dbu8MB6dr2JgYNyQkQe+asm6tqCNhi0wMDAwiulgfiRZPUBdFnAxMDC2YySDYmsDd5R6YmBgPIBRPQzoNcWqGy0UwBgYGFszegnffOw1J00OJzAwMG7O+AGj3nRy0xMM7gAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/82c92d21/&title=DL-book 5 Machine Learning Basics | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/82c92d21/&title=DL-book 5 Machine Learning Basics | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/82c92d21/&title=DL-book 5 Machine Learning Basics | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/c7711d38/" rel="prev" title="集体智慧编程-Ch1-2-Recommendation">
+                                  
+                                      集体智慧编程-Ch1-2-Recommendation
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/集体智慧/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>集体智慧</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/28331d12/" rel="prev" title="DL-book 4 Numerical Computation ">
+                                    
+                                        DL-book 4 Numerical Computation 
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'DL-book 5 Machine Learning Basics',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-Learning-Algorithms"><span class="toc-text">5.1 Learning Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-The-Task-T"><span class="toc-text">5.1.1 The Task, $T$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-The-Performance-Measure-P"><span class="toc-text">5.1.2 The Performance Measure, $P$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-The-Experience-E"><span class="toc-text">5.1.3 The Experience, $E$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-4-Example-Linear-Regression"><span class="toc-text">5.1.4 Example: Linear Regression</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-Capacity-Overﬁtting-and-Underﬁtting"><span class="toc-text">5.2 Capacity, Overﬁtting and Underﬁtting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-The-No-Free-Lunch-Theorem"><span class="toc-text">5.2.1 The No Free Lunch Theorem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-Regularization-正则化"><span class="toc-text">5.2.2 Regularization 正则化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-Hyperparameters-and-Validation-Sets"><span class="toc-text">5.3 Hyperparameters and Validation Sets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-1-Cross-Validation"><span class="toc-text">5.3.1 Cross-Validation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-Estimators-Bias-and-Variance"><span class="toc-text">5.4 Estimators, Bias and Variance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-1-Point-Estimation"><span class="toc-text">5.4.1 Point Estimation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-2-Bias"><span class="toc-text">5.4.2 Bias</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-3-Variance-and-Standard-Error"><span class="toc-text">5.4.3 Variance and Standard Error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-4-Trading-off-Bias-and-Variance-to-Minimize-Mean-Squared-Error"><span class="toc-text">5.4.4 Trading off Bias and Variance to Minimize Mean Squared Error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-5-Consistency"><span class="toc-text">5.4.5 Consistency</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-Maximum-Likelihood-Estimation"><span class="toc-text">5.5 Maximum Likelihood Estimation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-1-Conditional-Log-Likelihood-and-Mean-Squared-Error"><span class="toc-text">5.5.1 Conditional Log-Likelihood and Mean Squared Error</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-2-Properties-of-Maximum-Likelihood"><span class="toc-text">5.5.2 Properties of Maximum Likelihood</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-Bayesian-Statistics"><span class="toc-text">5.6 Bayesian Statistics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-1-Maximum-a-Posteriori-MAP-Estimation"><span class="toc-text">5.6.1 Maximum a Posteriori (MAP) Estimation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-Supervised-Learning-Algorithms"><span class="toc-text">5.7 Supervised Learning Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-1-Probabilistic-Supervised-Learning"><span class="toc-text">5.7.1 Probabilistic Supervised Learning</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-2-Support-Vector-Machines"><span class="toc-text">5.7.2 Support Vector Machines</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-3-Other-Simple-Supervised-Learning-Algorithms"><span class="toc-text">5.7.3 Other Simple Supervised Learning Algorithms</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-Unsupervised-Learning-Algorithms"><span class="toc-text">5.8 Unsupervised Learning Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-8-1-Principal-Components-Analysis"><span class="toc-text">5.8.1 Principal Components Analysis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-8-2-k-means-Clustering"><span class="toc-text">5.8.2 $k$-means Clustering</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-Stochastic-Gradient-Descent"><span class="toc-text">5.9 Stochastic Gradient Descent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-10-Building-a-Machine-Learning-Algorithm"><span class="toc-text">5.10 Building a Machine Learning Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-11-Challenges-Motivating-Deep-Learning"><span class="toc-text">5.11 Challenges Motivating Deep Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-11-1-The-Curse-of-Dimensionality"><span class="toc-text">5.11.1 The Curse of Dimensionality</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-11-2-Local-Constancy-and-Smoothness-Regularization-局部不变性和平滑正则化"><span class="toc-text">5.11.2 Local Constancy and Smoothness Regularization 局部不变性和平滑正则化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-11-3-Manifold-Learning"><span class="toc-text">5.11.3 Manifold Learning</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>集体智慧编程-Ch1-2-Recommendation | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="《集体智慧编程》刷书笔记，Ch1-2，1 概览，2 推荐系统.">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/c7711d38/">
+        集体智慧编程-Ch1-2-Recommendation
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-18</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/机器学习/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>机器学习</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+<p>代码库 <a href="https://github.com/xlindo/pci-notes" target="_blank" rel="noopener">https://github.com/xlindo/pci-notes</a></p>
+</blockquote>
+<p>准备面试和毕设。刚刚通过花书的前五章学习，获得了一定的内功，所以今天开始使用Python3实践《集体智慧编程》这本书，以获得一个实战上了算法理解。因为书上已经有了代码，那么我的代码学习也就是一个转录。</p>
+<p>本文会在某些地方使用原著中的英文表述，以规避欠佳的翻译。</p>
+<h2 id="0-TOC"><a href="#0-TOC" class="headerlink" title="0 TOC"></a>0 TOC</h2><ol>
+<li>Introduction to Collective Intelligence </li>
+<li>Making Recommendations</li>
+<li>Discovering Groups</li>
+<li>Searching and Ranking</li>
+<li>Optimization</li>
+<li>Document Filtering</li>
+<li>Modeling with Decision Trees</li>
+<li>Building Price Models</li>
+<li>Advanced Classification: Kernel Methods and SVMs</li>
+<li>Finding Independent Features</li>
+<li>Evolving Intelligence</li>
+<li>Algorithm Summary</li>
+</ol>
+<h2 id="1-Introduction-to-Collective-Intelligence"><a href="#1-Introduction-to-Collective-Intelligence" class="headerlink" title="1 Introduction to Collective Intelligence"></a>1 Introduction to Collective Intelligence</h2><blockquote>
+<p>本章无实战内容。</p>
+</blockquote>
+<p>本章做了个集体智慧、机器学习的大致介绍：面向数据，进行训练，提取模型，实现归纳。算法各有所长，数学与统计夯实基础，受限于大量模式下的归纳，在各个行业都有应用。</p>
+<h3 id="USES"><a href="#USES" class="headerlink" title="USES"></a>USES</h3><ul>
+<li>Biotechnology<ul>
+<li>find patterns</li>
+</ul>
+</li>
+<li>Financial fraud detection<ul>
+<li><strong>neural networks</strong> and <strong>inductive logic</strong> to verify transactions and catch improper usage</li>
+</ul>
+</li>
+<li>Machine vision<ul>
+<li>automatically detect intruders, identify vehicles, or recognize faces</li>
+<li>unsupervised techniques like <strong>independent component analysis</strong>, which finds interesting features in large datasets</li>
+</ul>
+</li>
+<li>Product marketing<ul>
+<li>such as <strong>clustering</strong> to better understand the natural divisions that exist in markets and to make better predictions about future trends.</li>
+</ul>
+</li>
+<li>Supply chain optimization<ul>
+<li><strong>Optimization</strong> and <strong>learning techniques</strong> are frequently used to analyze these datasets.</li>
+</ul>
+</li>
+<li>Stock market analysis<ul>
+<li>become necessary to analyze larger sets of data and use advanced techniques to <strong>detect patterns</strong>.</li>
+</ul>
+</li>
+<li>National security<ul>
+<li><strong>detect patterns</strong> and associate them with potential threats</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Making-Recommendations"><a href="#2-Making-Recommendations" class="headerlink" title="2 Making Recommendations"></a>2 Making Recommendations</h2><p>This chapter shows you how to build a system <strong>for finding people who share tastes</strong> and <strong>for making automatic recommendations based on things that other people like</strong>.</p>
+<p>本章构筑一个系统，寻找具有某些相同喜好的人，并基于互相之间的喜好给出推荐。</p>
+<p>我们能够使用许多不同的方式来搜集兴趣偏好，例如购买历史、评价信息、表达方式等。</p>
+<h3 id="2-1-Collaborative-Filtering-协作型过滤"><a href="#2-1-Collaborative-Filtering-协作型过滤" class="headerlink" title="2.1 Collaborative Filtering 协作型过滤"></a>2.1 Collaborative Filtering 协作型过滤</h3><p>该算法通常的做法是<strong>对一大群人进行搜索</strong>，并从中找到与目标<strong>品味相近的一小群人</strong>。然后对这群人所偏爱的<strong>其余内容进行评估</strong>，使用<strong>评估的结果构造有序的推荐列表</strong>。</p>
+<p>该算法所要处理的内容涉及电影，音乐，书籍，交友，购物，网站，播客，文章和笑话。</p>
+<h3 id="2-2-Collecting-Preferences-搜集偏好"><a href="#2-2-Collecting-Preferences-搜集偏好" class="headerlink" title="2.2 Collecting Preferences 搜集偏好"></a>2.2 Collecting Preferences 搜集偏好</h3><p>创建一个<strong>嵌套字典(nested dictionary)</strong>来保存不同人及其偏好的表达方式。创建<code>critics_rating_dict.py</code>，写入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A dict contains movie critics and ratings of movies</span></span><br><span class="line"></span><br><span class="line">critics = &#123;<span class="string">'Lisa Rose'</span>:</span><br><span class="line">           &#123;<span class="string">'Lady in the Water'</span>: <span class="number">2.5</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">3.5</span>, <span class="string">'Just My Luck'</span>: <span class="number">3.0</span>,</span><br><span class="line">               <span class="string">'Superman Returns'</span>: <span class="number">3.5</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">2.5</span>, <span class="string">'The Night Listener'</span>: <span class="number">3.0</span>&#125;,</span><br><span class="line">           <span class="string">'Gene Seymour'</span>:</span><br><span class="line">           &#123;<span class="string">'Lady in the Water'</span>: <span class="number">3.0</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">3.5</span>, <span class="string">'Just My Luck'</span>: <span class="number">1.5</span>,</span><br><span class="line">            <span class="string">'Superman Returns'</span>: <span class="number">5.0</span>, <span class="string">'The Night Listener'</span>: <span class="number">3.0</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">3.5</span>&#125;,</span><br><span class="line">           <span class="string">'Michael Phillips'</span>:</span><br><span class="line">           &#123;<span class="string">'Lady in the Water'</span>: <span class="number">2.5</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">3.0</span>,</span><br><span class="line">               <span class="string">'Superman Returns'</span>: <span class="number">3.5</span>, <span class="string">'The Night Listener'</span>: <span class="number">4.0</span>&#125;,</span><br><span class="line">           <span class="string">'Claudia Puig'</span>:</span><br><span class="line">           &#123;<span class="string">'Snakes on a Plane'</span>: <span class="number">3.5</span>, <span class="string">'Just My Luck'</span>: <span class="number">3.0</span>, <span class="string">'The Night Listener'</span>: <span class="number">4.5</span>,</span><br><span class="line">            <span class="string">'Superman Returns'</span>: <span class="number">4.0</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">2.5</span>&#125;,</span><br><span class="line">           <span class="string">'Mick LaSalle'</span>:</span><br><span class="line">           &#123;<span class="string">'Lady in the Water'</span>: <span class="number">3.0</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">4.0</span>, <span class="string">'Just My Luck'</span>: <span class="number">2.0</span>,</span><br><span class="line">            <span class="string">'Superman Returns'</span>: <span class="number">3.0</span>, <span class="string">'The Night Listener'</span>: <span class="number">3.0</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">2.0</span>&#125;,</span><br><span class="line">           <span class="string">'Jack Matthews'</span>:</span><br><span class="line">           &#123;<span class="string">'Lady in the Water'</span>: <span class="number">3.0</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">4.0</span>, <span class="string">'The Night Listener'</span>: <span class="number">3.0</span>,</span><br><span class="line">            <span class="string">'Superman Returns'</span>: <span class="number">5.0</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">3.5</span>&#125;,</span><br><span class="line">           <span class="string">'Toby'</span>:</span><br><span class="line">           &#123;<span class="string">'Snakes on a Plane'</span>: <span class="number">4.5</span>, <span class="string">'You, Me and Dupree'</span>: <span class="number">1.0</span>, <span class="string">'Superman Returns'</span>: <span class="number">4.0</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>上述字典使用1~5对电影评分，以此体现喜爱程度。<strong>我们总需要将偏好的表达对应到数字</strong>。例如：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>音乐会门票</th>
+<th></th>
+<th>在线购物</th>
+<th></th>
+<th>网站推荐者</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>已购买</td>
+<td>1</td>
+<td>已购买</td>
+<td>2</td>
+<td>喜欢</td>
+<td>1</td>
+</tr>
+<tr>
+<td>未购买</td>
+<td>0</td>
+<td>已浏览</td>
+<td>1</td>
+<td>未投票</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>未购买</td>
+<td>0</td>
+<td>不喜欢</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>下面为示例字典信息的查询：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> recommendations <span class="keyword">import</span> critics</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: critics[<span class="string">'Lisa Rose'</span>][<span class="string">'Lady in the Water'</span>]</span><br><span class="line">Out[<span class="number">2</span>]: <span class="number">2.5</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Finding-Similar-Users-寻找近似用户"><a href="#2-3-Finding-Similar-Users-寻找近似用户" class="headerlink" title="2.3 Finding Similar Users 寻找近似用户"></a>2.3 Finding Similar Users 寻找近似用户</h3><p>搜集了偏好之后，需要计算互相之间的相似度(<strong>similarity score</strong>)。这里有两种相似度评价体系：<strong>Euclidean distance</strong> 欧式距离 以及<strong>Pearson correlation coefficient</strong> 皮尔逊相关系数。</p>
+<h4 id="2-3-1-Euclidean-Distance-Score"><a href="#2-3-1-Euclidean-Distance-Score" class="headerlink" title="2.3.1 Euclidean Distance Score"></a>2.3.1 Euclidean Distance Score</h4><p>以经过人们一致评价的物品为坐标轴，对参与评价的人作图，评价彼此距离。例如，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190718162724.png" alt="Euclidean Distance Score"></p>
+<p>该图展示了偏好空间<strong>preference space</strong>中人们的分布，距离越近，偏好越相似。使用公式，</p>
+<script type="math/tex; mode=display">\begin{aligned} d(\mathbf{p}, \mathbf{q})=d(\mathbf{q}, \mathbf{p}) &=\sqrt{\left(q_{1}-p_{1}\right)^{2}+\left(q_{2}-p_{2}\right)^{2}+\cdots+\left(q_{n}-p_{n}\right)^{2}} \\ &=\sqrt{\sum_{i=1}^{n}\left(q_{i}-p_{i}\right)^{2}} \end{aligned}.</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line">sqrt(pow(<span class="number">4.5</span><span class="number">-4</span>, <span class="number">2</span>) + pow(<span class="number">1</span><span class="number">-2</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<p>为了得到更符合直觉的结果，即分数越高越相似，改写公式为，</p>
+<script type="math/tex; mode=display">score_{EuclideanDistance} = \frac{1}{1+\sqrt{\sum_{i=1}^{n}\left(q_{i}-p_{i}\right)^{2}}}</script><p>新结果总介于0和1之间。</p>
+<p>至此可创建代码文件<code>euclidean_distance_score.py</code>中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns a distance-based similarity score for person1 and person2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sim_distance</span><span class="params">(prefs, person1, person2)</span>:</span></span><br><span class="line">    <span class="comment"># Get the list of shared_items</span></span><br><span class="line">    si = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> prefs[person1]:</span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">in</span> prefs[person2]:</span><br><span class="line">            si[item] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># if they have no ratings in common, return 0</span></span><br><span class="line">    <span class="keyword">if</span> len(si) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Add up the squares of all the differences</span></span><br><span class="line">    sum_of_squares = sum([pow(prefs[person1][item]-prefs[person2][item], <span class="number">2</span>)</span><br><span class="line">                          <span class="keyword">for</span> item <span class="keyword">in</span> prefs[person1] <span class="keyword">if</span> item <span class="keyword">in</span> prefs[person2]])</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>/(<span class="number">1</span>+sqrt(sum_of_squares))</span><br></pre></td></tr></table></figure>
+<p>现在，我们可以计算两个人的欧式距离相似度了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> critics_rating_dict <span class="keyword">import</span> critics</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">import</span> euclidean_distance_score <span class="keyword">as</span> eds</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: eds.sim_distance(critics, <span class="string">'Lisa Rose'</span>, <span class="string">'Gene Seymour'</span>)</span><br><span class="line">Out[<span class="number">3</span>]: <span class="number">0.29429805508554946</span></span><br></pre></td></tr></table></figure>
+<p>这里附上<code>scipy</code>的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> scipy.spatial <span class="keyword">import</span> distance</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: <span class="number">1</span>/(<span class="number">1</span>+distance.euclidean([<span class="number">2.5</span>, <span class="number">3.5</span>, <span class="number">3.0</span>, <span class="number">3.5</span>, <span class="number">2.5</span>, <span class="number">3.0</span>],[<span class="number">3.0</span>, <span class="number">3.5</span>, <span class="number">1.5</span>, <span class="number">5.0</span>, <span class="number">3.5</span>, <span class="number">3.0</span>]))</span><br><span class="line">Out[<span class="number">2</span>]: <span class="number">0.29429805508554946</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-Pearson-correlation-coefficient-皮尔逊相关系数"><a href="#2-3-2-Pearson-correlation-coefficient-皮尔逊相关系数" class="headerlink" title="2.3.2 Pearson correlation coefficient  皮尔逊相关系数"></a>2.3.2 Pearson correlation coefficient  皮尔逊相关系数</h4><p>皮尔逊相关系数度量两组数据的线性相关性。由于相较于协方差加入了标准化（归一化）过程，故能剔除量纲影响。公式如下，</p>
+<script type="math/tex; mode=display">\rho_{X, Y}=\frac{\operatorname{cov}(X, Y)}{\sigma_{X} \sigma_{Y}}=\frac{E\left[\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\right]}{\sigma_{X} \sigma_{Y}} = \frac{E(XY)-E(X)E(Y)}{\sigma_{X} \sigma_{Y}}</script><p>在本例中，所作坐标系坐标为评论者对应评分，如图</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190718170250.png" alt="低相关评价值"></p>
+<p>上图表明，我们试图找到两位评论者评分之间的线性关系，即存在最佳拟合线<strong>best-fit line</strong>。下图为较高相关度的情况，</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1563462343784.png" alt="高相关评价值"></p>
+<p>同时可以看出，通过皮尔逊方法，Jack的夸大分值<strong>grade inflation</strong>得到了修正。这是欧式距离方法不具备的能力。</p>
+<p>创建<code>pearson_r_score.py</code>，添加代码，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns the Pearson correlation coefficient for p1 and p2 </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sim_pearson</span><span class="params">(prefs,p1,p2)</span>:</span> </span><br><span class="line">    <span class="comment"># Get the list of mutually rated items </span></span><br><span class="line">    si=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> prefs[p1]: </span><br><span class="line">        <span class="keyword">if</span> item <span class="keyword">in</span> prefs[p2]: </span><br><span class="line">            si[item]=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Find the number of elements </span></span><br><span class="line">    n=len(si)</span><br><span class="line">    <span class="comment"># if they are no ratings in common, return 0 </span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># Add up all the preferences </span></span><br><span class="line">    sum1=sum([prefs[p1][it] <span class="keyword">for</span> it <span class="keyword">in</span> si]) </span><br><span class="line">    sum2=sum([prefs[p2][it] <span class="keyword">for</span> it <span class="keyword">in</span> si])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sum up the squares</span></span><br><span class="line">    sum1Sq=sum([pow(prefs[p1][it],<span class="number">2</span>) <span class="keyword">for</span> it <span class="keyword">in</span> si]) </span><br><span class="line">    sum2Sq=sum([pow(prefs[p2][it],<span class="number">2</span>) <span class="keyword">for</span> it <span class="keyword">in</span> si])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sum up the products </span></span><br><span class="line">    pSum=sum([prefs[p1][it]*prefs[p2][it] <span class="keyword">for</span> it <span class="keyword">in</span> si])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Calculate Pearson score </span></span><br><span class="line">    num=pSum-(sum1*sum2/n)</span><br><span class="line">    den=sqrt((sum1Sq-pow(sum1,<span class="number">2</span>)/n)*(sum2Sq-pow(sum2,<span class="number">2</span>)/n)) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> den==<span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    r=num/den</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">import</span> pearson_r_score <span class="keyword">as</span> pr</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: pr.sim_pearson(critics, <span class="string">'Lisa Rose'</span>, <span class="string">'Gene Seymour'</span>)</span><br><span class="line">Out[<span class="number">2</span>]: <span class="number">0.39605901719066977</span></span><br></pre></td></tr></table></figure>
+<p>这里附上<code>scipy</code>的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> scipy <span class="keyword">import</span> stats</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: stats.pearsonr([<span class="number">2.5</span>, <span class="number">3.5</span>, <span class="number">3.0</span>, <span class="number">3.5</span>, <span class="number">2.5</span>, <span class="number">3.0</span>],[<span class="number">3.0</span>, <span class="number">3.5</span>, <span class="number">1.5</span>, <span class="number">5.0</span>, <span class="number">3.5</span>, <span class="number">3.0</span>])</span><br><span class="line">Out[<span class="number">2</span>]: (<span class="number">0.39605901719066977</span>, <span class="number">0.43697492654267506</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-3-Which-Similarity-Metric-Should-You-Use-如何选择度量"><a href="#2-3-3-Which-Similarity-Metric-Should-You-Use-如何选择度量" class="headerlink" title="2.3.3 Which Similarity Metric Should You Use? 如何选择度量"></a>2.3.3 Which Similarity Metric Should You Use? 如何选择度量</h4><p>取决于具体应用。</p>
+<p>下面这个链接里有其他方法，<a href="https://en.wikipedia.org/wiki/Metric_(mathematics)#Examples" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Metric_(mathematics)#Examples</a> </p>
+<h4 id="2-3-4-Ranking-the-Critics-为评论者打分"><a href="#2-3-4-Ranking-the-Critics-为评论者打分" class="headerlink" title="2.3.4 Ranking the Critics 为评论者打分"></a>2.3.4 Ranking the Critics 为评论者打分</h4><p>现在，可以针对某人，对其他所有人进行打分，并给出匹配结果。也意味着，可以找到更应该参考的同喜好的人。创建一个<code>top_matches.py</code>，写入，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns the best matches for person from the prefs dictionary. # Number of results and similarity function are optional params.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pearson_r_score <span class="keyword">import</span> sim_pearson</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">top_matches</span><span class="params">(prefs, person, n=<span class="number">5</span>, similarity=sim_pearson)</span>:</span></span><br><span class="line"></span><br><span class="line">    scores = [(similarity(prefs, person, other), other)</span><br><span class="line">              <span class="keyword">for</span> other <span class="keyword">in</span> prefs <span class="keyword">if</span> other != person]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Sort the list so the highest scores appear at the top</span></span><br><span class="line">    scores.sort()</span><br><span class="line">    scores.reverse()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> scores[<span class="number">0</span>:n]</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> top_matches <span class="keyword">import</span> top_matches <span class="keyword">as</span> tm</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: tm(critics,<span class="string">'Toby'</span>,n=<span class="number">3</span>)</span><br><span class="line">Out[<span class="number">2</span>]: </span><br><span class="line">[(<span class="number">0.9912407071619299</span>, <span class="string">'Lisa Rose'</span>),</span><br><span class="line"> (<span class="number">0.9244734516419049</span>, <span class="string">'Mick LaSalle'</span>),</span><br><span class="line"> (<span class="number">0.8934051474415647</span>, <span class="string">'Claudia Puig'</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-Recommending-Items-推荐物品"><a href="#2-4-Recommending-Items-推荐物品" class="headerlink" title="2.4 Recommending Items 推荐物品"></a>2.4 Recommending Items 推荐物品</h3><p>我们可以从匹配的人的影单里直接找一部目标用户没有看过的，但这样太随意<strong>permissive</strong>了。这么做的问题：</p>
+<ul>
+<li>评论者还未对目标用户喜欢的电影做评论；</li>
+<li>所有其他评论者都不喜欢这部将推荐给我的电影。</li>
+</ul>
+<p>为了解决这个问题，我们使用<strong>经过加权的评价值</strong>来对影片打分，于是评论者的评分有了顺序。</p>
+<p>为此，我们从<strong>所有其他评论者</strong>的评价结果得到相似度，再乘以他们对每部影片的评价值。如图，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190718202732.png" alt="rec for Toby"></p>
+<p>即</p>
+<script type="math/tex; mode=display">r_{i} = \frac{\sum s_{sim}\cdot c_{rate}}{\sum s_{sim}},</script><p>where $r_i$ represents the score of the recommendation for the $i^{th}$ movie.</p>
+<p>分母部分的归一化规避了评价人数多造成的分高。新建<code>get_commendations.py</code>，写入代码，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pearson_r_score <span class="keyword">import</span> sim_pearson</span><br><span class="line"></span><br><span class="line"><span class="comment"># Gets recommendations for a person by using a weighted average</span></span><br><span class="line"><span class="comment"># of every other user's rankings</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_recommendations</span><span class="params">(prefs, person, similarity=sim_pearson)</span>:</span></span><br><span class="line">    totals = &#123;&#125;</span><br><span class="line">    simSums = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> other <span class="keyword">in</span> prefs:</span><br><span class="line">        <span class="comment"># don't compare me to myself</span></span><br><span class="line">        <span class="keyword">if</span> other == person:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        sim = similarity(prefs, person, other)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># ignore scores of zero or lower</span></span><br><span class="line">        <span class="keyword">if</span> sim &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> prefs[other]:</span><br><span class="line">            <span class="comment"># only score movies I haven't seen yet</span></span><br><span class="line">            <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> prefs[person] <span class="keyword">or</span> prefs[person][item] == <span class="number">0</span>:</span><br><span class="line">                <span class="comment"># Similarity * Score</span></span><br><span class="line">                totals.setdefault(item, <span class="number">0</span>)</span><br><span class="line">                totals[item] += prefs[other][item]*sim</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Sum of similarities</span></span><br><span class="line">                simSums.setdefault(item, <span class="number">0</span>)</span><br><span class="line">                simSums[item] += sim</span><br><span class="line">    <span class="comment"># Create the normalized list</span></span><br><span class="line">    rankings = [(total/simSums[item], item) <span class="keyword">for</span> item, total <span class="keyword">in</span> totals.items()]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Return the sorted list</span></span><br><span class="line">    rankings.sort()</span><br><span class="line">    rankings.reverse()</span><br><span class="line">    <span class="keyword">return</span> rankings</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> get_commendations <span class="keyword">import</span> get_recommendations <span class="keyword">as</span> g_r</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: g_r(critics, <span class="string">'Toby'</span>)</span><br><span class="line">Out[<span class="number">2</span>]: </span><br><span class="line">[(<span class="number">3.3477895267131017</span>, <span class="string">'The Night Listener'</span>),</span><br><span class="line"> (<span class="number">2.8325499182641614</span>, <span class="string">'Lady in the Water'</span>),</span><br><span class="line"> (<span class="number">2.530980703765565</span>, <span class="string">'Just My Luck'</span>)]</span><br></pre></td></tr></table></figure>
+<p>这样，就通过其他相似喜好用户的权重获得了自己未看过的电影推荐，即自己可能对推荐电影的评分。</p>
+<h3 id="至此，已完成一个完整的推荐系统。"><a href="#至此，已完成一个完整的推荐系统。" class="headerlink" title="至此，已完成一个完整的推荐系统。"></a><strong>至此，已完成一个完整的推荐系统。</strong></h3><p>接下来，将会进行一些相关的实践。</p>
+<h3 id="2-5-Matching-Products-匹配商品"><a href="#2-5-Matching-Products-匹配商品" class="headerlink" title="2.5 Matching Products 匹配商品"></a>2.5 Matching Products 匹配商品</h3><p>如果想了解哪些商品是彼此相近的，该如何做呢？例如，对于新用户，可以通过查看哪些人喜欢某一特定物品，以及这些人喜欢的其他物品来决定相似度。这样就转换成了之前的问题。</p>
+<p>将源数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'Lisa Rose'</span>: &#123;<span class="string">'Lady in the Water'</span>: <span class="number">2.5</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">3.5</span>&#125;, </span><br><span class="line"> <span class="string">'Gene Seymour'</span>: &#123;<span class="string">'Lady in the Water'</span>: <span class="number">3.0</span>, <span class="string">'Snakes on a Plane'</span>: <span class="number">3.5</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>转换成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'Lady in the Water'</span>:&#123;<span class="string">'Lisa Rose'</span>:<span class="number">2.5</span>,<span class="string">'Gene Seymour'</span>:<span class="number">3.0</span>&#125;, </span><br><span class="line"> <span class="string">'Snakes on a Plane'</span>:&#123;<span class="string">'Lisa Rose'</span>:<span class="number">3.5</span>,<span class="string">'Gene Seymour'</span>:<span class="number">3.5</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>就可以复用之前的方法了。</p>
+<p>所以，创建函数文件<code>transform_prefs.py</code>用于转换，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">transform_prefs</span><span class="params">(prefs)</span>:</span> </span><br><span class="line">    result=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> person <span class="keyword">in</span> prefs:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> prefs[person]: </span><br><span class="line">            result.setdefault(item,&#123;&#125;)</span><br><span class="line">    </span><br><span class="line">        <span class="comment"># Flip item and person </span></span><br><span class="line">        result[item][person]=prefs[person][item] </span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> transform_prefs <span class="keyword">import</span> transform_prefs <span class="keyword">as</span> tp</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: movies = tp(critics)</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: <span class="keyword">from</span> top_matches <span class="keyword">import</span> top_matches</span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: top_matches(movies, <span class="string">'Superman Returns'</span>)</span><br><span class="line">Out[<span class="number">4</span>]: </span><br><span class="line">[(<span class="number">0.6579516949597695</span>, <span class="string">'You, Me and Dupree'</span>),</span><br><span class="line"> (<span class="number">0.4879500364742689</span>, <span class="string">'Lady in the Water'</span>),</span><br><span class="line"> (<span class="number">0.11180339887498941</span>, <span class="string">'Snakes on a Plane'</span>),</span><br><span class="line"> (<span class="number">-0.1798471947990544</span>, <span class="string">'The Night Listener'</span>),</span><br><span class="line"> (<span class="number">-0.42289003161103106</span>, <span class="string">'Just My Luck'</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-Building-a-del-icio-us-Link-Recommender-构建一个基于链接的推荐系统"><a href="#2-6-Building-a-del-icio-us-Link-Recommender-构建一个基于链接的推荐系统" class="headerlink" title="2.6 Building a del.icio.us Link Recommender 构建一个基于链接的推荐系统"></a>2.6 Building a del.icio.us Link Recommender 构建一个基于链接的推荐系统</h3><p>本节介绍从在线书签网站上获取数据，并利用数据查找相近用户并推荐其未知的链接。</p>
+<p>此部分由于<code>pydelicious</code>包失效，所以<strong><u>代码不可用</u></strong>，来学习一下思路。</p>
+<h4 id="2-6-1-API"><a href="#2-6-1-API" class="headerlink" title="2.6.1 API"></a>2.6.1 API</h4><p>网站所获取的数据以XML格式返回，使用相关的Python库可以以简单的函数调用获取。 例如<code>get_popular</code>返回近期张贴的指定tag的热门链接，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="keyword">import</span> pydelicious </span><br><span class="line">&gt;&gt; pydelicious.get_popular(tag=<span class="string">'programming'</span>)</span><br><span class="line">[&#123;<span class="string">'count'</span>: <span class="string">''</span>, <span class="string">'extended'</span>: <span class="string">''</span>, <span class="string">'hash'</span>: <span class="string">''</span>, <span class="string">'description'</span>: <span class="string">u'How To Write Unmaintainable Code'</span>, <span class="string">'tags'</span>: <span class="string">''</span>, <span class="string">'href'</span>: <span class="string">u'http://thc.segfault.net/root/phun/ unmaintain.html'</span>, <span class="string">'user'</span>: <span class="string">u'dorsia'</span>, <span class="string">'dt'</span>: <span class="string">u'2006-08-19T09:48:56Z'</span>&#125;, &#123;<span class="string">'count'</span>: <span class="string">''</span>, <span class="string">'extended'</span>: <span class="string">''</span>, <span class="string">'hash'</span>: <span class="string">''</span>, <span class="string">'description'</span>: <span class="string">u'Threading in C#'</span>, <span class="string">'tags'</span>: <span class="string">''</span>, <span class="string">'href'</span>: <span class="string">u'http://www.albahari.com/threading/'</span>, <span class="string">'user'</span>: <span class="string">u'mmihale'</span>, <span class="string">'dt'</span>: <span class="string">u'2006-05-17T18:09: 24Z'</span>&#125;, ...etc...</span><br></pre></td></tr></table></figure>
+<h4 id="2-6-2-Building-the-Dataset-构造数据集"><a href="#2-6-2-Building-the-Dataset-构造数据集" class="headerlink" title="2.6.2 Building the Dataset 构造数据集"></a>2.6.2 Building the Dataset 构造数据集</h4><p>根据自己的偏好，我们可以选取任意数据子集，这里选取查找经常张贴链接的用户和张贴内容类似的用户。<code>get_userposts</code>返回指定URL的所有张贴记录，<code>get_urlposts</code>返回给定用户的所有张贴记录</p>
+<p>可以找到一组近期提交过的某一热门链接，且链接附带指定标签<strong>tag</strong>的用户，建立如下代码，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydelicious <span class="keyword">import</span> get_popular,get_userposts,get_urlposts</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initializeUserDict</span><span class="params">(tag,count=<span class="number">5</span>)</span>:</span> </span><br><span class="line">    user_dict=&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># get the top count' popular posts </span></span><br><span class="line">    <span class="keyword">for</span> p1 <span class="keyword">in</span> get_popular(tag=tag)[<span class="number">0</span>:count]: </span><br><span class="line">        <span class="comment"># find all users who posted this </span></span><br><span class="line">        <span class="keyword">for</span> p2 <span class="keyword">in</span> get_urlposts(p1[<span class="string">'href'</span>]): </span><br><span class="line">            user=p2[<span class="string">'user'</span>] </span><br><span class="line">            user_dict[user]=&#123;&#125; </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> user_dict</span><br></pre></td></tr></table></figure>
+<p>上面代码建立了一个包含若干用户数据的字典，其中每一项都各自指向一个等待填入具体链接的空字典。由于API只返回最后30个用户，所以设置默认用户数为5。</p>
+<p>这里的评价只有两种值：0（未张贴），1（张贴）。下面使用API填充用户评价，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fillItems</span><span class="params">(user_dict)</span>:</span></span><br><span class="line">    all_items = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Find links posted by all users</span></span><br><span class="line">    <span class="keyword">for</span> user <span class="keyword">in</span> user_dict:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                posts = get_userposts(user)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">print</span> <span class="string">"Failed user "</span>+user+<span class="string">", retrying"</span></span><br><span class="line">                time.sleep(<span class="number">4</span>)</span><br><span class="line">        <span class="keyword">for</span> post <span class="keyword">in</span> posts:</span><br><span class="line">            url = post[<span class="string">'href'</span>]</span><br><span class="line">            user_dict[user][url] = <span class="number">1.0</span></span><br><span class="line">            all_items[url] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fill in missing items with 0</span></span><br><span class="line">    <span class="keyword">for</span> ratings <span class="keyword">in</span> user_dict.values():</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> all_items:</span><br><span class="line">            <span class="keyword">if</span> item <span class="keyword">not</span> <span class="keyword">in</span> ratings:</span><br><span class="line">                ratings[item] = <span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+<p>接下来使用这个函数，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="keyword">from</span> deliciousrec <span class="keyword">import</span> * </span><br><span class="line">&gt;&gt; delusers=initializeUserDict(<span class="string">'programming'</span>) </span><br><span class="line">&gt;&gt; delusers [<span class="string">'tsegaran'</span>]=&#123;&#125; <span class="comment"># Add yourself to the dictionary if you use delicious </span></span><br><span class="line">&gt;&gt; fillItems(delusers)</span><br></pre></td></tr></table></figure>
+<h4 id="2-6-3-Recommending-Neighbors-and-Links-推荐近邻与链接"><a href="#2-6-3-Recommending-Neighbors-and-Links-推荐近邻与链接" class="headerlink" title="2.6.3 Recommending Neighbors and Links 推荐近邻与链接"></a>2.6.3 Recommending Neighbors and Links 推荐近邻与链接</h4><p>复用之前的函数进行推荐，下面随机选择一位用户，并找到与其品味相近的其他用户，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; <span class="keyword">import</span> random </span><br><span class="line">&gt;&gt; user=delusers.keys( )[random.randint(<span class="number">0</span>,len(delusers)<span class="number">-1</span>)] </span><br><span class="line">&gt;&gt; user </span><br><span class="line"><span class="string">u'veza'</span> </span><br><span class="line">&gt;&gt; recommendations.topMatches(delusers,user)</span><br><span class="line">[(<span class="number">0.083</span>, <span class="string">u'kuzz99'</span>), (<span class="number">0.083</span>, <span class="string">u'arturoochoa'</span>), (<span class="number">0.083</span>, <span class="string">u'NickSmith'</span>), (<span class="number">0.083</span>, <span class="string">u'MichaelDahl'</span>), (<span class="number">0.050</span>, <span class="string">u'zinggoat'</span>)]</span><br></pre></td></tr></table></figure>
+<p>也可以调用<code>get_recommendations.py</code>为该用户获取推荐，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; recommendations.getRecommendations(delusers,user)[<span class="number">0</span>:<span class="number">10</span>] </span><br><span class="line">[(<span class="number">0.278</span>, <span class="string">u'http://www.devlisting.com/'</span>), (<span class="number">0.276</span>, <span class="string">u'http://www.howtoforge.com/linux_ldap_authentication'</span>), (<span class="number">0.191</span>, <span class="string">u'http://yarivsblog.com/articles/2006/08/09/secret-weapons-for-startups'</span>), (<span class="number">0.191</span>, <span class="string">u'http://www.dadgum.com/james/performance.html'</span>), (<span class="number">0.191</span>, <span class="string">u'http://www.codinghorror.com/blog/archives/000666.html'</span>)]</span><br></pre></td></tr></table></figure>
+<p>当然，偏好列表中的各是可以被调换的，所以可以根据链接而非人员进行搜索，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; url=recommendations.getRecommendations(delusers,user)[<span class="number">0</span>][<span class="number">1</span>] &gt;&gt; recommendations.topMatches(recommendations.transformPrefs(delusers),url) [(<span class="number">0.312</span>, <span class="string">u'http://www.fonttester.com/'</span>), (<span class="number">0.312</span>, <span class="string">u'http://www.cssremix.com/'</span>), (<span class="number">0.266</span>, <span class="string">u'http://www.logoorange.com/color/color-codes-chart.php'</span>), (<span class="number">0.254</span>, <span class="string">u'http://yotophoto.com/'</span>), (<span class="number">0.254</span>, <span class="string">u'http://www.wpdfd.com/editorial/basics/index.html'</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="2-7-Item-Based-Filtering-基于物品的过滤"><a href="#2-7-Item-Based-Filtering-基于物品的过滤" class="headerlink" title="2.7 Item-Based Filtering 基于物品的过滤"></a>2.7 Item-Based Filtering 基于物品的过滤</h3><p>前文中基于用户的协作型过滤<strong>user-based collaborative filtering</strong>，要求我们使用来自每一位用户的全部评分，显然不适用于大用户量的场景。</p>
+<p><strong>基于物品的协作型过滤item-based collaborative filtering</strong>可以在拥有大量数据集的情况下，得出更好的结论，而且它允许大量任务预先执行，甚至独立于主应用之外单独进行计算。</p>
+<p>其总体思路就是为每件物品预先计算好最为相近的其他物品：提供推荐前，查看目标用户的评价历史，选出靠前者，再构造出一个加权列表，其中包含了与这些选中物品最为相近的其他物品。其最为显著的特点是，<strong>物品间的比较不会像用户间的比较那样频繁变化</strong>。</p>
+<h4 id="2-7-1-Building-the-Item-Comparison-Dataset-构造物品比较数据集"><a href="#2-7-1-Building-the-Item-Comparison-Dataset-构造物品比较数据集" class="headerlink" title="2.7.1 Building the Item Comparison Dataset 构造物品比较数据集"></a>2.7.1 Building the Item Comparison Dataset 构造物品比较数据集</h4><p>为了比较物品，编写函数<code>calculate_similar_items.py</code>来构造包含相近物品的完整数据集。该数据集可<strong>重复使用</strong>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> transform_prefs <span class="keyword">import</span> transform_prefs</span><br><span class="line"><span class="keyword">from</span> top_matches <span class="keyword">import</span> top_matches</span><br><span class="line"><span class="keyword">from</span> euclidean_distance_score <span class="keyword">import</span> sim_distance</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calculate_similar_items</span><span class="params">(prefs, n=<span class="number">10</span>)</span>:</span></span><br><span class="line">    <span class="comment"># Create a dictionary of items showing which other items they # are most similar to.</span></span><br><span class="line">    result = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Invert the preference matrix to be item-centric</span></span><br><span class="line">    itemPrefs = transform_prefs(prefs)</span><br><span class="line">    c = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> itemPrefs:</span><br><span class="line">        <span class="comment"># Status updates for large datasets</span></span><br><span class="line">        c += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> c % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">"%d / %d"</span> % (c, len(itemPrefs)))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Find the most similar items to this one</span></span><br><span class="line">        scores = top_matches(itemPrefs, item, n=n, similarity=sim_distance)</span><br><span class="line">        result[item] = scores</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>该函数构造返回一个物品相似度的数据集，测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> critics_rating_dict <span class="keyword">import</span> critics</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">from</span> calculate_similar_items <span class="keyword">import</span> calculate_similar_items <span class="keyword">as</span> c_s</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: c_s(critics)</span><br><span class="line">Out[<span class="number">3</span>]: </span><br><span class="line">&#123;<span class="string">'Lady in the Water'</span>: [(<span class="number">0.4494897427831781</span>, <span class="string">'You, Me and Dupree'</span>),</span><br><span class="line">  (<span class="number">0.38742588672279304</span>, <span class="string">'The Night Listener'</span>),</span><br><span class="line">  (<span class="number">0.3483314773547883</span>, <span class="string">'Snakes on a Plane'</span>),</span><br><span class="line">  ...etc...</span><br></pre></td></tr></table></figure>
+<h4 id="2-7-2-Getting-Recommendations-获取推荐"><a href="#2-7-2-Getting-Recommendations-获取推荐" class="headerlink" title="2.7.2 Getting Recommendations 获取推荐"></a>2.7.2 Getting Recommendations 获取推荐</h4><p>现在，我们有了<strong>反映物品相似度的字典</strong>。我们可以获取目标用户的所有评价过的物品，找出相似物品，并根据相似度对其进行加权。下图为给Toby的基于物品的推荐，左两列是我们评过分的电影，右边未评分的影片字典，</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190719143148.png" alt="Item-based recommendations for Toby"></p>
+<p>左边的评分与字典中相似的电影相似度相乘，得到加权结果，对某相似电影的所有结果累加后归一化，就得到了推荐度（预计评分）。代码实现如下，<code>get_recommended_items.py</code>，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_recommended_items</span><span class="params">(prefs, item_match, user)</span>:</span></span><br><span class="line">    user_ratings = prefs[user]</span><br><span class="line">    scores = &#123;&#125;</span><br><span class="line">    total_sim = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Loop over items rated by this user</span></span><br><span class="line">    <span class="keyword">for</span> (item, rating) <span class="keyword">in</span> user_ratings.items():</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Loop over items similar to this one</span></span><br><span class="line">        <span class="keyword">for</span> (similarity, item2) <span class="keyword">in</span> item_match[item]:</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Ignore if this user has already rated this item</span></span><br><span class="line">            <span class="keyword">if</span> item2 <span class="keyword">in</span> user_ratings:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># Weighted sum of rating times similarity</span></span><br><span class="line">            scores.setdefault(item2, <span class="number">0</span>)</span><br><span class="line">            scores[item2] += similarity*rating</span><br><span class="line"></span><br><span class="line">            <span class="comment"># Sum of all the similarities</span></span><br><span class="line">            total_sim.setdefault(item2, <span class="number">0</span>)</span><br><span class="line">            total_sim[item2] += similarity</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Divide each total score by total weighting to get an average</span></span><br><span class="line">    rankings = [(score/total_sim[item], item) <span class="keyword">for</span> item, score <span class="keyword">in</span> scores.items()]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Return the rankings from highest to lowest</span></span><br><span class="line">    rankings.sort()</span><br><span class="line">    rankings.reverse()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rankings</span><br></pre></td></tr></table></figure>
+<p>测试一下给Toby的推荐，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">10</span>]: <span class="keyword">from</span> get_recommended_items <span class="keyword">import</span> get_recommended_items <span class="keyword">as</span> g_r_i</span><br><span class="line"></span><br><span class="line">In [<span class="number">11</span>]: g_r_i(critics, item_sim, <span class="string">'Toby'</span>)</span><br><span class="line">Out[<span class="number">11</span>]: </span><br><span class="line">[(<span class="number">3.1667425234070894</span>, <span class="string">'The Night Listener'</span>),</span><br><span class="line"> (<span class="number">2.9366294028444346</span>, <span class="string">'Just My Luck'</span>),</span><br><span class="line"> (<span class="number">2.868767392626467</span>, <span class="string">'Lady in the Water'</span>)]</span><br></pre></td></tr></table></figure>
+<p>值得强调的是，在计算推荐的时候，需要的字典已经提前独立算好了。</p>
+<h3 id="2-8-Using-the-MovieLens-Dataset-使用MovieLens数据集"><a href="#2-8-Using-the-MovieLens-Dataset-使用MovieLens数据集" class="headerlink" title="2.8 Using the MovieLens Dataset 使用MovieLens数据集"></a>2.8 Using the MovieLens Dataset 使用MovieLens数据集</h3><p>从<a href="https://grouplens.org/datasets/movielens/" target="_blank" rel="noopener">https://grouplens.org/datasets/movielens/</a> 下载数据集。我选择了<a href="http://files.grouplens.org/datasets/movielens/ml-100k.zip" target="_blank" rel="noopener">ml-100k.zip</a> (size: 5 MB)。</p>
+<p>关注<code>u.item</code>和<code>u.data</code>，前者包含影片ID和片名列表，后者包含评价情况。</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">u.item</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>|<span class="type">Toy</span> Story (<span class="number">1995</span>)|<span class="type">01</span>-Jan<span class="number">-1995</span>|<span class="type">|http</span>://us.imdb.com/M/title-<span class="built_in">exact</span>?Toy%<span class="number">20</span>Story%<span class="number">20</span>(<span class="number">1995</span>)|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">1</span>|<span class="type">1</span>|<span class="type">1</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span></span><br><span class="line"><span class="number">2</span>|<span class="type">GoldenEye</span> (<span class="number">1995</span>)|<span class="type">01</span>-Jan<span class="number">-1995</span>|<span class="type">|http</span>://us.imdb.com/M/title-<span class="built_in">exact</span>?GoldenEye%<span class="number">20</span>(<span class="number">1995</span>)|<span class="type">0</span>|<span class="type">1</span>|<span class="type">1</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">0</span>|<span class="type">1</span>|<span class="type">0</span>|<span class="type">0</span></span><br><span class="line">..etc...</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">u.data</span><br><span class="line"></span><br><span class="line"><span class="number">196</span>	<span class="number">242</span>	<span class="number">3</span>	<span class="number">881250949</span></span><br><span class="line"><span class="number">186</span>	<span class="number">302</span>	<span class="number">3</span>	<span class="number">891717742</span></span><br><span class="line"><span class="number">22</span>	<span class="number">377</span>	<span class="number">1</span>	<span class="number">878887116</span></span><br><span class="line">...etc...</span><br></pre></td></tr></table></figure>
+<p><code>u.data</code>中，每行包括一个用户ID，影片ID，用户评分，评价的时间。</p>
+<p>创建文件<code>load_MovieLens.py</code>加载数据，这里修改了原文中的打开方式，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_MovieLens</span><span class="params">(path=<span class="string">'./ml-100k'</span>)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get movie titles</span></span><br><span class="line">    movies = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> open(path+<span class="string">'/u.item'</span>,encoding=<span class="string">'ISO-8859-1'</span>):</span><br><span class="line">        (id, title) = line.split(<span class="string">'|'</span>)[<span class="number">0</span>:<span class="number">2</span>]</span><br><span class="line">        movies[id] = title</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Load data</span></span><br><span class="line">    prefs = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> open(path+<span class="string">'/u.data'</span>,encoding=<span class="string">'ISO-8859-1'</span>):</span><br><span class="line">        (user, movieid, rating, ts) = line.split(<span class="string">'\t'</span>)</span><br><span class="line">        prefs.setdefault(user, &#123;&#125;)</span><br><span class="line">        prefs[user][movies[movieid]] = float(rating)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> prefs</span><br></pre></td></tr></table></figure>
+<p>测试一下，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> load_MovieLens <span class="keyword">import</span> load_MovieLens <span class="keyword">as</span> lml</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: prefs = lml()</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: prefs[<span class="string">'87'</span>]</span><br><span class="line">Out[<span class="number">3</span>]: </span><br><span class="line">&#123;<span class="string">'Naked Gun 33 1/3: The Final Insult (1994)'</span>: <span class="number">4.0</span>,</span><br><span class="line"> <span class="string">'Con Air (1997)'</span>: <span class="number">4.0</span>,</span><br><span class="line"> <span class="string">'Sabrina (1995)'</span>: <span class="number">4.0</span>,</span><br><span class="line"> <span class="string">'Waterworld (1995)'</span>: <span class="number">4.0</span>,</span><br><span class="line"> ...etc...</span><br></pre></td></tr></table></figure>
+<p>则可以获取基于用户的推荐，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: <span class="keyword">from</span> get_commendations <span class="keyword">import</span> get_recommendations <span class="keyword">as</span> g_r</span><br><span class="line"></span><br><span class="line">In [<span class="number">5</span>]: g_r(prefs, <span class="string">'87'</span>)[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line">Out[<span class="number">5</span>]: </span><br><span class="line">[(<span class="number">5.0</span>, <span class="string">'They Made Me a Criminal (1939)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Star Kid (1997)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Santa with Muscles (1996)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Saint of Fort Washington, The (1993)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Marlene Dietrich: Shadow and Light (1996) '</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Great Day in Harlem, A (1994)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Entertaining Angels: The Dorothy Day Story (1996)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Boys, Les (1997)'</span>),</span><br><span class="line"> (<span class="number">4.89884443128923</span>, <span class="string">'Legal Deceit (1997)'</span>),</span><br><span class="line"> (<span class="number">4.815019082242709</span>, <span class="string">'Letter From Death Row, A (1998)'</span>)]</span><br></pre></td></tr></table></figure>
+<p>改为基于物品的推荐试试，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> calculate_similar_items <span class="keyword">import</span> calculate_similar_items <span class="keyword">as</span> c_s_i</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: <span class="keyword">from</span> get_recommended_items <span class="keyword">import</span> get_recommended_items <span class="keyword">as</span> g_r_i    </span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: item_sim = c_s_i(prefs,n=<span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: g_r_i(prefs, item_sim, <span class="string">'87'</span>)[<span class="number">0</span>:<span class="number">30</span>]</span><br><span class="line">Out[<span class="number">4</span>]: </span><br><span class="line">[(<span class="number">5.0</span>, <span class="string">"What's Eating Gilbert Grape (1993)"</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Vertigo (1958)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Usual Suspects, The (1995)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Toy Story (1995)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Titanic (1997)'</span>),</span><br><span class="line"> (<span class="number">5.0</span>, <span class="string">'Sword in the Stone, The (1963)'</span>),</span><br><span class="line"> ...etc...</span><br></pre></td></tr></table></figure>
+<h3 id="2-9-User-Based-or-Item-Based-Filtering-如何选择"><a href="#2-9-User-Based-or-Item-Based-Filtering-如何选择" class="headerlink" title="2.9 User-Based or Item-Based Filtering? 如何选择"></a>2.9 User-Based or Item-Based Filtering? 如何选择</h3><p>大数据背景下，基于条目的明显要快一些。同时这种方法根据数据集的’稀疏‘程度的不同，存在这精度差异。在稀疏数据集上，基于条目的方法要好一些。</p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:45:56+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/机器学习/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>机器学习</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/集体智慧/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>集体智慧</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3awW7CMBAEUP7/p+m1EoTOrEOlxM8nlKbgl8Mou+vHI17PX+v1ytE6+t/Xb/585bSFgYFxWUa7lQRztK2jv7bf/4aKgYGxAeNzFH4Owc+Ao83lsZ7ENAYGBkb+eXalfXwYGBgY7XbzGE2+EwMDA2OliM1f485qwH2lFsfAwLggI++6///nr8w3MDAwLsV4lisZPeavd228Hu4KAwPj1ow84NohZc6OCtRkFIGBgXFTRrK5pFidDSNn97y5EwMDY0tG0tJq214rj+OPyMbAwNiAMRs6to25tktWtN4wMDA2YLSHIfLito3vYYmLgYGxJSM5sNUeuWivFA8LAwNjA0Ybf+0m8oHlMHwxMDA2YLRhmrfn2qMbyYvm0ggTAwPjgoz2OMWsiJ3dP/wtDAyMWzPOfSmcbXf9SBkGBsZdGetDx/bARPs4IjAGBsYGjCTs2vK1LVBnd2JgYNybkbfDzn19zGM6KqcxMDBuzZiVlHWzvjxUkQ8nMDAw9mG0w8i23bb+ihmVzRgYGNswkpFhjsyD+xmsKO8xMDA2YKwH32nT1PagBgYGxk0Zz3Ll5essZNugx8DA2IGxEnZ5sM5GAvVhCwwMjFszki3ODljMBgnDwMXAwNiAsR58K8cjZoPSYjCAgYGxMaON1Lw8rtkYGBgY63XwaFxatPMwMDA2YCRFbAtom3R5rGNgYOzGaINyJXxXit4ThpoYGBjXY/wAsMNqmLkcgjUAAAAASUVORK5CYII='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/c7711d38/&title=集体智慧编程-Ch1-2-Recommendation | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/c7711d38/&title=集体智慧编程-Ch1-2-Recommendation | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/c7711d38/&title=集体智慧编程-Ch1-2-Recommendation | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/e3d825c6/" rel="prev" title="集体智慧编程-Ch3-Clustering">
+                                  
+                                      集体智慧编程-Ch3-Clustering
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/集体智慧/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>集体智慧</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/82c92d21/" rel="prev" title="DL-book 5 Machine Learning Basics">
+                                    
+                                        DL-book 5 Machine Learning Basics
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '集体智慧编程-Ch1-2-Recommendation',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-TOC"><span class="toc-text">0 TOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Introduction-to-Collective-Intelligence"><span class="toc-text">1 Introduction to Collective Intelligence</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#USES"><span class="toc-text">USES</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Making-Recommendations"><span class="toc-text">2 Making Recommendations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Collaborative-Filtering-协作型过滤"><span class="toc-text">2.1 Collaborative Filtering 协作型过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Collecting-Preferences-搜集偏好"><span class="toc-text">2.2 Collecting Preferences 搜集偏好</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Finding-Similar-Users-寻找近似用户"><span class="toc-text">2.3 Finding Similar Users 寻找近似用户</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-Euclidean-Distance-Score"><span class="toc-text">2.3.1 Euclidean Distance Score</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-Pearson-correlation-coefficient-皮尔逊相关系数"><span class="toc-text">2.3.2 Pearson correlation coefficient  皮尔逊相关系数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-Which-Similarity-Metric-Should-You-Use-如何选择度量"><span class="toc-text">2.3.3 Which Similarity Metric Should You Use? 如何选择度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-Ranking-the-Critics-为评论者打分"><span class="toc-text">2.3.4 Ranking the Critics 为评论者打分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Recommending-Items-推荐物品"><span class="toc-text">2.4 Recommending Items 推荐物品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#至此，已完成一个完整的推荐系统。"><span class="toc-text">至此，已完成一个完整的推荐系统。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Matching-Products-匹配商品"><span class="toc-text">2.5 Matching Products 匹配商品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-Building-a-del-icio-us-Link-Recommender-构建一个基于链接的推荐系统"><span class="toc-text">2.6 Building a del.icio.us Link Recommender 构建一个基于链接的推荐系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-API"><span class="toc-text">2.6.1 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-2-Building-the-Dataset-构造数据集"><span class="toc-text">2.6.2 Building the Dataset 构造数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-3-Recommending-Neighbors-and-Links-推荐近邻与链接"><span class="toc-text">2.6.3 Recommending Neighbors and Links 推荐近邻与链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-Item-Based-Filtering-基于物品的过滤"><span class="toc-text">2.7 Item-Based Filtering 基于物品的过滤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-1-Building-the-Item-Comparison-Dataset-构造物品比较数据集"><span class="toc-text">2.7.1 Building the Item Comparison Dataset 构造物品比较数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-2-Getting-Recommendations-获取推荐"><span class="toc-text">2.7.2 Getting Recommendations 获取推荐</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-Using-the-MovieLens-Dataset-使用MovieLens数据集"><span class="toc-text">2.8 Using the MovieLens Dataset 使用MovieLens数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-User-Based-or-Item-Based-Filtering-如何选择"><span class="toc-text">2.9 User-Based or Item-Based Filtering? 如何选择</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e3d825c6\" title="集体智慧编程-Ch3-Clustering" rel="bookmark">集体智慧编程-Ch3-Clustering</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

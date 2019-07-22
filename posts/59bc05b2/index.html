@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>SysId - System Identification #draft | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="Simple note of the draft of the book by Ljung. Not complish yet.">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/59bc05b2/">
+        SysId - System Identification #draft
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-12</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/System-Identification/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>System Identification</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+<p>System Identification #notes #sysid<br>Lennart Ljung, 1997</p>
+</blockquote>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h2><ul>
+<li>The process of going from observed data to a mathematical model is fundamental in science and engineering.</li>
+<li>dynamical models (difference or differential equations)</li>
+<li>System Identification covers the problem of building models of systems where both when insignificant prior information is available and when the system’s properties are known, up to a few parameters (physical constants). Accordingly, one talks about <strong>black box</strong> and <strong>gray box</strong> models.</li>
+<li><strong>black box</strong> models there are familiar <ul>
+<li>linear models such as ARX and ARMAX,</li>
+<li>and among non-linear black box models we have, e.g.,  Artificial Neural Networks (ANN).</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-The-Problem"><a href="#1-1-The-Problem" class="headerlink" title="1.1 The Problem"></a>1.1 The Problem</h3><ul>
+<li>The area of system identification begins and ends with real data. Data are required to build and to validate models.</li>
+<li>So, the bottom line of these examples is that we have collected input-output data from a process or a plant, and we need to extract information from these to find out (something about) the process’s dynamical properties.</li>
+</ul>
+<h3 id="1-2-Background-and-Literature-System"><a href="#1-2-Background-and-Literature-System" class="headerlink" title="1.2 Background and Literature System"></a>1.2 Background and Literature System</h3><ul>
+<li>System Identification has its roots in standard statistical techniques and many of the basic routines have direct interpretations as well known statistical methods such as Least Squares and Maximum Likelihood.</li>
+<li>Maximum likelihood estimation was applied to difference equations (ARMAX models) [1965] and thereafter a wide range of estimation techniques and model parameterizations flourished.</li>
+<li>The literature on System Identification is extensive.<ul>
+<li>except approaches in this book:<ul>
+<li>estimation of models from given frequency response measurement [Schoukens and Pintelon, 1991]</li>
+<li>on-line model estimation [Ljung and Söderström, 1983]</li>
+<li>non-parametric frequency domain methods [Brillinger, 1981]</li>
+</ul>
+</li>
+<li>IFAC series of Symposia on System Identification</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Outline"><a href="#1-3-Outline" class="headerlink" title="1.3 Outline"></a>1.3 Outline</h3><ul>
+<li>The system identification procedure is characterized by four basic ingredients:<ul>
+<li>The observed data</li>
+<li>A set of candidate models</li>
+<li>A criterion of fit </li>
+<li>Validation</li>
+</ul>
+</li>
+<li>The problem can be expressed as finding that model in the candidate set, that best describes the data, according to the criterion, and then evaluate and validate that model’s properties.</li>
+<li>In general terms, a model will be a predictor of the next output $y(t)$ from the process, given past observations $Z^{t-1}$ and parameterized in terms of a finite-dimensional parameter vector, $\hat{y}(t | \theta)=g\left(\theta, Z^{t-1}\right)$</li>
+<li>TOC<ul>
+<li>2 a preview of the whole process</li>
+<li>3,4 display and discuss the most common sets of candidate models<ul>
+<li><script type="math/tex; mode=display">\hat{y}(t | \theta)=g\left(\theta, Z^{t-1}\right) \tag{1}</script></li>
+</ul>
+</li>
+<li>5 discuss the criterion of fit for general model sets<ul>
+<li><script type="math/tex; mode=display">V_{N}(\theta)=\sum\|y(t)-\hat{y}(t | \theta)\|^{2} \tag{2}</script></li>
+</ul>
+</li>
+<li>6 describe special methods for linear black-box models</li>
+<li>7 to assure good quality of the data by proper experiment design</li>
+<li>8 how to decide upon a good model structure</li>
+<li>9 how to deal with the data</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Displaying-the-Basic-Ideas-ARX-Models-and-the-Linear-Least-Squares-Method"><a href="#2-Displaying-the-Basic-Ideas-ARX-Models-and-the-Linear-Least-Squares-Method" class="headerlink" title="2 Displaying the Basic Ideas: ARX Models and the Linear Least Squares Method"></a>2 Displaying the Basic Ideas: ARX Models and the Linear Least Squares Method</h2><h3 id="2-1-The-Model"><a href="#2-1-The-Model" class="headerlink" title="2.1 The Model"></a>2.1 The Model</h3><ul>
+<li>We shall generally denote the system’s input and output at time $t$ by $u(t)$ and $y(t)$ respectively. Perhaps the most basic relationship between the input and output is the <strong>linear difference equation</strong> <ul>
+<li><script type="math/tex; mode=display">y(t)+a_{1} y(t-1)+\ldots+a_{n} y(t-n)=b_{1} u(t-1)+\ldots+b_{m} u(t-m) \tag{3}</script></li>
+</ul>
+</li>
+<li>We have chosen to represent the system in <strong>discrete time</strong>, primarily since observed data are always collected by sampling.</li>
+<li>A pragmatic and useful way to see (3) is to view it as a way of <strong>determining the next output value</strong> given previous observations:<script type="math/tex; mode=display">y(t)=-a_{1} y(t-1)-\ldots-a_{n} y(t-n)+b_{1} u(t-1)+\ldots+b_{m} u(t-m) \tag{4}</script></li>
+<li>For more compact notation we introduce the vectors<script type="math/tex; mode=display">\theta=\left[a_{1} \ \ldots \ a_{n} \ b_{1} \ \ldots \ b_{m}\right]^{T} \tag{5}</script><script type="math/tex; mode=display">\varphi(t)=[-y(t-1) \ \ldots \ -y(t-n) \ u(t-1) \ \ldots \ u(t-m)]^{T} \tag{6}</script></li>
+<li>With these (4) can be rewritten as <ul>
+<li>$y(t)=\varphi^{T}(t) \theta$</li>
+</ul>
+</li>
+<li>To emphasize that the calculation of $y(t)$ from past data indeed depends on the parameters in $\theta$, we shall rather call this calculated value $\hat{y}(t | \theta)$ and write<script type="math/tex; mode=display">\hat{y}(t | \theta)=\varphi^{T}(t) \theta \tag{7}</script></li>
+</ul>
+<h3 id="2-2-The-Least-Squares-Method"><a href="#2-2-The-Least-Squares-Method" class="headerlink" title="2.2 The Least Squares Method"></a>2.2 The Least Squares Method</h3><ul>
+<li>…, we have recorded inputs and outputs over a time interval $1 \leq t \leq N$:<script type="math/tex; mode=display">Z^{N}=\{u(1), y(1), \ldots, u(N), y(N)\} \tag{8}</script></li>
+<li>An obvious approach is then to select $\theta$ in (3) through (7) so as to fit the calculated values $\hat{y}(t | \theta)$ as well as possible to the measured outputs by the least squares method:<script type="math/tex; mode=display">\min _{\theta} V_{N}\left(\theta, Z^{N}\right) \tag{9}</script>where <script type="math/tex; mode=display">V_{N}\left(\theta, Z^{N}\right)=\frac{1}{N} \sum_{t=1}^{N}(y(t)-\hat{y}(t | \theta))^{2}=\frac{1}{N} \sum_{t=1}^{N}\left(y(t)-\varphi^{T}(t) \theta\right)^{2} \tag{10}</script></li>
+<li>We shall denote the value of $\theta$ that minimizes (9) by $\hat{\theta}_{N}$:<script type="math/tex; mode=display">\hat{\theta}_{N}=\arg \min _{\theta} V_{N}\left(\theta, Z^{N}\right)</script></li>
+<li>we can find the minimum value easily by setting the derivative to zero:<script type="math/tex; mode=display">0=\frac{d}{d \theta} V_{N}\left(\theta, Z^{N}\right)=\frac{2}{N} \sum_{t=1}^{N} \varphi(t)\left(y(t)-\varphi^{T}(t) \theta\right)</script><ul>
+<li>which gives<script type="math/tex; mode=display">\sum_{t=1}^{N} \varphi(t) y(t)=\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t) \theta</script></li>
+<li>or<script type="math/tex; mode=display">\hat{\theta}_{N}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) y(t) \tag{13}</script></li>
+</ul>
+</li>
+<li>Once the vectors $\varphi(t)$ are defined, the solution can easily be found bymodern numerical software, such as MATLAB.</li>
+<li><strong>#Example 3 First order difference equation</strong><ul>
+<li>Consider the simple model<script type="math/tex; mode=display">y(t)+a y(t-1)=b u(t-1)</script></li>
+<li>This gives us the estimate according to (5), (6) and (13)<script type="math/tex; mode=display">\left[ \begin{array}{c}{\hat{a}_{N}} \\ {\hat{b}_{N}}\end{array}\right]=\left[ \begin{array}{c}{\sum y^{2}(t-1) \quad -\sum y(t-1) u(t-1)} \\ {-\sum y(t-1) u(t-1) \quad \sum u^{2}(t-1)}\end{array}\right]^{-1} \left[ \begin{array}{c}{-\sum y(t) y(t-1)} \\ {\sum y(t) u(t-1)}\end{array}\right]</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-Some-Statistical-Remarks-Model"><a href="#2-3-Some-Statistical-Remarks-Model" class="headerlink" title="2.3 Some Statistical Remarks Model"></a>2.3 Some Statistical Remarks Model</h3><ul>
+<li>Model structures, such as (7) that are linear in $\theta$ are known in statistics as <strong>linear regression</strong> and the vector $\varphi (t)$ is called the <strong>regression vector</strong> (its components are the <strong>regressors</strong>).</li>
+<li>Models such as (3) where the regression vector -$\varphi (t)$- contains old values of the variable to be explained -$y(t)$- are then partly <strong>auto-regressions</strong>. For that reason the model structure (3) has the standard name <strong>ARX-model</strong> (Auto-regression with extra inputs).</li>
+<li>So far we have just viewed (9) and (10) as “<strong>curve-fitting</strong>“.</li>
+</ul>
+<h3 id="2-4-Model-Quality-and-Experiment-Design"><a href="#2-4-Model-Quality-and-Experiment-Design" class="headerlink" title="2.4 Model Quality and Experiment Design"></a>2.4 Model Quality and Experiment Design</h3><ul>
+<li>Finite Impulse Response (FIR) model: That is obtained from (3) by taking $n=0$:<script type="math/tex; mode=display">y(t)=b_{1} u(t-1)+\ldots b_{m} u(t-m) \tag{14}</script></li>
+<li>Suppose that the observed data really have been generated by a similar mechanism<script type="math/tex; mode=display">y(t)=b_{1}^{0} u(t-1)+\ldots b_{m}^{0} u(t-m)+e(t)</script><ul>
+<li>where $e(t)$ is a white noise sequence with variance $\lambda$ but otherwise unknown.<ul>
+<li>That is, $e(t)$ can be described as a sequence of independent random variables with <strong>zero mean values</strong> and variances $\lambda$.</li>
+</ul>
+</li>
+<li>Analogous to (7) we can write this as <script type="math/tex; mode=display">y(t)=\varphi^{T}(t) \theta_{0}+e(t) \tag{16}</script></li>
+</ul>
+</li>
+<li><p>We can now replace $y(t)$ in (13) by the above expression, and obtain</p>
+<script type="math/tex; mode=display">\hat{\theta}_{N}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) y(t)=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1}\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t) \theta_{0}+\sum_{t=1}^{N} \varphi(t) e(t)\right]</script><script type="math/tex; mode=display">\tilde{\theta}_{N}=\hat{\theta}_{N}-\theta_{0}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) e(t) \tag{17}</script><script type="math/tex; mode=display">E \tilde{\theta}_{N}=0</script></li>
+<li>Denote the matrix within brackets by $R_N$, We can also form the expectation of $\tilde{\theta}_{N} \tilde{\theta}_{N}^{T}$, i.e., the covariance matrix of the parameter error.<script type="math/tex; mode=display">R(N)=\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)</script><script type="math/tex; mode=display">P_{N}=E \tilde{\theta}_{N} \tilde{\theta}_{N}^{T}=R_{N}^{-1} \sum_{t, s=1}^{N} \varphi(t) \varphi^{T}(s) E e(t) e(s) R_{N}^{-1}=\lambda R_{N}^{-1}</script></li>
+<li>Moreover define<script type="math/tex; mode=display">\overline{R}=\lim _{N \rightarrow \infty} \frac{1}{N} R_{N}</script><ul>
+<li>This will be the <strong>covariance matrix</strong> of the input, i.e., the $i-j$-element of $\bar R$ is $\lim _{N \rightarrow \infty} \frac{1}{N} \sum_{t=1}^{N} u(t-i) u(t-j)$.</li>
+</ul>
+</li>
+<li>If the matrix R is non-singular, we find that the covariance matrix of the parameter estimate is approximately<script type="math/tex; mode=display">P_{N}=\frac{\lambda}{N} \bar{R}^{-1}</script></li>
+<li>A number of things follow from this. All of them are typical of the general properties to be described in Section 5.2:<ul>
+<li>The covariance decays like $1/N$, so the parameters approach the limiting value at the rate $1/\sqrt N$.</li>
+<li>The covariance is proportional to the Noise-To-Signal ratio. That is, it is proportional to the noise variance and inversely proportional to the input power.</li>
+<li>The covariance does not depend on the input’s or noise’s signal shapes, only on their variance/covariance properties.</li>
+<li>Experiment design, i.e., the selection of the input $u$ aims at making the matrix $\bar{R}^{-1}$ “as small as possible”. Note that the same $\bar R$ can be obtained for many different signals $u$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Model-structures-I-Linear-Models"><a href="#3-Model-structures-I-Linear-Models" class="headerlink" title="3 Model structures I: Linear Models"></a>3 Model structures I: Linear Models</h2><h3 id="3-1-Output-error-models"><a href="#3-1-Output-error-models" class="headerlink" title="3.1 Output error models"></a>3.1 Output error models</h3><ul>
+<li>Starting from (3) there is actually another, quite dfferent, way to approach the calculation of good values of $a_i$ and $b_i$ from observed data (8). Equation (3) describes a linear, discrete0time system with transfer function<script type="math/tex; mode=display">G(z)=\frac{b_{1} z^{n-1}+b_{2} z^{n-2}+\ldots+b_{m} z^{n-m}}{z^{n}+a_{1} z^{n-1}+\ldots+a_{n}} \tag{21}</script><ul>
+<li>(assuming $n\geq m$)</li>
+</ul>
+</li>
+<li>shift operator $q$ has the properties<ul>
+<li>$q u(t)=u(t+1)$</li>
+</ul>
+</li>
+<li>Given only an input sequence<ul>
+<li>${u(t), t=1, \dots, N}$</li>
+</ul>
+</li>
+<li>we could then calculate the output for system (21) by running $u$ as input to this system:<script type="math/tex; mode=display">\hat{y}(t | \theta)=G(q) u(t) \tag{23}</script></li>
+</ul>
+<h2 id="4-Model-Structures-II-Non-linear-Black-Box-Models"><a href="#4-Model-Structures-II-Non-linear-Black-Box-Models" class="headerlink" title="4 Model Structures II: Non-linear Black Box Models"></a>4 Model Structures II: Non-linear Black Box Models</h2><h2 id="5-General-Parameter-Estimation-Techniques"><a href="#5-General-Parameter-Estimation-Techniques" class="headerlink" title="5 General Parameter Estimation Techniques"></a>5 General Parameter Estimation Techniques</h2><h2 id="6-Special-Estimation-Techniques-for-Linear-Black-Box-Models"><a href="#6-Special-Estimation-Techniques-for-Linear-Black-Box-Models" class="headerlink" title="6 Special Estimation Techniques for Linear Black Box Models"></a>6 Special Estimation Techniques for Linear Black Box Models</h2><h2 id="7-Data-Quality"><a href="#7-Data-Quality" class="headerlink" title="7 Data Quality"></a>7 Data Quality</h2><h2 id="8-Model-Validation-and-Model-Selection"><a href="#8-Model-Validation-and-Model-Selection" class="headerlink" title="8 Model Validation and Model Selection"></a>8 Model Validation and Model Selection</h2><h2 id="9-Back-to-Data-The-Practical-Side-of-Identification"><a href="#9-Back-to-Data-The-Practical-Side-of-Identification" class="headerlink" title="9 Back to Data: The Practical Side of Identification"></a>9 Back to Data: The Practical Side of Identification</h2>
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:49:20+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/inEnglish/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>inEnglish</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/建模/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>建模</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/辨识/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>辨识</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/动态系统/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>动态系统</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aQW6EMAwF0Ln/pak02wr4tmklksdqBBrCy8KyY38+8XV8r993evfPnp6t9diFgYHxWsZxeZ0tk3xW/vR63WRFDAyMHRjXQXYSInsblH8bBgYGxnXClyyf/K5uEAYGBkb1dTdJWyuhxMDAwOgVsXlKl29Kr2DGwMDYjVFtDPzn7z/sb2BgYLyEcbSuXrMzP3orfw8GBsbSjDyxqw5e9O70CloMDIwdGL1xrkkgnhzw3WwBBgbGoowktCV3knCc48vHahgYGIsyqq/rNR2rSWeyCgYGBsb8yCz5VzW4R6eGGBgYizLyQ7SEkZe41TdgYGDsycg/a9KwnBzANY/bMDAwFmU8W+LmSWE+fnFTGGNgYCzKyBOvXvOyWuJWQ21hug0DA+O1jOR1eatynhqO2BgYGBswesf9oymPXmDN/4CBgbEB4zq9m7cHJmMZhVIWAwNjCcZ1ojZPB6ufOwr9GBgYizLykYhqI/PhMjU5bsPAwNiGkcCS0DxJDRP2J985DAyMJRj5q586pMuDclTiYmBgLM3I08GnBiyScNzbdAwMjPUYR/HqpZJJqtcrdzEwMHZgTJqFvaI0D+u9lgMGBsaqjF45OtmnSWg+3QIMDIwNGL1juHkY7Z2e3UyLYGBgYLQSxxyZNEExMDAwekMV+UZMxsIKdTYGBsZyjLwZkH9EPjxRHgLDwMDYjNEbcUgWqyaIOfKBFiYGBsY7GD9Cgrwqf2MLrQAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/59bc05b2/&title=SysId - System Identification #draft | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/59bc05b2/&title=SysId - System Identification #draft | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/59bc05b2/&title=SysId - System Identification #draft | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/e2693f90/" rel="prev" title="Keypoints in short">
+                                  
+                                      Keypoints in short
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/控制/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>控制</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/2d662707/" rel="prev" title="Modeling - Dynamic system modeling intro">
+                                    
+                                        Modeling - Dynamic system modeling intro
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/控制/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>控制</a> <a class="tag" href="/tags/笔记/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>笔记</a> <a class="tag" href="/tags/系统辨识/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>系统辨识</a> <a class="tag" href="/tags/建模/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>建模</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'SysId - System Identification #draft',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Introduction"><span class="toc-text">1 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-The-Problem"><span class="toc-text">1.1 The Problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Background-and-Literature-System"><span class="toc-text">1.2 Background and Literature System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Outline"><span class="toc-text">1.3 Outline</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Displaying-the-Basic-Ideas-ARX-Models-and-the-Linear-Least-Squares-Method"><span class="toc-text">2 Displaying the Basic Ideas: ARX Models and the Linear Least Squares Method</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-The-Model"><span class="toc-text">2.1 The Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-The-Least-Squares-Method"><span class="toc-text">2.2 The Least Squares Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Some-Statistical-Remarks-Model"><span class="toc-text">2.3 Some Statistical Remarks Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Model-Quality-and-Experiment-Design"><span class="toc-text">2.4 Model Quality and Experiment Design</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Model-structures-I-Linear-Models"><span class="toc-text">3 Model structures I: Linear Models</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Output-error-models"><span class="toc-text">3.1 Output error models</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Model-Structures-II-Non-linear-Black-Box-Models"><span class="toc-text">4 Model Structures II: Non-linear Black Box Models</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-General-Parameter-Estimation-Techniques"><span class="toc-text">5 General Parameter Estimation Techniques</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Special-Estimation-Techniques-for-Linear-Black-Box-Models"><span class="toc-text">6 Special Estimation Techniques for Linear Black Box Models</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Data-Quality"><span class="toc-text">7 Data Quality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Model-Validation-and-Model-Selection"><span class="toc-text">8 Model Validation and Model Selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Back-to-Data-The-Practical-Side-of-Identification"><span class="toc-text">9 Back to Data: The Practical Side of Identification</span></a></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>多智能体-初步 | Xlindo is here!</title>
+  
+  
+  <meta name="description" content="入门多智能体的宏观角度知识归纳。">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="Xlindo is here!">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="l_header dark">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="dark"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Xlindo is here!
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/about/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="about">
+									<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Recent
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archive
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/posts/bf1f75f7/">
+        多智能体-初步
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://xlindo.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>xlindo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-01-02</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/控制理论/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>控制理论</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+<p>文章内容来自<a href="ps://blog.csdn.net/ren911/article/details/5315044" target="_blank" rel="noopener">ps://blog.csdn.net/ren911/article/details/5315044</a> 以及百度百科 </p>
+</blockquote>
+<h1 id="研究主线"><a href="#研究主线" class="headerlink" title="研究主线"></a>研究主线</h1><h2 id="主线"><a href="#主线" class="headerlink" title="主线"></a>主线</h2><h3 id="智能Agent"><a href="#智能Agent" class="headerlink" title="智能Agent"></a>智能Agent</h3><ul>
+<li>人工智能和分布式人工智能领域的研究热点，它侧重于研究Agent的认知、学习、理性决策、分布式问题求解等方面内容，从而来支持智能应用系统的构造和实现.</li>
+<li>指驻留在某一环境中能够自主、灵活地执行动作以满足设计目标的行为实体。<ul>
+<li>主体驻留在环境中并需要与环境进行交互。</li>
+<li>主体能够自主地实施行为</li>
+<li>灵活性体现为反应性、社会性和自发性</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件Agent"><a href="#软件Agent" class="headerlink" title="软件Agent"></a>软件Agent</h3><ul>
+<li>将Agent视为是一种新的抽象和计算模型，侧重于研究如何去构造基于Agent的软件系统，如软件体系结构、程序设计语言和环境。</li>
+<li>agent代表了一种新的：<ul>
+<li>建模抽象（活的，主体的行为实体）</li>
+<li>封装形式（状态、动作和行为）</li>
+<li>软件构件</li>
+<li>执行单元</li>
+</ul>
+</li>
+</ul>
+<h2 id="智能Agent-1"><a href="#智能Agent-1" class="headerlink" title="智能Agent"></a>智能Agent</h2><h3 id="基本理论："><a href="#基本理论：" class="headerlink" title="基本理论："></a>基本理论：</h3><ul>
+<li>随着计算机网络的迅速发展，许多应用系统变得越来越复杂，异质、分步是其主要特点。</li>
+<li>在这种背景下，<strong>分布式人工智能(DAI)</strong>应运而生。</li>
+<li>分布式人工智能主要研究在逻辑上或物理上分散的智能系统如何<strong>并行</strong>地、<strong>相互协作</strong>地实现问题求解。</li>
+<li>DAT可分为两个大方向: <strong>分布式问题求解(DPS)</strong>和<strong>多Agent系统</strong>。<ul>
+<li><strong>在一个DPS系统中</strong>，问题被分解成任务，并且由一些专用的任务处理系统求解这些任务，系统的控制是全局性的。</li>
+<li>在某种程度上，分布式问题求解是<strong>为了解决计算效率的问题</strong>，但是<strong>很难处理不同实体间发生的冲突问题</strong>。</li>
+<li>针对这种情况，人们提出了多Agent系统的概念。</li>
+<li><strong>在一个多Agent系统中</strong>，Agent是自主的，它们可以是不同的个人或组织，采用不同的设计方法和计算机语言开发而成，因而可能是完全异质的，没有全局数据，也没有全局控制。</li>
+<li>这是一种开放的系统，Agent加入和离开都是自由的。系统中的Agent共同协作，协调他们的能力和目标以求解单个Agent无法解决的问题。</li>
+</ul>
+</li>
+<li>Agent技术的两个主要特征是<strong>智能性</strong>和<strong>代理能力</strong>。<strong>智能性</strong>是指应用系统使用推理、学习和其他技术来分析解释它接触过的或刚提供给它的各种信息和知识的能力。<strong>代理能力</strong>指Agent能感知外界发生的消息，并根据自己所具有的知识自动作出反应。 </li>
+</ul>
+<h2 id="定义，四个特征："><a href="#定义，四个特征：" class="headerlink" title="定义，四个特征："></a>定义，四个特征：</h2><ul>
+<li><intelligent agents：theory and practice></intelligent></li>
+<li>autonomy: agents operate without the direct intervention of humans or others, and have some kind of control over their actions and internal state;<ul>
+<li>自治性，也就是下面俺们将要谈到的独立心智。</li>
+</ul>
+</li>
+<li>social ability: agents interact with other agents (and possibly humans) via some kind of agent-communication language;<ul>
+<li>社会性，这点俺并不认为是Agent的本质特性，一个独立存在的Agent难道就不是Agent了吗。一位生活在孤岛上的同志难道就不是Human了吗。之所以拎出这点来，俺估计Michael的考虑是：单个的Agent的存在是无意义的，只有处于群体中的Agent才能体现它的价值。</li>
+</ul>
+</li>
+<li>reactivity: agents perceive their environment, (which may be the physical world, a user via a graphical user interface, a collection of other agents, the INTERNET, or perhaps all of these combined), and respond in a timely fashion to changes that occur in it;<ul>
+<li>反应性，能够接受外界的输入信号，并且做出相应的反应。</li>
+</ul>
+</li>
+<li>pro-activeness: agents do not simply act in response to their environment, they are able to exhibit goal-directed behaviour by taking the initiative.<ul>
+<li>主动性，或称目标驱动，这是Agent很重要的一个特点。依据当前的环境和自身的心智，Agent 可以主动地执行某种操作或者任务。举例来说，大家都熟悉的Web Service，不论Web Service能够提供多少服务，计算能力多么强，它都不是一个Agent，因为它是被动地，而非主动地提供服务。</li>
+</ul>
+</li>
+</ul>
+<h2 id="agent的分类"><a href="#agent的分类" class="headerlink" title="agent的分类"></a>agent的分类</h2><ul>
+<li><p>Agent的分类可以根据体系结构、属性和功能的不同来进行分类</p>
+</li>
+<li><p>(1) 根据Agent所采用的<strong>体系结构</strong>的不同可以把Agent分为:</p>
+<ul>
+<li>认知式Agent</li>
+<li>反应式Agent</li>
+<li>混合式Agent</li>
+</ul>
+</li>
+<li><p>(2) 应用于IT领域的Agent除了具备自治性、交互性、反应性、能动性这些基本属性外还可以有选择地具有其他一些属性这些附加属性的出现导致了各种类型Agent的出现，包括可移动Agent、可协作Agent、智能Agent、推理Agent、竞争Agent、软件Agent、硬件Agent、网络Agent等，也包括带有多个属性或功能的复合型Agent</p>
+</li>
+</ul>
+<h2 id="agent的体系结构："><a href="#agent的体系结构：" class="headerlink" title="agent的体系结构："></a>agent的体系结构：</h2><ol>
+<li>认知结构</li>
+<li>反应式结构</li>
+</ol>
+<h2 id="agent的实现方法："><a href="#agent的实现方法：" class="headerlink" title="agent的实现方法："></a>agent的实现方法：</h2><ol>
+<li>分布式对象技术</li>
+<li>java语言</li>
+<li>Script语言</li>
+</ol>
+<h2 id="agent的优越性："><a href="#agent的优越性：" class="headerlink" title="agent的优越性："></a>agent的优越性：</h2><ol>
+<li>问题领域有着广泛性，复杂性和不可预测性的特点。采用Agent技术可以将一个大而复杂的问题分解成许多较小、较简单的问题，使问题得以简化。</li>
+<li>当问题领域涉及大量不同的问题求解实体(或数据资源)，而这些实体在物理或逻辑上又是分布的，并且需要相互协作以解决公共问题时，Agent技术是一种有效的选择。</li>
+<li>Agent的表示方式简单明了，软件的功能可以从其名字的喻意上推敲出来。</li>
+</ol>
+<h2 id="移动agent："><a href="#移动agent：" class="headerlink" title="移动agent："></a>移动agent：</h2><ul>
+<li><p>移动agent工智能、分布式系统的研究热点之一，它被抽象地定义为<strong>能够自动完成用户任务的程序</strong>，可以不固定于开始运行的系统，能够自主地从网络中的一个节点移动到另一个节点并继续运行泌要时可以进行自我复制以及生成子移动代理。每一个节点上的MobileAgent都可以直接同服务资源进行交互，待任务完成后再将结果集传回源节点。</p>
+</li>
+<li><p>我们可以将MobileAgent定义为:旨在解决网络计算中的低带宽、高延迟，具有跨平台持续运行、自我控制和移动功能，<strong>模拟人类行为关系</strong>，并能够提供智能服务的程序。它是对人工智能中Agent概念(指模拟人类的行为和关系、具有一定智能并可以自主运行和提供相应服务的计算机程序)的扩展，是Agent技术与分布式计算技术相结合的产物，它的提出不仅使分布式计算技术具有了动态性、智能性等特点，也使Agent技术具有了求解大规模问题的能力。非常适合于现代网络计算的需求。</p>
+</li>
+</ul>
+<h1 id="多agent系统（MAS）"><a href="#多agent系统（MAS）" class="headerlink" title="多agent系统（MAS）"></a>多agent系统（MAS）</h1><h2 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h2><ul>
+<li>多能体系统MAS(Multi-AgentSystem)是指由多个Agent组成的集合，这些Agent成员之间相互协调，相互服务，共同完成一个复杂的任务。</li>
+<li>MAS是分布式人工智能研究的一个重要分支，是人工智能的最新发展方向，是人工智能技术的一次质的飞跃。如果说模拟人是单智能体的目标，那么模拟人类社会则是多智能体系统的最终目标。</li>
+</ul>
+<h2 id="为什么需要MAS："><a href="#为什么需要MAS：" class="headerlink" title="为什么需要MAS："></a>为什么需要MAS：</h2><ul>
+<li>虽然,Agent具有自主性、交互性、反应性、主动性学习性和移动性等智能特性，但单个的Agent对问题的解决能力有限，很难完成动态分布、网络和异构情况下的大型、复杂问题。正如一个人不能离开他所存在的集体、社会而单独存在一样。</li>
+<li>Agent的研究最终要融入多Agent系统，研究单个Agent的最终目的是将它放入MAS中，解决大型、复杂问题，这就导致了Agent系统的出现。</li>
+</ul>
+<h2 id="MAS的应用："><a href="#MAS的应用：" class="headerlink" title="MAS的应用："></a>MAS的应用：</h2><ul>
+<li>在同一个多智能体系统中各智能体可以异构，因此多智能体技术对于复杂系统具有无可比拟的表达力，它为各种实际系统提供了一种统一的模型，从而为各种实际系统的研究提供了一种统一的框架，其应用领域十分广阔，现己面向社会领域的各个方面，具有潜在的巨大市场。</li>
+</ul>
+<h2 id="MAS的有关问题："><a href="#MAS的有关问题：" class="headerlink" title="MAS的有关问题："></a>MAS的有关问题：</h2><ul>
+<li><p>（01）智能机器人</p>
+<ul>
+<li>在智能机器人中，信息集成和协调是一项关键性技术，它直接关系到机器人的性能和智能化程度。一个智能机器人应包括多种信息处理子系统，如二维或三维视觉处理、信息融合、规划决策以及自动驾驶等。各子系统是相互依赖、互为条件的，它们需要共享信息、相互协调，才能有效地完成总体任务，其目标是用来结合、协调、集成智能机器人系统的各种关键技术及功能子系统，使之成为一个整体以执行各种自主任务。利用多智能体系统，将每个机器人作为一个智能体，建立多智能体机器人协调系统，可实现多个机器人的相互协调与合作，完成复杂的并行作业任务。</li>
+</ul>
+</li>
+<li><p>（02）交通控制</p>
+<ul>
+<li>由于交通控制拓扑结构的分布式特性，使其很适合于应用多智能体技术，尤其对于具有剧烈变化的交通情况(如交通事故)，多智能体的分布式处理和协调技术更为适合。</li>
+</ul>
+</li>
+<li><p>（03）柔性制造</p>
+<ul>
+<li>多智能体技术应用在柔性制造领域，可表示制造系统，并为解决动态问题的复杂性和不确定性提供新的思路。如在制造系统中，各加工单元可看作智能体，从而使加工过程构成一个半自治的多智能体制造系统，完成单元内加工任务的监督和控制。多智能体技术可用于制造系统的调度、制造过程中的分布式控制。</li>
+</ul>
+</li>
+<li><p>（04）协调专家系统</p>
+<ul>
+<li>对于复杂的问题，采用单一的专家系统往往不能满足要求，需要通过多个专家系统协作，共同解决问题。利用多智能体技术，可实现多专家系统的协调求解。</li>
+</ul>
+</li>
+<li><p>（05）分布式预测、监控及诊断</p>
+<ul>
+<li>智能体具有意图的性质，利用多智能体的联合意图机制可实现联合行动，从而实现分布式预测与监控。</li>
+</ul>
+</li>
+<li><p>（06）分布式智能决策</p>
+<ul>
+<li>采用智能体技术将多个专家系统的决策方法有机地协调起来，可建立基于多智能体协调的环境决策支持系统。智能体采用基于规则的描述方法，可实现环境管理的分布式智能决策。</li>
+</ul>
+</li>
+<li><p>（07）软件开发</p>
+<ul>
+<li>利用计算机来开发多智能体系统，称为软件智能体。[软件工程的研究从模型角度考察智能体，认为面向智能体的软件开发方法是为更确切地描述复杂并发系统的行为而采用的一种抽象的描述形式，是观察客观世界和解决问题的一种方法。</li>
+</ul>
+</li>
+<li><p>（08）虚拟现实</p>
+<ul>
+<li>采用虚拟智能体技术建立了电子市场的模拟系统(MA GMA)，可实现电子市场中的货物储藏和买卖机制以及银行信贷和金融管理机制，并设计买和卖智能体，提出两类智能体间的直接交互和代理交互算法，并采用异质智能体技术将模拟系统设计为开放式结构。</li>
+</ul>
+</li>
+<li><p>（09）操作系统</p>
+<ul>
+<li>利用拟人化的具有自学习能力的人机智能体(IPA I)技术设计VAX VM S操作系统，利用智能体所具有的特性可实现操作系统的自适应功能。智能体IPA I可通过接受用户的反馈使操作系统适应用户的兴趣和习惯，通过识别正确与错误的命令及与其它智能体进行网络通讯实现系统的学习，从而使操作系统在复杂环境下实现与用户的交互。</li>
+</ul>
+</li>
+<li><p>（10）网络自动化与智能化</p>
+<ul>
+<li>1)网络管理<ul>
+<li>利用多智能体一致性的组织、表示、通信等特点，通过定义不同类别的智能体，可构成网络的不同智能成员(包括网络单元智能体、管理对象智能体和操作系统智能体)，实现网络管理。</li>
+</ul>
+</li>
+<li>2)网络协同化<ul>
+<li>智能体技术具有在Internet上的协调功能，通过采用U nix命令实现用户在Internet上广泛的协调。将智能体技术与Internet技术相结合，建立基于客户服务器的智能体结构，可实现用WWW开发计算机支持的协同工作(CSCW)，建立一个以WWW为基础、以一组协同工作的智能体为核心的应用环境(CAW)，达到在网络环境下更好地支持用户之间的协同工作。</li>
+</ul>
+</li>
+<li>3)网络信息处理<ul>
+<li>软件智能体是指活动于软件环境中的智能体，它通过下达命令和分析环境反馈同环境进行交互。利用软件智能体技术，可对Internet这一规模庞大、极度异质、高度动态的软件环境实现信息的收集、检索、分析、综合，从而实现高度智能行为的信息处理手段。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>（11）分布式计算</p>
+<ul>
+<li>用多智能体技术建立分布式计算环境的基本目标是建立各种客户服务器应用，其核心是基于智能体的服务请求代理机制，它分为两部分：1)客户环境:由客户应用和服务请求智能体组成；2)服务环境:由一组服务智能体组成。</li>
+</ul>
+</li>
+<li><p>（12）产品设计</p>
+<ul>
+<li>目前，利用智能体技术来构造设计系统已成为一个研究热点。设计问题涉及到多目标的约束求解和设计过程的协调。以超大规模集成电路(VLSI)的设计为例，它需要有关电路、逻辑门、寄存器、指令集、结构以及装配技术等方面的知识。为了降低VL S I设计的耗费，提高设计的速度，利用多智能体系统的并行处理技术将不同的任务分解，分别分布在不同的智能体上。</li>
+</ul>
+</li>
+<li><p>（13）商业管理</p>
+<ul>
+<li>目前，物资流通管理中存在以下几方面问题：缺少公共的通讯结构；缺少集中管理机制；协调成本过高。利用移动智能体(MA)可实现网络化的物资购买与出售之间的管理。</li>
+</ul>
+</li>
+<li><p>（14）网络化的办公自动化</p>
+<ul>
+<li>人可作为一类智能体存在于多智能体系统中。采用多智能体技术可实现办公自动化系统的人机一体化,系统中各个智能体分别实现信息的采集、存储、交换、加工和决策。</li>
+</ul>
+</li>
+<li><p>（15）网络化计算机辅助教学及医疗</p>
+<ul>
+<li>采用人机智能体技术可建立一个放射治疗培训系统(RA TA PLAN)，开发用于人机交互的窗口，实现了人机对话。每个用户都有各自的人机智能体，各智能体通过网络实现通讯。</li>
+<li>可把智能体技术应用于智能教学系统开发，如：远程教学和健康信息系统。</li>
+<li>可以预见，在网上智能学校和网上智能医院的设计和开发中，多智能体技术将发挥潜在的不可估量的作用。</li>
+</ul>
+</li>
+<li><p>（16）控制</p>
+<ul>
+<li>利用MAS技术可建立一个多智能体控制系统框架，包括三层:最底层为控制层，具有实时控制能力；中间层为管理层；最上层为多智能体协调与通讯层。该框架可解决航行器机翼的伺服控制问题，框架内每个智能体负责各自的控制任务。例如：采用多智能体技术;建立混杂控制系统、板材自适应控制模型等。</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T09:45:10+02:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Jul 22, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/控制/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>控制</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/多智能体/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>多智能体</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MAS/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>MAS</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aS27DMAxF0ex/0+60QCDnPlL9mLoaBYlr83jAUiJfL7yut/X9+9Xn1V+93/n+m21LhgwZj2Vct+uesbrPKqzVr/y5yxhkyJBxAOM+FRISuZ48kV8pQ4YMGeR2BJaSZMiQIWNXwkW3DhP0H/zfkCFDxqMYZDPJyzi+NSWvb/NeXIYMGQ9k8FP33//8I/0NGTJkPIpxhavf2uyk12VUMmTIGM3gCS5F1r6pxSNDhowTGP0hrdrBWe0aFJUMGTKGMjpJMz04qzUbEEaGDBlDGbVhCD4EVis346M3GTJkjGbsahXwsdROSboZJkOGjH/PSFNnGtDekVY0LSJDhoxxjNphWaeY6xzMfUi+MmTIGMpIm5Hp8Gja8uQjqmhmRIYMGSMY5MF8K8uP8jvbWhSbDBkyBjH64w48TXeO7VDzUoYMGQcw+OF+un3tHLeho0AZMmQcwCCB9kPsvKxiN1WGDBkjGJ2CLB384sUoj+pDnStDhoxBjHQ867405GGlzwqaEzJkyBjHqKXRlFQbOAu2zTJkyDiAwQvEtHBMhydaO3IZMmSMZuxtLsZtyPA87UNpKEOGjEGMK1ydYpGHlbZIZciQMZtRS3Y8aXZaAv1yU4YMGZMY6chX+mvt1fBxMRkyZJzD4Imvtn3lqTltS8iQIUNG2uasjbSmsA0JV4YMGaMZaUD8WTxlLzexMmTIGM0gm9g0OdbGv3jClSFDxjmM1tYRj1Pw5uguqgwZMkYwvgDus507RUFr6wAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/bf1f75f7/&title=多智能体-初步 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/bf1f75f7/&title=多智能体-初步 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/bf1f75f7/&title=多智能体-初步 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/4e20385c/" rel="prev" title="一周的旅行结束，又开始学术啦">
+                                  
+                                      一周的旅行结束，又开始学术啦
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/随笔/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>随笔</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/92fd6741/" rel="prev" title="Scientific Writing">
+                                    
+                                        Scientific Writing
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/research/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>research</a> <a class="tag" href="/tags/paper/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>paper</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '多智能体-初步',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget plain'>
+  
+<header class='dark'>
+  <div><i class=" fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;</div>
+  
+</header>
+
+  <div class='content dark'>
+    <p>⚠️所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。 <br>⚠️Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content dark'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/avatar/avatar.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="http://weibo.com/mrdo"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://www.zhihu.com/people/xlindo"
+              class="social fab fa-zhihu flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hi@xlindo.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#研究主线"><span class="toc-text">研究主线</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主线"><span class="toc-text">主线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#智能Agent"><span class="toc-text">智能Agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件Agent"><span class="toc-text">软件Agent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能Agent-1"><span class="toc-text">智能Agent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本理论："><span class="toc-text">基本理论：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义，四个特征："><span class="toc-text">定义，四个特征：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agent的分类"><span class="toc-text">agent的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agent的体系结构："><span class="toc-text">agent的体系结构：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agent的实现方法："><span class="toc-text">agent的实现方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agent的优越性："><span class="toc-text">agent的优越性：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动agent："><span class="toc-text">移动agent：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多agent系统（MAS）"><span class="toc-text">多agent系统（MAS）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义："><span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么需要MAS："><span class="toc-text">为什么需要MAS：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAS的应用："><span class="toc-text">MAS的应用：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAS的有关问题："><span class="toc-text">MAS的有关问题：</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='dark'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Research/" href="/categories/Research/"><div class='name'>Research</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/System-Identification/" href="/categories/System-Identification/"><div class='name'>System Identification</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/巡游记/" href="/categories/巡游记/"><div class='name'>巡游记</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/控制理论/" href="/categories/控制理论/"><div class='name'>控制理论</div><div class='badge'>(11)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/数学与统计/" href="/categories/数学与统计/"><div class='name'>数学与统计</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/编程之路/" href="/categories/编程之路/"><div class='name'>编程之路</div><div class='badge'>(16)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='dark'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content dark'>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 14px; color: #999">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 14px; color: #999">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 23px; color: #5c5c5c">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 16px; color: #8b8b8b">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 15px; color: #929292">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 21px; color: #696969">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 15px; color: #929292">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 16px; color: #8b8b8b">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\eba9a6eb\" title="备查手册-前馈-反馈控制系统" rel="bookmark">备查手册-前馈-反馈控制系统</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\63aa839f\" title="动态优化-最优控制-知识点总结-1in3" rel="bookmark">动态优化-最优控制-知识点总结-1in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\711f2c71\" title="动态优化-最优控制-知识点总结-2in3" rel="bookmark">动态优化-最优控制-知识点总结-2in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c9a34b14\" title="动态优化-最优控制-知识点总结-3in3" rel="bookmark">动态优化-最优控制-知识点总结-3in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\89cdb521\" title="备查手册-卡尔曼滤波器" rel="bookmark">备查手册-卡尔曼滤波器</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f875cf87\" title="备查手册-KKT条件" rel="bookmark">备查手册-KKT条件</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+    <div class="footer">
+      <p>Be pure, be cool.</p>
+
+    </div>
+    <br>
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="http://weibo.com/mrdo"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="http://www.zhihu.com/people/xlindo"
+            class="social fab fa-zhihu flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hi@xlindo.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!--fancybox start-->
+<script src="/js/fancybox-use.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--fancybox end-->
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
