@@ -640,6 +640,29 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722162448.png" alt="分类"></p>
 <p><strong>评价分类器性能的指标</strong>一般是<strong>分类准确率(accuracy)</strong>，即对于给定的测试数据集，分类器<strong>正确分类的样本数与总样本数之比</strong>。</p>
 <p>对于二类分类问题常用的评价指标是<strong>精确率(precision)</strong>与<strong>召回率(recall)</strong>。</p>
+<h4 id="混淆矩阵-Confusion-matrix"><a href="#混淆矩阵-Confusion-matrix" class="headerlink" title="混淆矩阵 Confusion matrix"></a>混淆矩阵 Confusion matrix</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Condition positive</th>
+<th>Condition negative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Predicted condition positive</td>
+<td>True Positive</td>
+<td>False Positive</td>
+</tr>
+<tr>
+<td>Predicted condition negative</td>
+<td>False Negative</td>
+<td>True Negative</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
 <li><p>通常以<strong>关注的类为正类</strong>，<strong>其他类为负类</strong>，分类器在测试数据集上的<strong>预测或正确或不正确</strong>，4种情 况出现的总数分别记作：</p>
 <ul>
@@ -648,9 +671,6 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <li>FP——将负类预测为正类数； </li>
 <li>TN——将负类预测为负类数。</li>
 </ul>
-</li>
-<li><p><strong>混淆矩阵 Confusion matrix</strong></p>
-<p>  |               +              | Condition positive | Condition negative |<br>  | —————————————— |  ————————  |  ————————  |<br>  | Predicted condition positive |   True Positive    |   False Positive   |<br>  | Predicted condition negative |   False Negative   |   True Negative    |</p>
 </li>
 <li><p><strong>精确率 Accuracy</strong></p>
 <ul>
@@ -757,7 +777,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T19:42:03+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-22T21:44:34+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 22, 2019</p>
@@ -1053,7 +1073,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-TOC"><span class="toc-text">0 TOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概论"><span class="toc-text">1 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-统计学习"><span class="toc-text">1.1 统计学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-监督学习"><span class="toc-text">1.2 监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-输入空间、特征空间与输出空间"><span class="toc-text">1.2.1 输入空间、特征空间与输出空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-联合概率分布"><span class="toc-text">1.2.2 联合概率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-假设空间"><span class="toc-text">1.2.3 假设空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4-问题的形式化"><span class="toc-text">1.2.4 问题的形式化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-统计学习三要素"><span class="toc-text">1.3 统计学习三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-模型"><span class="toc-text">1.3.1 模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-策略"><span class="toc-text">1.3.2 策略</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-1-损失函数和风险函数"><span class="toc-text">1.3.2.1 损失函数和风险函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-2-经验风险最小化与结构风险最小化"><span class="toc-text">1.3.2.2 经验风险最小化与结构风险最小化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-算法"><span class="toc-text">1.3.3 算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-模型评估与模型选择"><span class="toc-text">1.4 模型评估与模型选择</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-训练误差与测试误差"><span class="toc-text">1.4.1 训练误差与测试误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-过拟合与模型选择"><span class="toc-text">1.4.2 过拟合与模型选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-正则化与交叉验证"><span class="toc-text">1.5 正则化与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-正则化"><span class="toc-text">1.5.1 正则化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-交叉验证"><span class="toc-text">1.5.2 交叉验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-泛化能力"><span class="toc-text">1.6 泛化能力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-1-泛化误差"><span class="toc-text">1.6.1 泛化误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-2-泛化误差上界"><span class="toc-text">1.6.2 泛化误差上界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-生成模型与判别模型"><span class="toc-text">1.7 生成模型与判别模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-分类问题"><span class="toc-text">1.8 分类问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-标注问题"><span class="toc-text">1.9 标注问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-回归问题"><span class="toc-text">1.10 回归问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-本章概要"><span class="toc-text">1.10 本章概要</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-TOC"><span class="toc-text">0 TOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概论"><span class="toc-text">1 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-统计学习"><span class="toc-text">1.1 统计学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-监督学习"><span class="toc-text">1.2 监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-输入空间、特征空间与输出空间"><span class="toc-text">1.2.1 输入空间、特征空间与输出空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-联合概率分布"><span class="toc-text">1.2.2 联合概率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-假设空间"><span class="toc-text">1.2.3 假设空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4-问题的形式化"><span class="toc-text">1.2.4 问题的形式化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-统计学习三要素"><span class="toc-text">1.3 统计学习三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-模型"><span class="toc-text">1.3.1 模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-策略"><span class="toc-text">1.3.2 策略</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-1-损失函数和风险函数"><span class="toc-text">1.3.2.1 损失函数和风险函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-2-经验风险最小化与结构风险最小化"><span class="toc-text">1.3.2.2 经验风险最小化与结构风险最小化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-算法"><span class="toc-text">1.3.3 算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-模型评估与模型选择"><span class="toc-text">1.4 模型评估与模型选择</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-训练误差与测试误差"><span class="toc-text">1.4.1 训练误差与测试误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-过拟合与模型选择"><span class="toc-text">1.4.2 过拟合与模型选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-正则化与交叉验证"><span class="toc-text">1.5 正则化与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-正则化"><span class="toc-text">1.5.1 正则化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-交叉验证"><span class="toc-text">1.5.2 交叉验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-泛化能力"><span class="toc-text">1.6 泛化能力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-1-泛化误差"><span class="toc-text">1.6.1 泛化误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-2-泛化误差上界"><span class="toc-text">1.6.2 泛化误差上界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-生成模型与判别模型"><span class="toc-text">1.7 生成模型与判别模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-分类问题"><span class="toc-text">1.8 分类问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#混淆矩阵-Confusion-matrix"><span class="toc-text">混淆矩阵 Confusion matrix</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-标注问题"><span class="toc-text">1.9 标注问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-回归问题"><span class="toc-text">1.10 回归问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-本章概要"><span class="toc-text">1.10 本章概要</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1151,7 +1171,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1445,22 +1465,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
