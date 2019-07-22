@@ -504,8 +504,40 @@
       <blockquote>
 <p>统计学习方法 刷书笔记<br><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
 </blockquote>
-<p>In progress.</p>
-
+<h2 id="2-感知机"><a href="#2-感知机" class="headerlink" title="2 感知机"></a>2 感知机</h2><ul>
+<li><strong>感知机（perceptron）</strong>是<strong>二类分类</strong>的<strong>线性分类模型</strong>，其<strong>输入</strong>为实例的<strong>特征向量</strong>，输出为<strong>实例</strong>的<strong>类别</strong>，取+1和–1二值。</li>
+<li>感知机对应于输入空间（特征空间）中将实例划分为<strong>正负两类的分离超平面</strong>，属于<strong>判别模型</strong>。</li>
+<li>感知机<strong>学习</strong>旨在求出将训练数据进行线性划分的<strong>分离超平面</strong>，为此，导入基于<strong>误分类</strong>的<strong>损失函数</strong>，<strong>利用梯度下降法对损失函数进行极小化</strong>， 求得<strong>感知机模型</strong>。</li>
+<li>感知机学习算法具有<strong>简单而易于实现</strong>的优点，分为<strong>原始形式</strong>和<strong>对偶形式</strong>。</li>
+<li>感知机预测是用学习得到的感知机模型对新的输入实例进行分类。</li>
+<li>感知机1957年由 Rosenblatt提出，是神经网络与支持向量机的基础。</li>
+</ul>
+<h3 id="2-1-感知机模型"><a href="#2-1-感知机模型" class="headerlink" title="2.1 感知机模型"></a>2.1 感知机模型</h3><ul>
+<li><p>定义2.1<strong>（感知机）</strong> 假设<strong>输入空间</strong>（特征空间）是$\mathcal{X} \subseteq \mathbf{R}^{n}$，<strong>输出空间</strong>是$\mathcal{Y}={+1,-1}$。输入$x \in \mathcal{X}$表示<strong>实例的特征向量</strong>，对应于输入空间（特征空间）的点；输出$y \in \mathcal{Y}$表示实例的 类别。由输入空间到输出空间的如下函数称为感知机。</p>
+<ul>
+<li>$f(x)=\operatorname{sign}(w \cdot x+b)$</li>
+<li>其中$w$和$b$为感知机模型参数，$w \in \mathbf{R}^{n}$叫作<strong>权值（weight）</strong>或<strong>权值向量 （weight vector）</strong>，$b \in \mathbf{R}$叫作<strong>偏置（bias）</strong>，$w \cdot x$表示$w$和$x$的内积。$\operatorname{sign}$是符号函数，即<ul>
+<li>$\operatorname{sign}(x) = \begin{cases} +1, x \geqslant 0 \ -1,  x&lt;0 \end{cases}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>感知机模型的<strong>假设空间</strong>是定义在特征空间中的所有<strong>线性分类模型（linear classification model）</strong>或<strong>线性分类器(linear classifier)</strong>，即函数集合${f | f(x)=w \cdot x+b}$。</p>
+</li>
+<li>感知机有如下几何解释：<ul>
+<li>线性方程<ul>
+<li>$w \cdot x+b=0$</li>
+</ul>
+</li>
+<li>对应于特征空间$\mathbf{R}^{n}$中的一个<strong>超平面</strong>$S$，其中$w$是超平面的<strong>法向量</strong>，$b$是超平面的<strong>截距</strong>。</li>
+<li>这个超平面将特征空间划分为<strong>两个部分</strong>。位于两部分的点（特征向量）分别被分为正、负两类。</li>
+<li>因此，超平面$S$称为<strong>分离超平面（separating hyperplane）</strong>，如图所示，</li>
+<li><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722223104.png" alt="感知机"></li>
+</ul>
+</li>
+<li><strong>感知机学习</strong>，由训练数据集（实例的特征向量及类别）求得感知机模型，即求得模型参数$w,b$。</li>
+</ul>
+<h3 id="2-2-感知机学习策略"><a href="#2-2-感知机学习策略" class="headerlink" title="2.2 感知机学习策略"></a>2.2 感知机学习策略</h3><h4 id="2-2-1-数据集的线性可分性"><a href="#2-2-1-数据集的线性可分性" class="headerlink" title="2.2.1 数据集的线性可分性"></a>2.2.1 数据集的线性可分性</h4>
       
     </div>
     
