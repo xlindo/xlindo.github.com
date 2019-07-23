@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>备查手册-独立成分分析-ICA</title>
+      <link href="/posts/ca0caebe/"/>
+      <url>/posts/ca0caebe/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><p>之前不太清楚这是什么，今天看到《机器学习工程师必知的十大算法》里这一条还没听过用过。而看了个大致介绍，感觉和我的毕设有点契合，所以集中学习一下。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学与统计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>统计学习方法-Ch3-k近邻</title>
       <link href="/posts/a59bd45b/"/>
       <url>/posts/a59bd45b/</url>

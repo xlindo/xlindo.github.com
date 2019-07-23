@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xlindo.com/"/>
-  <updated>2019-07-22T07:42:34.246Z</updated>
+  <updated>2019-07-23T08:38:54.897Z</updated>
   <id>http://xlindo.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>备查手册-独立成分分析-ICA</title>
+    <link href="http://xlindo.com/posts/ca0caebe/"/>
+    <id>http://xlindo.com/posts/ca0caebe/</id>
+    <published>2019-07-23T08:37:06.000Z</published>
+    <updated>2019-07-23T08:38:54.897Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><p>之前不太清楚这是什么，今天看到《机器学习工程师必知的十大算法》里这一条还没听过用过。而看了个大致介绍，感觉和我的毕设有点契合，所以集中学习一下。</p>]]></content>
+    
+    <summary type="html">
+    
+      在统计学中，独立成分分析或独立分量分析（Independent components analysis，缩写：ICA） 是一种利用统计原理进行计算的方法。它是一个线性变换。这个变换把数据或信号分离成统计独立的非高斯的信号源的线性组合。独立成分分析是盲信号分离（Blind source separation）的一种特例。
+    
+    </summary>
+    
+      <category term="数学与统计" scheme="http://xlindo.com/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/"/>
+    
+    
+      <category term="数据分析" scheme="http://xlindo.com/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>统计学习方法-Ch3-k近邻</title>
@@ -49,17 +71,13 @@
     <link href="http://xlindo.com/posts/836ddfd5/"/>
     <id>http://xlindo.com/posts/836ddfd5/</id>
     <published>2019-07-22T07:38:57.000Z</published>
-    <updated>2019-07-22T20:32:41.224Z</updated>
+    <updated>2019-07-23T08:38:52.523Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>统计学习方法 刷书笔记<br><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><h2 id="2-感知机"><a href="#2-感知机" class="headerlink" title="2 感知机"></a>2 感知机</h2><ul><li><strong>感知机（perceptron）</strong>是<strong>二类分类</strong>的<strong>线性分类模型</strong>，其<strong>输入</strong>为实例的<strong>特征向量</strong>，输出为<strong>实例</strong>的<strong>类别</strong>，取+1和–1二值。</li><li>感知机对应于输入空间（特征空间）中将实例划分为<strong>正负两类的分离超平面</strong>，属于<strong>判别模型</strong>。</li><li>感知机<strong>学习</strong>旨在求出将训练数据进行线性划分的<strong>分离超平面</strong>，为此，导入基于<strong>误分类</strong>的<strong>损失函数</strong>，<strong>利用梯度下降法对损失函数进行极小化</strong>， 求得<strong>感知机模型</strong>。</li><li>感知机学习算法具有<strong>简单而易于实现</strong>的优点，分为<strong>原始形式</strong>和<strong>对偶形式</strong>。</li><li>感知机预测是用学习得到的感知机模型对新的输入实例进行分类。</li><li>感知机1957年由 Rosenblatt提出，是神经网络与支持向量机的基础。</li></ul><h3 id="2-1-感知机模型"><a href="#2-1-感知机模型" class="headerlink" title="2.1 感知机模型"></a>2.1 感知机模型</h3><ul><li><p>定义2.1<strong>（感知机）</strong> 假设<strong>输入空间</strong>（特征空间）是$\mathcal{X} \subseteq \mathbf{R}^{n}$，<strong>输出空间</strong>是$\mathcal{Y}={+1,-1}$。输入$x \in \mathcal{X}$表示<strong>实例的特征向量</strong>，对应于输入空间（特征空间）的点；输出$y \in \mathcal{Y}$表示实例的 类别。由输入空间到输出空间的如下函数称为感知机。</p><ul><li>$f(x)=\operatorname{sign}(w \cdot x+b)$</li><li>其中$w$和$b$为感知机模型参数，$w \in \mathbf{R}^{n}$叫作<strong>权值（weight）</strong>或<strong>权值向量 （weight vector）</strong>，$b \in \mathbf{R}$叫作<strong>偏置（bias）</strong>，$w \cdot x$表示$w$和$x$的内积。$\operatorname{sign}$是符号函数，即<ul><li>$\operatorname{sign}(x) = \begin{cases} +1, x \geqslant 0 \ -1,  x&lt;0 \end{cases}$</li></ul></li></ul></li><li><p>感知机模型的<strong>假设空间</strong>是定义在特征空间中的所有<strong>线性分类模型（linear classification model）</strong>或<strong>线性分类器(linear classifier)</strong>，即函数集合${f | f(x)=w \cdot x+b}$。</p></li><li>感知机有如下几何解释：<ul><li>线性方程<ul><li>$w \cdot x+b=0$</li></ul></li><li>对应于特征空间$\mathbf{R}^{n}$中的一个<strong>超平面</strong>$S$，其中$w$是超平面的<strong>法向量</strong>，$b$是超平面的<strong>截距</strong>。</li><li>这个超平面将特征空间划分为<strong>两个部分</strong>。位于两部分的点（特征向量）分别被分为正、负两类。</li><li>因此，超平面$S$称为<strong>分离超平面（separating hyperplane）</strong>，如图所示，</li><li><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722223104.png" alt="感知机"></li></ul></li><li><strong>感知机学习</strong>，由训练数据集（实例的特征向量及类别）求得感知机模型，即求得模型参数$w,b$。</li></ul><h3 id="2-2-感知机学习策略"><a href="#2-2-感知机学习策略" class="headerlink" title="2.2 感知机学习策略"></a>2.2 感知机学习策略</h3><h4 id="2-2-1-数据集的线性可分性"><a href="#2-2-1-数据集的线性可分性" class="headerlink" title="2.2.1 数据集的线性可分性"></a>2.2.1 数据集的线性可分性</h4>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;统计学习方法 刷书笔记&lt;br&gt;&lt;a href=&quot;http://xlindo.com&quot;&gt;http://xlindo.com&lt;/a&gt;&lt;br&gt;所有文章遵循&lt;a href=&quot;https://creativecommons.org/licenses/by-n
-      
+      统计学习方法 刷书笔记 Ch2 感知机
     
     </summary>
     
@@ -491,28 +509,6 @@
       <category term="控制" scheme="http://xlindo.com/tags/%E6%8E%A7%E5%88%B6/"/>
     
       <category term="辨识" scheme="http://xlindo.com/tags/%E8%BE%A8%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>备查手册-特征值与奇异值</title>
-    <link href="http://xlindo.com/posts/4c6748ad/"/>
-    <id>http://xlindo.com/posts/4c6748ad/</id>
-    <published>2019-05-30T15:31:38.000Z</published>
-    <updated>2019-07-22T07:44:36.783Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><p>在统计学习方法中，我们会经常使用到特征值和奇异值，本文对其背后的特定意义做一个梳理。</p><h2 id="0-我能想到的适用或有益理解的场景"><a href="#0-我能想到的适用或有益理解的场景" class="headerlink" title="0 我能想到的适用或有益理解的场景"></a>0 我能想到的适用或有益理解的场景</h2><ul><li>OLS 最小二乘法</li><li>PCA分析<ul><li>数据压缩</li></ul></li><li>Fisher information matrix<ul><li>矩阵条件数</li></ul></li></ul><h2 id="1-特征值与特征向量"><a href="#1-特征值与特征向量" class="headerlink" title="1 特征值与特征向量"></a>1 特征值与特征向量</h2><blockquote><p>Wikipedia: In linear algebra, an eigenvector or characteristic vector of a linear transformation is a non-zero vector that changes by only a scalar factor when that linear transformation is applied to it. </p></blockquote><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p>首先，看这个定义，</p><script type="math/tex; mode=display">A v=\lambda v</script><p>其中$\lambda$是特征值(eigenvalue)，$v$为特征向量。</p><p>其实这个公式就可以说明很多特点：</p><ul><li>$A$为(作用)<strong>方阵</strong>；</li><li>$v$是$A$的特征向量；</li><li>$\lambda$是$A$的特征值，为纯量，表示为<strong>对角阵</strong>。</li></ul><p>让我们根据这个式子展开想象：</p><p>矩阵的乘法都是线性变换，式子想说明，<strong>特征向量在$A$的作用下进行线性变换，效果是特征向量的$\lambda$倍伸缩</strong>。注意：</p><ul><li>并不是所有向量都能被$A$给伸缩，只有$v$中的向量（特征向量）能被其伸缩；</li><li>伸缩的尺度$\lambda$体现$A$的变换能力。</li></ul><blockquote><p>援引维基百科就是“在数学上，特别是线性代数中，对于一个给定的方阵$A$，它的特征向量（eigenvector，也译固有向量或本征向量）$v$经过这个线性变换之后，得到的新向量仍然与原来的$v$保持在同一条直线上，但其长度或方向也许会改变”。这个方向是正负那个方向，不是小旋转。</p></blockquote><p>这样的话，如果我们知道了一个方阵的特征值和特征向量，就知道了这个方阵的<strong>线性变换能力</strong>。</p><p>放到应用场景中就是，我们通过特征值就能掌握当前数据在对应方向上的变换能力。所以某些场景中，我们选取较大的特征值们来代表原数据的变换能力，例如：PCA分析、数据压缩。</p><h3 id="1-2-计算"><a href="#1-2-计算" class="headerlink" title="1.2 计算"></a>1.2 计算</h3><p>那么，怎么得到特征值和特征向量呢？</p><ul><li><p>Matlab：<code>scipy.linalg.eig()</code>提供类似下面Matlab函数的计算。</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%matlab</span></span><br><span class="line"></span><br><span class="line">[V,D] = eig(A) </span><br><span class="line"></span><br><span class="line"><span class="comment">% returns diagonal matrix D of eigenvalues and matrix V </span></span><br><span class="line"><span class="comment">% whose columns are the corresponding right eigenvectors,</span></span><br><span class="line"><span class="comment">% so that A*V = V*D.</span></span><br></pre></td></tr></table></figure></li><li><p>手算特征值： 除了考试，请使用计算机，写出来仅供娱乐。</p></li></ul><script type="math/tex; mode=display">\begin{aligned}(\mathbf{A}-\lambda \mathbf{I}) \mathbf{x} &=0 \\  det(\mathbf{A}-\lambda \mathbf{I}) &=0 \end{aligned}</script><h2 id="2-奇异值和奇异值分解"><a href="#2-奇异值和奇异值分解" class="headerlink" title="2 奇异值和奇异值分解"></a>2 奇异值和奇异值分解</h2><p>奇异值与上文中的特征值相对应。特征值固然方便使用，但其对<strong>原矩阵为方阵</strong>的限制为实际情况下所难得的。自然，我们就需要一种更一般化的特征提取方式，这里的特征我们叫<strong>奇异值(singular value)</strong>，而这种方式正是<strong>奇异值分解(singular-value decomposition (SVD))</strong>。所以，<strong>该分解和结果的意义与特征值类似</strong>，但拓展了适用范围。</p><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><script type="math/tex; mode=display">M=U \Sigma V^{*}</script><ul><li>$M$： $m\times n$矩阵；</li><li>$U$： $m\times m$ 酉矩阵(unitary matrix)；</li><li>$\Sigma$： $m\times n$ 的对角阵，对角元素非负(<strong>奇异值</strong>)；</li><li>$V^{*}$： $n\times n$ 酉矩阵，是$V$的转置。</li></ul><p><strong>需要注意的是，奇异值分解结果并不唯一。</strong></p><h3 id="2-2-与特征值分解的关系"><a href="#2-2-与特征值分解的关系" class="headerlink" title="2.2 与特征值分解的关系"></a>2.2 与特征值分解的关系</h3><p>除开适用范围，我们可以将特征值分解看成SVD的一个特例。而更深层的联系是在于[引自维基百科]，对于$M=U \Sigma V^{*}$：</p><ul><li>$U$的列是$M$正交输出基向量，是$MM^T$的特征向量；</li><li>$\Sigma$是$M^TM,MM^T$的特征值的非负平方根；</li><li>$V$的列是$M$正交输入基向量，是$M^T M$的特征向量。</li></ul><p>随手验证感受一下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> linalg</span><br><span class="line"></span><br><span class="line">M = np.array([[<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">1</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">U,S,V = linalg.svd(M)</span><br><span class="line">print(<span class="string">'U='</span>,U,<span class="string">'\n\nS='</span>,s,<span class="string">'\n\nV='</span>,V.T)</span><br></pre></td></tr></table></figure><pre><code>U= [[-0.38925572  0.85502491  0.34265491] [-0.56511886  0.07208746 -0.82185404] [-0.7274068  -0.51355215  0.45513025]] S= [4.71147949 1.3423714 ] V= [[-2.27634931e-01  2.17876780e-01 -2.66842116e-02 -9.48683298e-01] [-3.49895643e-01 -4.65155494e-01 -8.13144148e-01 -2.37643771e-16] [-6.82904792e-01  6.53630339e-01 -8.00526349e-02  3.16227766e-01] [-5.99496807e-01 -5.55812428e-01  5.75913294e-01 -1.66533454e-16]]</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linalg.eig(M.dot(M.T))</span><br></pre></td></tr></table></figure><pre><code>(array([54.58348639+0.j,  3.60292832+0.j,  0.81358529+0.j]), array([[-0.38925572, -0.85502491,  0.34265491],        [-0.56511886, -0.07208746, -0.82185404],        [-0.7274068 ,  0.51355215,  0.45513025]]))</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S ** <span class="number">2</span></span><br></pre></td></tr></table></figure><pre><code>array([54.58348639,  3.60292832,  0.81358529])</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linalg.eig(M.T.dot(M))</span><br></pre></td></tr></table></figure><pre><code>(array([5.45834864e+01+0.j, 3.60292832e+00+0.j, 7.98251465e-16+0.j,        8.13585293e-01+0.j]), array([[ 2.27634931e-01,  2.17876780e-01,  9.48683298e-01,         -2.66842116e-02],        [ 3.49895643e-01, -4.65155494e-01,  2.02012103e-17,         -8.13144148e-01],        [ 6.82904792e-01,  6.53630339e-01, -3.16227766e-01,         -8.00526349e-02],        [ 5.99496807e-01, -5.55812428e-01,  1.84126527e-17,          5.75913294e-01]]))</code></pre><p><strong>我们从中需要知道的是，这些结果是和$M^TM$或$MM^T$有关系的。</strong></p><blockquote><p>这些性质我在Fisher information matrix中用到了一点点。</p></blockquote><h3 id="2-3-计算"><a href="#2-3-计算" class="headerlink" title="2.3 计算"></a>2.3 计算</h3><ul><li><p>Matlab</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[U,S,V] = svd(A)</span><br></pre></td></tr></table></figure></li><li><p>Python</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U,s,Vh = scipy.linalg.svd(A)</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      在统计学习方法中，我们会经常使用到特征值和奇异值，本文对其背后的特定意义做一个梳理。
-    
-    </summary>
-    
-      <category term="数学与统计" scheme="http://xlindo.com/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/"/>
-    
-    
-      <category term="线性代数" scheme="http://xlindo.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
   </entry>
   
