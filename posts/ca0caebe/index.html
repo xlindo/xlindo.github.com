@@ -275,7 +275,38 @@
 <p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
 </blockquote>
 <p>之前不太清楚这是什么，今天看到《机器学习工程师必知的十大算法》里这一条还没听过用过。而看了个大致介绍，感觉和我的毕设有点契合，所以集中学习一下。</p>
-
+<h2 id="0-参考资料"><a href="#0-参考资料" class="headerlink" title="0 参考资料"></a>0 参考资料</h2><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Independent_component_analysis" target="_blank" rel="noopener">/wiki/Independent_component_analysis</a></p>
+<p><a href="http://www.picb.ac.cn/~xiaohang/vimwiki/study/course/pattern_recognition/courses/10/PCA/独立成分分析.pdf" target="_blank" rel="noopener">独立成分分析法基本原理</a></p>
+</blockquote>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2><p>In signal processing, independent component analysis (ICA) is a computational method for <strong>separating a multivariate signal into additive subcomponents</strong>. This is done by <strong>assuming</strong> that the <strong>subcomponents are non-Gaussian signals</strong> and that they are <strong>statistically independent from each other.</strong> ICA is a special case of <strong>blind source separation</strong>. </p>
+<blockquote>
+<p>中文不太好的维基：在统计学中，独立成分分析或独立分量分析（Independent components analysis，缩写：ICA） 是一种利用统计原理进行计算的方法。它是一个线性变换。这个变换把数据或信号分离成统计独立的非高斯的信号源的线性组合。独立成分分析是盲信号分离（Blind source separation）的一种特例。</p>
+</blockquote>
+<h2 id="2-定义"><a href="#2-定义" class="headerlink" title="2 定义"></a>2 定义</h2><ul>
+<li>一句话，从<strong>多通道</strong>测量中得到的有<strong>若干独立信源线性组合成</strong>的观测信号中，将独立成分<strong>分解</strong>出来。<ul>
+<li>因为主成分分析只对符合高斯分布的样本点比较有效，所以ICA可以看成是主成分分析与因子分析的延展。</li>
+</ul>
+</li>
+<li><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190723113719.png" alt="示例"></li>
+<li>独立成分分析的<strong>最重要的假设</strong>就是<strong>信号源统计独立</strong>。这个假设在大多数盲信号分离的情况中符合实际情况。<ul>
+<li>即使当该<strong>假设不满足时</strong>，仍然可以用独立成分分析来<strong>把观察信号统计独立化</strong>，从而进一步分析数据的特性。</li>
+</ul>
+</li>
+<li>独立成分分析的<strong>经典问题</strong>是“鸡尾酒会问题”（cocktail party problem）。<ul>
+<li>该问题描述的是<strong>给定混合信号</strong>，如何分离出鸡尾酒会中同时说话的每个人的独立信号。</li>
+<li>An important note to consider is that if $N$ <strong>sources</strong> are present, at least $N$ <strong>observations</strong> (e.g. microphones if the observed signal is audio) <strong>are needed to recover the original signals</strong>. This constitutes the case where the <strong>matrix is square</strong> ($D=J$ , where $D$ is the number of <strong>observed signals</strong> and $J$ is the number of <strong>source signals hypothesized by the model</strong>). Other cases of underdetermined ($D<j$) and overdetermined ($d>J$) have been investigated.<ul>
+<li>当有$N$个信号源时，通常假设观察信号也有$N$个（例如$N$个麦克风或者录音机）。该假设意味着混<strong>合矩阵是个方阵</strong>，即$J = D$，其中$D$是输入数据的维数，$J$是系统模型的维数。对于$J &lt; D$和$J &gt; D$的情况，学术界也分别有不同研究。</li>
+</ul>
+</j$)></li>
+<li>独立成分分析<strong>并不能完全恢复信号源的具体数值，也不能解出信号源的正负符号、信号的级数或者信号的数值范围</strong>。 </li>
+</ul>
+</li>
+</ul>
+<h3 id="2-1-问题分类"><a href="#2-1-问题分类" class="headerlink" title="2.1 问题分类"></a>2.1 问题分类</h3><p>Linear independent component analysis can be <strong>divided into noiseless and noisy cases,</strong> where <strong>noiseless ICA is a special case of noisy ICA</strong>. <strong>Nonlinear</strong> ICA should be considered as a <strong>separate</strong> case.</p>
+<h3 id="2-2-General-definition"><a href="#2-2-General-definition" class="headerlink" title="2.2 General definition"></a>2.2 General definition</h3><p>The <strong>data</strong> are represented by the <strong>observed random vector</strong> ${\boldsymbol {x}}=(x_{1},\ldots ,x_{m})^{T}$ and the <strong>hidden components</strong> as the random vector ${\boldsymbol {s}}=(s_{1},\ldots ,s_{n})^{T}.$ The <strong>task</strong> is to <strong>transform the observed data</strong> using a <strong>linear static transformation</strong> ${\boldsymbol {W}}$  as ${\boldsymbol {s}}={\boldsymbol {W}}{\boldsymbol {x}}$, <strong>into</strong> an observable vector of <strong>maximally independent components</strong> ${\boldsymbol {s}}$ measured by some function $F(s_{1},\ldots ,s_{n})$ of <strong>independence</strong>.</p>
+<p>简单讲，就将观察到的<strong>向量通过线性变换</strong>，使其本身的<strong>隐含成分的独立成分</strong>被分离。</p>
+<h3 id="2-3-Generative-model"><a href="#2-3-Generative-model" class="headerlink" title="2.3 Generative model"></a>2.3 Generative model</h3><h4 id="2-3-1-Linear-noiseless-ICA"><a href="#2-3-1-Linear-noiseless-ICA" class="headerlink" title="2.3.1 Linear noiseless ICA"></a>2.3.1 Linear noiseless ICA</h4><h4 id="2-3-2-Linear-noisy-ICA"><a href="#2-3-2-Linear-noisy-ICA" class="headerlink" title="2.3.2 Linear noisy ICA"></a>2.3.2 Linear noisy ICA</h4><h4 id="2-3-3-Nonlinear-ICA"><a href="#2-3-3-Nonlinear-ICA" class="headerlink" title="2.3.3 Nonlinear ICA"></a>2.3.3 Nonlinear ICA</h4>
         </div>
         
           
@@ -286,7 +317,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-23T10:38:54+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-23T11:39:09+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 23, 2019</p>
@@ -553,6 +584,20 @@
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-参考资料"><span class="toc-text">0 参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-简介"><span class="toc-text">1 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-定义"><span class="toc-text">2 定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-问题分类"><span class="toc-text">2.1 问题分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-General-definition"><span class="toc-text">2.2 General definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Generative-model"><span class="toc-text">2.3 Generative model</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-Linear-noiseless-ICA"><span class="toc-text">2.3.1 Linear noiseless ICA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-Linear-noisy-ICA"><span class="toc-text">2.3.2 Linear noisy ICA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-Nonlinear-ICA"><span class="toc-text">2.3.3 Nonlinear ICA</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
 
           
         
@@ -647,7 +692,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c0aebc2\" title="Math - Fisher Information" rel="bookmark">Math - Fisher Information</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d56cc9ea\" title="常微分方程-Lyapunov稳定性1-2in3" rel="bookmark">常微分方程-Lyapunov稳定性1-2in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\4c6748ad\" title="备查手册-特征值与奇异值" rel="bookmark">备查手册-特征值与奇异值</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c0aebc2\" title="Math - Fisher Information" rel="bookmark">Math - Fisher Information</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\4c6748ad\" title="备查手册-特征值与奇异值" rel="bookmark">备查手册-特征值与奇异值</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d56cc9ea\" title="常微分方程-Lyapunov稳定性1-2in3" rel="bookmark">常微分方程-Lyapunov稳定性1-2in3</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -941,7 +986,22 @@
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
