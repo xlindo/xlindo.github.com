@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>TSA-Analysis-of-Serial-Correlation | Xlindo is here!</title>
+  <title>TSA-Analysis of the serial correlation | Xlindo is here!</title>
   
   
   <meta name="description" content="There are three basic concepts in the analysis of a time serie, autovariance, autocorrelation and partial correlation.">
@@ -190,7 +190,7 @@
   
     <h1 class="title">
       <a href="/posts/affea27a/">
-        TSA-Analysis-of-Serial-Correlation
+        TSA-Analysis of the serial correlation
       </a>
     </h1>
   
@@ -275,23 +275,24 @@
 <p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p>
 </blockquote>
 <p>In time series analysis, we should always focus on the correlation itself. Because there exists no other series to compare, we define <strong>autovariance</strong>, <strong>autocorrelation function</strong> and <strong>partial autocorrelation function</strong> based on the characteristics of the time series. Word <strong><em>auto</em></strong> means we do the analysis on <strong><em>itself</em></strong>.</p>
-<h2 id="1-Autovariance"><a href="#1-Autovariance" class="headerlink" title="1 Autovariance"></a>1 Autovariance</h2><blockquote>
+<h2 id="1-Autocovariance"><a href="#1-Autocovariance" class="headerlink" title="1 Autocovariance"></a>1 Autocovariance</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Autocovariance" target="_blank" rel="noopener">/wiki/Autocovariance</a></p>
 </blockquote>
 <h3 id="1-1-Introduction"><a href="#1-1-Introduction" class="headerlink" title="1.1 Introduction"></a>1.1 Introduction</h3><p>In probability theory and statistics, given a <strong>stochastic process</strong>, the <strong>autocovariance is a function that gives the covariance of the process with itself at pairs of time points</strong>. Autocovariance is closely related to the <strong>autocorrelation</strong> of the process in question.</p>
+<p><strong>It can be thought that the autovariance is the similarity of the signal with with a delayed copy of itself .</strong></p>
 <h3 id="1-2-Definition"><a href="#1-2-Definition" class="headerlink" title="1.2 Definition"></a>1.2 Definition</h3><p>With the usual notation $\operatorname {E}$ for the <strong>expectation</strong> operator, if the stochastic process ${X_{t}}$ <strong>has the mean</strong> function $\mu _{t}=\operatorname {E} [X_{t}]$, then the autocovariance is given by,</p>
 <script type="math/tex; mode=display">
-\mathbf{K}_{X X}\left(t_{1}, t_{2}\right)=\operatorname{cov}\left[X_{t_{1}}, X_{t_{2}}\right]=\mathrm{E}\left[\left(X_{t_{1}}-\mu_{t_{1}}\right)\left(X_{t_{2}}-\mu_{t_{2}}\right)\right]=\mathrm{E}\left[X_{t_{1}} X_{t_{2}}\right]-\mu_{t_{1}} \mu_{t_{2}},</script><p>where $t_{1}$and $t_{2}$are two moments in time.</p>
+\begin{aligned}\mathbf{K}_{X X}\left(t_{1}, t_{2}\right) &= \operatorname{cov}\left[X_{t_{1}}, X_{t_{2}}\right] \\&= \mathrm{E}\left[\left(X_{t_{1}}-\mu_{t_{1}}\right)\left(X_{t_{2}}-\mu_{t_{2}}\right)\right] \\&= \mathrm{E}\left[X_{t_{1}} X_{t_{2}}\right]-\mu_{t_{1}} \mu_{t_{2}}\end{aligned},</script><p>where $t_{1}$and $t_{2}$are two moments in time.</p>
 <p>Or, we usually use $\gamma$ as the notion,</p>
 <script type="math/tex; mode=display">
-\gamma(i, j)=E\left[\left(X_{i}-\mu_{i}\right)\left(X_{j}-\mu_{j}\right)\right].</script><p>More generally, if the process is a second order stationary process, which means a <strong>weakly stationaty process (WSS)</strong>, it gives</p>
+\gamma(i, j)=E\left[\left(X_{i}-\mu_{i}\right)\left(X_{j}-\mu_{j}\right)\right].</script><p>More generally, if the process is a second order stationary process, which means a <strong>weakly stationaty process (WSS)</strong>. From the definition of a weakly stationary signal, the autocovariance and autocorrelation will <strong>not depend on</strong> $t$.it gives</p>
 <script type="math/tex; mode=display">
-\gamma(k)=\operatorname{cov}\left(X_{n+k}, X_{n}\right)=E\left[\left(X_{n}-\mu\right)\left(X_{n+k}-\mu\right)\right],</script><p>where $\tau$ is the lag time, the time has been shifted.</p>
+\gamma(k)=\operatorname{cov}\left(X_{t+k}, X_{t}\right)=E\left[\left(X_{t}-\mu\right)\left(X_{t+k}-\mu\right)\right],</script><p>where $\tau$ is the lag time, the time has been shifted.</p>
 <h3 id="1-3-calculation"><a href="#1-3-calculation" class="headerlink" title="1.3 calculation"></a>1.3 calculation</h3><script type="math/tex; mode=display">
-\gamma(k)=\frac{1}{n} \Sigma_{t=k+1}^{n}\left(X_{t}-\overline{X}\right)\left(X_{t-k}-\overline{X}\right)</script><h3 id="1-4-Normalization"><a href="#1-4-Normalization" class="headerlink" title="1.4 Normalization"></a>1.4 Normalization</h3><p>For a <strong>WSS</strong> with a variance $\sigma^2$, it converts to a time-dependent <strong>Pearson correlation coefficient</strong>,</p>
+\begin{aligned}\gamma(k)&=\mathrm{E}\left[\left(X_{t}-\mu_{t}\right)\left(X_{t-k}-\mu_{t}\right)\right] \\&=\mathrm{E}\left[X_{t} X_{t-k}\right]-\mu_{t} \mu_{t}\\&=\frac{1}{N-k}\sum_{t=k+1}^{N}{X_tX_{t-k}}-\overline{X_t}^2\end{aligned}</script><h3 id="1-4-Normalization"><a href="#1-4-Normalization" class="headerlink" title="1.4 Normalization"></a>1.4 Normalization</h3><p>For a <strong>WSS</strong> with a variance $\sigma^2$, it converts to a time-dependent <strong>Pearson correlation coefficient</strong>,</p>
 <script type="math/tex; mode=display">
-\rho_{X X}(k)=\frac{\gamma(k)}{\gamma(0)}=\frac{E\left[\left(X_{n}-\mu\right)\left(X_{n+k}-\mu\right)\right]}{\sigma^{2}}</script><p>where $\gamma(0)=\sigma^{2}$.</p>
-<p><strong>It can be thought that the autovariance is the similarity of the signal with with a delayed copy of itself .</strong></p>
+\rho(k)=\frac{\gamma(k)}{\gamma(0)}=\frac{\gamma(k)}{\sigma^{2}}</script><p>where $\gamma(0)=\sigma^{2}$.</p>
+<h3 id="1-5-MATLAB-code-for-Autocovariance-Matrix"><a href="#1-5-MATLAB-code-for-Autocovariance-Matrix" class="headerlink" title="1.5 MATLAB code for Autocovariance Matrix"></a>1.5 MATLAB code for Autocovariance Matrix</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% autocov_m</span></span><br><span class="line"><span class="comment">% Author: xlindo</span></span><br><span class="line"><span class="comment">% Date: 2019.7.24</span></span><br><span class="line"><span class="comment">% </span></span><br><span class="line"><span class="comment">% function: compute the autocovariance of a weakly stationaty process</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">% INPUT: x, a 1*n series vector</span></span><br><span class="line"><span class="comment">% OUTPUT: ac_m, a n*n matrix</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ac_m</span> = <span class="title">autocov_m</span><span class="params">(x)</span></span></span><br><span class="line"></span><br><span class="line">len_x = <span class="built_in">length</span>(x);</span><br><span class="line"><span class="built_in">gamma</span> = <span class="built_in">zeros</span>(<span class="number">1</span>,len_x);</span><br><span class="line"></span><br><span class="line">mu_x = <span class="built_in">mean</span>(x);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k=<span class="number">1</span>:len_x<span class="number">-1</span></span><br><span class="line">    <span class="built_in">gamma</span>(k) = sum(x(<span class="number">1</span>:len_x-k+<span class="number">1</span>).*x(k:len_x)) / (len_x-k)- mu_x^<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">gamma</span>(len_x) = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">ac_m = <span class="built_in">zeros</span>(len_x, len_x);</span><br><span class="line">ac_m(<span class="number">1</span>,:) = <span class="built_in">gamma</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:len_x</span><br><span class="line">    ac_m(<span class="built_in">i</span>,<span class="number">1</span>:len_x) = [<span class="built_in">gamma</span>(<span class="built_in">i</span>:<span class="number">-1</span>:<span class="number">2</span>), <span class="built_in">gamma</span>(<span class="number">1</span>:len_x-<span class="built_in">i</span>+<span class="number">1</span>)];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-Autocorrelation-Function-ACF"><a href="#2-Autocorrelation-Function-ACF" class="headerlink" title="2 Autocorrelation Function (ACF)"></a>2 Autocorrelation Function (ACF)</h2><blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Autocorrelation" target="_blank" rel="noopener">/wiki/Autocorrelation</a></p>
 </blockquote>
@@ -301,9 +302,13 @@
 <h3 id="2-2-Definition"><a href="#2-2-Definition" class="headerlink" title="2.2 Definition"></a>2.2 Definition</h3><p><strong>see 1.3</strong>. Autocorrealtion function is defined by the normalization of the autovariance,</p>
 <script type="math/tex; mode=display">
 \rho(k)=\frac{\gamma(k)}{\gamma(0)}</script><h3 id="2-3-Calculation"><a href="#2-3-Calculation" class="headerlink" title="2.3 Calculation"></a>2.3 Calculation</h3><script type="math/tex; mode=display">
-\rho(k)=\frac{\gamma(k)}{\gamma(0)}=\Sigma_{t=k+1}^{n} \frac{\left(X_{t}-\overline{X}\right)\left(X_{t-k}-\overline{X}\right)}{\Sigma_{t=1}^{n}\left(X_{t}-\overline{X}\right)^{2}}</script><h3 id="2-4-White-noise"><a href="#2-4-White-noise" class="headerlink" title="2.4 White noise"></a>2.4 White noise</h3><p>The ACF of <strong>white noise</strong> is <strong>Dirac’s function</strong>,</p>
+\begin{aligned}\rho(k)&=\frac{\gamma(k)}{\gamma(0)}\\&=\sum_{t=k+1}^{n} \frac{\left(X_{t}-\overline{X}\right)\left(X_{t-k}-\overline{X}\right)}{\sum_{t=1}^{n}\left(X_{t}-\overline{X}\right)^{2}}\end{aligned}</script><h3 id="2-4-White-noise"><a href="#2-4-White-noise" class="headerlink" title="2.4 White noise"></a>2.4 White noise</h3><p>The ACF of <strong>white noise</strong> is <strong>Dirac’s function</strong>,</p>
 <script type="math/tex; mode=display">
-\rho_{k}=\delta(k)</script><h2 id="3-Partial-Autocorrelation-Function-PACF"><a href="#3-Partial-Autocorrelation-Function-PACF" class="headerlink" title="3 Partial Autocorrelation Function (PACF)"></a>3 Partial Autocorrelation Function (PACF)</h2><p><a href="https://en.wikipedia.org/wiki/Partial_autocorrelation_function" target="_blank" rel="noopener">/wiki/Partial_autocorrelation_function</a></p>
+\rho_{k}=\delta(k)</script><h3 id="2-5-MATLAB-code"><a href="#2-5-MATLAB-code" class="headerlink" title="2.5 MATLAB code"></a>2.5 MATLAB code</h3><p>As a extension based on the autocovariance,</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acf = autocov_m(p)/var(p);</span><br></pre></td></tr></table></figure>
+<p>or use <code>autocorr()</code></p>
+<p><code>[acf,lags,bounds] = autocorr(___)</code> additionally returns the lag numbers that MATLAB® uses to compute the ACF, and also returns the approximate upper and lower confidence bounds.</p>
+<h2 id="3-Partial-Autocorrelation-Function-PACF"><a href="#3-Partial-Autocorrelation-Function-PACF" class="headerlink" title="3 Partial Autocorrelation Function (PACF)"></a>3 Partial Autocorrelation Function (PACF)</h2><p><a href="https://en.wikipedia.org/wiki/Partial_autocorrelation_function" target="_blank" rel="noopener">/wiki/Partial_autocorrelation_function</a></p>
 <h3 id="3-1-Introduction"><a href="#3-1-Introduction" class="headerlink" title="3.1 Introduction"></a>3.1 Introduction</h3><p>The result of ACF actually is not the pure correlation of $X(t)$ and $X(t-k)$, because $X(t)$ will also be <strong>influenced by the variables between</strong>.</p>
 <p>In time series analysis, the partial autocorrelation function (PACF) gives the <strong>partial correlation</strong> of a stationary time series <strong>with its own lagged values</strong>, regressed the values of the time series at all shorter lags. It contrasts with the <strong>autocorrelation function</strong>, which <strong>does not control for other lags</strong>.</p>
 <h3 id="3-2-Definition"><a href="#3-2-Definition" class="headerlink" title="3.2 Definition"></a>3.2 Definition</h3><blockquote>
@@ -314,8 +319,12 @@
 \phi_{11}=\operatorname{corr}\left(x_{t+1}, x_{t}\right)=\rho(1)</script><p>and</p>
 <script type="math/tex; mode=display">
 \phi_{h h}=\operatorname{corr}\left(x_{t+h}-\hat{x}_{t+h}, x_{t}-\hat{x}_{t}\right), \quad h \geq 2</script><h3 id="3-3-Calculation"><a href="#3-3-Calculation" class="headerlink" title="3.3 Calculation"></a>3.3 Calculation</h3><script type="math/tex; mode=display">
-\phi(k)=\frac{E\left(X_{t}-E X_{t}\right)\left(X_{t-k}-E X_{t-k}\right)}{\sqrt{E\left(X_{t}-E X_{t}\right)^{2}} \sqrt{E\left(X_{t-k}-E X_{t-k}\right)^{2}}}=\frac{\operatorname{cov}\left[\left(X_{t}-\overline{X}_{t}\right),\left(X_{t-k}-\overline{X}_{t-k}\right)\right]}{\sqrt{\operatorname{var}\left(X_{t}-\overline{X}_{t}\right) )} \sqrt{\operatorname{var}\left(X_{t-k}-\overline{X}_{t-k}\right)}}</script><h2 id="4-Summary"><a href="#4-Summary" class="headerlink" title="4 Summary"></a>4 Summary</h2><ul>
-<li><p>Autovariance = Variance</p>
+\phi(k)=\frac{E\left(X_{t}-E X_{t}\right)\left(X_{t-k}-E X_{t-k}\right)}{\sqrt{E\left(X_{t}-E X_{t}\right)^{2}} \sqrt{E\left(X_{t-k}-E X_{t-k}\right)^{2}}}=\frac{\operatorname{cov}\left[\left(X_{t}-\overline{X}_{t}\right),\left(X_{t-k}-\overline{X}_{t-k}\right)\right]}{\sqrt{\operatorname{var}\left(X_{t}-\overline{X}_{t}\right) )} \sqrt{\operatorname{var}\left(X_{t-k}-\overline{X}_{t-k}\right)}}</script><h3 id="3-4-Matlab-code"><a href="#3-4-Matlab-code" class="headerlink" title="3.4 Matlab code"></a>3.4 Matlab code</h3><p>Use 3.3, e.g.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">phi(<span class="number">4</span>) = cov(p(<span class="number">4</span>:<span class="number">14</span>)-<span class="built_in">mean</span>(p(<span class="number">4</span>:<span class="number">14</span>)),p(<span class="number">1</span>:<span class="number">11</span>)-<span class="built_in">mean</span>(p(<span class="number">1</span>:<span class="number">11</span>)) ) / ...</span><br><span class="line">				(std(p(<span class="number">1</span>:<span class="number">11</span>)-<span class="built_in">mean</span>(p(<span class="number">1</span>:<span class="number">11</span>)))*std(p(<span class="number">4</span>:<span class="number">14</span>)-<span class="built_in">mean</span>(p(<span class="number">4</span>:<span class="number">14</span>))));</span><br></pre></td></tr></table></figure>
+<p>Or use <code>parcorr()</code></p>
+<p><code>[pacf,lags,bounds] = parcorr(___)</code> additionally returns the lag numbers that MATLAB® uses to compute the PACF, and also returns the approximate upper and lower confidence bounds.</p>
+<h2 id="4-Summary"><a href="#4-Summary" class="headerlink" title="4 Summary"></a>4 Summary</h2><ul>
+<li><p>Autocovariance= Covariance</p>
 </li>
 <li><p>Autocorrelation = Pearson correaltion coefficient calculated with the expectation of the whole process</p>
 </li>
@@ -364,10 +373,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-23T21:38:05+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-24T18:36:18+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 23, 2019</p>
+    <p>last updated at Jul 24, 2019</p>
   </a>
 </div>
 
@@ -397,7 +406,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis-of-Serial-Correlation | Xlindo is here!&summary="
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis of the serial correlation | Xlindo is here!&summary="
           
           >
           
@@ -409,7 +418,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis-of-Serial-Correlation | Xlindo is here!&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis of the serial correlation | Xlindo is here!&summary="
           
           >
           
@@ -421,7 +430,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis-of-Serial-Correlation | Xlindo is here!&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/affea27a/&title=TSA-Analysis of the serial correlation | Xlindo is here!&summary="
           
           >
           
@@ -542,7 +551,7 @@
 
   <script>
     window.subData = {
-      title: 'TSA-Analysis-of-Serial-Correlation',
+      title: 'TSA-Analysis of the serial correlation',
       tools: true
     }
   </script>
@@ -641,7 +650,7 @@
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Autovariance"><span class="toc-text">1 Autovariance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Introduction"><span class="toc-text">1.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Definition"><span class="toc-text">1.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-calculation"><span class="toc-text">1.3 calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Normalization"><span class="toc-text">1.4 Normalization</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Autocorrelation-Function-ACF"><span class="toc-text">2 Autocorrelation Function (ACF)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Introduction"><span class="toc-text">2.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Definition"><span class="toc-text">2.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Calculation"><span class="toc-text">2.3 Calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-White-noise"><span class="toc-text">2.4 White noise</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Partial-Autocorrelation-Function-PACF"><span class="toc-text">3 Partial Autocorrelation Function (PACF)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Introduction"><span class="toc-text">3.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Definition"><span class="toc-text">3.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Calculation"><span class="toc-text">3.3 Calculation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Summary"><span class="toc-text">4 Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-ARMA"><span class="toc-text">5 ARMA</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Autocovariance"><span class="toc-text">1 Autocovariance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Introduction"><span class="toc-text">1.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Definition"><span class="toc-text">1.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-calculation"><span class="toc-text">1.3 calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Normalization"><span class="toc-text">1.4 Normalization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-MATLAB-code-for-Autocovariance-Matrix"><span class="toc-text">1.5 MATLAB code for Autocovariance Matrix</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Autocorrelation-Function-ACF"><span class="toc-text">2 Autocorrelation Function (ACF)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Introduction"><span class="toc-text">2.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Definition"><span class="toc-text">2.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Calculation"><span class="toc-text">2.3 Calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-White-noise"><span class="toc-text">2.4 White noise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-MATLAB-code"><span class="toc-text">2.5 MATLAB code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Partial-Autocorrelation-Function-PACF"><span class="toc-text">3 Partial Autocorrelation Function (PACF)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Introduction"><span class="toc-text">3.1 Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Definition"><span class="toc-text">3.2 Definition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Calculation"><span class="toc-text">3.3 Calculation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Matlab-code"><span class="toc-text">3.4 Matlab code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Summary"><span class="toc-text">4 Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-ARMA"><span class="toc-text">5 ARMA</span></a></li></ol>
     </div>
   </section>
 
@@ -739,7 +748,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li></ul>
     </div>
   </section>
 
