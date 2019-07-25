@@ -286,13 +286,11 @@
 <li><p><strong>定义2.1(感知机)</strong> 假设<strong>输入空间</strong>(特征空间)是$\mathcal{X} \subseteq \mathbf{R}^{n}$，<strong>输出空间</strong>是$\mathcal{Y}={+1,-1}$。输入$x \in \mathcal{X}$表示<strong>实例的特征向量</strong>，对应于输入空间(特征空间)的点；输出$y \in \mathcal{Y}$表示实例的 类别。由输入空间到输出空间的如下函数称为感知机。</p>
 <ul>
 <li>$f(x)=\operatorname{sign}(w \cdot x+b)$</li>
-<li>其中$w$和$b$为感知机模型参数，$w \in \mathbf{R}^{n}$叫作<strong>权值(weight)</strong>或<strong>权值向量 (weight vector)</strong>，$b \in \mathbf{R}$叫作<strong>偏置(bias)</strong>，$w \cdot x$表示$w$和$x$的内积。$\operatorname{sign}$是符号函数，即<ul>
-<li>$\operatorname{sign}(x) = \begin{cases} +1, x \geqslant 0 \ -1,  x&lt;0 \end{cases}$</li>
+<li>其中$w$和$b$为感知机模型参数，$w \in \mathbf{R}^{n}$叫作<strong>权值(weight)</strong>或<strong>权值向量 (weight vector)</strong>，$b \in \mathbf{R}$叫作<strong>偏置(bias)</strong>，$w \cdot x$表示$w$和$x$的内积。$\operatorname{sign}$是符号函数，即<script type="math/tex; mode=display">
+\operatorname{sign}(x) = \begin{cases} +1,& x \geqslant 0 \\ -1,&  x<0 \end{cases}</script></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>感知机模型的<strong>假设空间</strong>是定义在特征空间中的所有<strong>线性分类模型(linear classification model)</strong>或<strong>线性分类器(linear classifier)</strong>，即函数集合${f | f(x)=w \cdot x+b}$。</p>
+<li><p>感知机模型的<strong>假设空间</strong>是定义在特征空间中的所有<strong>线性分类模型(linear classification model)</strong>或<strong>线性分类器(linear classifier)</strong>，即函数集合$\lbrace f | f(x)=w \cdot x+b \rbrace$。</p>
 </li>
 <li>感知机有如下几何解释：<ul>
 <li>线性方程<ul>
@@ -309,7 +307,7 @@
 </ul>
 <h3 id="2-2-感知机学习策略"><a href="#2-2-感知机学习策略" class="headerlink" title="2.2 感知机学习策略"></a>2.2 感知机学习策略</h3><h4 id="2-2-1-数据集的线性可分性"><a href="#2-2-1-数据集的线性可分性" class="headerlink" title="2.2.1 数据集的线性可分性"></a>2.2.1 数据集的线性可分性</h4><p><strong>定义2.2(数据集的线性可分性)</strong> 给定一个数据集</p>
 <script type="math/tex; mode=display">
-T=\left\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\right\},</script><p>其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，如果存在某个超平面$S$</p>
+T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace,</script><p>其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，如果存在某个超平面$S$</p>
 <script type="math/tex; mode=display">
 w \cdot x+b=0</script><p>能够将数据集的正实例点和负实例点完全正确地划分到超平面的两侧，即对所有$y_{i}=+1$的实例$i$，有$w \cdot x_{i}+b&gt;0$，对所有$y_{i}=-1$的实例，有$w \cdot x_{i}+b&lt;0$，则称数据集$T$为线性可分数据集(linearly separable data set)；否则，称数据集$T$线性不可分。</p>
 <h4 id="2-2-2-感知机学习策略"><a href="#2-2-2-感知机学习策略" class="headerlink" title="2.2.2 感知机学习策略"></a>2.2.2 感知机学习策略</h4><p>确定模型参数$w,b$，需要确定一个学习策略，即定义(经验)损失函数并将损失函数极小化。</p>
@@ -341,7 +339,7 @@ L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right). \tag{2.4}</script
 \begin{array}{c}{w \leftarrow w+\eta y_{i} x_{i}} \\ {b \leftarrow b+\eta y_{i}}\end{array}</script><p>式中$\eta(0&lt;\eta \leqslant 1)$是步长，也称学习率(learning rate)。</p>
 <p>综上所述，得到如下算法：</p>
 <p><strong>算法2.1(感知机学习算法的原始形式)</strong></p>
-<p>输入：训练数据集$T={\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)}$，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，学习率$\eta(0&lt;\eta \leqslant 1)$；</p>
+<p>输入：训练数据集$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，学习率$\eta(0&lt;\eta \leqslant 1)$；</p>
 <p>输出：$w,b$；感知机模型$f(x)=\operatorname{sign}(w \cdot x+b)$.</p>
 <ol>
 <li><p>选取初值$w_{0}, b_{0}$</p>
@@ -359,7 +357,7 @@ L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right). \tag{2.4}</script
 <h4 id="2-3-2-算法的收敛性"><a href="#2-3-2-算法的收敛性" class="headerlink" title="2.3.2 算法的收敛性"></a>2.3.2 算法的收敛性</h4><p>现在证明，对于<strong>线性可分数据集</strong>感知机学习算法<strong>原始形式收敛</strong>，即经过<strong>有限次迭代</strong>可以得到一个将训练数据集完全正确划分的分离超平面及感知机模型。</p>
 <p>为了便于叙述与推导，将偏置$b$并入权重向量$w$，记作$\hat{w}=\left(w^{\mathrm{T}}, b\right)^{\mathrm{T}}$，同样也将输入向量加以扩充，加进常数$1$，记作$\hat{x}=\left(x^{\mathrm{T}}, 1\right)^{\mathrm{T}}$,这样$\hat{x} \in \mathbf{R}^{n+1}$,$\hat{w} \in \mathbf{R}^{n+1}$。显然，$\hat{w} \cdot \hat{x}=w \cdot x+b$。</p>
 <p><strong>定理2.1(Novikoff)</strong></p>
-<p>设训练数据集$T={\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)}$是线性可分的，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，则</p>
+<p>设训练数据集$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$是线性可分的，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，则</p>
 <ol>
 <li><p>存在满足条件$\left|\hat{w}_{\mathrm{opt}}\right|=1$的超平面$\hat{w}_{\mathrm{opt}} \cdot \hat{x}=w_{\mathrm{opt}} \cdot x+b_{\mathrm{opt}}=0$将训练数据集完全正确分开；且存在$\gamma&gt;0$，对所有$i=1,2, \cdots, N$</p>
 <script type="math/tex; mode=display">
@@ -379,7 +377,7 @@ k \leqslant\left(\frac{R}{\gamma}\right)^{2}</script></li>
 <p>实例点更新次数越多，意味着它<strong>距离分离超平面越近</strong>，也就<strong>越难正确分类</strong>。换句话说，这样的实例对学习结果影响最大。 </p>
 <p>下面对照原始形式来叙述感知机学习算法的对偶形式。</p>
 <p><strong>算法2.2(感知机学习算法的对偶形式)</strong></p>
-<p>输入：线性可分数据集$T={\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)}$，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，学习率$\eta(0&lt;\eta \leqslant 1)$；</p>
+<p>输入：线性可分数据集$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，学习率$\eta(0&lt;\eta \leqslant 1)$；</p>
 <p>输出：$\alpha,b$；感知机模型$f(x)=\operatorname{sign}\left(\sum_{j=1}^{N} \alpha_{j} y_{j} x_{j} \cdot x+b\right)$.</p>
 <p>其中$\alpha=\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{N}\right)^{\mathrm{T}}$.</p>
 <ol>
@@ -422,7 +420,7 @@ k \leqslant\left(\frac{R}{\gamma}\right)^{2}</script><p>当训练数据集线性
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T09:18:17+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T09:59:59+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 25, 2019</p>
@@ -816,7 +814,7 @@ k \leqslant\left(\frac{R}{\gamma}\right)^{2}</script><p>当训练数据集线性
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e3d825c6\" title="集体智慧编程-Ch3-Clustering" rel="bookmark">集体智慧编程-Ch3-Clustering</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
     </div>
   </section>
 
