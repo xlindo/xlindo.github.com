@@ -340,7 +340,7 @@
 </li>
 </ul>
 <h2 id="1-4-Pseudorandom-Binary-Sequence-PRBS"><a href="#1-4-Pseudorandom-Binary-Sequence-PRBS" class="headerlink" title="1.4 Pseudorandom Binary Sequence (PRBS)"></a>1.4 Pseudorandom Binary Sequence (PRBS)</h2><p>A PRBS $(u(t))_t$ is a periodic, deterministic signal with white noise-like properties.</p>
-<script type="math/tex; mode=display">u(t)=\operatorname{rem}\left(A\left(q^{-1}\right) e(t), 2\right)</script><h3 id="Properties-3"><a href="#Properties-3" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<script type="math/tex; mode=display">u(t)=\operatorname{rem}\left(A\left(q^{-1}\right) e(t), 2\right)=\operatorname{rem}\left(a_{1} u(t-1)+\ldots+a_{n} u(t-n), 2\right)</script><h3 id="Properties-3"><a href="#Properties-3" class="headerlink" title="Properties"></a>Properties</h3><ul>
 <li>The signal takes values ${0, 1}$ in a fashion dictated by $A$.</li>
 <li>Spectral properties are determined by $A(q)$ and in particular by the period length $M = 2^n − 1$.</li>
 <li>Deterministic sequence behaving as noise (reproducible). </li>
@@ -361,7 +361,7 @@
 <li>A <strong>step function</strong> that is  persistently exciting of order $1$, but not of greater order.</li>
 <li>A PRBS with period $M$ is  persistently exciting of order $M$, and can generate a $2M − 1$ full length sequence.</li>
 <li>An <strong>ARMA</strong> process is  persistently exciting of any finite order.</li>
-<li>A <strong>sum of $M$ sinusoids</strong> is  persistently exciting of order $2M$ (if $\omega_{m} \neq 0,-\pi, \pi$)</li>
+<li>A sum of $M$ sinusoids is  persistently exciting of order of order $n=2M$ (if $\omega_{m} \neq 0,-\pi, \pi$)</li>
 <li><strong>A parametric model becomes more accurate in the frequency region where the input signal has a major part of its energy.</strong></li>
 </ul>
 <h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ul>
@@ -385,7 +385,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T12:02:59+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T12:09:34+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 25, 2019</p>
@@ -779,7 +779,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\affea27a\" title="TSA-Analysis of the serial correlation" rel="bookmark">TSA-Analysis of the serial correlation</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\59bc05b2\" title="SysId - System Identification #draft" rel="bookmark">SysId - System Identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\affea27a\" title="TSA-Analysis of the serial correlation" rel="bookmark">TSA-Analysis of the serial correlation</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\59bc05b2\" title="SysId - System Identification #draft" rel="bookmark">SysId - System Identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li></ul>
     </div>
   </section>
 
