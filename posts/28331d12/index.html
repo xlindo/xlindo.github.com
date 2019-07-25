@@ -345,7 +345,7 @@
 </ul>
 </li>
 <li>To minimize $f$ , we would like to find the direction in which $f$ decreases the fastest.<ul>
-<li>$\begin{aligned} &amp; \min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1} \boldsymbol{u}^{\top} \nabla_{\boldsymbol{x}} f(\boldsymbol{x}) \=&amp; \min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1}|\boldsymbol{u}|_{2}\left|\nabla_{\boldsymbol{x}} f(\boldsymbol{x})\right|_{2} \cos \theta \end{aligned}$</li>
+<li>$\min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1} \boldsymbol{u}^{\top} \nabla_{\boldsymbol{x}} f(\boldsymbol{x}) = \min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1}|\boldsymbol{u}|_{2}\left|\nabla_{\boldsymbol{x}} f(\boldsymbol{x})\right|_{2} \cos \theta$</li>
 <li>Substituting in $|\boldsymbol{u}|_{2}=1$ and ignoring factors that do not depend on $\boldsymbol{u}$, this simplifies to<ul>
 <li>$\min _{\boldsymbol{u}} \cos \theta$</li>
 <li>This is minimized when $\boldsymbol{u}$ points in the <strong>opposite</strong> direction as the gradient.<ul>
@@ -449,7 +449,7 @@
 <li>$L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})=f(\boldsymbol{x})+\sum_{i} \lambda_{i} g^{(i)}(\boldsymbol{x})+\sum_{j} \alpha_{j} h^{(j)}(\boldsymbol{x})$</li>
 </ul>
 </li>
-<li>and $\mathbb{S}=\left{\boldsymbol{x} | \forall i, g^{(i)}(\boldsymbol{x})=0 \text { and } \forall j, h^{(j)}(\boldsymbol{x}) \leq 0\right}$ with equality constraints $g^{(j)}$ and inequality constraints $h^{(j)}$</li>
+<li>and $\mathbb{S}=\lbrace\boldsymbol{x} | \forall i, g^{(i)}(\boldsymbol{x})=0 \text { and } \forall j, h^{(j)}(\boldsymbol{x}) \leq 0\rbrace$ with equality constraints $g^{(j)}$ and inequality constraints $h^{(j)}$</li>
 <li>then<ul>
 <li>$\min _{\boldsymbol{x}} \max _{\boldsymbol{\lambda}} \max _{\boldsymbol{\alpha}, \boldsymbol{\alpha} \geq 0} L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})$</li>
 </ul>
@@ -506,10 +506,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-23T19:41:56+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T10:03:07+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 23, 2019</p>
+    <p>last updated at Jul 25, 2019</p>
   </a>
 </div>
 
@@ -900,7 +900,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2-感知机" rel="bookmark">统计学习方法-Ch2-感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c7711d38\" title="集体智慧编程-Ch1-2-Recommendation" rel="bookmark">集体智慧编程-Ch1-2-Recommendation</a></h3></div></li></ul>
     </div>
   </section>
 
