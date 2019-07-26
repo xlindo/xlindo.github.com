@@ -31,7 +31,7 @@
     
     
     <entry>
-      <title>备查手册-独立成分分析-ICA</title>
+      <title>备查手册-独立成分分析 ICA</title>
       <link href="/posts/ca0caebe/"/>
       <url>/posts/ca0caebe/</url>
       
@@ -56,7 +56,7 @@
     
     
     <entry>
-      <title>统计学习方法-Ch3-k近邻</title>
+      <title>统计学习方法-Ch3 k近邻</title>
       <link href="/posts/a59bd45b/"/>
       <url>/posts/a59bd45b/</url>
       
@@ -83,7 +83,7 @@
     
     
     <entry>
-      <title>统计学习方法-Ch2-感知机</title>
+      <title>统计学习方法-Ch2 感知机</title>
       <link href="/posts/836ddfd5/"/>
       <url>/posts/836ddfd5/</url>
       
@@ -110,7 +110,7 @@
     
     
     <entry>
-      <title>统计学习方法-Ch1-概论</title>
+      <title>统计学习方法-Ch1 概论</title>
       <link href="/posts/10b80194/"/>
       <url>/posts/10b80194/</url>
       
@@ -137,7 +137,7 @@
     
     
     <entry>
-      <title>集体智慧编程-Ch3-Clustering</title>
+      <title>集体智慧编程-Ch3 Clustering</title>
       <link href="/posts/e3d825c6/"/>
       <url>/posts/e3d825c6/</url>
       
@@ -164,7 +164,7 @@
     
     
     <entry>
-      <title>集体智慧编程-Ch1-2-Recommendation</title>
+      <title>集体智慧编程-Ch1-2 Recommendation</title>
       <link href="/posts/c7711d38/"/>
       <url>/posts/c7711d38/</url>
       
@@ -371,9 +371,9 @@
             
             <tag> aufDeutsch </tag>
             
-            <tag> 人机交互 </tag>
-            
             <tag> 机器人 </tag>
+            
+            <tag> 人机交互 </tag>
             
         </tags>
       
@@ -980,9 +980,9 @@
             
             <tag> 数据结构与算法 </tag>
             
-            <tag> leetcode </tag>
-            
             <tag> python </tag>
+            
+            <tag> leetcode </tag>
             
             <tag> 程序 </tag>
             
