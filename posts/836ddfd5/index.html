@@ -357,9 +357,9 @@ L(w, b)=-\sum_{x_{i} \in M} y_{i}\left(w \cdot x_{i}+b\right). \tag{2.4}</script
 <h4 id="2-3-2-算法的收敛性"><a href="#2-3-2-算法的收敛性" class="headerlink" title="2.3.2 算法的收敛性"></a>2.3.2 算法的收敛性</h4><p>现在证明，对于<strong>线性可分数据集</strong>感知机学习算法<strong>原始形式收敛</strong>，即经过<strong>有限次迭代</strong>可以得到一个将训练数据集完全正确划分的分离超平面及感知机模型。</p>
 <p>为了便于叙述与推导，将偏置$b$并入权重向量$w$，记作$\hat{w}=\left(w^{\mathrm{T}}, b\right)^{\mathrm{T}}$，同样也将输入向量加以扩充，加进常数$1$，记作$\hat{x}=\left(x^{\mathrm{T}}, 1\right)^{\mathrm{T}}$,这样$\hat{x} \in \mathbf{R}^{n+1}$,$\hat{w} \in \mathbf{R}^{n+1}$。显然，$\hat{w} \cdot \hat{x}=w \cdot x+b$。</p>
 <p><strong>定理2.1(Novikoff)</strong></p>
-<p>设训练数据集$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$是线性可分的，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}={+1,-1}$, $i=1,2, \cdots, N$，则</p>
+<p>设训练数据集$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$是线性可分的，其中$x_{i} \in \mathcal{X}=\mathbf{R}^{n}$, $y_{i} \in \mathcal{Y}=\lbrace+1,-1\rbrace$, $i=1,2, \cdots, N$，则</p>
 <ol>
-<li><p>存在满足条件$\left|\hat{w}_{\mathrm{opt}}\right|=1$的超平面$\hat{w}_{\mathrm{opt}} \cdot \hat{x}=w_{\mathrm{opt}} \cdot x+b_{\mathrm{opt}}=0$将训练数据集完全正确分开；且存在$\gamma&gt;0$，对所有$i=1,2, \cdots, N$</p>
+<li><p>存在满足条件$|\hat{w}_{\mathrm{opt}}|=1$的超平面$\hat{w}_{\mathrm{opt}} \cdot \hat{x}=w_{\mathrm{opt}} \cdot x+b_{\mathrm{opt}}=0$将训练数据集完全正确分开；且存在$\gamma&gt;0$，对所有$i=1,2, \cdots, N$</p>
 <script type="math/tex; mode=display">
 y_{i}\left(\hat{w}_{\mathrm{opt}} \cdot \hat{x}_{i}\right)=y_{i}\left(w_{\mathrm{opt}} \cdot x_{i}+b_{\mathrm{opt}}\right) \geqslant \gamma</script></li>
 <li><p>令$R=\max _{1 \leqslant i \leqslant N}\left|\hat{x}_{i}\right|$，则感知机算法2.1在训练数据集上的误分类次数$k$满足不等式</p>
@@ -420,10 +420,10 @@ k \leqslant\left(\frac{R}{\gamma}\right)^{2}</script><p>当训练数据集线性
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-25T09:59:59+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-26T21:27:58+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 25, 2019</p>
+    <p>last updated at Jul 26, 2019</p>
   </a>
 </div>
 
@@ -814,7 +814,7 @@ k \leqslant\left(\frac{R}{\gamma}\right)^{2}</script><p>当训练数据集线性
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e3d825c6\" title="集体智慧编程-Ch3-Clustering" rel="bookmark">集体智慧编程-Ch3-Clustering</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3-k近邻" rel="bookmark">统计学习方法-Ch3-k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1-概论" rel="bookmark">统计学习方法-Ch1-概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\18e427db\" title="ML - kNN,k-近邻算法学习" rel="bookmark">ML - kNN,k-近邻算法学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e3d825c6\" title="集体智慧编程-Ch3-Clustering" rel="bookmark">集体智慧编程-Ch3-Clustering</a></h3></div></li></ul>
     </div>
   </section>
 
