@@ -67,9 +67,9 @@
     <link href="http://xlindo.com/posts/a59bd45b/"/>
     <id>http://xlindo.com/posts/a59bd45b/</id>
     <published>2019-07-22T07:42:33.000Z</published>
-    <updated>2019-07-26T19:55:06.532Z</updated>
+    <updated>2019-07-26T20:15:18.212Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>统计学习方法 刷书笔记<br><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><p>In progress.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>统计学习方法 刷书笔记<br><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><h2 id="3-k-近邻"><a href="#3-k-近邻" class="headerlink" title="3 $k$近邻"></a>3 $k$近邻</h2><p>$k$近邻法（$k$-nearest neighbor，$k$-NN）是一种基本<strong>分类与回归</strong>方法。本书只讨论分类问题中的$k$近邻法。</p><ul><li>$k$近邻法的<strong>输入</strong>为实例的<strong>特征向量</strong>，对应于特征空间的<strong>点</strong>；<ul><li><strong>输出</strong>为实例的<strong>类别</strong>，可以取多类。</li></ul></li><li>$k$近邻法<strong>假设</strong>给定一个训练数据集，其中的实例<strong>类别已定</strong>。分类时，对新的实例，根据其$k$个最近邻的训练实例的类别，通过多数表决等方式进行预测。 <ul><li><strong>因此，k近邻法不具有显式的学习过程。</strong></li><li>$k$近邻法<strong>实际上</strong>利用训练数据集<strong>对特征向量空间</strong>进行划分，并作为其分类的“模型”。</li></ul></li><li><strong>$k$值的选择</strong>、<strong>距离度量</strong>及<strong>分类决策规则</strong>是$k$近邻法的三个基本要素。</li><li>本章最后讲述$k$近邻法的一个实现方法——$kd$树，介绍构造$kd$树和搜索$kd$树的算法。</li></ul><h3 id="3-1-k近邻算法"><a href="#3-1-k近邻算法" class="headerlink" title="3.1 k近邻算法"></a>3.1 k近邻算法</h3><hr><p><strong>算法3.1（k近邻法）</strong></p><p>输入</p><hr>]]></content>
     
     <summary type="html">
     
@@ -346,9 +346,9 @@
     
       <category term="aufDeutsch" scheme="http://xlindo.com/tags/aufDeutsch/"/>
     
-      <category term="机器人" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
       <category term="人机交互" scheme="http://xlindo.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+      <category term="机器人" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
   </entry>
   
