@@ -276,7 +276,7 @@
 </blockquote>
 <p>这本书的内容，全部是所有的算法工程师岗位的职位要求。另外也听说这本书重数学、重推导，所以可以作为集体智慧编程的搭档。理论与实战的两本书的结合，应该能使人在通用机器学习算法方面有极大的提升。</p>
 <p><strong><u>非常重要的一件事：本书中的所有变量，对其在数学符号表示上，向量与标量没有作仔细区分(即加粗与否)。所以请读者在公式中自行判断一下。</u></strong></p>
-<h2 id="0-TOC"><a href="#0-TOC" class="headerlink" title="0 TOC"></a>0 TOC</h2><ol>
+<h1 id="0-TOC"><a href="#0-TOC" class="headerlink" title="0 TOC"></a>0 TOC</h1><ol>
 <li>概论</li>
 <li>感知机</li>
 <li>k近邻</li>
@@ -290,8 +290,8 @@
 <li>条件随机场</li>
 <li>统计学习方法总结</li>
 </ol>
-<h2 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h2><p>本章简述统计学习方法的基本概念。</p>
-<h3 id="1-1-统计学习"><a href="#1-1-统计学习" class="headerlink" title="1.1 统计学习"></a>1.1 统计学习</h3><ul>
+<h1 id="1-概论"><a href="#1-概论" class="headerlink" title="1 概论"></a>1 概论</h1><p>本章简述统计学习方法的基本概念。</p>
+<h2 id="1-1-统计学习"><a href="#1-1-统计学习" class="headerlink" title="1.1 统计学习"></a>1.1 统计学习</h2><ul>
 <li><p><strong>统计学习</strong>(statistical learning)是关于计算机基于数据构建概率统计模型并运用模型<br>对数据进行预测与分析的一门学科。统计学习也称为<strong>统计机器学习</strong>(statistical machine learning)。</p>
 </li>
 <li><p>统计学习的<strong>对象是数据</strong>(data)。</p>
@@ -323,8 +323,8 @@
 </li>
 <li>统计学习<strong>研究</strong>一般包括<strong>统计学习方法</strong>(statistical learning method)、<strong>统计学习理论</strong>(statistical learning theory)及<strong>统计学习应用</strong>(application of statistical learning)三个方面。</li>
 </ul>
-<h3 id="1-2-监督学习"><a href="#1-2-监督学习" class="headerlink" title="1.2 监督学习"></a>1.2 监督学习</h3><p>监督学习(supervised learning)的<strong>任务</strong>是学习一个模型，使模型能够对<strong>任意给定的输入</strong>，对其相应的输出做出一个好的<strong>预测</strong>。</p>
-<h4 id="1-2-1-输入空间、特征空间与输出空间"><a href="#1-2-1-输入空间、特征空间与输出空间" class="headerlink" title="1.2.1 输入空间、特征空间与输出空间"></a>1.2.1 输入空间、特征空间与输出空间</h4><ul>
+<h2 id="1-2-监督学习"><a href="#1-2-监督学习" class="headerlink" title="1.2 监督学习"></a>1.2 监督学习</h2><p>监督学习(supervised learning)的<strong>任务</strong>是学习一个模型，使模型能够对<strong>任意给定的输入</strong>，对其相应的输出做出一个好的<strong>预测</strong>。</p>
+<h3 id="1-2-1-输入空间、特征空间与输出空间"><a href="#1-2-1-输入空间、特征空间与输出空间" class="headerlink" title="1.2.1 输入空间、特征空间与输出空间"></a>1.2.1 输入空间、特征空间与输出空间</h3><ul>
 <li><strong>输入空间(input space)与输出空间(output space)</strong>：输入与输出所有可能取值的集合。</li>
 <li><strong>特征空间(feature space)</strong>：所有特征向量存在的空间。<ul>
 <li>每个<strong>具体的输入</strong>是一个<strong>实例(instance)</strong>，通常由<strong>特征向量(feature vector)</strong>表示。</li>
@@ -347,7 +347,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h4 id="1-2-2-联合概率分布"><a href="#1-2-2-联合概率分布" class="headerlink" title="1.2.2 联合概率分布"></a>1.2.2 联合概率分布</h4><ul>
+<h3 id="1-2-2-联合概率分布"><a href="#1-2-2-联合概率分布" class="headerlink" title="1.2.2 联合概率分布"></a>1.2.2 联合概率分布</h3><ul>
 <li><p>监督学习<strong>假设</strong>输入与输出的随机变量$X$和$Y$遵循联合概率分布$P(X,Y)$。</p>
 </li>
 <li><p>注意，在<strong>学习过程</strong>中，假定这一联合概率分布存在，</p>
@@ -358,7 +358,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <li><strong>训练数据与测试数据</strong>被看作是依联合概率分布$P(X,Y)$<strong>独立同分布</strong>产生的。</li>
 <li>统计学习假设数据存在一定的统计规律，<strong>$X$和$Y$具有联合概率分布的假设就是监督学习关于数据的基本假设</strong>。</li>
 </ul>
-<h4 id="1-2-3-假设空间"><a href="#1-2-3-假设空间" class="headerlink" title="1.2.3 假设空间"></a>1.2.3 假设空间</h4><ul>
+<h3 id="1-2-3-假设空间"><a href="#1-2-3-假设空间" class="headerlink" title="1.2.3 假设空间"></a>1.2.3 假设空间</h3><ul>
 <li>监督学习的<strong>目的</strong>在于<strong>学习一个由输入到输出的映射</strong>，这一映射由<strong>模型来表示</strong>。<ul>
 <li>换句话说，学习的目的就在于找到最好的这样的模型。</li>
 </ul>
@@ -372,7 +372,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h4 id="1-2-4-问题的形式化"><a href="#1-2-4-问题的形式化" class="headerlink" title="1.2.4 问题的形式化"></a>1.2.4 问题的形式化</h4><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722103044.png" alt="监督学习"></p>
+<h3 id="1-2-4-问题的形式化"><a href="#1-2-4-问题的形式化" class="headerlink" title="1.2.4 问题的形式化"></a>1.2.4 问题的形式化</h3><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722103044.png" alt="监督学习"></p>
 <ul>
 <li>监督学习分为<strong>学习</strong>和<strong>预测</strong>两个过程，由学习系统与预测系统完成。</li>
 <li><p>首先给定一个训练数据集</p>
@@ -388,9 +388,9 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <li>在<strong>学习过程中</strong>，学习系统利用给定的训练数据集，<strong>通过学习(或训练)得到一个模型</strong>，表示为条件概率分布$\hat{P}(Y | X)$或决策函数$Y=\hat{f}(X)$，用以描述输入与输出随机变量之间的映射关系。</li>
 <li>在<strong>预测过程</strong>中，预测系统对于给定的测试样本集中的输入$x_{N+1}$，由模型$y_{N+1}=\arg \max _{y_{N+1}} \hat{P}\left(y_{N+1} | x_{N+1}\right)$或$y_{N+1}=\hat{f}\left(x_{N+1}\right)$给出相应的输出$y_{N+1}$。</li>
 </ul>
-<h3 id="1-3-统计学习三要素"><a href="#1-3-统计学习三要素" class="headerlink" title="1.3 统计学习三要素"></a>1.3 统计学习三要素</h3><p>统计学习方法由三要素构成，可以简单地表示为</p>
+<h2 id="1-3-统计学习三要素"><a href="#1-3-统计学习三要素" class="headerlink" title="1.3 统计学习三要素"></a>1.3 统计学习三要素</h2><p>统计学习方法由三要素构成，可以简单地表示为</p>
 <script type="math/tex; mode=display">
-方法＝模型＋策略＋算法</script><h4 id="1-3-1-模型"><a href="#1-3-1-模型" class="headerlink" title="1.3.1 模型"></a>1.3.1 模型</h4><ul>
+方法＝模型＋策略＋算法</script><h3 id="1-3-1-模型"><a href="#1-3-1-模型" class="headerlink" title="1.3.1 模型"></a>1.3.1 模型</h3><ul>
 <li>在<strong>监督学习过程</strong>中，模型就是所要学习的<strong>条件概率分布</strong>或<strong>决策函数</strong>。</li>
 <li>模型的<strong>假设空间(hypothesis space)</strong>包含所有可能的<strong>决策函数</strong>或<strong>条件概率分布</strong>:<ul>
 <li>假设空间用$\mathcal{F}$表示，<strong>可以定义为决策函数的集合</strong><ul>
@@ -413,10 +413,10 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h4 id="1-3-2-策略"><a href="#1-3-2-策略" class="headerlink" title="1.3.2 策略"></a>1.3.2 策略</h4><ul>
+<h3 id="1-3-2-策略"><a href="#1-3-2-策略" class="headerlink" title="1.3.2 策略"></a>1.3.2 策略</h3><ul>
 <li>策略：考虑按照什么样的<strong>准则</strong>学习或选择最优的模型。</li>
 </ul>
-<h5 id="1-3-2-1-损失函数和风险函数"><a href="#1-3-2-1-损失函数和风险函数" class="headerlink" title="1.3.2.1 损失函数和风险函数"></a>1.3.2.1 损失函数和风险函数</h5><p><strong>损失函数</strong>度量模型<strong>一次预测</strong>的好坏，<strong>风险函数</strong>度量<strong>平均意义下模型预测</strong>的好坏。</p>
+<h4 id="1-3-2-1-损失函数和风险函数"><a href="#1-3-2-1-损失函数和风险函数" class="headerlink" title="1.3.2.1 损失函数和风险函数"></a>1.3.2.1 损失函数和风险函数</h4><p><strong>损失函数</strong>度量模型<strong>一次预测</strong>的好坏，<strong>风险函数</strong>度量<strong>平均意义下模型预测</strong>的好坏。</p>
 <ul>
 <li>输出的预测值$f(X)$与真实值$Y$可能一致也可能不一致，<strong>损失函数(loss function)</strong>或<strong>代价函数(cost function)</strong>来<strong>度量预测错误的程度</strong>。<ul>
 <li>损失函数是$f(X)$和$Y$的<strong>非负</strong>实值函数，记作$L(Y,f(X))$。常用的损失函数有：</li>
@@ -456,7 +456,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h5 id="1-3-2-2-经验风险最小化与结构风险最小化"><a href="#1-3-2-2-经验风险最小化与结构风险最小化" class="headerlink" title="1.3.2.2 经验风险最小化与结构风险最小化"></a>1.3.2.2 经验风险最小化与结构风险最小化</h5><p>经验风险最小化与结构风险最小化是监督学习的两个基本策略。</p>
+<h4 id="1-3-2-2-经验风险最小化与结构风险最小化"><a href="#1-3-2-2-经验风险最小化与结构风险最小化" class="headerlink" title="1.3.2.2 经验风险最小化与结构风险最小化"></a>1.3.2.2 经验风险最小化与结构风险最小化</h4><p>经验风险最小化与结构风险最小化是监督学习的两个基本策略。</p>
 <ul>
 <li><p><strong>经验风险最小化(empirical risk minimization，ERM)</strong>的策略认为，经验风险最小的模型是最优的模型。</p>
 <ul>
@@ -492,13 +492,13 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </li>
 </ul>
 <p>  这样，监督学习问题就变成了经验风险或结构风险函数的最优化问题。这时经验或结构风险函数是最优化的<strong>目标函数</strong>。</p>
-<h4 id="1-3-3-算法"><a href="#1-3-3-算法" class="headerlink" title="1.3.3 算法"></a>1.3.3 算法</h4><ul>
+<h3 id="1-3-3-算法"><a href="#1-3-3-算法" class="headerlink" title="1.3.3 算法"></a>1.3.3 算法</h3><ul>
 <li><p>算法是指<strong>学习模型的具体计算方法</strong>。</p>
 </li>
 <li><p>统计学习基于训练数据集，根据学习策略，从假设空间中选择最优模型，最后需要考虑<strong>用什么样的计算方法求解最优模型</strong>。</p>
 </li>
 </ul>
-<h3 id="1-4-模型评估与模型选择"><a href="#1-4-模型评估与模型选择" class="headerlink" title="1.4 模型评估与模型选择"></a>1.4 模型评估与模型选择</h3><h4 id="1-4-1-训练误差与测试误差"><a href="#1-4-1-训练误差与测试误差" class="headerlink" title="1.4.1 训练误差与测试误差"></a>1.4.1 训练误差与测试误差</h4><p>当损失函数给定时，基于损失函数的模型的<strong>训练误差(training error)</strong>和模型的<strong>测试误差(test error)</strong>就自然成为<strong>学习方法评估的标准</strong>。</p>
+<h2 id="1-4-模型评估与模型选择"><a href="#1-4-模型评估与模型选择" class="headerlink" title="1.4 模型评估与模型选择"></a>1.4 模型评估与模型选择</h2><h3 id="1-4-1-训练误差与测试误差"><a href="#1-4-1-训练误差与测试误差" class="headerlink" title="1.4.1 训练误差与测试误差"></a>1.4.1 训练误差与测试误差</h3><p>当损失函数给定时，基于损失函数的模型的<strong>训练误差(training error)</strong>和模型的<strong>测试误差(test error)</strong>就自然成为<strong>学习方法评估的标准</strong>。</p>
 <p><strong>训练误差</strong>的大小，对判断给定的问题是不是一个容易学习的问题是有意义的，<strong>但本质上不重要</strong>。<strong>测试误差</strong>反映了学习方法<strong>对未知的测试数据集的预测能力</strong>，是学习中的<strong>重要概念</strong>。</p>
 <ul>
 <li><strong>注意，统计学习方法具体采用的损失函数未必是评估时使用的损失函数。</strong></li>
@@ -520,11 +520,11 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </li>
 </ul>
 <p>显然，给定两种学习方法，测试误差小的方法具有更好的预测能力，这种对未知数据的预测能力称为<strong>泛化能力(generalization ability)</strong>。</p>
-<h4 id="1-4-2-过拟合与模型选择"><a href="#1-4-2-过拟合与模型选择" class="headerlink" title="1.4.2 过拟合与模型选择"></a>1.4.2 过拟合与模型选择</h4><p>如果在假设空间中存 在“真”模型，那么所选择的模型应该逼近真模型。<strong>即参数个数相同，且与真模型参数向量接近。</strong></p>
+<h3 id="1-4-2-过拟合与模型选择"><a href="#1-4-2-过拟合与模型选择" class="headerlink" title="1.4.2 过拟合与模型选择"></a>1.4.2 过拟合与模型选择</h3><p>如果在假设空间中存 在“真”模型，那么所选择的模型应该逼近真模型。<strong>即参数个数相同，且与真模型参数向量接近。</strong></p>
 <p>如果<strong>一味追求提高对训练数据的预测能力</strong>，所选模型的<strong>复杂度</strong>则往往会比真模型<strong>更高</strong>。这种现象称为<strong>过拟合(over-fitting)</strong>。</p>
 <p>模型选择时，不仅要考虑对已知数据的预测能力，<strong>而且还要考虑对未知数据的预测能力</strong>。其关系如下图，</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722145305.png" alt="训练误差和测试误差"></p>
-<h3 id="1-5-正则化与交叉验证"><a href="#1-5-正则化与交叉验证" class="headerlink" title="1.5 正则化与交叉验证"></a>1.5 正则化与交叉验证</h3><h4 id="1-5-1-正则化"><a href="#1-5-1-正则化" class="headerlink" title="1.5.1 正则化"></a>1.5.1 正则化</h4><ul>
+<h2 id="1-5-正则化与交叉验证"><a href="#1-5-正则化与交叉验证" class="headerlink" title="1.5 正则化与交叉验证"></a>1.5 正则化与交叉验证</h2><h3 id="1-5-1-正则化"><a href="#1-5-1-正则化" class="headerlink" title="1.5.1 正则化"></a>1.5.1 正则化</h3><ul>
 <li><strong>模型选择</strong>的典型方法是正则化(regularization)。</li>
 <li><p>正则化是<strong>结构风险最小化策略</strong>的实现，是<strong>在经验风险上加一个正则化项(regularizer)或罚项(penalty term)</strong>。</p>
 <ul>
@@ -549,7 +549,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </li>
 <li>从<strong>贝叶斯估计</strong>的角度来看，<strong>正则化项对应于模型的先验概率</strong>。可以假设复杂的模型有较小的先验概率，简单的模型有较大的先验概率。</li>
 </ul>
-<h4 id="1-5-2-交叉验证"><a href="#1-5-2-交叉验证" class="headerlink" title="1.5.2 交叉验证"></a>1.5.2 交叉验证</h4><p><strong>交叉验证(cross validation)</strong>随机地将数据集切分成三部分，分别为<strong>训练集(training set)</strong>、<strong>验证集(validation set)</strong>和<strong>测试集(test set)</strong>。</p>
+<h3 id="1-5-2-交叉验证"><a href="#1-5-2-交叉验证" class="headerlink" title="1.5.2 交叉验证"></a>1.5.2 交叉验证</h3><p><strong>交叉验证(cross validation)</strong>随机地将数据集切分成三部分，分别为<strong>训练集(training set)</strong>、<strong>验证集(validation set)</strong>和<strong>测试集(test set)</strong>。</p>
 <p>训练集用来训练模型，验证集用于模型的选择，而测试集用于最终对学习方法的评估。</p>
 <p>交叉验证的<strong>基本想法</strong>是重复地使用数据：把给定的数据进行切分，将切分的数据集组 合为训练集与测试集，在此基础上反复地进行训练、测试以及模型选择。</p>
 <ol>
@@ -563,7 +563,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <p>S折交叉验证的特殊情形是S＝N，称为<strong>留一交叉验证(leave-one-out validation)</strong>。</p>
 </li>
 </ol>
-<h3 id="1-6-泛化能力"><a href="#1-6-泛化能力" class="headerlink" title="1.6 泛化能力"></a>1.6 泛化能力</h3><h4 id="1-6-1-泛化误差"><a href="#1-6-1-泛化误差" class="headerlink" title="1.6.1 泛化误差"></a>1.6.1 泛化误差</h4><p>泛化能力(generalization ability)是指由该方法学习到的模型<strong>对未知数据的预测能力</strong>。</p>
+<h2 id="1-6-泛化能力"><a href="#1-6-泛化能力" class="headerlink" title="1.6 泛化能力"></a>1.6 泛化能力</h2><h3 id="1-6-1-泛化误差"><a href="#1-6-1-泛化误差" class="headerlink" title="1.6.1 泛化误差"></a>1.6.1 泛化误差</h3><p>泛化能力(generalization ability)是指由该方法学习到的模型<strong>对未知数据的预测能力</strong>。</p>
 <p>现实中<strong>采用最多的办法</strong>是通过<strong>测试误差</strong>来评价学习方法的泛化能力。统计学习理论试图从理论上对学习方法的泛化能力进行分析。</p>
 <ul>
 <li><strong>泛化误差</strong>：如果学到的模型是$\hat{f}$，那么用这个模型对未知数据预测的误差即为<strong>泛化误差(generalization error)</strong><ul>
@@ -572,7 +572,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h4 id="1-6-2-泛化误差上界"><a href="#1-6-2-泛化误差上界" class="headerlink" title="1.6.2 泛化误差上界"></a>1.6.2 泛化误差上界</h4><p><strong>泛化误差上界(generalization error bound)</strong>通过比较两种学习方法的泛化误差上界的大小来比较它们的优劣。</p>
+<h3 id="1-6-2-泛化误差上界"><a href="#1-6-2-泛化误差上界" class="headerlink" title="1.6.2 泛化误差上界"></a>1.6.2 泛化误差上界</h3><p><strong>泛化误差上界(generalization error bound)</strong>通过比较两种学习方法的泛化误差上界的大小来比较它们的优劣。</p>
 <p>它是假设空间<strong>容量(capacity)</strong>的函数，假设空间<strong>容量越大</strong>，模型就越难学，<strong>泛化误差上界就越大</strong>。</p>
 <ul>
 <li><p><strong>二类分类问题</strong></p>
@@ -611,7 +611,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h3 id="1-7-生成模型与判别模型"><a href="#1-7-生成模型与判别模型" class="headerlink" title="1.7 生成模型与判别模型"></a>1.7 生成模型与判别模型</h3><p>监督学习方法又可以分为<strong>生成方法(generative approach)</strong>和<strong>判别方法(discriminative approach)</strong>。所学到的模型分别称为<strong>生成模型(generative model)</strong>和<strong>判别模型(discriminative model)</strong>。</p>
+<h2 id="1-7-生成模型与判别模型"><a href="#1-7-生成模型与判别模型" class="headerlink" title="1.7 生成模型与判别模型"></a>1.7 生成模型与判别模型</h2><p>监督学习方法又可以分为<strong>生成方法(generative approach)</strong>和<strong>判别方法(discriminative approach)</strong>。所学到的模型分别称为<strong>生成模型(generative model)</strong>和<strong>判别模型(discriminative model)</strong>。</p>
 <ul>
 <li><strong>生成方法</strong>：由数据<strong>学习</strong>联合概率分布$P(X,Y)$，然后<strong>求出</strong>条件概率分布$P(Y|X)$作为<strong>预测的模型</strong>，即生成模型：<ul>
 <li>$P(Y | X)=\frac{P(X, Y)}{P(X)}$</li>
@@ -635,12 +635,12 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h3 id="1-8-分类问题"><a href="#1-8-分类问题" class="headerlink" title="1.8 分类问题"></a>1.8 分类问题</h3><p>监督学习从数据中学习一个<strong>分类模型</strong>或分类决策函数，称为<strong>分类器(classifier)</strong>。分类器对新的输入进行输出的<strong>预测(prediction)</strong>，称为<strong>分类(classification)</strong>。<strong>可能的输出称为类 (class)</strong>。分类的类别为多个时，称为多类分类问题。<strong>本书主要讨论二类分类问题。</strong></p>
+<h2 id="1-8-分类问题"><a href="#1-8-分类问题" class="headerlink" title="1.8 分类问题"></a>1.8 分类问题</h2><p>监督学习从数据中学习一个<strong>分类模型</strong>或分类决策函数，称为<strong>分类器(classifier)</strong>。分类器对新的输入进行输出的<strong>预测(prediction)</strong>，称为<strong>分类(classification)</strong>。<strong>可能的输出称为类 (class)</strong>。分类的类别为多个时，称为多类分类问题。<strong>本书主要讨论二类分类问题。</strong></p>
 <p>分类问题包括学习和分类两个过程。在<strong>学习过程</strong>中，根据<strong>已知的训练数据集</strong>利用有效的学习方法<strong>学习</strong>一个<strong>分类器</strong>；在<strong>分类过程</strong>中，利用学习的分类器<strong>对新的输入实例进行分类</strong>。分类问题图示，</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722162448.png" alt="分类"></p>
 <p><strong>评价分类器性能的指标</strong>一般是<strong>分类准确率(accuracy)</strong>，即对于给定的测试数据集，分类器<strong>正确分类的样本数与总样本数之比</strong>。</p>
 <p>对于二类分类问题常用的评价指标是<strong>精确率(precision)</strong>与<strong>召回率(recall)</strong>。</p>
-<h4 id="1-8-1-混淆矩阵-Confusion-matrix"><a href="#1-8-1-混淆矩阵-Confusion-matrix" class="headerlink" title="1.8.1 混淆矩阵 Confusion matrix"></a>1.8.1 混淆矩阵 Confusion matrix</h4><div class="table-container">
+<h3 id="1-8-1-混淆矩阵-Confusion-matrix"><a href="#1-8-1-混淆矩阵-Confusion-matrix" class="headerlink" title="1.8.1 混淆矩阵 Confusion matrix"></a>1.8.1 混淆矩阵 Confusion matrix</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -690,7 +690,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190722215405.png" alt="ConfusionMatrix"></p>
-<h3 id="1-9-标注问题"><a href="#1-9-标注问题" class="headerlink" title="1.9 标注问题"></a>1.9 标注问题</h3><p><strong>标注(tagging)</strong>也是一个监督学习问题。可以认为标注问题<strong>是分类问题的一个推广</strong>，标注问题又是更复杂的<strong>结构预测(structure prediction)问题</strong>的简单形式。</p>
+<h2 id="1-9-标注问题"><a href="#1-9-标注问题" class="headerlink" title="1.9 标注问题"></a>1.9 标注问题</h2><p><strong>标注(tagging)</strong>也是一个监督学习问题。可以认为标注问题<strong>是分类问题的一个推广</strong>，标注问题又是更复杂的<strong>结构预测(structure prediction)问题</strong>的简单形式。</p>
 <p>标注问题的<strong>目标</strong>在于学习一个模型， 使它能够<strong>对观测序列给出标记序列</strong>作为预测。注意，<strong>可能的标记个数是有限的</strong>，但其组合所成的<strong>标记序列的个数</strong>是依序列长度呈<strong>指数级增长</strong>的。</p>
 <ul>
 <li>标注问题分为<strong>学习</strong>和<strong>标注</strong>两个过程</li>
@@ -742,7 +742,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </ul>
 </li>
 </ul>
-<h3 id="1-10-回归问题"><a href="#1-10-回归问题" class="headerlink" title="1.10 回归问题"></a>1.10 回归问题</h3><p><strong>回归(regression)</strong>用于预测输入变量(自变量)和输出变量(因变量)之间的关系，特别是当输入变量的值发生变化时，输出变量的值随之发生的变化。</p>
+<h2 id="1-10-回归问题"><a href="#1-10-回归问题" class="headerlink" title="1.10 回归问题"></a>1.10 回归问题</h2><p><strong>回归(regression)</strong>用于预测输入变量(自变量)和输出变量(因变量)之间的关系，特别是当输入变量的值发生变化时，输出变量的值随之发生的变化。</p>
 <p><strong>回归模型</strong>正是表示从输入变量到输出变量之间<strong>映射的函数</strong>。</p>
 <p><strong>回归问题</strong>的学习<strong>等价于函数拟合</strong>：选择一条函数曲线使其很好地拟合已知数据且很好地预测未知数据(参照1.4.2节)。</p>
 <ul>
@@ -762,7 +762,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <li><p>回归学习<strong>最常用的损失函数</strong>是<strong>平方损失函数</strong>，在此情况下，回归问题可以由著名的 <strong>最小二乘法(least squares)</strong> 求解。</p>
 </li>
 </ul>
-<h3 id="1-11-本章概要"><a href="#1-11-本章概要" class="headerlink" title="1.11 本章概要"></a>1.11 本章概要</h3><p>1．统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行分析与预测的一门学科。统计学习包括监督学习、非监督学习、半监督学习和强化学习。 </p>
+<h2 id="1-11-本章概要"><a href="#1-11-本章概要" class="headerlink" title="1.11 本章概要"></a>1.11 本章概要</h2><p>1．统计学习是关于计算机基于数据构建概率统计模型并运用模型对数据进行分析与预测的一门学科。统计学习包括监督学习、非监督学习、半监督学习和强化学习。 </p>
 <p>2．统计学习方法三要素——模型、策略、算法，对理解统计学习方法起到提纲挈领的作用。 </p>
 <p>3．本书主要讨论监督学习，监督学习可以概括如下：从给定有限的训练数据出发，假设数据是独立同分布的，而且假设模型属于某个假设空间，应用某一评价准则，从假设 空间中选取一个最优的模型，使它对已给训练数据及未知测试数据在给定评价标准意义下 有最准确的预测。 </p>
 <p>4．统计学习中，进行模型选择或者说提高学习的泛化能力是一个重要问题。如果只考虑减少训练误差，就可能产生过拟合现象。模型选择的方法有正则化与交叉验证。学习 方法泛化能力的分析是统计学习理论研究的重要课题。 </p>
@@ -778,10 +778,10 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-26T21:55:14+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-28T17:48:45+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 26, 2019</p>
+    <p>last updated at Jul 28, 2019</p>
   </a>
 </div>
 
@@ -1074,7 +1074,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-TOC"><span class="toc-text">0 TOC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概论"><span class="toc-text">1 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-统计学习"><span class="toc-text">1.1 统计学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-监督学习"><span class="toc-text">1.2 监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-输入空间、特征空间与输出空间"><span class="toc-text">1.2.1 输入空间、特征空间与输出空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-联合概率分布"><span class="toc-text">1.2.2 联合概率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-假设空间"><span class="toc-text">1.2.3 假设空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-4-问题的形式化"><span class="toc-text">1.2.4 问题的形式化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-统计学习三要素"><span class="toc-text">1.3 统计学习三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-模型"><span class="toc-text">1.3.1 模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-策略"><span class="toc-text">1.3.2 策略</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-1-损失函数和风险函数"><span class="toc-text">1.3.2.1 损失函数和风险函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-2-经验风险最小化与结构风险最小化"><span class="toc-text">1.3.2.2 经验风险最小化与结构风险最小化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-算法"><span class="toc-text">1.3.3 算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-模型评估与模型选择"><span class="toc-text">1.4 模型评估与模型选择</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-训练误差与测试误差"><span class="toc-text">1.4.1 训练误差与测试误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-过拟合与模型选择"><span class="toc-text">1.4.2 过拟合与模型选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-正则化与交叉验证"><span class="toc-text">1.5 正则化与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-正则化"><span class="toc-text">1.5.1 正则化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-交叉验证"><span class="toc-text">1.5.2 交叉验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-泛化能力"><span class="toc-text">1.6 泛化能力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-1-泛化误差"><span class="toc-text">1.6.1 泛化误差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-2-泛化误差上界"><span class="toc-text">1.6.2 泛化误差上界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-生成模型与判别模型"><span class="toc-text">1.7 生成模型与判别模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-分类问题"><span class="toc-text">1.8 分类问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-1-混淆矩阵-Confusion-matrix"><span class="toc-text">1.8.1 混淆矩阵 Confusion matrix</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-9-标注问题"><span class="toc-text">1.9 标注问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-10-回归问题"><span class="toc-text">1.10 回归问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-11-本章概要"><span class="toc-text">1.11 本章概要</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-TOC"><span class="toc-text">0 TOC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-概论"><span class="toc-text">1 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-统计学习"><span class="toc-text">1.1 统计学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-监督学习"><span class="toc-text">1.2 监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-输入空间、特征空间与输出空间"><span class="toc-text">1.2.1 输入空间、特征空间与输出空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-联合概率分布"><span class="toc-text">1.2.2 联合概率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-假设空间"><span class="toc-text">1.2.3 假设空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-问题的形式化"><span class="toc-text">1.2.4 问题的形式化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-统计学习三要素"><span class="toc-text">1.3 统计学习三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-模型"><span class="toc-text">1.3.1 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-策略"><span class="toc-text">1.3.2 策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-1-损失函数和风险函数"><span class="toc-text">1.3.2.1 损失函数和风险函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-2-经验风险最小化与结构风险最小化"><span class="toc-text">1.3.2.2 经验风险最小化与结构风险最小化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-算法"><span class="toc-text">1.3.3 算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-模型评估与模型选择"><span class="toc-text">1.4 模型评估与模型选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-训练误差与测试误差"><span class="toc-text">1.4.1 训练误差与测试误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2-过拟合与模型选择"><span class="toc-text">1.4.2 过拟合与模型选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-正则化与交叉验证"><span class="toc-text">1.5 正则化与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-1-正则化"><span class="toc-text">1.5.1 正则化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-2-交叉验证"><span class="toc-text">1.5.2 交叉验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-泛化能力"><span class="toc-text">1.6 泛化能力</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-1-泛化误差"><span class="toc-text">1.6.1 泛化误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-2-泛化误差上界"><span class="toc-text">1.6.2 泛化误差上界</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-生成模型与判别模型"><span class="toc-text">1.7 生成模型与判别模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-分类问题"><span class="toc-text">1.8 分类问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-8-1-混淆矩阵-Confusion-matrix"><span class="toc-text">1.8.1 混淆矩阵 Confusion matrix</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-标注问题"><span class="toc-text">1.9 标注问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-回归问题"><span class="toc-text">1.10 回归问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-本章概要"><span class="toc-text">1.11 本章概要</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1172,7 +1172,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
     </div>
   </section>
 
