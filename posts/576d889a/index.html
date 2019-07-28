@@ -287,7 +287,7 @@
 <p>本章叙述朴素贝叶斯法，包括朴素贝叶斯法的学习与分类、朴素贝叶斯法的参数估计算法。</p>
 <h2 id="4-1-朴素贝叶斯法的学习与分类"><a href="#4-1-朴素贝叶斯法的学习与分类" class="headerlink" title="4.1 朴素贝叶斯法的学习与分类"></a>4.1 朴素贝叶斯法的学习与分类</h2><h3 id="4-1-1-基本方法"><a href="#4-1-1-基本方法" class="headerlink" title="4.1.1 基本方法"></a>4.1.1 基本方法</h3><p>设输入空间$\mathcal{X} \subseteq \mathbf{R}^{n}$为$n$维向量的集合，输出空间为<strong>类标记</strong>集合$\mathcal{Y}=\lbrace c_{1}, c_{2}, \cdots, c_{K} }$。输入为特征向量$x \in \mathcal{X}$，输出为类标记（class label）$y \in \mathcal{Y}$。$X$是定义在输入空间$\mathcal{X}$上的随机向量，$Y$是定义在输出空间$\mathcal{Y}$上的随机变量。$P(X,Y)$是$X$和$Y$的联合概率分布。训练数据集</p>
 <script type="math/tex; mode=display">
-T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace</script><p>由$P(X,Y)$独立同分布产生。</p>
+T=\lbrace \left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace</script><p>由$P(X,Y)$独立同分布产生。</p>
 <p>朴素贝叶斯法通过训练数据集学习联合概率分布$P(X,Y)$。具体地，学习以下先验概率分布及条件概率分布。</p>
 <p><strong>先验概率分布</strong></p>
 <script type="math/tex; mode=display">
@@ -311,7 +311,7 @@ y=f(x)=\arg \max _{c_{k}} \frac{P\left(Y=c_{k}\right) \prod_{j} P\left(X^{(j)}=x
 <script type="math/tex; mode=display">
 y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j} P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right)</script><h3 id="4-1-2-后验概率最大化的含义"><a href="#4-1-2-后验概率最大化的含义" class="headerlink" title="4.1.2 后验概率最大化的含义"></a>4.1.2 后验概率最大化的含义</h3><p>朴素贝叶斯法将实例分到后验概率最大的类中。这<strong>等价于期望风险最小化</strong>。假设选择$0-1$损失函数：</p>
 <script type="math/tex; mode=display">
-L(Y, f(X))=\lbrace\begin{array}{ll}{1,} & {Y \neq f(X)} \\ {0,} & {Y=f(X)}\end{array}</script><p>式中$f(X)$是分类决策函数。这时，期望风险函数为</p>
+L(Y, f(X))=\lbrace \begin{array}{ll}{1,} & {Y \neq f(X)} \\ {0,} & {Y=f(X)}\end{array}</script><p>式中$f(X)$是分类决策函数。这时，期望风险函数为</p>
 <script type="math/tex; mode=display">
 R_{\exp }(f)=E[L(Y, f(X))]</script><p>期望是对联合分布$P(X,Y)$取的。由此取条件期望</p>
 <script type="math/tex; mode=display">
@@ -322,13 +322,13 @@ R_{\mathrm{exp}}(f)=E_{X} \sum_{k=1}^{K}\left[L\left(c_{k}, f(X)\right)\right] P
 f(x)=\arg \max P\left(c_{k} | X=x\right)</script><p>即朴素贝叶斯法所采用的原理。</p>
 <h2 id="4-2-朴素贝叶斯法的参数估计"><a href="#4-2-朴素贝叶斯法的参数估计" class="headerlink" title="4.2 朴素贝叶斯法的参数估计"></a>4.2 朴素贝叶斯法的参数估计</h2><h3 id="4-2-1-极大似然估计"><a href="#4-2-1-极大似然估计" class="headerlink" title="4.2.1 极大似然估计"></a>4.2.1 极大似然估计</h3><p>在朴素贝叶斯法中，学习意味着估计$P\left(Y=c_{k}\right)$和$P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right)$.可以应用极大似然估计法估计相应概率。先验概率$P\left(Y=c_{k}\right)$的极大似然估计是，</p>
 <script type="math/tex; mode=display">
-P\left(Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)}{N}, \quad k=1,2, \cdots, K</script><p>设第$j$个特征$x^{(j)}$可能取值的集合为$\lbracea_{j 1}, a_{j 2}, \cdots, a_{j s_{j}}\rbrace$，条件概率$P\left(X^{(j)}=a_{j l} | Y=c_{k}\right)$的极大似然估计是，</p>
+P\left(Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)}{N}, \quad k=1,2, \cdots, K</script><p>设第$j$个特征$x^{(j)}$可能取值的集合为$\lbrace a_{j 1}, a_{j 2}, \cdots, a_{j s_{j}}\rbrace$，条件概率$P\left(X^{(j)}=a_{j l} | Y=c_{k}\right)$的极大似然估计是，</p>
 <script type="math/tex; mode=display">
 P\left(X^{(j)}=a_{j l} | Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(x_{i}^{(j)}=a_{j t}, y_{i}=c_{k}\right)}{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)}</script><script type="math/tex; mode=display">
 j=1,2, \cdots, n ; \quad l=1,2, \cdots, S_{j} : \quad k=1,2, \cdots, K</script><p>式中，$x_{i}^{(j)}$是第$i$个样本的第$j$个特征；$a_{j l}$是第$j$个特征可能取的第$l$个值；$I$为指示函数。</p>
 <h3 id="4-2-2-学习与分类算法"><a href="#4-2-2-学习与分类算法" class="headerlink" title="4.2.2 学习与分类算法"></a>4.2.2 学习与分类算法</h3><hr>
 <p><strong>算法4.1 朴素贝叶斯算法（naïve Bayes algorithm）</strong></p>
-<p><strong>输入</strong>：训练数据$T=\lbrace\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$，其中$x_{i}=\left(x_{i}^{(1)}, x_{i}^{(2)}, \cdots, x_{i}^{(n)}\right)^{\mathrm{T}}$，$x_{i}^{(j)}$是第$i$个样本的第$j$个特征；$x_{i}^{(j)} \in\lbracea_{j 1}, a_{j 2}, \cdots, a_{j s_{j}}\rbrace$，$a_{j l}$是第$j$个特征可能取的第$l$个值，$j=1,2, \cdots, n$, $ l=1,2, \cdots, S_{j}$, $y_{i} \in\lbracec_{1}, c_{2}, \cdots, c_{K}\rbrace$；实例$x$；</p>
+<p><strong>输入</strong>：训练数据$T=\lbrace \left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$，其中$x_{i}=\left(x_{i}^{(1)}, x_{i}^{(2)}, \cdots, x_{i}^{(n)}\right)^{\mathrm{T}}$，$x_{i}^{(j)}$是第$i$个样本的第$j$个特征；$x_{i}^{(j)} \in\lbrace a_{j 1}, a_{j 2}, \cdots, a_{j s_{j}}\rbrace$，$a_{j l}$是第$j$个特征可能取的第$l$个值，$j=1,2, \cdots, n$, $ l=1,2, \cdots, S_{j}$, $y_{i} \in\lbrace c_{1}, c_{2}, \cdots, c_{K}\rbrace$；实例$x$；</p>
 <p><strong>输出</strong>：实例$x$的分类。 </p>
 <ol>
 <li>计算先验概率及条件概率</li>
@@ -379,7 +379,7 @@ y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-28T20:15:58+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-28T20:21:23+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jul 28, 2019</p>
@@ -773,7 +773,7 @@ y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} 
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
     </div>
   </section>
 
