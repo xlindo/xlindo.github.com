@@ -492,9 +492,9 @@
         
           <a href="/tags/建模/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>建模</a>
         
-          <a href="/tags/动态系统/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>动态系统</a>
-        
           <a href="/tags/辨识/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>辨识</a>
+        
+          <a href="/tags/动态系统/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>动态系统</a>
         
       </div>
     
@@ -1666,7 +1666,22 @@
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

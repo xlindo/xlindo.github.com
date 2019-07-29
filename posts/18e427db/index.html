@@ -382,9 +382,9 @@ http://xlindo.com所有文章遵循CC BY-NC-SA 4.0许可协议。请按许可使
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                             <h4>
-                                <a href="/posts/ff73f050/" rel="prev" title="GitLab - GitLab备份与恢复操作方法">
+                                <a href="/posts/ab48d4a3/" rel="prev" title="GitLab - GitLab数据库转换为MySQL">
                                   
-                                      GitLab - GitLab备份与恢复操作方法
+                                      GitLab - GitLab数据库转换为MySQL
                                   
                                 </a>
                             </h4>
@@ -677,7 +677,7 @@ http://xlindo.com所有文章遵循CC BY-NC-SA 4.0许可协议。请按许可使
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\94cff455\" title="统计学习方法-Ch11 条件随机场" rel="bookmark">统计学习方法-Ch11 条件随机场</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\94cff455\" title="todo 统计学习方法-Ch11 条件随机场" rel="bookmark">todo 统计学习方法-Ch11 条件随机场</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -971,7 +971,22 @@ http://xlindo.com所有文章遵循CC BY-NC-SA 4.0许可协议。请按许可使
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

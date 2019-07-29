@@ -708,7 +708,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\eba9a6eb\" title="备查手册-前馈-反馈控制系统" rel="bookmark">备查手册-前馈-反馈控制系统</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\63aa839f\" title="动态优化-最优控制-知识点总结-1in3" rel="bookmark">动态优化-最优控制-知识点总结-1in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\711f2c71\" title="动态优化-最优控制-知识点总结-2in3" rel="bookmark">动态优化-最优控制-知识点总结-2in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c9a34b14\" title="动态优化-最优控制-知识点总结-3in3" rel="bookmark">动态优化-最优控制-知识点总结-3in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\267af5a1\" title="备查手册-拉格朗日乘数法" rel="bookmark">备查手册-拉格朗日乘数法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f875cf87\" title="备查手册-KKT条件" rel="bookmark">备查手册-KKT条件</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\89cdb521\" title="备查手册-卡尔曼滤波器" rel="bookmark">备查手册-卡尔曼滤波器</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e2693f90\" title="Keypoints in short" rel="bookmark">Keypoints in short</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\63aa839f\" title="动态优化-最优控制-知识点总结-1in3" rel="bookmark">动态优化-最优控制-知识点总结-1in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\711f2c71\" title="动态优化-最优控制-知识点总结-2in3" rel="bookmark">动态优化-最优控制-知识点总结-2in3</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f875cf87\" title="备查手册-KKT条件" rel="bookmark">备查手册-KKT条件</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\eba9a6eb\" title="备查手册-前馈-反馈控制系统" rel="bookmark">备查手册-前馈-反馈控制系统</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c9a34b14\" title="动态优化-最优控制-知识点总结-3in3" rel="bookmark">动态优化-最优控制-知识点总结-3in3</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1002,7 +1002,22 @@
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
