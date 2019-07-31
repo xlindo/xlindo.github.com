@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>python-PySide2问题 Available platform plugins</title>
+      <link href="/posts/bc97063b/"/>
+      <url>/posts/bc97063b/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p></blockquote><h2 id="1-安装PySide2"><a href="#1-安装PySide2" class="headerlink" title="1 安装PySide2"></a>1 安装PySide2</h2><p>因为<code>conda</code>安装对应的版本是<code>Qt 5.9</code>，而我的<code>Qt</code>版本是<code>5.12</code>，怕有冲突，所以用<code>pip</code>指定版本安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyside2==5.12</span><br></pre></td></tr></table></figure></p><h2 id="2-问题"><a href="#2-问题" class="headerlink" title="2 问题"></a>2 问题</h2><p>安装好后运行时报错，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">qt.qpa.plugin: Could not load the Qt platform plugin <span class="string">"windows"</span> <span class="keyword">in</span> <span class="string">""</span> even though it was found.</span><br><span class="line">This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.</span><br><span class="line"></span><br><span class="line">Available platform plugins are: direct2d, minimal, offscreen, windows.</span><br></pre></td></tr></table></figure></p><p>解决方法，复制<code>[你的安装目录]\Miniconda3\envs\py36\Lib\site-packages\PySide2\plugins\platforms</code>下的5个<code>dll</code>文件到<code>[你的安装目录]\Miniconda3\envs\py36\Library\plugins\platforms</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程之路 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>todo 统计学习方法-Ch6 Logistic回归与最大熵模型</title>
       <link href="/posts/bf88569f/"/>
       <url>/posts/bf88569f/</url>
@@ -1088,9 +1115,9 @@
             
             <tag> 数据结构与算法 </tag>
             
-            <tag> leetcode </tag>
-            
             <tag> python </tag>
+            
+            <tag> leetcode </tag>
             
             <tag> 程序 </tag>
             

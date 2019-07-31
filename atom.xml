@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xlindo.com/"/>
-  <updated>2019-07-30T20:42:23.126Z</updated>
+  <updated>2019-07-31T09:31:13.176Z</updated>
   <id>http://xlindo.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python-PySide2问题 Available platform plugins</title>
+    <link href="http://xlindo.com/posts/bc97063b/"/>
+    <id>http://xlindo.com/posts/bc97063b/</id>
+    <published>2019-07-31T09:30:32.000Z</published>
+    <updated>2019-07-31T09:31:13.176Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p></blockquote><h2 id="1-安装PySide2"><a href="#1-安装PySide2" class="headerlink" title="1 安装PySide2"></a>1 安装PySide2</h2><p>因为<code>conda</code>安装对应的版本是<code>Qt 5.9</code>，而我的<code>Qt</code>版本是<code>5.12</code>，怕有冲突，所以用<code>pip</code>指定版本安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyside2==5.12</span><br></pre></td></tr></table></figure></p><h2 id="2-问题"><a href="#2-问题" class="headerlink" title="2 问题"></a>2 问题</h2><p>安装好后运行时报错，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">qt.qpa.plugin: Could not load the Qt platform plugin <span class="string">"windows"</span> <span class="keyword">in</span> <span class="string">""</span> even though it was found.</span><br><span class="line">This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.</span><br><span class="line"></span><br><span class="line">Available platform plugins are: direct2d, minimal, offscreen, windows.</span><br></pre></td></tr></table></figure></p><p>解决方法，复制<code>[你的安装目录]\Miniconda3\envs\py36\Lib\site-packages\PySide2\plugins\platforms</code>下的5个<code>dll</code>文件到<code>[你的安装目录]\Miniconda3\envs\py36\Library\plugins\platforms</code></p>]]></content>
+    
+    <summary type="html">
+    
+      Available platform plugins are: direct2d, minimal, offscreen, windows.
+    
+    </summary>
+    
+      <category term="编程之路" scheme="http://xlindo.com/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="python" scheme="http://xlindo.com/tags/python/"/>
+    
+      <category term="程序" scheme="http://xlindo.com/tags/%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>todo 统计学习方法-Ch6 Logistic回归与最大熵模型</title>
@@ -473,34 +497,6 @@
       <category term="机器人" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
       <category term="计算机视觉" scheme="http://xlindo.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MATLAB - Design of experiments</title>
-    <link href="http://xlindo.com/posts/7d197d0/"/>
-    <id>http://xlindo.com/posts/7d197d0/</id>
-    <published>2019-07-08T08:34:36.000Z</published>
-    <updated>2019-07-23T17:42:15.733Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p></blockquote><p>This blog is an archive for the code snippets in MATLAB.</p><h1 id="1-Random-numbers-and-PDF"><a href="#1-Random-numbers-and-PDF" class="headerlink" title="1 Random numbers and PDF"></a>1 Random numbers and PDF</h1><blockquote><p>with assigned mean and standard deviation</p></blockquote><h2 id="normrnd"><a href="#normrnd" class="headerlink" title="normrnd"></a>normrnd</h2><blockquote><p>Normal random numbers</p></blockquote><p><code>r = normrnd(mu,sigma,sz1,...,szN)</code> or <code>r = normrnd(mu,sigma,[sz1,...,szN])</code> generates a sz1-by-⋯-by-szN array of normal random numbers.</p><h2 id="normfit"><a href="#normfit" class="headerlink" title="normfit"></a>normfit</h2><blockquote><p>Normal parameter estimates</p></blockquote><ul><li><code>[muHat,sigmaHat] = normfit(x)</code> returns estimates of normal distribution parameters</li><li><code>[muHat,sigmaHat,muCI,sigmaCI] = normfit(x,alpha)</code> specifies the confidence level for the confidence intervals to be 100(1–alpha)%.</li></ul><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rng(<span class="string">'default'</span>); <span class="comment">% For reproducibility</span></span><br><span class="line">x = normrnd(<span class="number">0</span>,<span class="number">2</span>,[<span class="number">1</span>,<span class="number">50000</span>]);</span><br><span class="line">[mu, sigma] = normfit(x);</span><br><span class="line"><span class="built_in">plot</span>(x,pdf(<span class="string">'norm'</span>,x,mu,sigma),<span class="string">'.'</span>)</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190708104105.png" alt="PDF(0,2^2)"></p><h1 id="2-PRBS-Pseudorandom-binary-sequence"><a href="#2-PRBS-Pseudorandom-binary-sequence" class="headerlink" title="2 PRBS, Pseudorandom binary sequence"></a>2 PRBS, Pseudorandom binary sequence</h1><blockquote><p><a href="http://blog.sina.com.cn/s/blog_6163bdeb0102e2qj.html#cmt_2482889" target="_blank" rel="noopener">M序列的生成</a></p></blockquote><h2 id="idinput"><a href="#idinput" class="headerlink" title="idinput"></a>idinput</h2><blockquote><p>Generate input signals. You can also use idinput to design an input that has sufficient bandwidth to excite the dynamic range of your system.</p></blockquote><ul><li><code>u = idinput(N,type,band,levels)</code> in default, 1 channel (Nu=1), 1 period (M=1), band=[0, 1] (white noise), levels=[-1,1].<ul><li>If set <code>N=[P Nu M]</code>, nu is channel, P is period, M*P is the total length of the signal.</li></ul></li><li><code>[u,freq] = idinput(___,&#39;sine&#39;,Band,Range,SineData)</code> </li><li>type<ul><li>‘rbs’ — Random binary signal</li><li>‘rgs’ — Random Gaussian signal</li><li>‘prbs’ — Pseudorandom binary signal</li><li>‘sine’ — Sum-of-sinusoids signal</li></ul></li></ul><h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% generate PRBS, (M sequence）</span></span><br><span class="line"></span><br><span class="line">n = <span class="number">8</span>; <span class="comment">% order</span></span><br><span class="line">p = <span class="number">2</span>^n <span class="number">-1</span>; <span class="comment">% period</span></span><br><span class="line">ms = idinput(p, <span class="string">'prbs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">stairs(ms)</span><br><span class="line">title(<span class="string">'PRBS'</span>)</span><br><span class="line">ylim([<span class="number">-1.5</span> <span class="number">1.5</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">% generate inverse M sequence</span></span><br><span class="line"></span><br><span class="line">s = <span class="number">0</span>;</span><br><span class="line">ims = <span class="built_in">zeros</span>(<span class="number">2</span>*p, <span class="number">1</span>);</span><br><span class="line">mstemp = [ms; ms];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">2</span>*p</span><br><span class="line">  ims(<span class="built_in">i</span>) = xor(mstemp(<span class="built_in">i</span>), s);</span><br><span class="line">  s = not(s);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">ims(ims==<span class="number">0</span>) = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">stairs(ims)</span><br><span class="line">title(<span class="string">'Inverse M sequence'</span>)</span><br><span class="line">ylim([<span class="number">-1.5</span> <span class="number">1.5</span>])</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      This blog is an archive for the code snippets in MATLAB.
-    
-    </summary>
-    
-      <category term="编程之路" scheme="http://xlindo.com/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="编程" scheme="http://xlindo.com/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="inEnglish" scheme="http://xlindo.com/tags/inEnglish/"/>
-    
-      <category term="MATLAB" scheme="http://xlindo.com/tags/MATLAB/"/>
-    
-      <category term="DOE" scheme="http://xlindo.com/tags/DOE/"/>
     
   </entry>
   
