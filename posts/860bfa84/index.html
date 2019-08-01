@@ -403,13 +403,13 @@ L ( w , b , \alpha ) = \frac { 1 } { 2 } \| w \| ^ { 2 } - \sum _ { i = 1 } ^ { 
 \end{aligned}</script><p>（2）求$\operatorname { max } _ { \alpha } \operatorname { min } _ { w,b } L ( w,b ,\alpha)$</p>
 <script type="math/tex; mode=display">
 \begin{align}
-\max_{w} &  \quad - \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) + \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
+\max_{\alpha} &  \quad - \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) + \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
 &\quad \alpha_i\geqslant 0,\quad i=1,2,\cdots,N
 \end{align}</script><p>转换为求极小值的一般的最优化问题，</p>
 <script type="math/tex; mode=display">
 \begin{align}
-\min_{w} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \tag{7.22}\\
+\min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \tag{7.22}\\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \tag{7.23}\\
 &\quad \alpha_i\geqslant 0,\quad i=1,2,\cdots,N \tag{7.24}
 \end{align}</script><hr>
@@ -421,17 +421,17 @@ s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \tag{7.23}\\
 <script type="math/tex; mode=display">
 \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } (x \cdot x_i) + b ^{\star} =0</script><p>以及相应的分类决策函数</p>
 <script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } (x \cdot x_i) + b ^{\star} ) \tag{7.30}</script><p>这就是说，分类决策函数只依赖于输入$x$和训练样本输入的内积。式（7.30）称为线性可分支持向量机的对偶形式。</p>
+f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } (x \cdot x_i) + b ^{\star} ) \tag{7.30}</script><p>这就是说，分类决策函数只依赖于输入$x$和训练样本输入的内积。式（7.30）称为线性可分支持向量机的对偶形式。</p>
 <hr>
 <p><strong>算法7.2（线性可分支持向量机学习算法）</strong> </p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = R ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
-<p><strong>输出</strong>：最大间隔分离超平面和分类决策函数。</p>
+<p><strong>输出</strong>：分离超平面和分类决策函数。</p>
 <ol>
 <li>构造并求解约束最优化问题</li>
 </ol>
 <script type="math/tex; mode=display">
 \begin{align}
-\min_{w} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
+\min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
 &\quad \alpha_i\geqslant 0,\quad i=1,2,\cdots,N
 \end{align}</script><p>​    求得最优解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _n^{\star} )^T$</p>
@@ -443,11 +443,19 @@ w ^ { * } = \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i }<
 <script type="math/tex; mode=display">
 b ^ { * } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } ( x _ { i } \cdot x _ { j } )</script><ol>
 <li>求得分离超平面，<script type="math/tex; mode=display">
-\sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } (x \cdot x_i) + b ^{\star} =0</script>以及相应的分类决策函数<script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } (x \cdot x_i) + b ^{\star} ) \tag{7.30}</script></li>
+w ^{\star} \cdot x + b ^{\star} =0</script>以及相应的分类决策函数<script type="math/tex; mode=display">
+f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} )</script></li>
 </ol>
 <hr>
-<p>在线性可分支持向量机中可知，$w ^ { <em> } $和$b ^ { </em> } $只依赖于训练数据中对应于$\alpha _ {i } ^ { <em> }&gt;0$的样本点$(x_i ,y_i)$.我们将训练数据中对应于$\alpha _ {i } ^ { </em> }&gt;0$的实例点称$x _ { i } \in  R ^ { n } $为支持向量，其一定在间隔边界上。</p>
+<p>其KKT条件为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& \nabla _ { w } L ( w ^ { * } , b ^ { * } , \alpha ^ { * } ) = w ^ { * } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } = 0 \\
+& \nabla _ { b } L ( w ^ { * } , b ^ { * } , \alpha ^ { * } ) = - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } = 0 \\
+&  \alpha _ { i }^ { * } ( y_i(w ^ { * } \cdot x _ { i } + b ^ { * } ) - 1)= 0 , \quad i = 1,2 , \cdots , N  \\
+& y_i(w ^ { * } \cdot x _ { i } + b ^ { * }) -1 \geqslant 0 , \quad i = 1,2 , \cdots , N \\
+&  \alpha _ { i } ^ { * } \geqslant 0 , \quad i = 1,2 , \cdots , N 
+\end{align}</script><p>在线性可分支持向量机中可知，$w ^ { <em> } $和$b ^ { </em> } $只依赖于训练数据中对应于$\alpha _ {i } ^ { <em> }&gt;0$的样本点$(x_i ,y_i)$.我们将训练数据中对应于$\alpha _ {i } ^ { </em> }&gt;0$的实例点称$x _ { i } \in  R ^ { n } $为支持向量，其一定在间隔边界上。</p>
 <hr>
 <p><strong>定义7.4（支持向量）</strong> </p>
 <p>考虑原始最优化问题（7.13）～（7.14）及对偶最优化问题 （7.22）～（7.24），将训练数据集中对应于$\alpha _ {i } ^ { * }&gt;0$的样本点$(x_i ,y_i)$的实例$x _ { i } \in  R ^ { n } $称为支持向量。</p>
@@ -455,6 +463,101 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { *
 <p><strong>例7.2</strong></p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190801210406.png" alt="1"></p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190801210432.png" alt="2"></p>
+<p>对于线性可分问题，上述线性可分支持向量机的学习（硬间隔最大化）算法是完美的。但是，训练数据集线性可分是理想的情形。<strong>在现实问题中，训练数据集往往是线性不 可分的</strong>，即在样本中出现噪声或特异点。此时，有更一般的学习算法。</p>
+<h2 id="7-2-线性支持向量机与软间隔最大化"><a href="#7-2-线性支持向量机与软间隔最大化" class="headerlink" title="7.2 线性支持向量机与软间隔最大化"></a>7.2 线性支持向量机与软间隔最大化</h2><h3 id="7-2-1-线性支持向量机"><a href="#7-2-1-线性支持向量机" class="headerlink" title="7.2.1 线性支持向量机"></a>7.2.1 线性支持向量机</h3><p>线性可分问题的支持向量机学习方法，对线性不可分训练数据是不适用的<strong>需要修改硬间隔最大化，使其成为软间隔最大化</strong>。</p>
+<p>假设给定一个特征空间上的训练数据集</p>
+<script type="math/tex; mode=display">
+T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace</script><p>其中，$x _ { i } \in \mathcal{X} = R ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$，$x_i$为第$i$个特征向量，$y_i$为$x_i$的类标记。</p>
+<p>再假设训练数据集不是线性可分的。通常情况是，训练数据中有一些<strong>特异点（outlier）</strong>，将这些特异点除去后，剩下大部分的样本点组成的集合是线性可分的。</p>
+<p>线性不可分意味着某些样本点$(x_i,y_i)$不能满足函数间隔大于等于1的约束条件（7.14）。为了解决这个问题，可以对每个样本点$(x_i,y_i)$引进一个松弛变量$\xi_i\geqslant 0$，使函数间隔加上松弛变量大于等于1。这样，约束条件变为</p>
+<script type="math/tex; mode=display">
+y_i(w \cdot x _ { i } + b)  \geqslant 1-\xi_i</script><p>则目标函数</p>
+<script type="math/tex; mode=display">
+\frac { 1 } { 2 } \| w \| ^ { 2 }+C\sum_{i=1}^{N}\xi_i\</script><p>其中，$C&gt;0$称为惩罚参数，一般由应用问题决定。则线性不可分时的线性支持向量机学习问题，软间隔最大化，变成凸二次规划问题（原始问题）：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\min_{w,b} & \quad \quad \frac { 1 } { 2 } \| w \| ^ { 2 }+C\sum_{j=1}^{N}\xi_i \tag{7.32}  \\
+s.t. & \quad y_i(w \cdot x _ { i } + b)  \geqslant 1-\xi_i, \quad i=1,2,\cdots,N \\
+& \quad \xi_i \geqslant 0, \quad i=1,2,\cdots,N 
+
+\end{align}</script><p>可以证明该问题的解$(w,b,\xi)$存在，$w$的解唯一，而$b$的解存在于一个区间。最终得到的分离超平面和分类决策函数称为训练样本线性不可分时的线性支持向量机，简称线性支持向量机。</p>
+<hr>
+<p><strong>定义7.5（线性支持向量机）</strong> </p>
+<p>对于给定的线性不可分的训练数据集，通过求解凸二次规划问题，即软间隔最大化问题(7.32)，得到的分离超平面为</p>
+<script type="math/tex; mode=display">
+w ^{\star} \cdot x + b ^{\star} =0</script><p>以及相应的分类决策函数</p>
+<script type="math/tex; mode=display">
+f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} )</script><p>称为线性支持向量机。</p>
+<hr>
+<h3 id="7-2-2-学习的对偶算法"><a href="#7-2-2-学习的对偶算法" class="headerlink" title="7.2.2 学习的对偶算法"></a>7.2.2 学习的对偶算法</h3><p>原始问题（7.32）的对偶问题是</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i } \tag{7.37} \\
+s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
+&\quad 0\leqslant\alpha_i\leqslant C,\quad i=1,2,\cdots,N
+\end{align}</script><p>原始最优化问题（7.32）的拉格朗日函数是</p>
+<script type="math/tex; mode=display">
+L ( w , b ,\xi, \alpha,\mu ) = \frac { 1 } { 2 } \| w \| ^ { 2 } +C\sum_{i=1}^{N}\xi_i- \sum _ { i = 1 } ^ { N } \alpha _ { i } (y _ { i } ( w \cdot x _ { i } + b ) -1+\xi_i)- \sum _ { i = 1 } ^ { N } \mu _ { i } \xi_i</script><p>其中，$\alpha_i\geqslant 0,\mu_i \geqslant 0$.</p>
+<p>对偶问题是拉格朗日函数的极大极小问题：</p>
+<p>首先求极小，$\min_{w,b,\xi} L ( w , b ,\xi, \alpha,\mu ) $，由</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& \nabla _ { w } L ( w , b , \xi , \alpha , \mu ) = w - \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } x _ { i } = 0 \\ 
+& \nabla _ { b } L ( w , b , \xi , \alpha , \mu ) = - \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0 \\ 
+& \nabla _ { \xi _ { i } } L ( w , b , \xi , \alpha , \mu ) = C - \alpha _ { i } - \mu _ { i } = 0 
+\end{align}</script><p>得</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& w = \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } x _ { i } \\ 
+& \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0 \\ 
+& C - \alpha _ { i } - \mu _ { i } = 0 
+\end{align}</script><p>带入原始问题$ L ( w , b ,\xi, \alpha,\mu ) $，得</p>
+<script type="math/tex; mode=display">
+\min_{w,b,\xi} L ( w , b ,\xi, \alpha,\mu ) =-\frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) + \sum _ { i = 1 } ^ { N } \alpha _ { i }</script><p>然后，求上式的极大，即得对偶问题，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\max_\alpha & \quad - \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) + \sum _ { i = 1 } ^ { N } \alpha _ { i }\\
+s.t. &\quad  \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0 \\ 
+&\quad  C - \alpha _ { i } - \mu _ { i } = 0 \\
+&\quad  \alpha_i\geqslant 0\\
+&\quad  \mu_i \geqslant 0, \quad i=1,2,\cdots,N
+\end{align}</script><p>变换对偶问题，消去$\mu_i$，因而只留下$\alpha_i$，且写成$0&lt; \alpha_i&lt;C$，再将目标函数由求极大转为求绩效，于是得到对偶问题(7.37).</p>
+<hr>
+<p><strong>定理7.3</strong></p>
+<p>设$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _n^{\star} )^T$是对偶最优化问题(7.37)的解，则存在下标$j$，使得$0\leqslant\alpha_j\leqslant C$，并可按下式求得原始最优化问题的解$w^{\star},b^{\star}$，</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { c } { w ^ { * } = \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } } \\ { b ^ { * } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } ( x _ { i } \cdot x _ { j } ) } \end{array} \right.</script><hr>
+<p>由此定理可知分离超平面，</p>
+<script type="math/tex; mode=display">
+\sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i } (x \cdot x_i) + b ^{\star} =0</script><p>以及相应的分类决策函数</p>
+<script type="math/tex; mode=display">
+f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i }  (x \cdot x_i) + b ^{\star} )</script><p>综合前面，则有下面算法</p>
+<hr>
+<p><strong>算法7.3（线性支持向量机学习算法）</strong> </p>
+<p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = R ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
+<p><strong>输出</strong>：分离超平面和分类决策函数。</p>
+<ol>
+<li>选择惩罚参数$C$，构造并求解凸二次规划问题</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{align}
+\min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
+s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
+&\quad 0\leqslant\alpha_i\leqslant C,\quad i=1,2,\cdots,N
+\end{align}</script><p>​    求得最优解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _n^{\star} )^T$</p>
+<ol>
+<li>计算</li>
+</ol>
+<script type="math/tex; mode=display">
+w ^ { * } = \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } x _ { i }</script><p>​    并选择$\alpha^ { * }$的一个正分量 $0&lt; \alpha_j &lt; C$，计算</p>
+<script type="math/tex; mode=display">
+b ^ { * } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { * } y _ { i } ( x _ { i } \cdot x _ { j } )</script><ol>
+<li>求得分离超平面，<script type="math/tex; mode=display">
+w ^{\star} \cdot x + b ^{\star} =0</script>以及相应的分类决策函数<script type="math/tex; mode=display">
+f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} ) \tag{7.30}</script></li>
+</ol>
+<hr>
+<p>步骤2. 中，对任意的$0&lt; \alpha_j &lt; C$都可求出$b^{*}$，但由于有$b$的解不唯一，所以实际计算时可以取在所有符合条件的样本点上的平均值。</p>
 
         </div>
         
@@ -466,7 +569,7 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { *
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T21:04:48+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T22:39:25+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 1, 2019</p>
@@ -743,7 +846,7 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { *
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#7-支持向量机"><span class="toc-text">7 支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-线性可分支持向量机与硬间隔最大化"><span class="toc-text">7.1 线性可分支持向量机与硬间隔最大化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-线性可分支持向量机"><span class="toc-text">7.1.1 线性可分支持向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-函数间隔和几何间隔"><span class="toc-text">7.1.2 函数间隔和几何间隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-3-间隔最大化"><span class="toc-text">7.1.3 间隔最大化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-1-最大间隔分离超平面"><span class="toc-text">7.1.3.1 最大间隔分离超平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-2-最大间隔分离超平面的存在唯一性"><span class="toc-text">7.1.3.2 最大间隔分离超平面的存在唯一性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-3-支持向量和间隔边界"><span class="toc-text">7.1.3.3 支持向量和间隔边界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-4-学习的对偶算法"><span class="toc-text">7.1.4 学习的对偶算法</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#7-支持向量机"><span class="toc-text">7 支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-线性可分支持向量机与硬间隔最大化"><span class="toc-text">7.1 线性可分支持向量机与硬间隔最大化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-线性可分支持向量机"><span class="toc-text">7.1.1 线性可分支持向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-函数间隔和几何间隔"><span class="toc-text">7.1.2 函数间隔和几何间隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-3-间隔最大化"><span class="toc-text">7.1.3 间隔最大化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-1-最大间隔分离超平面"><span class="toc-text">7.1.3.1 最大间隔分离超平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-2-最大间隔分离超平面的存在唯一性"><span class="toc-text">7.1.3.2 最大间隔分离超平面的存在唯一性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-3-支持向量和间隔边界"><span class="toc-text">7.1.3.3 支持向量和间隔边界</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-4-学习的对偶算法"><span class="toc-text">7.1.4 学习的对偶算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-线性支持向量机与软间隔最大化"><span class="toc-text">7.2 线性支持向量机与软间隔最大化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-1-线性支持向量机"><span class="toc-text">7.2.1 线性支持向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-2-学习的对偶算法"><span class="toc-text">7.2.2 学习的对偶算法</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -841,7 +944,7 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ { *
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
     </div>
   </section>
 
