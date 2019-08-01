@@ -327,8 +327,57 @@ H ( P ) = - \sum _ { x } P ( x ) \operatorname { log } P ( x )</script><p>满足
 <script type="math/tex; mode=display">
 0 \leqslant H ( P ) \leqslant \operatorname { log } | X |</script><p>式中，$|X|$是$X$的取值个数，当且仅当$X$的分布是<strong>均匀分布</strong>时右边的等号成立。这就是说， 当$X$服从均匀分布时，熵最大。</p>
 <p>直观地，最大熵原理认为要选择的概率模型首先必须满足已有的事实，即约束条件。在没有更多信息的情况下，那些<strong>不确定的部分都是“等可能的”</strong>。</p>
-<h3 id="6-2-2-最大熵模型的定义"><a href="#6-2-2-最大熵模型的定义" class="headerlink" title="6.2.2 最大熵模型的定义"></a>6.2.2 最大熵模型的定义</h3><script type="math/tex; mode=display">
-P ( Y = 0 | x ) = \frac { 1 } { 1 + \operatorname { exp } ( w \cdot x ) }</script>
+<h3 id="6-2-2-最大熵模型的定义"><a href="#6-2-2-最大熵模型的定义" class="headerlink" title="6.2.2 最大熵模型的定义"></a>6.2.2 最大熵模型的定义</h3><p>对于给定的训练数据集，</p>
+<script type="math/tex; mode=display">
+T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace</script><p>可以确定联合分布$P(X,Y)$的经验分布和边缘分布$P(X)$的经验分布，</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { l } { \tilde { P } ( X = x , Y = y ) = \frac { v ( X = x , Y = y ) } { N } } \\ { \tilde { P } ( X = x ) = \frac { v ( X = x ) } { N } } \end{array} \right.</script><p>其中，$v(X＝x,Y＝y)$表示训练数据中样本$（X,Y）$出现的频数，$v(X＝x)$表示训练数据中输 入$x$出现的频数，$N$表示训练样本容量。</p>
+<p>用<strong>特征函数（feature function）</strong>$f(X,Y)$描述输入$x$和输出$y$之间的某一个事实，</p>
+<script type="math/tex; mode=display">
+f(x,y)=\begin{cases}1, \quad x与y满足某一事实\\0,\quad 否则\end{cases}</script><p>特征函数$f(X,Y)$关于经验分布$\tilde P (X,Y)$的期望值，用$E _ { \tilde { p } } ( f )$表示，</p>
+<script type="math/tex; mode=display">
+E _ { \tilde { p } } ( f ) = \sum _ { x , y } \tilde { P } ( x , y ) f ( x , y )</script><p>特征函数$f(X,Y)$关于模型$P (X,Y)$与经验分布$\tilde P (X)$的期望值，用$E _ {  p }  ( f )$表示，</p>
+<script type="math/tex; mode=display">
+E _ { P } ( f ) = \sum _ { x , y } \tilde { P } ( x ) P ( y | x ) f ( x , y )</script><p>如果模型能够获取训练数据中的信息，那么就可以假设这两个期望值相等，即</p>
+<script type="math/tex; mode=display">
+E _ { \tilde { p } } ( f ) =E _ {p } ( f )</script><p>将上式作为模型学习的约束条件，假如有$n$个特征函数$f_i(X,Y), i＝1,2,\cdots,n$，那么就有$n$个约束条件。</p>
+<h3 id="6-2-3-最大熵模型的学习"><a href="#6-2-3-最大熵模型的学习" class="headerlink" title="6.2.3 最大熵模型的学习"></a>6.2.3 最大熵模型的学习</h3><p>最大熵模型的学习可以形式化为约束最优化问题，</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { l }\max_{P\in C} &{ H ( P ) = - \sum _ { x , y } \tilde { P } ( x ) P ( y | x ) \operatorname { log } P ( y | x ) } \\ s.t. &{ E _ { P } ( f _ { i } ) = E _ { \tilde P } ( f _ { i } ) , \quad i = 1,2 , \cdots , n } \\ &{ \sum _ { v } P ( y | x ) = 1 } \end{array} \right.</script><p>按最优化习惯改写成求最小值问题，</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { l }\min_{P\in C} &{ -H ( P ) =  \sum _ { x , y } \tilde { P } ( x ) P ( y | x ) \operatorname { log } P ( y | x ) } \\ s.t. &{ E _ { P } ( f _ { i } ) - E _ { \tilde P } ( f _ { i } ) =0, \quad i = 1,2 , \cdots , n } \\ &{ \sum _ { v } P ( y | x ) = 1 } \end{array} \right.</script><p><strong>推导过程</strong></p>
+<p>将原始问题转化为无约束最优化的对偶问题，定义<strong>拉格朗日函数</strong>$L(P,w)$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+L ( P , w )  & \equiv - H ( P ) + w _ { 0 } ( 1 - \sum _ { y } P ( y | x ) ) + \sum _ { i = 1 } ^ { n } w _ { i } ( E _ { \overline { p } } ( f _ { i } ) - E _ { P } ( f _ { i } ) ) \\
+& = \sum _ { x , y } \tilde { P } ( x ) P ( y | x ) \operatorname { log } P ( y | x ) + w _ { 0 } ( 1 - \sum _ { y } P ( y | x ) ) \\&\quad + \sum _ { i = 1 } ^ { n } w _ { i } ( \sum _ { x , y } \tilde { P } ( x , y ) f _ { i } ( x , y ) - \sum _ { x , y } \tilde { P } ( x ) P ( y | x ) f _ { i } ( x , y ) ) 
+\end{align}</script><p>原始问题，</p>
+<script type="math/tex; mode=display">
+\operatorname { min } _ { P \in C } \operatorname { max } _ { w } L ( P , w )</script><p>对偶问题，</p>
+<script type="math/tex; mode=display">
+\operatorname { max } _ { w } \operatorname { min } _ { P \in C } L ( P , w ) \tag{6.19}</script><p>由于$L(P,w)$是$P$的凸函数，所以两个问题的解等价。</p>
+<p>首先求解(6.19)的极小化问题，记作，</p>
+<script type="math/tex; mode=display">
+\Psi ( w ) = \operatorname { min } _ { P \in C } L ( P , w ) = L ( P _ { w } , w )</script><p>$\Psi( w )$称作对偶函数，同时将其解记作，</p>
+<script type="math/tex; mode=display">
+P_w = \arg \min _ { P \in C } L ( P , w ) = P_w(y|x)</script><p>求解，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac { \partial L ( P , w ) } { \partial P ( y | x ) } &= \sum _ { x , y } \tilde { P } ( x ) ( \operatorname { log } P ( y | x ) + 1 ) - \sum _ { y } w _ { 0 } - \sum _ { x , y } ( \tilde { P } ( x ) \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) ) \\ &= \sum _ { x , y } \tilde { P } ( x ) ( \operatorname { log } P ( y | x ) + 1 - w _ { 0 } - \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) ) \end{align}</script><p>另偏导数等于$0$，在$\tilde P(x)&gt;0$的情况下，解得，</p>
+<script type="math/tex; mode=display">
+P ( y | x ) = \operatorname { exp } ( \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) + w _ { 0 } - 1 ) = \frac { \operatorname { exp } ( \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) ) } { \operatorname { exp } ( 1 - w _ { 0 } ) }</script><p>由于$\sum_y P(y|x)=1$，得</p>
+<script type="math/tex; mode=display">
+P _ { w } ( y | x ) = \frac { 1 } { Z _ { w } ( x ) } \operatorname { exp } ( \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) ) \tag{6.22}</script><p>其中，</p>
+<script type="math/tex; mode=display">
+Z _ { w } ( x ) = \sum _ { y } \operatorname { exp } ( \sum _ { i = 1 } ^ { n } w _ { i } f _ { i } ( x , y ) )  \tag{6.23}</script><p>$Z_w(x)$称为规范化因子；$f_i(X,Y)$是特征函数；$w_i$是特征的权值。</p>
+<p>由(6.22)，(6.23)表示的模型$P_w = P_w(Y|X)$就是最大熵模型，这里的$w$是模型中的参数向量。</p>
+<p>之后，求解对偶问题外部的极大化问题，</p>
+<script type="math/tex; mode=display">
+\max_w \Psi(w)</script><p>将其解记为，</p>
+<script type="math/tex; mode=display">
+w^* = \arg \max_w \Psi(w)</script><p>这就是说，可以应用<strong>最优化算法</strong>求对偶函数$\Psi(w)$的极大化，得到$w^<em>$，用来表示$P^</em>\in C$. </p>
+<p>这里，$P^<em>＝P_{w^</em>}＝P_{w^<em>}(Y|X)$是学习到的<em>*最优模型（最大熵模型）</em></em>。</p>
+<h3 id="6-2-4-极大似然估计"><a href="#6-2-4-极大似然估计" class="headerlink" title="6.2.4 极大似然估计"></a>6.2.4 极大似然估计</h3>
         </div>
         
           
@@ -339,10 +388,10 @@ P ( Y = 0 | x ) = \frac { 1 } { 1 + \operatorname { exp } ( w \cdot x ) }</scrip
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-31T22:02:42+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T11:36:29+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 31, 2019</p>
+    <p>last updated at Aug 1, 2019</p>
   </a>
 </div>
 
@@ -635,7 +684,7 @@ P ( Y = 0 | x ) = \frac { 1 } { 1 + \operatorname { exp } ( w \cdot x ) }</scrip
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Logistic回归与最大熵模型"><span class="toc-text">6 Logistic回归与最大熵模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-逻辑斯谛回归模型"><span class="toc-text">6.1 逻辑斯谛回归模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-逻辑斯谛分布"><span class="toc-text">6.1.1 逻辑斯谛分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-二项逻辑斯谛回归模型"><span class="toc-text">6.1.2 二项逻辑斯谛回归模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-模型参数估计"><span class="toc-text">6.1.3 模型参数估计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-4-多项逻辑斯谛回归"><span class="toc-text">6.1.4 多项逻辑斯谛回归</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-最大熵模型"><span class="toc-text">6.2 最大熵模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-1-最大熵原理"><span class="toc-text">6.2.1 最大熵原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-2-最大熵模型的定义"><span class="toc-text">6.2.2 最大熵模型的定义</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Logistic回归与最大熵模型"><span class="toc-text">6 Logistic回归与最大熵模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-逻辑斯谛回归模型"><span class="toc-text">6.1 逻辑斯谛回归模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-逻辑斯谛分布"><span class="toc-text">6.1.1 逻辑斯谛分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-二项逻辑斯谛回归模型"><span class="toc-text">6.1.2 二项逻辑斯谛回归模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-模型参数估计"><span class="toc-text">6.1.3 模型参数估计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-4-多项逻辑斯谛回归"><span class="toc-text">6.1.4 多项逻辑斯谛回归</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-最大熵模型"><span class="toc-text">6.2 最大熵模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-1-最大熵原理"><span class="toc-text">6.2.1 最大熵原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-2-最大熵模型的定义"><span class="toc-text">6.2.2 最大熵模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-3-最大熵模型的学习"><span class="toc-text">6.2.3 最大熵模型的学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-4-极大似然估计"><span class="toc-text">6.2.4 极大似然估计</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -733,7 +782,7 @@ P ( Y = 0 | x ) = \frac { 1 } { 1 + \operatorname { exp } ( w \cdot x ) }</scrip
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li></ul>
     </div>
   </section>
 
