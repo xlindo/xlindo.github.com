@@ -434,7 +434,7 @@ L _ (w)= \sum _ { x , y } \tilde { P } ( x , y ) \sum _ { i = 1 } ^ { n } w _ { 
 L ( w + \delta ) - L ( w ) \geqslant A(\delta|w)</script><p>其中该变量的下界，</p>
 <script type="math/tex; mode=display">
 A(\delta|w)=\sum _ { x , y } \tilde { P } ( x , y ) \sum _ { i = 1 } ^ { n } \delta _ { i } f _ { i } ( x , y ) + 1 - \sum _ { x } \tilde { P } ( x ) \sum _ { y } P _ { w } ( y | x ) \operatorname { exp } \sum _ { i = 1 } ^ { n } \delta _ { i } f _ { i } ( x , y )</script><hr>
-<p><strong>算法6.1(改进的迭代尺度算法IIS)</strong> </p>
+<p><strong>算法6.1 (改进的迭代尺度算法IIS)</strong> </p>
 <p><strong>输入</strong>：特征函数$f_1,f_2,\cdots,f_n$，经验分布$\tilde P (X,Y)$，模型$P_w(y|x)$<br><strong>输出</strong>：最优参数值$w^<em>$；最优模型$P_{w^</em>}$ </p>
 <ol>
 <li><p>对所有$i\in {1,2,\cdots,n}$，取初值$w_i=0$</p>
@@ -450,9 +450,7 @@ f ^ { \# } ( x , y ) = \sum _ { i = 1 } ^ { n } f _ { i } ( x , y )</script><p>(
 </li>
 </ol>
 <hr>
-<p>这一算法关键的一步是(a)，即求解方程(6.33)中的$\delta_i$，如果$f^#(x,y)＝M$，那么$\delta_i$可以显式地表示成</p>
-<script type="math/tex; mode=display">
-\delta _ { i } = \frac { 1 } { M } \operatorname { log } \frac { E _ { \tilde { p } } ( f _ { i } ) } { E _ { p } ( f _ { i } ) }</script><p>如果$f^#(x,y)$不是常数，那么必须通过数值计算求$\delta_i$，简单有效的方法是牛顿法。以$g(\delta_i)＝0$表示(6.33)，牛顿法通过迭代求得$\delta_i^<em>$，使得$g(\delta_i^</em>)＝0$，</p>
+<p>这一算法关键的一步是(a)，即求解方程(6.33)中的$\delta_i$，如果$f^(x,y)$不是常数，那么必须通过数值计算求$\delta_i$，简单有效的方法是牛顿法。以$g(\delta_i)＝0$表示(6.33)，牛顿法通过迭代求得$\delta_i^<em>$，使得$g(\delta_i^</em>)＝0$，</p>
 <script type="math/tex; mode=display">
 \delta _ { i } ^ { ( k + 1 ) } = \delta _ { i } ^ { ( k ) } - \frac { g ( \delta _ { i } ^ { ( k ) } ) } { g ^ { \prime } ( \delta _ { i } ^ { ( k ) } ) }</script><h3 id="6-3-2-拟牛顿法"><a href="#6-3-2-拟牛顿法" class="headerlink" title="6.3.2 拟牛顿法"></a>6.3.2 拟牛顿法</h3><p>最大熵模型学习还可以应用牛顿法或拟牛顿法。对于最大熵模型而言，</p>
 <script type="math/tex; mode=display">
@@ -518,7 +516,7 @@ Z _ { w } ( x ) = \sum _ { y } \operatorname { exp } ( \sum _ { i = 1 } ^ { n } 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T15:17:10+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T15:25:27+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 1, 2019</p>
@@ -912,7 +910,7 @@ Z _ { w } ( x ) = \sum _ { y } \operatorname { exp } ( \sum _ { i = 1 } ^ { n } 
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
     </div>
   </section>
 
