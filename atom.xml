@@ -89,6 +89,30 @@
   </entry>
   
   <entry>
+    <title>统计学习方法-Ch9 EM算法及推广</title>
+    <link href="http://xlindo.com/posts/4723d1ed/"/>
+    <id>http://xlindo.com/posts/4723d1ed/</id>
+    <published>2019-07-30T18:32:17.000Z</published>
+    <updated>2019-08-02T19:55:46.050Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p></blockquote><p><strong><u>由于这一章跟我目前做的事关系不大， 所以以了解概念为主，等用到了再回来看。</u></strong></p><h1 id="9-EM算法及推广"><a href="#9-EM算法及推广" class="headerlink" title="9 EM算法及推广"></a>9 EM算法及推广</h1><p>EM算法是一种迭代算法，1977年由Dempster等人总结提出，<strong>用于含有隐变量（hidden variable）的概率模型参数的极大似然估计，或极大后验概率估计</strong>。EM算法的每 次迭代由两步组成：E步，求期望（expectation）；M步，求极大（maximization）。所以这一算法称为期望极大算法（expectation maximization algorithm），简称EM算法。本章首 先叙述EM算法，然后讨论EM算法的收敛性；作为EM算法的应用，介绍高斯混合模型的学习；最后叙述EM算法的推广——GEM算法。</p><h2 id="TODO"><a href="#TODO" class="headerlink" title="#TODO"></a>#TODO</h2>]]></content>
+    
+    <summary type="html">
+    
+      统计学习方法 刷书笔记 Ch9 EM算法及推广
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://xlindo.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="统计学习方法" scheme="http://xlindo.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>统计学习方法-Ch6 Logistic回归与最大熵模型</title>
     <link href="http://xlindo.com/posts/bf88569f/"/>
     <id>http://xlindo.com/posts/bf88569f/</id>
@@ -467,28 +491,6 @@
       <category term="机器学习" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="inEnglish" scheme="http://xlindo.com/tags/inEnglish/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工具 - Notion, Trello, OneNote等效率工具几句话对比 2019</title>
-    <link href="http://xlindo.com/posts/b5919051/"/>
-    <id>http://xlindo.com/posts/b5919051/</id>
-    <published>2019-07-13T09:43:02.000Z</published>
-    <updated>2019-07-22T07:45:20.792Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p></blockquote><p>偶然间，看到各类文章对效率工具的吹捧。又很好奇，其中有些我又确实没有用过，就都试了一试。不如把我测试的感受跟大家分享一下吧！</p><p>我是客观中立的学生党。</p><h1 id="0-使用场景"><a href="#0-使用场景" class="headerlink" title="0 使用场景"></a>0 使用场景</h1><p>我的使用场景是：Android手机，iPad，Windows计算机，三个都要使用，这也是直接扔了印象笔记（免费版支持2个设备）不考虑的原因。</p><p>对，所有产品基于免费版本。</p><h1 id="1-笔记本之王-OneNote"><a href="#1-笔记本之王-OneNote" class="headerlink" title="1 笔记本之王 OneNote"></a>1 笔记本之王 OneNote</h1><blockquote><p>Notability当然是不可错过的好工具，我也一直在用。但是它没有win版本，所以导致我不能直接在win上桌面化操作。</p></blockquote><p>没有什么笔记工具能与OneNote比肩了吧，5个G的免费容量也是够够的了。</p><ul><li>平台：Win下我比较喜欢用UWP版本</li><li>优点<ul><li>全面、均衡的好</li><li>大厂出品，前景美好</li></ul></li><li>缺点<ul><li>原生不支持Markdown不知道算不算一个小遗憾，因为对于我，我比较喜欢写md</li></ul></li></ul><h1 id="2-模板笔记大师-Notion"><a href="#2-模板笔记大师-Notion" class="headerlink" title="2 模板笔记大师 Notion"></a>2 模板笔记大师 Notion</h1><p>各类平台无脑吹的最多的一款看似“全能”的笔记应用。花里胡哨。</p><p>我把他留着使用的原因是他丰富的模板，当我要在OneNote里写类似笔记时，我会去参考一下它的模板内容。</p><p>我一直不太推荐这种所谓的“全能型”工具，除非你是苹果、微软这种有强大的各方面能力支撑的公司，不然可能还是专心干一件事会比较好。</p><ul><li>优点<ul><li>模板丰富，丰富到感动你</li><li>可选block 插件丰富，可以做出漂亮的、一体的笔记</li></ul></li><li>缺点<ul><li>慢。无形之中的慢，总感觉卡卡的</li><li>花里胡哨，到处都是block和操作按钮。有一种富文本之于markdown的感觉</li><li>免费版1000 blocks限制</li><li>被墙风险，毕竟可以分享，有不可控风险</li></ul></li></ul><h1 id="3-行事规划-Trello，Teambition"><a href="#3-行事规划-Trello，Teambition" class="headerlink" title="3 行事规划 Trello，Teambition"></a>3 行事规划 Trello，Teambition</h1><h2 id="3-1-Trello"><a href="#3-1-Trello" class="headerlink" title="3.1 Trello"></a>3.1 Trello</h2><p>这一波试用后，留在我电脑上的应用。推荐。</p><p>这是一个逻辑简单的项目规划类应用，而我将其作为我的个人规划应用。我最近用它来做找工作和写毕设的规划。</p><p>如果你和我一样以前没用过，来看一看界面就知道这软件是怎么回事了。</p><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/Trello-ui.png" alt="Trello"></p><ul><li>优点<ul><li>界面美观</li><li>模板，尤其是个人项目逻辑友好</li></ul></li><li>缺点<ul><li>免费版的Power-Ups ，也就是原生插件，只支持一个，但是够用了</li><li>被墙风险，不够这类应用也不用担心这个过多，墙了就转回Teambition</li></ul></li></ul><h2 id="3-2-国产计划行事-Teambition"><a href="#3-2-国产计划行事-Teambition" class="headerlink" title="3.2 国产计划行事 Teambition"></a>3.2 国产计划行事 Teambition</h2><p>Trello类似的应用，国内用户推荐，国外用户不推荐。</p><ul><li>优点<ul><li>国产，被墙风险小</li><li>本地支持</li></ul></li><li>缺点<ul><li>国内服务器对国外用户有点慢，账号又和国际服务器不通，导致随时登出，然后报个json的错误出来。就卸载了</li><li>手机上操作逻辑我不太喜欢。为什么一屏就显示一个card？</li></ul></li></ul><h1 id="4-大纲笔记：Dynalist，幕布"><a href="#4-大纲笔记：Dynalist，幕布" class="headerlink" title="4 大纲笔记：Dynalist，幕布"></a>4 大纲笔记：Dynalist，幕布</h1><h2 id="4-1-Dynalist"><a href="#4-1-Dynalist" class="headerlink" title="4.1 Dynalist"></a>4.1 Dynalist</h2><p>Markdown用户的笔记应用首选，比较完美的一款产品。需要搭配一个图床，我一直在用。</p><ul><li>优点<ul><li>华人产品</li></ul></li><li>缺点<ul><li>不支持代码块，这个要加上了就完美了</li><li>文档多了后，树状结构看起来很乱</li></ul></li></ul><h2 id="4-2-幕布"><a href="#4-2-幕布" class="headerlink" title="4.2 幕布"></a>4.2 幕布</h2><p>总体逻辑和Dynalist一致，有其独特优点。</p><ul><li>优点<ul><li>转换笔记到脑图</li></ul></li><li>缺点<ul><li>不支持Latex，不支持Latex公式必然是个巨大的败笔</li></ul></li></ul><h1 id="5-定时任务：To-Do，奇妙清单"><a href="#5-定时任务：To-Do，奇妙清单" class="headerlink" title="5 定时任务：To-Do，奇妙清单"></a>5 定时任务：To-Do，奇妙清单</h1><h2 id="5-1-To-Do"><a href="#5-1-To-Do" class="headerlink" title="5.1 To-Do"></a>5.1 To-Do</h2><p>奇妙清单的微软版。无脑吹微软的产品，大厂的软件生命值得期待、值得信赖。</p><ul><li>优点<ul><li>清爽，免费，前景好</li><li>和微软产品的逐渐耦合</li></ul></li><li>缺点<ul><li>应该都是暂时的，比如iPad还没有Widget</li></ul></li></ul><h2 id="5-2-奇妙清单"><a href="#5-2-奇妙清单" class="headerlink" title="5.2 奇妙清单"></a>5.2 奇妙清单</h2><p>毫无疑问，奇妙清单在这类应用中几乎无懈可击。但从商业角度上看，我认为To-Do会逐渐吸收奇妙清单的优点，并被微软优先支持。</p><ul><li>优点<ul><li>完美</li></ul></li><li>缺点<ul><li>被大厂收购了，前景没有To-Do好</li></ul></li></ul><h1 id="6-计算器-Uno-Calculator"><a href="#6-计算器-Uno-Calculator" class="headerlink" title="6 计算器 Uno Calculator"></a>6 计算器 Uno Calculator</h1><p>彩蛋推荐。</p><p>该计算器是基于Windows默认计算器的开源代码创建，Android和iPad都有下载。好用，四舍五入的看成是微软出品吧。</p><p>最后，欢迎读者指正，也期待您给我推荐更好用的工具。</p>]]></content>
-    
-    <summary type="html">
-    
-      偶然间，看到各类文章对效率工具的吹捧。又很好奇，其中有些我又确实没有用过，就都试了一试。不如把我测试的感受跟大家分享一下吧！
-    
-    </summary>
-    
-      <category term="经验之谈" scheme="http://xlindo.com/categories/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/"/>
-    
-    
-      <category term="工具" scheme="http://xlindo.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
