@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xlindo.com/"/>
-  <updated>2019-08-02T17:43:36.798Z</updated>
+  <updated>2019-08-02T17:52:54.678Z</updated>
   <id>http://xlindo.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>todo 统计学习方法-Ch8 提升方法</title>
+    <link href="http://xlindo.com/posts/f43c3bdb/"/>
+    <id>http://xlindo.com/posts/f43c3bdb/</id>
+    <published>2019-08-02T17:52:02.000Z</published>
+    <updated>2019-08-02T17:52:54.678Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p></blockquote><h1 id="8-提升方法"><a href="#8-提升方法" class="headerlink" title="8 提升方法"></a>8 提升方法</h1>]]></content>
+    
+    <summary type="html">
+    
+      统计学习方法 刷书笔记 Ch8 提升方法
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://xlindo.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="统计学习方法" scheme="http://xlindo.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>统计学习方法-Ch7 SVM</title>
@@ -465,34 +489,6 @@
     
     
       <category term="工具" scheme="http://xlindo.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Robotics - Mensch-Maschine Interaktion Kurs</title>
-    <link href="http://xlindo.com/posts/1bfc9d47/"/>
-    <id>http://xlindo.com/posts/1bfc9d47/</id>
-    <published>2019-07-10T09:45:35.000Z</published>
-    <updated>2019-07-23T17:42:24.487Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p><p>2018WS in TU Ilmenau<br>TOC of the course</p></blockquote><h1 id="Intro-–-Einfuhrung"><a href="#Intro-–-Einfuhrung" class="headerlink" title="Intro – Einführung"></a>Intro – Einführung</h1><ul><li>Organisatorisches</li><li>Begriffsbestimmung</li><li>Anwendungsgebiete</li><li>Teilbereiche</li><li>Literatur</li></ul><h1 id="A-–-Ausgewahlte-Basisoperationen-fur-viele-Erkennungsverfahren"><a href="#A-–-Ausgewahlte-Basisoperationen-fur-viele-Erkennungsverfahren" class="headerlink" title="A – Ausgewählte Basisoperationen für viele Erkennungsverfahren"></a>A – Ausgewählte <strong><em>Basisoperationen</em></strong> für viele Erkennungsverfahren</h1><h2 id="1-Basisoperationen"><a href="#1-Basisoperationen" class="headerlink" title="1 Basisoperationen"></a>1 Basisoperationen</h2><ul><li><strong><em>Vorverarbeitung</em></strong><ul><li>mache Konzepten</li><li><strong><em>Merkmalsextraktion</em></strong></li><li><strong><em>Klassifikation / Funktionsapproximation (Regression)/ Clusterung</em></strong></li></ul></li></ul><h2 id="2-Bildvorverarbeitung"><a href="#2-Bildvorverarbeitung" class="headerlink" title="2 Bildvorverarbeitung"></a>2 Bildvorverarbeitung</h2><ul><li><strong><em>Histogrammausgleich</em></strong><ul><li>Beleuchtungsausgleich</li><li>Histogrammausgleich</li><li>kumulative Histogramm</li><li><strong><em>Summenhistogramm</em></strong></li></ul></li><li>Behandlung der <strong><em>Rand</em></strong> probleme</li><li><strong><em>Auflösungspyramiden</em></strong><ul><li>Ortsfrequenzen</li><li><strong><em>Abtasttheorem</em></strong></li></ul></li><li><strong><em>Integralbilder</em></strong> A-28</li></ul><h2 id="3-Merkmalsextraktion"><a href="#3-Merkmalsextraktion" class="headerlink" title="3 Merkmalsextraktion"></a>3 Merkmalsextraktion</h2><ul><li><strong><em>Hautfarb</em></strong>erkennung<ul><li>Farbraum</li><li>r-g space</li><li>Farbtemperatur</li></ul></li><li><strong><em>Gabor-Filterung</em></strong>  A-34<ul><li>Vorzugsrichtungen $\phi$</li><li>Vorzugsfrequenzen $\omega$</li><li>Kantendetektion</li><li>Jet</li></ul></li><li><strong><em>PCA</em></strong> A-52<ul><li>Ablauf A-59</li><li>Dimension bestimmen</li></ul></li><li>Linear subspace methods<ul><li>steps A-63</li></ul></li></ul><h2 id="4-Leistungsbewertung-von-Detektoren"><a href="#4-Leistungsbewertung-von-Detektoren" class="headerlink" title="4 Leistungsbewertung von Detektoren"></a>4 <strong><em>Leistungsbewertung von Detektoren</em></strong></h2><ul><li>Konfusionsmatrix<ul><li>ACC/PPV/Recall/TNR/F1-score</li></ul></li><li><strong><em>ROC Curve</em></strong> (Receiver Operating Characteristic)<ul><li>Diskrete Klassifikatoren</li><li>Einordnung aller Begrifflichkeiten A-78</li><li><strong><em>AUC: Area Under Curve</em></strong><ul><li>ACC</li><li>BER</li></ul></li><li>Precision-Recall-Curve A-82<ul><li>F1-score</li></ul></li><li>DET-Curve (Detection Error Tradeoff)</li><li>Mehrklassen-Bewertung<ul><li>Problem Konfusionsmatrix A-89</li></ul></li><li>CMC – Cumulative Match Characteristic</li></ul></li></ul><h2 id="5-Analyse-spatio-temporale-Daten-A-92"><a href="#5-Analyse-spatio-temporale-Daten-A-92" class="headerlink" title="5 Analyse spatio-temporale Daten A-92"></a>5 Analyse spatio-temporale Daten A-92</h2><ul><li><strong><em>Dynamic Time Warping (DTW)</em></strong></li><li><strong><em>Hidden Markov Modelle (HMM)</em></strong> A-102</li></ul><h1 id="B-–-Wichtige-Verfahren-zur-Erkennung-von-Nutzerzustand-amp-Nutzerintention"><a href="#B-–-Wichtige-Verfahren-zur-Erkennung-von-Nutzerzustand-amp-Nutzerintention" class="headerlink" title="B – Wichtige Verfahren zur Erkennung von Nutzerzustand &amp; Nutzerintention"></a>B – Wichtige Verfahren zur <strong><em>Erkennung</em></strong> von Nutzerzustand &amp; Nutzerintention</h1><h2 id="1-Nutzerdetektion-Nutzertracking"><a href="#1-Nutzerdetektion-Nutzertracking" class="headerlink" title="1 Nutzerdetektion, Nutzertracking"></a>1 Nutzerdetektion, Nutzertracking</h2><ul><li><strong><em>Implizite</em></strong> Personendetektion mittels<ul><li>Hintergrund-Modellierung B1-7</li><li>GMM - Gaussians Mixture Model</li></ul></li><li><strong><em>Explicit</em></strong> Methods<ul><li>Monolithic <ul><li>Person detection via <strong><em>faces</em></strong>, <strong><em>Template-based</em></strong> B1-13<ul><li>Appearance-based<ul><li>Distribution-based methods B1-18</li><li>Neural Networks<ul><li>什么形状匹配什么部位 B1-23</li><li>Bootstrapping B1-27</li></ul></li><li>HMM B1-31</li><li>Boosting-basierte Klassifikatorkaskaden B1-35<ul><li>Ensemble learning</li><li>Gesamtklassifikator (Strong Learner)</li></ul></li></ul></li></ul></li><li>Full Body Models – Monolithic, <strong><em>Silhouette-based</em></strong> Person Detection<ul><li><strong><em>Ellipse</em></strong>, Parametric geometric models, Static contour models B1-48</li><li><strong><em>Splines</em></strong>, 样条曲线, Point based B1-52</li><li><strong><em>ASM, Active Shape Models,</em></strong> B1-58</li></ul></li><li><strong><em>Feature-based</em></strong>, B1-61<ul><li>Histograms of Oriented Gradients (<strong><em>HOG</em></strong>)<ul><li>Normalisierung, B1-69 </li></ul></li></ul></li><li>Deep Learning<ul><li>CNN</li></ul></li></ul></li><li>Part-based<ul><li>Feature-based<ul><li>Implicit Shape Model (ISM) B1-77</li></ul></li></ul></li></ul></li><li>Personendetektion in <strong><em>3D Tiefenbildern</em></strong> B1-80<ul><li>Szenengeometrie</li><li><strong><em>Speckle Muster</em></strong> B1-85</li><li>Monolithic<ul><li>Datenbasis: Tiefenkarte</li><li>Tiefentemplates, B1-90</li><li>histogrammbasierten Features<ul><li>HOD</li><li>Combo-HOD</li><li>HDD</li></ul></li></ul></li><li>Mehrteilig, B1-95<ul><li>Datenbasis: Punktewolke</li><li>histogrammbasierten Features<ul><li>HLSN</li></ul></li><li>geometrischen und statistischen Features<ul><li>Layered Approach</li><li>AdaBoost</li></ul></li></ul></li></ul></li><li><strong><em>Multi-Cue People Tracking</em></strong>, B1-103<ul><li>Bayes-Filter<ul><li>Continuous: Kalman filter</li><li>Discrete: <strong><em>Particle filter</em></strong></li></ul></li></ul></li></ul><h2 id="2-Zeigeposen-und-Gestenerkennung-B2-1"><a href="#2-Zeigeposen-und-Gestenerkennung-B2-1" class="headerlink" title="2 Zeigeposen- und Gestenerkennung B2-1"></a>2 Zeigeposen- und <strong><em>Gestenerkennung</em></strong> B2-1</h2><ul><li>Simple template matching approach<ul><li>Dynamic Gesture Recognition, B2-11</li></ul></li><li>Gesture recognition by statistical techniques (HMMs), B2-13</li></ul><h2 id="3-Nutzeridentifikation-B3-1"><a href="#3-Nutzeridentifikation-B3-1" class="headerlink" title="3 Nutzeridentifikation, B3-1"></a>3 Nutzeridentifikation, B3-1</h2><ul><li>nicht-biometrische Widererkennung<ul><li>markante Punkte</li><li>statische Merkmale</li><li>semantischer Attribute</li></ul></li><li>biometrische Nutzeridentifikation anhand des Gesichts, B3-8<ul><li>Elastic Graph Matching (<strong><em>EGM</em></strong>)</li></ul></li></ul><h2 id="4-Erkennung-von-Mimik-Emotionen-Stress-und-Interaktionsinteresse-B4-1"><a href="#4-Erkennung-von-Mimik-Emotionen-Stress-und-Interaktionsinteresse-B4-1" class="headerlink" title="4 Erkennung von Mimik (Emotionen, Stress) und Interaktionsinteresse, B4-1"></a>4 Erkennung von Mimik (Emotionen, Stress) und Interaktionsinteresse, B4-1</h2><ul><li>emotional classes</li><li>visual classes<ul><li>Facial Action Coding Systems (FACS)</li></ul></li><li>Comparison, B4-12</li><li>automatic facial expression analysis<ul><li>Facial Data Acquisition</li><li>Facial Feature Extraction<ul><li>Deformation Extraction<ul><li>Image-based</li><li>model-based<ul><li>Active Appearance Models (AAMs)</li></ul></li></ul></li><li>Movement Extraction <h1 id="C-–-Anwendungsbeispiele-fur-Assistenzfunktionen"><a href="#C-–-Anwendungsbeispiele-fur-Assistenzfunktionen" class="headerlink" title="C – Anwendungsbeispiele für Assistenzfunktionen"></a>C – Anwendungsbeispiele für Assistenzfunktionen</h1></li></ul></li></ul></li></ul><h2 id="1-Sturzdetektion-im-hauslichen-Umfeld"><a href="#1-Sturzdetektion-im-hauslichen-Umfeld" class="headerlink" title="1 Sturzdetektion im häuslichen Umfeld"></a>1 Sturzdetektion im häuslichen Umfeld</h2><ul><li>Tragbare Sensoren, C1—5</li><li>Bildbasierte Verfahren, C1—7<ul><li>von Bewegungen</li><li>Detektion liegender Personen</li></ul></li><li>NDT—Sturzdetektor</li></ul><h2 id="2-Soziale-Assistenzroboter-fur-die-Gesundheitsassistenz-Rehabilitation"><a href="#2-Soziale-Assistenzroboter-fur-die-Gesundheitsassistenz-Rehabilitation" class="headerlink" title="2 Soziale Assistenzroboter für die Gesundheitsassistenz (Rehabilitation)"></a>2 Soziale Assistenzroboter für die Gesundheitsassistenz (Rehabilitation)</h2>]]></content>
-    
-    <summary type="html">
-    
-      Auf Deutsch verfasst. Die Verzeichnisstruktur des Kurses Mensch-Maschine Interaktion.
-    
-    </summary>
-    
-      <category term="机器人" scheme="http://xlindo.com/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
-    
-      <category term="笔记" scheme="http://xlindo.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="aufDeutsch" scheme="http://xlindo.com/tags/aufDeutsch/"/>
-    
-      <category term="人机交互" scheme="http://xlindo.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
-    
-      <category term="机器人" scheme="http://xlindo.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
   </entry>
   
