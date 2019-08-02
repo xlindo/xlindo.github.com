@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>todo 统计学习方法-Ch8 提升方法 | Xlindo is here!</title>
+  <title>统计学习方法-Ch8 提升方法 | Xlindo is here!</title>
   
   
   <meta name="description" content="统计学习方法 刷书笔记 Ch8 提升方法">
@@ -190,7 +190,7 @@
   
     <h1 class="title">
       <a href="/posts/f43c3bdb/">
-        todo 统计学习方法-Ch8 提升方法
+        统计学习方法-Ch8 提升方法
       </a>
     </h1>
   
@@ -273,8 +273,213 @@
         <div class="article-entry" itemprop="articleBody">
           <blockquote>
 <p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p>
+<p>TODO: 8.3 AdaBoost算法的解释</p>
 </blockquote>
-<h1 id="8-提升方法"><a href="#8-提升方法" class="headerlink" title="8 提升方法"></a>8 提升方法</h1>
+<p><strong><u>由于这一章跟我目前做的事关系不大， 所以以了解概念为主，等用到了再回来看。</u></strong></p>
+<h1 id="8-提升方法"><a href="#8-提升方法" class="headerlink" title="8 提升方法"></a>8 提升方法</h1><p>提升(boosting)方法是一种常用的统计学习方法，应用广泛且有效。在分类问题中，它通过<strong>改变训练样本的权重</strong>，学习多个分类器，并将这些分类器进行线性组合，提高分类的性能。</p>
+<h2 id="8-1-提升方法AdaBoost算法"><a href="#8-1-提升方法AdaBoost算法" class="headerlink" title="8.1 提升方法AdaBoost算法"></a>8.1 提升方法AdaBoost算法</h2><h3 id="8-1-1-提升方法的基本思路"><a href="#8-1-1-提升方法的基本思路" class="headerlink" title="8.1.1 提升方法的基本思路"></a>8.1.1 提升方法的基本思路</h3><p>提升方法基于这样一种思想：对于一个复杂任务来说，将多个专家的判断进行适当的综合所得出的判断，要比其中任何一个专家单独的判断好。</p>
+<p>在概率近似正确(probably approximately correct， PAC)学习的框架中，强可学习与弱可学习是等价的，也就是说一个概念是强可学习的充分必要条件是这个概念是弱可学习的。(Kearns，Valiant)</p>
+<p>这样一来，问题便成为，在学习中，如果已经发现了“弱学习算法”，那么能否将它提升(boost)为“强学习算法”。最具代表性的是AdaBoost算法(AdaBoost algorithm)。</p>
+<p>对于分类问题而言，给定一个训练样本集，求比较粗糙的分类规则(弱分类器)要比求精确的分类规则(强分类器)容易得多。<strong>提升方法就是从弱学习算法出发，反复学习</strong>， 得到一系列弱分类器(又称为基本分类器)，然后<strong>组合这些弱分类器</strong>，构成一个强分类器。<strong>大多数的提升方法都是改变训练数据的概率分布</strong>(训练数据的权值分布)，针对不同的训练数据分布调用弱学习算法学习一系列弱分类器。</p>
+<p>这样，对提升方法来说，有两个问题需要回答：</p>
+<ul>
+<li>一是在每一轮如何改变训练数据的权值或概率分布；</li>
+<li>二是如何将弱分类器组合成一个强分类器。</li>
+</ul>
+<p>关于第1个问题，AdaBoost的做法是，<strong>提高那些被前一轮弱分类器错误分类样本的权值，而降低那些被正确分类样本的权值</strong>。于是，分类问题被一系列的弱分类器“分而治之”。至于第2个问题，即<strong>弱分类器的组合</strong>，AdaBoost采取<strong>加权多数表决</strong>的方法。具体地，<strong>加大分类误差率小的弱分类器的权值</strong>，使其在表决中起较大的作用，减小分类误差率大的弱分类器的权值，使其在表决中起较小的作用。 </p>
+<p>AdaBoost的巧妙之处就在于它将这些想法自然且有效地实现在一种算法里。</p>
+<h3 id="8-1-2-AdaBoost算法"><a href="#8-1-2-AdaBoost算法" class="headerlink" title="8.1.2 AdaBoost算法"></a>8.1.2 AdaBoost算法</h3><p>现在叙述AdaBoost算法。假设给定一个二类分类的训练数据集</p>
+<script type="math/tex; mode=display">
+T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace</script><p>其中，每个样本点由实例与标记组成。实例$x _ { i } \in \mathcal{X} = R ^ { n }$标记，$y _ { i } \in \mathcal{Y}= { +1,-1 }$，$\mathcal{X}$是实例空间，$\mathcal{Y}$是标记集合。AdaBoost利用以下算法，从训练数据中学习一系列弱分类器或基本分类器，并将这些弱分类器线性组合成为一个强分类器。</p>
+<hr>
+<p><strong>算法8.1(AdaBoost)</strong></p>
+<p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$，弱学习算法；</p>
+<p><strong>输出</strong>：最终分类器$G(x)$.</p>
+<ol>
+<li>初始化训练数据的权值分布</li>
+</ol>
+<script type="math/tex; mode=display">
+D _ { 1 } = ( w _ { 11 } , \cdots , w _ { 1 i } , \cdots , w _ { 1 N } ) , \quad w _ { 1 i } = \frac { 1 } { N } , \quad i = 1,2 , \cdots , N</script><ol>
+<li><p>对$m=1,2 , \cdots , M$</p>
+<p>(a) 使用具有权值分布$D_m$的训练数据集学习，得到基本分类器</p>
+<script type="math/tex; mode=display">
+G_m(x):\mathcal{X}\rightarrow\lbrace -1,+1 \rbrace</script><p>(b) 计算$G_m(x)$在训练数据集上的分类误差率</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+e _ { m } = P ( G _ { m } ( x _ { i } ) \neq y _ { i } ) = \sum _ { i = 1 } ^ { N } w _ { m i } I ( G _ { m } ( x _ { i } ) \neq y _ { i } )</script><p>​        (c) 计算$G_m(x)$的系数</p>
+<script type="math/tex; mode=display">
+\alpha _ { m } = \frac { 1 } { 2 } \operatorname { log } \frac { 1 - e _ { m } } { e _ { m } }</script><p>​        这里的对数是自然对数。</p>
+<p>​        (d) 更新训练数据集的权值分布</p>
+<script type="math/tex; mode=display">
+D _ { m+ 1 } = ( w _ { m+1,1 } , \cdots , w _ { m+1, i } , \cdots , w _ { m+1, N } )</script><script type="math/tex; mode=display">
+w _ { m + 1 , i } = \frac { w _ { m i } } { Z _ { m } } \operatorname { exp } ( - \alpha _ { m } y _ { i } G _ { m } ( x _ { i } ) ) , \quad i = 1,2 , \cdots , N \tag{8.4}</script><p>​        这里，$Z_m$是规范化因子</p>
+<script type="math/tex; mode=display">
+Z _ { m } = \sum _ { i = 1 } ^ { N } w _ { m i } \operatorname { exp } ( - \alpha _ { m } y _ { i } G _ { m } ( x _ { i } ) ) \tag{8.5}</script><p>​        它使$D_{m+1}$成为一个概率分布。</p>
+<ol>
+<li>构建基本分类器的线性组合</li>
+</ol>
+<script type="math/tex; mode=display">
+f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><p>​        得到最终分类器</p>
+<script type="math/tex; mode=display">
+G ( x ) = \operatorname { sign } ( f ( x ) ) = \operatorname { sign } ( \sum _ { m = 1 } ^ { M } \alpha _ { m } G _ { m } ( x ) ) \tag{8.7}</script><hr>
+<p>对AdaBoost算法作如下说明：</p>
+<p><strong>步骤(1)</strong> 假设训练数据集具有均匀的权值分布，即每个训练样本在基本分类器的学习中作用相同，这一假设保证第1步能够在原始数据上学习基本分类器$G_1(x)$</p>
+<p><strong>步骤(2)</strong>AdaBoost反复学习基本分类器，在每一轮$m=1,2 , \cdots , M$顺次地执行下列操作：</p>
+<p>​    (a)使用当前分布$D_m$加权的训练数据集，学习基本分类器$G_m(x)$</p>
+<p>​    (b)计算基本分类器$G_m(x)$在加权训练数据集上的分类误差率：</p>
+<script type="math/tex; mode=display">
+e _ { m } = P ( G _ { m } ( x _ { i } ) \neq y _ { i } ) = \sum _ { i = 1 } ^ { N } w _ { m i }</script><p>​        这里，$w_{mi}$表示第$m$轮中第$i$个实例的权值，。这表明，$G_m(x)$在加权的训练数据集上的分类误差率是被$G_m(x)$误分类样本的权值之和，由此可以看出数据权值分布$D_m$与基本分类器$G_m(x)$的分类误差率的关系。</p>
+<p>​    (c)计算基本分类器$G_m(x)$的系数$\alpha_m$。$\alpha_m$表示$G_m(x)$在最终分类器中的重要性。由式(8.2)可知，当$e_m \leqslant \frac{1}{2}$时，$\alpha_m\geqslant 0$，并且$\alpha_m$随着$e_m$的减小而增大，所以分类误差率越小的基本分类器在最终分类器中的作用越大。</p>
+<p>​    (d)更新训练数据的权值分布为下一轮作准备。式(8.4)可以写成：</p>
+<script type="math/tex; mode=display">
+w _ { m + 1 , i } = \left\{ \begin{array} { l l } { \frac { w _ { m i } } { Z _ { m } } e ^ { - \alpha _ { m } } , } & { G _ { m } ( x _ { i } ) = y _ { i } } \\ { \frac { w _ { m i } } { Z _ { m } } e ^ { \alpha _ { m } } , } & { G _ { m } ( x _ { i } ) \neq y _ { i } } \end{array} \right.</script><p>由此可知，被基本分类器$G_m(x)$误分类样本的权值得以扩大，而被正确分类样本的权值却得以缩小。两相比较，误分类样本的权值被放大$e^{2\alpha_m}= \frac { 1 - e _ { m } } { e _ { m } }$倍。因此，误分类样本在下一轮学习中起更大的作用。<strong>不改变所给的训练数据，而不断改变训练数据权值的分布，使得训练数据在基本分类器的学习中起不同的作用，这是AdaBoost的一个特点。</strong></p>
+<p><strong>步骤(3)</strong>线性组合$f(x)$实现$M$个基本分类器的加权表决。系数$\alpha_m$表示了基本分类器$G_m(x)$的重要性，这里，所有$\alpha_m$之和并不为1. $f(x)$的符号决定实例$x$的类，$f(x)$的绝对值表示分类的确信度。利用基本分类器的线性组合构建最终分类器是AdaBoost的另一特点。</p>
+<h2 id="8-2-AdaBoost算法的训练误差分析"><a href="#8-2-AdaBoost算法的训练误差分析" class="headerlink" title="8.2 AdaBoost算法的训练误差分析"></a>8.2 AdaBoost算法的训练误差分析</h2><p>AdaBoost最基本的性质是它能在学习过程中不断减少训练误差，即在训练数据集上的分类误差率。关于这个问题有下面的定理</p>
+<hr>
+<p><strong>定理8.1(AdaBoost的训练误差界)</strong> </p>
+<p>AdaBoost算法最终分类器的训练误差界为</p>
+<script type="math/tex; mode=display">
+\frac { 1 } { N } \sum _ { i = 1 } ^ { N } I ( G ( x _ { i } ) \neq y _ { i } ) \leqslant \frac { 1 } { N } \sum _ { i } \operatorname { exp } ( - y _ { i } f ( x _ { i } ) ) = \prod _ { m } Z _ { m }</script><p>这里,$G(x)$,$f(x)$和$Z_m$分别由式(8.7)、式(8.6)和式(8.5)给出。</p>
+<hr>
+<p>这一定理说明，可以在每一轮选取适当的$G_m$使得使得$Z_m$最小，从而使训练误差下降最快。对二类分类问题，有如下结果：</p>
+<hr>
+<p><strong>定理8.2(二类分类问题AdaBoost的训练误差界)</strong></p>
+<script type="math/tex; mode=display">
+\prod _ { m = 1 } ^ { M } Z _ { m } = \prod _ { m = 1 } ^ { M } [ 2 \sqrt { e _ { m } ( 1 - e _ { m } ) } ] = \prod _ { m = 1 } ^ { M } \sqrt { ( 1 - 4 \gamma _ { m } ^ { 2 } ) } \leq \operatorname { exp } ( - 2 \sum _ { m = 1 } ^ { M } \gamma _ { m } ^ { 2 } ) \tag{8.10}</script><p>这里，$\gamma_m = \frac{1}{2}-e_m$.</p>
+<hr>
+<hr>
+<p><strong>推论8.1</strong></p>
+<p>如果存在$\gamma&gt;0$，对所有有$\gamma_m\geqslant \gamma$，则</p>
+<script type="math/tex; mode=display">
+\frac { 1 } { N } \sum _ { i = 1 } ^ { N } I ( G ( x _ { i } ) \neq y _ { i } ) \leqslant \frac { 1 } { N } \sum _ { i } \operatorname { exp } ( -2M\gamma^2)</script><hr>
+<p><strong>这表明在此条件下AdaBoost的训练误差是以指数速率下降的。</strong></p>
+<p>注意，AdaBoost算法不需要知道下界。这正是Freund与Schapire设计AdaBoost时所考虑的。与一些早期的提升方法不同，AdaBoost具有适应性，即它能适应弱分类器各自的训 练误差率。</p>
+<h2 id="8-3-AdaBoost算法的解释"><a href="#8-3-AdaBoost算法的解释" class="headerlink" title="8.3 AdaBoost算法的解释"></a>8.3 AdaBoost算法的解释</h2><p>AdaBoost算法还有另一个解释，即可以认为AdaBoost算法是模型为加法模型、损失函数为指数函数、学习算法为前向分步算法时的二类分类学习方法。</p>
+<h3 id="8-3-1-前向分步算法"><a href="#8-3-1-前向分步算法" class="headerlink" title="8.3.1 前向分步算法"></a>8.3.1 前向分步算法</h3><p>考虑加法模型(additive model)</p>
+<script type="math/tex; mode=display">
+f(x)= \sum _ { m = 1 } ^ { M } \beta _ { m } b ( x _ { i } ; \gamma _ { m } )</script><p>其中，$b ( x  ; \gamma _ { m })$为基函数，$\gamma_m$为基函数的参数，$\beta_m$为基函数的系数。</p>
+<p>在给定训练数据及损失函数L(Y,f(X))的条件下，学习加法模型f(x)成为经验风险极小化即损失函数极小化问题：</p>
+<script type="math/tex; mode=display">
+\operatorname { min } _ { \beta _ { n } , \gamma _ { n } } \sum _ { i = 1 } ^ { N } L ( y _ { i } , \sum _ { m = 1 } ^ { M } \beta _ { m } b ( x _ { i } ; \gamma _ { m } ) ) \tag{8.14}</script><p>通常这是一个复杂的优化问题。前向分步算法(forward stagewise algorithm)求解这一优化问题的想法是：因为学习的是加法模型，如果能够从前向后，每一步只学习一个基函数及其系数，逐步逼近优化目标函数式(8.14)，那么就可以简化优化的复杂度。具体地，每步只需优化如下损失函数：</p>
+<script type="math/tex; mode=display">
+\operatorname { min } _ { \beta , \gamma } \sum _ { i = 1 } ^ { N } L ( y _ { i } , \beta b ( x _ { i } ; \gamma ) )</script><hr>
+<p><strong>算法8.2(前向分步算法)</strong></p>
+<p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$，基函数集 $\beta_m b ( x _ { i } ; \gamma_m )$</p>
+<p><strong>输出</strong>：加法模型$f(x)$.</p>
+<ol>
+<li><p>初始化$f _ { 0 } ( x ) = 0$</p>
+</li>
+<li><p>对$m=1,2 , \cdots , M$</p>
+<p>(a) 极小化损失函数</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+( \beta _ { m } , \gamma _ { m } ) = \operatorname { arg } \operatorname { min } _ { \beta , \gamma } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + \beta b ( x _ { i } ; \gamma ) )</script><p>​        得到$\beta_m,\gamma_m$</p>
+<p>​        (b) 更新$f _ { m } ( x ) = f _ { m-1 } ( x )+  \beta_m b ( x _ { i } ; \gamma_m ) $</p>
+<ol>
+<li>得到回归问题提升树</li>
+</ol>
+<script type="math/tex; mode=display">
+f(x)=f _ { M } ( x ) = \sum _ { m = 1 } ^ { M }  \beta_m b ( x ; \gamma_m )</script><hr>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3><h3 id="8-3-2-前向分步算法与AdaBoost"><a href="#8-3-2-前向分步算法与AdaBoost" class="headerlink" title="8.3.2 前向分步算法与AdaBoost"></a>8.3.2 前向分步算法与AdaBoost</h3><p>由前向分步算法可以推导出AdaBoost，用定理叙述这一关系。</p>
+<hr>
+<p><strong>定理8.3</strong> </p>
+<p>AdaBoost算法是前向分歩加法算法的特例。这时，模型是由基本分类器组成的加法模型，损失函数是指数函数</p>
+<hr>
+<h4 id="TODO"><a href="#TODO" class="headerlink" title="#TODO"></a>#TODO</h4><h2 id="8-4-提升树"><a href="#8-4-提升树" class="headerlink" title="8.4 提升树"></a>8.4 提升树</h2><p>提升树是以分类树或回归树为基本分类器的提升方法。<strong>提升树被认为是统计学习中性能最好的方法之一</strong>。</p>
+<h3 id="8-4-1-提升树模型"><a href="#8-4-1-提升树模型" class="headerlink" title="8.4.1 提升树模型"></a>8.4.1 提升树模型</h3><p>提升方法实际采用加法模型(即基函数的线性组合)与前向分步算法。以决策树为基函数的提升方法称为提升树(boosting tree)。提升树模型可以表示为决策树的加法模型：</p>
+<script type="math/tex; mode=display">
+f _ { M } ( x ) = \sum _ { m = 1 } ^ { M } T ( x ; \Theta _ { m } )</script><p>其中$T ( x ; \Theta _ { m } )$表示决策树；$\Theta _ { m } $为决策树的参数；$M$为树的个数。</p>
+<h3 id="8-4-2-提升树算法"><a href="#8-4-2-提升树算法" class="headerlink" title="8.4.2 提升树算法"></a>8.4.2 提升树算法</h3><p>提升树算法采用<strong>前向分步算法</strong>。首先确定初始提升树$f_0(x)＝0$，第$m$歩的模型是</p>
+<script type="math/tex; mode=display">
+f _ { m } ( x ) = f _ { m-1 } ( x )+ T ( x ; \Theta _ { m } )</script><p>其中，$f _ { m-1 } ( x )$为当前模型，通过经验风险极小化确定下一棵决策树的参数$\Theta _ { m } $，</p>
+<script type="math/tex; mode=display">
+\hat { \Theta } _ { m } = \operatorname { arg } \operatorname { min } _ { \Theta _ { m } } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + T ( x _ { i } ; \Theta _ { m } ) )</script><p>由于<strong>树的线性组合可以很好地拟合训练数据</strong>，即使数据中的输入与输出之间的关系很复杂也是如此，所以提升树是一个<strong>高功能</strong>的学习算法。</p>
+<p>下面讨论使用不同的损失函数的提升树学习算法，包括用平方误差损失函数的回归问题，用指数损失函数的分类问题，以及用一般损失函数的一般决策问题。</p>
+<p>对于二类分类问题，提升树算法只需将AdaBoost算法8.1中的基本分类器限制为二类分类树即可，可以说这时的提升树算法是AdaBoost算法的特殊情况，这里不再细述。下面叙述回归问题的提升树。</p>
+<p>如果将输入空间$\mathcal{X}$划分为$J$个互不相交的区域$R_1,R_2,\cdots,R_J$，并且在每个区域上确定输出的常量$c_j$，那么树可以表示为</p>
+<script type="math/tex; mode=display">
+T ( x ; \Theta ) = \sum _ { j = 1 } ^ { J } c _ { j } I ( x \in R _ { j } )</script><p>其中，参数$\Theta = { ( R _ { 1 } , c _ { 1 } ) , ( R _ { 2 } , c _ { 2 } ) , \cdots , ( R _ { J } , c _ { J } ) }$表示树的区域划分和各区域上的常数。$J$是回归树的复杂度即叶结点个数。 </p>
+<p>回归问题提升树使用以下前向分步算法：</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { l } { f _ { 0 } ( x ) = 0 } \\ { f _ { m } ( x ) = f _ { m - 1 } ( x ) + T ( x ; \Theta _ { m } ) , \quad m = 1,2 , \cdots , M } \\ { f _ { M } ( x ) = \sum _ { m = 1 } ^ { M } T ( x ; \Theta _ { m } ) } \end{array} \right.</script><p>在前向分步算法的第$m$步，给定当前模型$f _ { m - 1 } ( x )$，需求解</p>
+<script type="math/tex; mode=display">
+\hat { \Theta } _ { m } = \operatorname { arg } \operatorname { min } _ { \Theta _ { m } } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + T ( x _ { i } ; \Theta _ { m } ) )</script><p>得到$\hat\Theta_m$，即第$m$棵树的参数。</p>
+<p>当采用平方误差损失函数时，</p>
+<script type="math/tex; mode=display">
+{ L ( y , f ( x ) ) = ( y - f ( x ) ) ^ { 2 } }</script><p>其损失变为</p>
+<script type="math/tex; mode=display">
+\left. \begin{array} { l } L({ y , f _ { m - 1 } ( x ) + T ( x ; \Theta _ { m } ) ) } \\ { = [ y - f _ { m - 1 } ( x ) - T ( x ; \Theta _ { m } ) ] ^ { 2 } } \\ { = [ r - T ( x ; \Theta _ { m } ) ] ^ { 2 } } \end{array} \right.</script><p>这里，</p>
+<script type="math/tex; mode=display">
+r=y-f _ { m - 1 } ( x ) \tag{8.27}</script><p>是当前模型拟合数据的<strong>残差(residual)</strong>。所以，对回归问题的提升树算法来说，只需简单地拟合当前模型的残差。这样，算法是相当简单的。</p>
+<hr>
+<p><strong>算法8.3(回归问题的提升树算法)</strong> </p>
+<p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$</p>
+<p><strong>输出</strong>：最终分类器$f_M(x)$.</p>
+<ol>
+<li><p>初始化$f _ { 0 } ( x ) = 0$</p>
+</li>
+<li><p>对$m=1,2 , \cdots , M$</p>
+<p>(a) 按式(8.27)计算残差</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+r_{mi}=y_i-f _ { m - 1 } ( x ),\quad i = 1,2,\cdots, N</script><p>​        (b) 拟合残差$r_{mi}$学习一个回归树，得到$T ( x ; \Theta ) $</p>
+<p>​        (c) 更新$f _ { m } ( x ) = f _ { m-1 } ( x )+ T ( x ; \Theta _ { m } )$</p>
+<ol>
+<li>得到回归问题提升树</li>
+</ol>
+<script type="math/tex; mode=display">
+f _ { M } ( x ) = \sum _ { m = 1 } ^ { M } T ( x ; \Theta _ { m } )</script><hr>
+<h3 id="8-4-3-梯度提升"><a href="#8-4-3-梯度提升" class="headerlink" title="8.4.3 梯度提升"></a>8.4.3 梯度提升</h3><p>提升树利用加法模型与前向分歩算法实现学习的优化过程。当损失函数是平方损失和指数损失函数时，每一步优化是很简单的。但对一般损失函数而言，往往每一步优化并不那么容易。针对这一问题，Freidman提出了梯度提升(gradient boosting)算法。这是利用最速下降法的近似方法，<strong>其关键是利用损失函数的负梯度在当前模型的值</strong></p>
+<script type="math/tex; mode=display">
+- [ \frac { \partial L ( y , f ( x _ { i } ) ) } { \partial f ( x _ { i } ) } ] _ { f ( x ) = f _ { m - 1 } ( x ) }</script><p><strong>作为回归问题提升树算法中的残差的近似值</strong>，拟合一个回归树。</p>
+<hr>
+<p>算法8.4(梯度提升算法)</p>
+<p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$，损失函数$L(y,f(x))$；</p>
+<p><strong>输出</strong>：最终分类器$\hat f(x)$.</p>
+<ol>
+<li>初始化</li>
+</ol>
+<script type="math/tex; mode=display">
+f _ { 0 } ( x ) = \operatorname { arg } \operatorname { min } _ { c } \sum _ { i = 1 } ^ { N } L ( y _ { i } , c )</script><ol>
+<li><p>对$m=1,2 , \cdots , M$</p>
+<p>(a) 对$n=1,2 , \cdots , N$，计算</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+r_{mi}=- [ \frac { \partial L ( y , f ( x _ { i } ) ) } { \partial f ( x _ { i } ) } ] _ { f ( x ) = f _ { m - 1 } ( x ) }</script><p>​        (b) 拟合残差$r_{mi}$学习一个回归树，得到第$m$棵树的叶结点区域$R_{mj}$，$j=1,2 , \cdots , J$</p>
+<p>​        (c) 对$j=1,2 , \cdots , J$，计算</p>
+<script type="math/tex; mode=display">
+c_{mj} = \operatorname { arg } \operatorname { min } _ { c } \sum _ { x_i \in R_{mj} }  L ( y _ { i } , f_{m-1}(x_i) + c )</script><p>​        (c) 更新$\hat f _ { m } ( x ) = f _ { m-1 } ( x )+ \sum _ { j = 1 } ^ { J } c _ { mj } I ( x \in R _ { mj } )$</p>
+<ol>
+<li>得到回归树</li>
+</ol>
+<script type="math/tex; mode=display">
+\hat f ( x ) = f _ {M } ( x )=\sum_{m=1}^{M} \sum _ { j = 1 } ^ { J } c _ { mj } I ( x \in R _ { mj } )</script><hr>
+<p>算法第1步初始化，估计使损失函数极小化的常数值，它是只有一个根结点的树。第2(a)步计算损失函数的负梯度在当前模型的值，将它作为残差的估计。对于平方损失函数，它就是通常所说的残差；对于一般损失函数，它就是残差的近似值。第2(b)步估计回归树叶结点区域，以拟合残差的近似值。第2(c)步利用线性搜索估计叶结点区域的值，使损失函数极小化。第2(d)步更新回归树。第3步得到输出的最终模型$\hat f ( x )$.</p>
+<h2 id="8-5本章概要"><a href="#8-5本章概要" class="headerlink" title="8.5本章概要"></a>8.5本章概要</h2><ol>
+<li><p>提升方法是将弱学习算法提升为强学习算法的统计学习方法。在分类学习中，提升方法通过反复修改训练数据的权值分布，构建一系列基本分类器(弱分类器)，并将这些基本分类器线性组合，构成一个强分类器。代表性的提升方法是AdaBoost算法。 </p>
+<p>AdaBoost模型是弱分类器的线性组合：</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
+<li><p>AdaBoost算法的特点是通过迭代每次学习一个基本分类器。每次迭代中，提高那些被前一轮分类器错误分类数据的权值，而降低那些被正确分类的数据的权值。最后，AdaBoost将基本分类器的线性组合作为强分类器，其中给分类误差率小的基本分类器以大的权值，给分类误差率大的基本分类器以小的权值。</p>
+</li>
+<li><p>AdaBoost的训练误差分析表明，AdaBoost的每次迭代可以减少它在训练数据集上的分类误差率，这说明了它作为提升方法的有效性。</p>
+</li>
+<li><p>AdaBoost算法的一个解释是该算法实际是前向分步算法的一个实现。在这个方法里，模型是加法模型，损失函数是指数损失，算法是前向分步算法。</p>
+<p>每一步中极小化损失函数</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+( \beta _ { m } , \gamma _ { m } ) = \operatorname { arg } \operatorname { min } _ { \beta , \gamma } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + \beta b ( x _ { i } ; \gamma ) )</script><p>​        得到参数$\beta _ { m } , \gamma _ { m }$.</p>
+<ol>
+<li>提升树是以分类树或回归树为基本分类器的提升方法。提升树被认为是统计学习中最有效的方法之一。</li>
+</ol>
+
         </div>
         
           
@@ -285,7 +490,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-02T19:52:54+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-02T21:49:11+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 2, 2019</p>
@@ -318,7 +523,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/f43c3bdb/&title=todo 统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/f43c3bdb/&title=统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
           
           >
           
@@ -330,7 +535,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/f43c3bdb/&title=todo 统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/f43c3bdb/&title=统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
           
           >
           
@@ -342,7 +547,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/f43c3bdb/&title=todo 统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/f43c3bdb/&title=统计学习方法-Ch8 提升方法 | Xlindo is here!&summary="
           
           >
           
@@ -463,7 +668,7 @@
 
   <script>
     window.subData = {
-      title: 'todo 统计学习方法-Ch8 提升方法',
+      title: '统计学习方法-Ch8 提升方法',
       tools: true
     }
   </script>
@@ -562,7 +767,7 @@
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8-提升方法"><span class="toc-text">8 提升方法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8-提升方法"><span class="toc-text">8 提升方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-提升方法AdaBoost算法"><span class="toc-text">8.1 提升方法AdaBoost算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-1-提升方法的基本思路"><span class="toc-text">8.1.1 提升方法的基本思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-2-AdaBoost算法"><span class="toc-text">8.1.2 AdaBoost算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-AdaBoost算法的训练误差分析"><span class="toc-text">8.2 AdaBoost算法的训练误差分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-AdaBoost算法的解释"><span class="toc-text">8.3 AdaBoost算法的解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-1-前向分步算法"><span class="toc-text">8.3.1 前向分步算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text"> </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-2-前向分步算法与AdaBoost"><span class="toc-text">8.3.2 前向分步算法与AdaBoost</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TODO"><span class="toc-text">#TODO</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-提升树"><span class="toc-text">8.4 提升树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-1-提升树模型"><span class="toc-text">8.4.1 提升树模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-2-提升树算法"><span class="toc-text">8.4.2 提升树算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-3-梯度提升"><span class="toc-text">8.4.3 梯度提升</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5本章概要"><span class="toc-text">8.5本章概要</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -660,7 +865,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li></ul>
     </div>
   </section>
 
