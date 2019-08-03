@@ -219,7 +219,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-30</p>
+    <p>2019-08-02</p>
   </a>
 </div>
 
@@ -275,7 +275,7 @@
 <p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p>
 </blockquote>
 <p><strong><u>由于这一章跟我目前做的事关系不大， 所以以了解概念为主，等用到了再回来看。</u></strong></p>
-<h1 id="9-mathrm-EM-算法及推广"><a href="#9-mathrm-EM-算法及推广" class="headerlink" title="9 $\mathrm{EM}$算法及推广"></a>9 $\mathrm{EM}$算法及推广</h1><p>$\mathrm{EM}$算法是一种迭代算法，1977年由D$\mathrm{EM}$pster等人总结提出，<strong>用于含有隐变量(hidden variable)的概率模型参数的极大似然估计，或极大后验概率估计</strong>。$\mathrm{EM}$算法的<strong>每次迭代由两步组成：E步，求期望(expectation)；M步，求极大(maximization)。</strong>所以这一算法称为期望极大算法(expectation maximization algorithm)，简称$\mathrm{EM}$算法。本章首先叙述$\mathrm{EM}$算法，然后讨论$\mathrm{EM}$算法的收敛性；作为$\mathrm{EM}$算法的应用，介绍高斯混合模型的学习；最后叙述$\mathrm{EM}$算法的推广——G$\mathrm{EM}$算法。</p>
+<h1 id="9-mathrm-EM-算法及推广"><a href="#9-mathrm-EM-算法及推广" class="headerlink" title="9 $\mathrm{EM}$算法及推广"></a>9 $\mathrm{EM}$算法及推广</h1><p>$\mathrm{EM}$算法是一种迭代算法，1977年由D$\mathrm{EM}$pster等人总结提出，<strong>用于含有隐变量(hidden variable)的概率模型参数的极大似然估计，或极大后验概率估计</strong>。$\mathrm{EM}$算法的<strong>每次迭代由两步组成：E步，求期望(expectation)；M步，求极大(maximization)。</strong>所以这一算法称为期望极大算法(expectation maximization algorithm)，简称$\mathrm{EM}$算法。本章首先叙述$\mathrm{EM}$算法，然后讨论$\mathrm{EM}$算法的收敛性；作为$\mathrm{EM}$算法的应用，介绍高斯混合模型的学习；最后叙述$\mathrm{EM}$算法的推广——$\mathrm{GEM}$算法。</p>
 <h2 id="9-1-mathrm-EM-算法的引入"><a href="#9-1-mathrm-EM-算法的引入" class="headerlink" title="9.1 $\mathrm{EM}$算法的引入"></a>9.1 $\mathrm{EM}$算法的引入</h2><p>概率模型有时既含有观测变量(observable variable)，又含有隐变量或潜在变量(latent variable)。如果概率模型的变量都是观测变量，那么给定数据，可以直接用极大似然估计法，或贝叶斯估计法估计模型参数。但是，当模型含有隐变量时，就不能简单地使用这些估计方法。$\mathrm{EM}$算法就是含有隐变量的概率模型参数的极大似然估计，或极大后验概率估计法。我们仅讨论极大似然</p>
 <h3 id="9-1-1-mathrm-EM-算法"><a href="#9-1-1-mathrm-EM-算法" class="headerlink" title="9.1.1 $\mathrm{EM}$算法"></a>9.1.1 $\mathrm{EM}$算法</h3><p>首先介绍一个使用$\mathrm{EM}$算法的例子。</p>
 <hr>
@@ -458,7 +458,7 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-03T22:10:23+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-03T22:17:51+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 3, 2019</p>
@@ -543,16 +543,16 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                             <h4>
-                                <a href="/posts/bc97063b/" rel="prev" title="python-PySide2问题 Available platform plugins">
+                                <a href="/posts/f43c3bdb/" rel="prev" title="统计学习方法-Ch8 提升方法">
                                   
-                                      python-PySide2问题 Available platform plugins
+                                      统计学习方法-Ch8 提升方法
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/python/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>python</a> <a class="tag" href="/tags/程序/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>程序</a>
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/统计学习方法/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>统计学习方法</a>
                                 </h6>
                             
                         </span>
@@ -563,9 +563,9 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
                         <span class="art-item-right" aria-hidden="true">
                             <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/posts/bf88569f/" rel="prev" title="统计学习方法-Ch6 Logistic回归与最大熵模型">
+                                <a href="/posts/860bfa84/" rel="prev" title="统计学习方法-Ch7 SVM">
                                     
-                                        统计学习方法-Ch6 Logistic回归与最大熵模型
+                                        统计学习方法-Ch7 SVM
                                     
                                 </a>
                             </h4>
@@ -852,7 +852,7 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 HMM" rel="bookmark">统计学习方法-Ch10 HMM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
     </div>
   </section>
 
