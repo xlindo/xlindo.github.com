@@ -295,17 +295,12 @@ T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x 
 <p><strong>算法8.1(AdaBoost)</strong></p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$，弱学习算法；</p>
 <p><strong>输出</strong>：最终分类器$G(x)$.</p>
-<ol>
-<li>初始化训练数据的权值分布</li>
-</ol>
+<p>(1) 初始化训练数据的权值分布</p>
 <script type="math/tex; mode=display">
-D _ { 1 } = ( w _ { 11 } , \cdots , w _ { 1 i } , \cdots , w _ { 1 N } ) , \quad w _ { 1 i } = \frac { 1 } { N } , \quad i = 1,2 , \cdots , N</script><ol>
-<li><p>对$m=1,2 , \cdots , M$</p>
-<p>(a) 使用具有权值分布$D_m$的训练数据集学习，得到基本分类器</p>
+D _ { 1 } = ( w _ { 11 } , \cdots , w _ { 1 i } , \cdots , w _ { 1 N } ) , \quad w _ { 1 i } = \frac { 1 } { N } , \quad i = 1,2 , \cdots , N</script><p>(2) 对$m=1,2 , \cdots , M$</p>
+<p>   (a) 使用具有权值分布$D_m$的训练数据集学习，得到基本分类器</p>
 <script type="math/tex; mode=display">
-G_m(x):\mathcal{X}\rightarrow\lbrace -1,+1 \rbrace</script><p>(b) 计算$G_m(x)$在训练数据集上的分类误差率</p>
-</li>
-</ol>
+   G_m(x):\mathcal{X}\rightarrow\lbrace -1,+1 \rbrace</script><p>   (b) 计算$G_m(x)$在训练数据集上的分类误差率</p>
 <script type="math/tex; mode=display">
 e _ { m } = P ( G _ { m } ( x _ { i } ) \neq y _ { i } ) = \sum _ { i = 1 } ^ { N } w _ { m i } I ( G _ { m } ( x _ { i } ) \neq y _ { i } )</script><p>​        (c) 计算$G_m(x)$的系数</p>
 <script type="math/tex; mode=display">
@@ -316,9 +311,7 @@ D _ { m+ 1 } = ( w _ { m+1,1 } , \cdots , w _ { m+1, i } , \cdots , w _ { m+1, N
 w _ { m + 1 , i } = \frac { w _ { m i } } { Z _ { m } } \operatorname { exp } ( - \alpha _ { m } y _ { i } G _ { m } ( x _ { i } ) ) , \quad i = 1,2 , \cdots , N \tag{8.4}</script><p>​        这里，$Z_m$是规范化因子</p>
 <script type="math/tex; mode=display">
 Z _ { m } = \sum _ { i = 1 } ^ { N } w _ { m i } \operatorname { exp } ( - \alpha _ { m } y _ { i } G _ { m } ( x _ { i } ) ) \tag{8.5}</script><p>​        它使$D_{m+1}$成为一个概率分布。</p>
-<ol>
-<li>构建基本分类器的线性组合</li>
-</ol>
+<p>(3)  构建基本分类器的线性组合</p>
 <script type="math/tex; mode=display">
 f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><p>​        得到最终分类器</p>
 <script type="math/tex; mode=display">
@@ -334,7 +327,7 @@ e _ { m } = P ( G _ { m } ( x _ { i } ) \neq y _ { i } ) = \sum _ { i = 1 } ^ { 
 <p>​    (d)更新训练数据的权值分布为下一轮作准备。式(8.4)可以写成：</p>
 <script type="math/tex; mode=display">
 w _ { m + 1 , i } = \left\{ \begin{array} { l l } { \frac { w _ { m i } } { Z _ { m } } e ^ { - \alpha _ { m } } , } & { G _ { m } ( x _ { i } ) = y _ { i } } \\ { \frac { w _ { m i } } { Z _ { m } } e ^ { \alpha _ { m } } , } & { G _ { m } ( x _ { i } ) \neq y _ { i } } \end{array} \right.</script><p>由此可知，被基本分类器$G_m(x)$误分类样本的权值得以扩大，而被正确分类样本的权值却得以缩小。两相比较，误分类样本的权值被放大$e^{2\alpha_m}= \frac { 1 - e _ { m } } { e _ { m } }$倍。因此，误分类样本在下一轮学习中起更大的作用。<strong>不改变所给的训练数据，而不断改变训练数据权值的分布，使得训练数据在基本分类器的学习中起不同的作用，这是AdaBoost的一个特点。</strong></p>
-<p><strong>步骤(3)</strong>线性组合$f(x)$实现$M$个基本分类器的加权表决。系数$\alpha_m$表示了基本分类器$G_m(x)$的重要性，这里，所有$\alpha_m$之和并不为1. $f(x)$的符号决定实例$x$的类，$f(x)$的绝对值表示分类的确信度。利用基本分类器的线性组合构建最终分类器是AdaBoost的另一特点。</p>
+<p><strong>步骤(3)</strong>线性组合$f(x)$实现$M$个基本分类器的加权表决。系数$\alpha_m$表示了基本分类器$G_m(x)$的重要性，这里，所有$\alpha_m$之和并不为(1) $f(x)$的符号决定实例$x$的类，$f(x)$的绝对值表示分类的确信度。利用基本分类器的线性组合构建最终分类器是AdaBoost的另一特点。</p>
 <h2 id="8-2-AdaBoost算法的训练误差分析"><a href="#8-2-AdaBoost算法的训练误差分析" class="headerlink" title="8.2 AdaBoost算法的训练误差分析"></a>8.2 AdaBoost算法的训练误差分析</h2><p>AdaBoost最基本的性质是它能在学习过程中不断减少训练误差，即在训练数据集上的分类误差率。关于这个问题有下面的定理</p>
 <hr>
 <p><strong>定理8.1(AdaBoost的训练误差界)</strong> </p>
@@ -367,19 +360,13 @@ f(x)= \sum _ { m = 1 } ^ { M } \beta _ { m } b ( x _ { i } ; \gamma _ { m } )</s
 <p><strong>算法8.2(前向分步算法)</strong></p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$，基函数集 $\beta_m b ( x _ { i } ; \gamma_m )$</p>
 <p><strong>输出</strong>：加法模型$f(x)$.</p>
-<ol>
-<li><p>初始化$f _ { 0 } ( x ) = 0$</p>
-</li>
-<li><p>对$m=1,2 , \cdots , M$</p>
-<p>(a) 极小化损失函数</p>
-</li>
-</ol>
+<p>(1) 初始化$f _ { 0 } ( x ) = 0$</p>
+<p>(2) 对$m=1,2 , \cdots , M$</p>
+<p>   (a) 极小化损失函数</p>
 <script type="math/tex; mode=display">
 ( \beta _ { m } , \gamma _ { m } ) = \operatorname { arg } \operatorname { min } _ { \beta , \gamma } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + \beta b ( x _ { i } ; \gamma ) )</script><p>​        得到$\beta_m,\gamma_m$</p>
 <p>​        (b) 更新$f _ { m } ( x ) = f _ { m-1 } ( x )+  \beta_m b ( x _ { i } ; \gamma_m ) $</p>
-<ol>
-<li>得到回归问题提升树</li>
-</ol>
+<p>(3) 得到回归问题提升树</p>
 <script type="math/tex; mode=display">
 f(x)=f _ { M } ( x ) = \sum _ { m = 1 } ^ { M }  \beta_m b ( x ; \gamma_m )</script><hr>
 <h3 id><a href="#" class="headerlink" title=" "></a> </h3><h3 id="8-3-2-前向分步算法与AdaBoost"><a href="#8-3-2-前向分步算法与AdaBoost" class="headerlink" title="8.3.2 前向分步算法与AdaBoost"></a>8.3.2 前向分步算法与AdaBoost</h3><p>由前向分步算法可以推导出AdaBoost，用定理叙述这一关系。</p>
@@ -417,19 +404,13 @@ r=y-f _ { m - 1 } ( x ) \tag{8.27}</script><p>是当前模型拟合数据的<str
 <p><strong>算法8.3(回归问题的提升树算法)</strong> </p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$</p>
 <p><strong>输出</strong>：最终分类器$f_M(x)$.</p>
-<ol>
-<li><p>初始化$f _ { 0 } ( x ) = 0$</p>
-</li>
-<li><p>对$m=1,2 , \cdots , M$</p>
-<p>(a) 按式(8.27)计算残差</p>
-</li>
-</ol>
+<p>(1) 初始化$f _ { 0 } ( x ) = 0$</p>
+<p>(2) 对$m=1,2 , \cdots , M$</p>
+<p>   (a) 按式(8.27)计算残差</p>
 <script type="math/tex; mode=display">
 r_{mi}=y_i-f _ { m - 1 } ( x ),\quad i = 1,2,\cdots, N</script><p>​        (b) 拟合残差$r_{mi}$学习一个回归树，得到$T ( x ; \Theta ) $</p>
 <p>​        (c) 更新$f _ { m } ( x ) = f _ { m-1 } ( x )+ T ( x ; \Theta _ { m } )$</p>
-<ol>
-<li>得到回归问题提升树</li>
-</ol>
+<p>(3) 得到回归问题提升树</p>
 <script type="math/tex; mode=display">
 f _ { M } ( x ) = \sum _ { m = 1 } ^ { M } T ( x ; \Theta _ { m } )</script><hr>
 <h3 id="8-4-3-梯度提升"><a href="#8-4-3-梯度提升" class="headerlink" title="8.4.3 梯度提升"></a>8.4.3 梯度提升</h3><p>提升树利用加法模型与前向分歩算法实现学习的优化过程。当损失函数是平方损失和指数损失函数时，每一步优化是很简单的。但对一般损失函数而言，往往每一步优化并不那么容易。针对这一问题，Freidman提出了梯度提升(gradient boosting)算法。这是利用最速下降法的近似方法，<strong>其关键是利用损失函数的负梯度在当前模型的值</strong></p>
@@ -439,46 +420,29 @@ f _ { M } ( x ) = \sum _ { m = 1 } ^ { M } T ( x ; \Theta _ { m } )</script><hr>
 <p>算法8.4(梯度提升算法)</p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace$，$x _ { i } \in \mathcal{X} \subseteq R ^ { n } , \quad y _ { i } \in \mathcal{Y}\subseteq  \mathrm{R}$，损失函数$L(y,f(x))$；</p>
 <p><strong>输出</strong>：最终分类器$\hat f(x)$.</p>
-<ol>
-<li>初始化</li>
-</ol>
+<p>(1) 初始化</p>
 <script type="math/tex; mode=display">
-f _ { 0 } ( x ) = \operatorname { arg } \operatorname { min } _ { c } \sum _ { i = 1 } ^ { N } L ( y _ { i } , c )</script><ol>
-<li><p>对$m=1,2 , \cdots , M$</p>
-<p>(a) 对$n=1,2 , \cdots , N$，计算</p>
-</li>
-</ol>
+f _ { 0 } ( x ) = \operatorname { arg } \operatorname { min } _ { c } \sum _ { i = 1 } ^ { N } L ( y _ { i } , c )</script><p>(2) 对$m=1,2 , \cdots , M$</p>
+<p>   (a) 对$n=1,2 , \cdots , N$，计算</p>
 <script type="math/tex; mode=display">
 r_{mi}=- [ \frac { \partial L ( y , f ( x _ { i } ) ) } { \partial f ( x _ { i } ) } ] _ { f ( x ) = f _ { m - 1 } ( x ) }</script><p>​        (b) 拟合残差$r_{mi}$学习一个回归树，得到第$m$棵树的叶结点区域$R_{mj}$，$j=1,2 , \cdots , J$</p>
 <p>​        (c) 对$j=1,2 , \cdots , J$，计算</p>
 <script type="math/tex; mode=display">
 c_{mj} = \operatorname { arg } \operatorname { min } _ { c } \sum _ { x_i \in R_{mj} }  L ( y _ { i } , f_{m-1}(x_i) + c )</script><p>​        (c) 更新$\hat f _ { m } ( x ) = f _ { m-1 } ( x )+ \sum _ { j = 1 } ^ { J } c _ { mj } I ( x \in R _ { mj } )$</p>
-<ol>
-<li>得到回归树</li>
-</ol>
+<p>(3) 得到回归树</p>
 <script type="math/tex; mode=display">
 \hat f ( x ) = f _ {M } ( x )=\sum_{m=1}^{M} \sum _ { j = 1 } ^ { J } c _ { mj } I ( x \in R _ { mj } )</script><hr>
 <p>算法第1步初始化，估计使损失函数极小化的常数值，它是只有一个根结点的树。第2(a)步计算损失函数的负梯度在当前模型的值，将它作为残差的估计。对于平方损失函数，它就是通常所说的残差；对于一般损失函数，它就是残差的近似值。第2(b)步估计回归树叶结点区域，以拟合残差的近似值。第2(c)步利用线性搜索估计叶结点区域的值，使损失函数极小化。第2(d)步更新回归树。第3步得到输出的最终模型$\hat f ( x )$.</p>
-<h2 id="8-5本章概要"><a href="#8-5本章概要" class="headerlink" title="8.5本章概要"></a>8.5本章概要</h2><ol>
-<li><p>提升方法是将弱学习算法提升为强学习算法的统计学习方法。在分类学习中，提升方法通过反复修改训练数据的权值分布，构建一系列基本分类器(弱分类器)，并将这些基本分类器线性组合，构成一个强分类器。代表性的提升方法是AdaBoost算法。 </p>
-<p>AdaBoost模型是弱分类器的线性组合：</p>
-</li>
-</ol>
+<h2 id="8-5本章概要"><a href="#8-5本章概要" class="headerlink" title="8.5本章概要"></a>8.5本章概要</h2><p>(1) 提升方法是将弱学习算法提升为强学习算法的统计学习方法。在分类学习中，提升方法通过反复修改训练数据的权值分布，构建一系列基本分类器(弱分类器)，并将这些基本分类器线性组合，构成一个强分类器。代表性的提升方法是AdaBoost算法。 </p>
+<p>   AdaBoost模型是弱分类器的线性组合：</p>
 <script type="math/tex; mode=display">
-f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
-<li><p>AdaBoost算法的特点是通过迭代每次学习一个基本分类器。每次迭代中，提高那些被前一轮分类器错误分类数据的权值，而降低那些被正确分类的数据的权值。最后，AdaBoost将基本分类器的线性组合作为强分类器，其中给分类误差率小的基本分类器以大的权值，给分类误差率大的基本分类器以小的权值。</p>
-</li>
-<li><p>AdaBoost的训练误差分析表明，AdaBoost的每次迭代可以减少它在训练数据集上的分类误差率，这说明了它作为提升方法的有效性。</p>
-</li>
-<li><p>AdaBoost算法的一个解释是该算法实际是前向分步算法的一个实现。在这个方法里，模型是加法模型，损失函数是指数损失，算法是前向分步算法。</p>
-<p>每一步中极小化损失函数</p>
-</li>
-</ol>
+f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><p>(2) AdaBoost算法的特点是通过迭代每次学习一个基本分类器。每次迭代中，提高那些被前一轮分类器错误分类数据的权值，而降低那些被正确分类的数据的权值。最后，AdaBoost将基本分类器的线性组合作为强分类器，其中给分类误差率小的基本分类器以大的权值，给分类误差率大的基本分类器以小的权值。</p>
+<p>(3) AdaBoost的训练误差分析表明，AdaBoost的每次迭代可以减少它在训练数据集上的分类误差率，这说明了它作为提升方法的有效性。</p>
+<p>(4) AdaBoost算法的一个解释是该算法实际是前向分步算法的一个实现。在这个方法里，模型是加法模型，损失函数是指数损失，算法是前向分步算法。</p>
+<p>   每一步中极小化损失函数</p>
 <script type="math/tex; mode=display">
 ( \beta _ { m } , \gamma _ { m } ) = \operatorname { arg } \operatorname { min } _ { \beta , \gamma } \sum _ { i = 1 } ^ { N } L ( y _ { i } , f _ { m - 1 } ( x _ { i } ) + \beta b ( x _ { i } ; \gamma ) )</script><p>​        得到参数$\beta _ { m } , \gamma _ { m }$.</p>
-<ol>
-<li>提升树是以分类树或回归树为基本分类器的提升方法。提升树被认为是统计学习中最有效的方法之一。</li>
-</ol>
+<p>(5) 提升树是以分类树或回归树为基本分类器的提升方法。提升树被认为是统计学习中最有效的方法之一。</p>
 
         </div>
         
@@ -490,10 +454,10 @@ f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-02T21:49:11+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:19:50+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 2, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -575,9 +539,9 @@ f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                             <h4>
-                                <a href="/posts/e9b76bf4/" rel="prev" title="统计学习方法-Ch10 隐马尔可夫模型">
+                                <a href="/posts/4723d1ed/" rel="prev" title="统计学习方法-Ch9 EM算法及推广">
                                   
-                                      统计学习方法-Ch10 隐马尔可夫模型
+                                      统计学习方法-Ch9 EM算法及推广
                                   
                                 </a>
                             </h4>
@@ -595,9 +559,9 @@ f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
                         <span class="art-item-right" aria-hidden="true">
                             <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/posts/4723d1ed/" rel="prev" title="统计学习方法-Ch9 EM算法及推广">
+                                <a href="/posts/860bfa84/" rel="prev" title="统计学习方法-Ch7 SVM">
                                     
-                                        统计学习方法-Ch9 EM算法及推广
+                                        统计学习方法-Ch7 SVM
                                     
                                 </a>
                             </h4>
@@ -884,7 +848,7 @@ f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1178,22 +1142,7 @@ f(x) = \sum_{m=1}^M \alpha_m G_m(x) \tag{8.6}</script><ol>
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

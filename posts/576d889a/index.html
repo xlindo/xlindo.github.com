@@ -330,19 +330,13 @@ j=1,2, \cdots, n ; \quad l=1,2, \cdots, S_{j} : \quad k=1,2, \cdots, K</script><
 <p><strong>算法4.1 朴素贝叶斯算法（naïve Bayes algorithm）</strong></p>
 <p><strong>输入</strong>：训练数据$T=\lbrace \left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\rbrace$，其中$x_{i}=\left(x_{i}^{(1)}, x_{i}^{(2)}, \cdots, x_{i}^{(n)}\right)^{\mathrm{T}}$，$x_{i}^{(j)}$是第$i$个样本的第$j$个特征；$x_{i}^{(j)} \in\lbrace a_{j 1}, a_{j 2}, \cdots, a_{j s_{j}}\rbrace$，$a_{j l}$是第$j$个特征可能取的第$l$个值，$j=1,2, \cdots, n$, $ l=1,2, \cdots, S_{j}$, $y_{i} \in\lbrace c_{1}, c_{2}, \cdots, c_{K}\rbrace$；实例$x$；</p>
 <p><strong>输出</strong>：实例$x$的分类。 </p>
-<ol>
-<li>计算先验概率及条件概率</li>
-</ol>
+<p>(1) 计算先验概率及条件概率</p>
 <script type="math/tex; mode=display">
 P\left(Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)}{N}, \quad k=1,2, \cdots, K</script><script type="math/tex; mode=display">
 P\left(X^{(j)}=a_{j l} | Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(x_{i}^{(j)}=a_{j l}, y_{i}=c_{k}\right)}{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)}</script><script type="math/tex; mode=display">
-j=1,2, \cdots, n ; \quad l=1,2, \cdots, S_{j} ; \quad k=1,2, \cdots, K</script><ol>
-<li>对于给定的实例$x=\left(x^{(1)}, x^{(2)}, \cdots, x^{(n)}\right)^{\mathrm{T}}$，计算</li>
-</ol>
+j=1,2, \cdots, n ; \quad l=1,2, \cdots, S_{j} ; \quad k=1,2, \cdots, K</script><p>(2) 对于给定的实例$x=\left(x^{(1)}, x^{(2)}, \cdots, x^{(n)}\right)^{\mathrm{T}}$，计算</p>
 <script type="math/tex; mode=display">
-P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right), \quad k=1,2, \cdots, K</script><ol>
-<li>确定实例$x$的类</li>
-</ol>
+P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right), \quad k=1,2, \cdots, K</script><p>(3) 确定实例$x$的类</p>
 <script type="math/tex; mode=display">
 y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right)</script><hr>
 <h3 id="4-2-3-贝叶斯估计"><a href="#4-2-3-贝叶斯估计" class="headerlink" title="4.2.3 贝叶斯估计"></a>4.2.3 贝叶斯估计</h3><p>用极大似然估计可能会出现所要估计的概率值为0的情况。解决这一问题的方法是采用贝叶斯估计。具体地，条件概率的贝叶斯估计是</p>
@@ -351,19 +345,13 @@ P_{\lambda}\left(X^{(j)}=a_{j l} | Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(x_
 <script type="math/tex; mode=display">
 \begin{array}{l}{P_{\lambda}\left(X^{(j)}=a_{j l} | Y=c_{k}\right)>0} \\ {\sum_{l=1}^{S_{j}} P\left(X^{(j)}=a_{j l} | Y=c_{k}\right)=1}\end{array}</script><p>同样，先验概率的贝叶斯估计是，</p>
 <script type="math/tex; mode=display">
-P_{\lambda}\left(Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)+\lambda}{N+K \lambda}</script><h2 id="4-3-本章概要"><a href="#4-3-本章概要" class="headerlink" title="4.3 本章概要"></a>4.3 本章概要</h2><ol>
-<li>朴素贝叶斯法是典型的生成学习方法。生成方法由训练数据学习联合概率分布$P(X,Y)$，然后求得后验概率分布$P(Y|X)$。具体来说，利用训练数据学习$P(X|Y)$和$P(Y)$的估计，得到联合概率分布：</li>
-</ol>
+P_{\lambda}\left(Y=c_{k}\right)=\frac{\sum_{i=1}^{N} I\left(y_{i}=c_{k}\right)+\lambda}{N+K \lambda}</script><h2 id="4-3-本章概要"><a href="#4-3-本章概要" class="headerlink" title="4.3 本章概要"></a>4.3 本章概要</h2><p>(1) 朴素贝叶斯法是典型的生成学习方法。生成方法由训练数据学习联合概率分布$P(X,Y)$，然后求得后验概率分布$P(Y|X)$。具体来说，利用训练数据学习$P(X|Y)$和$P(Y)$的估计，得到联合概率分布：</p>
 <script type="math/tex; mode=display">
 P(X, Y)=P(Y) P(X | Y)</script><p>概率估计方法可以是极大似然估计或贝叶斯估计。</p>
-<ol>
-<li>朴素贝叶斯法的基本假设是<strong>条件独立性</strong>，</li>
-</ol>
+<p>(2) 朴素贝叶斯法的基本假设是<strong>条件独立性</strong>，</p>
 <script type="math/tex; mode=display">
 \begin{aligned} P\left(X=x | Y=c_{k}\right) &=P\left(X^{(1)}=x^{(1)}, \cdots, X^{(n)}=x^{(n)} | Y=c_{k}\right) \\ &=\prod_{j=1}^{n} P\left(X^{(j)}=x^{(j)} | Y=c_{k}\right) \end{aligned}</script><p>这是一个<strong>较强的假设</strong>。由于这一假设，模型包含的<strong>条件概率的数量大为减少</strong>，朴素贝叶斯法的学习与预测大为<strong>简化</strong>。因而朴素贝叶斯法高效，且易于实现。其<strong>缺点是分类的性能不一定很高</strong>。</p>
-<ol>
-<li>朴素贝叶斯法利用<strong>贝叶斯定理</strong>与学到的<strong>联合概率模型</strong>进行分类预测。</li>
-</ol>
+<p>(3) 朴素贝叶斯法利用<strong>贝叶斯定理</strong>与学到的<strong>联合概率模型</strong>进行分类预测。</p>
 <script type="math/tex; mode=display">
 P(Y | X)=\frac{P(X, Y)}{P(X)}=\frac{P(Y) P(X | Y)}{\sum_{Y} P(Y) P(X | Y)}</script><p>将输入$x$分到后验概率最大的类$y$。</p>
 <script type="math/tex; mode=display">
@@ -379,10 +367,10 @@ y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-28T20:22:09+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:22:49+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 28, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -773,7 +761,7 @@ y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} 
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1067,22 +1055,7 @@ y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} 
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

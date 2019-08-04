@@ -309,15 +309,7 @@
 </li>
 <li>统计学习由监督学习(supervised learning)、非监督学习(unsupervised learning)、半监督学习(semi-supervised learning)和强化学习(reinforcement learning)等组成。</li>
 <li>统计学习方法的<strong>三要素</strong>包括模型的假设空间、模型选择的准则以及模型学习的算法，简称为模型(model)、策略(strategy)和算法 (algorithm)。</li>
-<li><p>实现统计学习方法的<strong>步骤</strong>如下： </p>
-<ol>
-<li>得到一个有限的<strong>训练数据集合</strong>；</li>
-<li><strong>确定</strong>包含所有可能的<strong>模型的假设空间</strong>，即学习模型的集合；</li>
-<li><strong>确定模型选择的准则</strong>，即学习的<strong>策略</strong>；</li>
-<li><strong>实现求解最优模型的算法</strong>，即学习的算法；</li>
-<li>通过学习方法<strong>选择最优模型</strong>；</li>
-<li>利用学习的最优模型对新数据进行<strong>预测或分析</strong>。</li>
-</ol>
+<li><p>实现统计学习方法的<strong>步骤</strong>如下：<br>(1) 得到一个有限的<strong>训练数据集合</strong>；<br>(2) <strong>确定</strong>包含所有可能的<strong>模型的假设空间</strong>，即学习模型的集合；<br>(3) <strong>确定模型选择的准则</strong>，即学习的<strong>策略</strong>；<br>(4) <strong>实现求解最优模型的算法</strong>，即学习的算法；<br>(5) 通过学习方法<strong>选择最优模型</strong>；<br>(7) 利用学习的最优模型对新数据进行<strong>预测或分析</strong>。</p>
 </li>
 <li><p><strong>本书</strong>以介绍统计学习方法为主，<strong>特别是监督学习方法</strong>，主要包括用于分类、标注与回归问题的方法。</p>
 </li>
@@ -552,17 +544,12 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 <h3 id="1-5-2-交叉验证"><a href="#1-5-2-交叉验证" class="headerlink" title="1.5.2 交叉验证"></a>1.5.2 交叉验证</h3><p><strong>交叉验证(cross validation)</strong>随机地将数据集切分成三部分，分别为<strong>训练集(training set)</strong>、<strong>验证集(validation set)</strong>和<strong>测试集(test set)</strong>。</p>
 <p>训练集用来训练模型，验证集用于模型的选择，而测试集用于最终对学习方法的评估。</p>
 <p>交叉验证的<strong>基本想法</strong>是重复地使用数据：把给定的数据进行切分，将切分的数据集组 合为训练集与测试集，在此基础上反复地进行训练、测试以及模型选择。</p>
-<ol>
-<li><p><strong>简单交叉验证</strong></p>
-<p>首先<strong>随机地</strong>将已给数据<strong>分为两部分</strong>，一部分作为训练集，另一部分作为测试集(例如，70%的数据为训练集，30%的数据为测试集)；然后用训练集在各种条件下(例如，不同的参数个数)<strong>训练模型</strong>，从而得到不同的模型；在测试集上评价 各个模型的测试误差，<strong>选出测试误差最小的模型</strong>。</p>
-</li>
-<li><p><strong>S折交叉验证</strong></p>
-<p>应用最多的是<strong>S折交叉验证(S-fold cross validation)</strong>：首先<strong>随机</strong>地将已给数据<strong>切分</strong>为<strong>S个互不相交</strong>的大小相同的<strong>子集</strong>；然后利用<strong>S-1个子集的数据训练模型</strong>，利用<strong>余下的子集测试模型</strong>；将这一过程对可能的<strong>S种选择重复进行</strong>；最后<strong>选出S次评测中平均测试误差最小的模型</strong>。</p>
-</li>
-<li><p><strong>留一交叉验证</strong></p>
-<p>S折交叉验证的特殊情形是S＝N，称为<strong>留一交叉验证(leave-one-out validation)</strong>。</p>
-</li>
-</ol>
+<p>(1) <strong>简单交叉验证</strong></p>
+<p>   首先<strong>随机地</strong>将已给数据<strong>分为两部分</strong>，一部分作为训练集，另一部分作为测试集(例如，70%的数据为训练集，30%的数据为测试集)；然后用训练集在各种条件下(例如，不同的参数个数)<strong>训练模型</strong>，从而得到不同的模型；在测试集上评价 各个模型的测试误差，<strong>选出测试误差最小的模型</strong>。</p>
+<p>(2) <strong>S折交叉验证</strong></p>
+<p>   应用最多的是<strong>S折交叉验证(S-fold cross validation)</strong>：首先<strong>随机</strong>地将已给数据<strong>切分</strong>为<strong>S个互不相交</strong>的大小相同的<strong>子集</strong>；然后利用<strong>S-1个子集的数据训练模型</strong>，利用<strong>余下的子集测试模型</strong>；将这一过程对可能的<strong>S种选择重复进行</strong>；最后<strong>选出S次评测中平均测试误差最小的模型</strong>。</p>
+<p>(3) <strong>留一交叉验证</strong></p>
+<p>   S折交叉验证的特殊情形是S＝N，称为<strong>留一交叉验证(leave-one-out validation)</strong>。</p>
 <h2 id="1-6-泛化能力"><a href="#1-6-泛化能力" class="headerlink" title="1.6 泛化能力"></a>1.6 泛化能力</h2><h3 id="1-6-1-泛化误差"><a href="#1-6-1-泛化误差" class="headerlink" title="1.6.1 泛化误差"></a>1.6.1 泛化误差</h3><p>泛化能力(generalization ability)是指由该方法学习到的模型<strong>对未知数据的预测能力</strong>。</p>
 <p>现实中<strong>采用最多的办法</strong>是通过<strong>测试误差</strong>来评价学习方法的泛化能力。统计学习理论试图从理论上对学习方法的泛化能力进行分析。</p>
 <ul>
@@ -778,10 +765,10 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-28T17:48:45+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:21:31+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Jul 28, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -1172,7 +1159,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1466,22 +1453,7 @@ T=\{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

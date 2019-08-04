@@ -303,7 +303,7 @@ b_{j}(k) = P ( o_t=v_k|i_t=q_j ) , \quad k = 1,2 , \cdots , M ; j = 1,2 , \cdots
 \pi = (\pi_i)</script><p>其中，</p>
 <script type="math/tex; mode=display">
 \pi_i = P ( i_1=q_i ) , \quad i = 1,2 , \cdots , N</script><p>是时刻$t+1$处于状态$q_i$的概率。</p>
-<p>隐马尔可夫模型由<strong>初始状态概率向量$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$决定</strong>。$\pi$和$A$决定状态序列，$B$决定观测序列。因此，隐马尔可夫模型$\lambda$可以用三元符号表 示，即</p>
+<p>隐马尔可夫模型由<strong>初始状态概率向量$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$决定</strong>。$\pi$和$A$决定状态序列，$B$决定观测序列。因此，隐马尔可夫模型$\lambda$可以用三元符号表示，即</p>
 <script type="math/tex; mode=display">
 \lambda = (A,B,\pi)</script><p>$A,B,\pi$称为隐马尔可夫模型的三要素。</p>
 <p>状态转移概率矩阵$A$与初始状态概率向量$\pi$确定了<strong>隐藏的马尔可夫链</strong>，生成<strong>不可观测</strong>的状态序列。观测概率矩阵$B$确定了如何从状态生成观测，与<strong>状态序列综合</strong>确定了如何产生<strong>观测序列</strong>。</p>
@@ -317,6 +317,27 @@ P ( i _ { t } | i _ { t - 1 } , o _ { t - 1 } ,  \cdots , i _ { 1 } , o _ { 1 } 
 </ol>
 <script type="math/tex; mode=display">
 P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots , i _ { t + 1 } , o _ { t + 1 } , i _ { t } , i _ { t - 1 } , \cdots , i _ { 1 } , o _ { 1 } ) = P ( o _ { t } | i _ { t } )</script><p>隐马尔可夫模型可以用于标注，这时<strong>状态对应着标记</strong>。标注问题是给定观测的序列预测其对应的标记序列。可以假设标注问题的数据是由隐马尔可夫模型生成的。这样我们可以利用隐马尔可夫模型的学习与预测算法进行标注。</p>
+<hr>
+<p><strong>建模过程</strong> </p>
+<blockquote>
+<p>@xlindo</p>
+</blockquote>
+<ol>
+<li>明确是否有HMM三要素的情况：初始状态概率向量$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$；</li>
+<li>确定状态集合$Q$，状态数$N$；确定观测集合$V$，观测数$M$；</li>
+<li>确定观测序列$O$，序列长度$T$；此处状态序列$I$为隐藏序列。</li>
+<li>确定初始状态概率分布$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$.</li>
+</ol>
+<hr>
+<h3 id="10-1-2-观测序列的生成过程"><a href="#10-1-2-观测序列的生成过程" class="headerlink" title="10.1.2 观测序列的生成过程"></a>10.1.2 观测序列的生成过程</h3><p>根据隐马尔可夫模型定义，可以将一个长度为$T$的观测序列$O = (o_1,o_2,\cdots,o_T)$的生成过程描述如下：</p>
+<hr>
+<p><strong>算法10.1（观测序列的生成）</strong></p>
+<p>输入：隐马尔可夫模型$\lambda = (A,B,\pi)$，观测序列长度$T$；</p>
+<p>输出：观测序列$O = (o_1,o_2,\cdots,o_T)$.</p>
+<p>（1）按照初始状态分布$\pi$产生状态$i_1$</p>
+<p>（2）令$t＝1$</p>
+<p>（3）按照状态$i_t$的观测概率分布bi</p>
+<p>（4）按照状态it的状态转移概率分布{ }产生状态it+1 ，it+1 ＝1,2,…,N<br>（5）令t＝t+1；如果t&lt;T，转步（3）；否则，终止</p>
 
         </div>
         
@@ -328,10 +349,10 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-03T22:37:18+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:16:15+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 3, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -414,9 +435,9 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
                         <span class="art-item-right" aria-hidden="true">
                             <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/posts/f43c3bdb/" rel="prev" title="统计学习方法-Ch8 提升方法">
+                                <a href="/posts/4723d1ed/" rel="prev" title="统计学习方法-Ch9 EM算法及推广">
                                     
-                                        统计学习方法-Ch8 提升方法
+                                        统计学习方法-Ch9 EM算法及推广
                                     
                                 </a>
                             </h4>
@@ -605,7 +626,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-2-观测序列的生成过程"><span class="toc-text">10.1.2 观测序列的生成过程</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -703,7 +724,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -997,22 +1018,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

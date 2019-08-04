@@ -353,17 +353,13 @@ s.t. & \quad g_i(w) \leqslant 0, \quad i=1,2,\cdots,k \\
 <p><strong>算法7.1(线性可分支持向量机学习算法——最大间隔法)</strong> </p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
 <p><strong>输出</strong>：最大间隔分离超平面和分类决策函数。</p>
-<ol>
-<li>构造并求解约束最优化问题：</li>
-</ol>
+<p>(1) 构造并求解约束最优化问题：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{w,b} & \quad \quad \frac { 1 } {2} \| w \|^2  \\
 s.t. & \quad y _ { i } ( w \cdot x _ { i } + b ) - 1\geqslant 0, \quad i=1,2,\cdots,N
 \end{align}</script><p>​    求出解 $w ^ {\star }$， $b ^ {\star }$</p>
-<ol>
-<li>由此得到分离超平面</li>
-</ol>
+<p>(2) 由此得到分离超平面</p>
 <script type="math/tex; mode=display">
 w ^ {\star } \cdot x + b ^ {\star } =0</script><p>​    以及相应的分类决策函数</p>
 <script type="math/tex; mode=display">
@@ -426,27 +422,22 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\s
 <p><strong>算法7.2(线性可分支持向量机学习算法)</strong> </p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
 <p><strong>输出</strong>：分离超平面和分类决策函数。</p>
-<ol>
-<li>构造并求解约束最优化问题</li>
-</ol>
+<p>(1) 构造并求解约束最优化问题</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
 &\quad \alpha_i\geqslant 0,\quad i=1,2,\cdots,N
 \end{align}</script><p>​    求得最优解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _N^{\star} )^T$</p>
-<ol>
-<li>计算</li>
-</ol>
+<p>(2) 计算</p>
 <script type="math/tex; mode=display">
 w ^ {\star } = \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } x _ { i }</script><p>​    并选择$\alpha^ {\star }$的一个正分量 $\alpha _ { j } ^ {\star }&gt;0$，计算</p>
 <script type="math/tex; mode=display">
-b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } ( x _ { i } \cdot x _ { j } )</script><ol>
-<li>求得分离超平面，<script type="math/tex; mode=display">
-w ^{\star} \cdot x + b ^{\star} =0</script>以及相应的分类决策函数<script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} )</script></li>
-</ol>
-<hr>
+b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } ( x _ { i } \cdot x _ { j } )</script><p>(3) 求得分离超平面，</p>
+<script type="math/tex; mode=display">
+   w ^{\star} \cdot x + b ^{\star} =0</script><p>   以及相应的分类决策函数</p>
+<script type="math/tex; mode=display">
+   f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} )</script><hr>
 <p>其KKT条件为</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -536,28 +527,23 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\s
 <p><strong>算法7.3(线性支持向量机学习算法)</strong> </p>
 <p><strong>输入</strong>：线性可分训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
 <p><strong>输出</strong>：分离超平面和分类决策函数。</p>
-<ol>
-<li>选择惩罚参数$C$，构造并求解凸二次规划问题</li>
-</ol>
+<p>(1) 选择惩罚参数$C$，构造并求解凸二次规划问题</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } ( x _ { i } \cdot x _ { j } ) - \sum _ { i = 1 } ^ { N } \alpha _ { i }  \\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
 &\quad 0\leqslant\alpha_i\leqslant C,\quad i=1,2,\cdots,N
 \end{align}</script><p>​    求得最优解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _N^{\star} )^T$</p>
-<ol>
-<li>计算</li>
-</ol>
+<p>(2) 计算</p>
 <script type="math/tex; mode=display">
 w ^ {\star } = \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } x _ { i }</script><p>​    并选择$\alpha^ {\star }$的一个正分量 $0&lt; \alpha_j &lt; C$，计算</p>
 <script type="math/tex; mode=display">
-b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } ( x _ { i } \cdot x _ { j } )</script><ol>
-<li>求得分离超平面，<script type="math/tex; mode=display">
-w ^{\star} \cdot x + b ^{\star} =0</script>以及相应的分类决策函数<script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} ) \tag{7.30}</script></li>
-</ol>
-<hr>
-<p>步骤2. 中，对任意的$0&lt; \alpha_j &lt; C$都可求出$b^{*}$，但由于$b$的解不唯一，所以实际计算时可以取在所有符合条件的样本点上的平均值。</p>
+b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } ( x _ { i } \cdot x _ { j } )</script><p>(3) 求得分离超平面，</p>
+<script type="math/tex; mode=display">
+   w ^{\star} \cdot x + b ^{\star} =0</script><p>   以及相应的分类决策函数</p>
+<script type="math/tex; mode=display">
+   f ( x ) = \operatorname { sign } ( w ^{\star} \cdot x + b ^{\star} ) \tag{7.30}</script><hr>
+<p>步骤(2) 中，对任意的$0&lt; \alpha_j &lt; C$都可求出$b^{*}$，但由于$b$的解不唯一，所以实际计算时可以取在所有符合条件的样本点上的平均值。</p>
 <h3 id="7-2-3-支持向量"><a href="#7-2-3-支持向量" class="headerlink" title="7.2.3 支持向量"></a>7.2.3 支持向量</h3><p>在线性不可分的情况下，将对偶问题(7.37)的解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _N^{\star} )^T$中对应于$\alpha_i^{\star} &gt;0$的样本点$(x_i,y_i)$的实例$x_i$称为支持向量(软间隔的支持向量)。</p>
 <p>如图7.5所示，这时的支持向量要比线性可分时的情况复杂一些，</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190802100454.png" alt="软间隔"></p>
@@ -662,24 +648,18 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ 
 <p><strong>算法7.4(非线性支持向量机学习算法)</strong></p>
 <p><strong>输入</strong>：训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$</p>
 <p><strong>输出</strong>：分离超平面和分类决策函数。</p>
-<ol>
-<li>选择核函数$K(x,z)$和惩罚参数$C$，构造并求解最优化问题</li>
-</ol>
+<p>(1) 选择核函数$K(x,z)$和惩罚参数$C$，构造并求解最优化问题</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{\alpha} &  \quad  \frac { 1 } { 2 } \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { i } \alpha _ { j } y _ { i } y _ { j } K ( x_{i}, x _ { j }  ) - \sum _ { i = 1 } ^ { N } \alpha _ { i } \tag{7.95} \\
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \\
 &\quad 0\leqslant\alpha_i\leqslant C,\quad i=1,2,\cdots,N
 \end{align}</script><p>​    求得最优解$\alpha^{\star} = (\alpha _1^{\star} ,\alpha _2^{\star} ,\cdots,\alpha _N^{\star} )^T$</p>
-<ol>
-<li>选择$\alpha^ {\star }$的一个正分量 $0&lt; \alpha_j &lt; C$，计算</li>
-</ol>
+<p>(2) 选择$\alpha^ {\star }$的一个正分量 $0&lt; \alpha_j &lt; C$，计算</p>
 <script type="math/tex; mode=display">
-b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } K ( x_{i}, x _ { j }  )</script><ol>
-<li>构造分类决策函数<script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ {\star } y _ { i } K ( x, x _ { i }  ) + b ^ {\star } )</script></li>
-</ol>
-<hr>
+b ^ {\star } = y _ { j } - \sum _ { i = 1 } ^ { N } \alpha _ { i } ^ {\star } y _ { i } K ( x_{i}, x _ { j }  )</script><p>(3) 构造分类决策函数</p>
+<script type="math/tex; mode=display">
+   f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ {\star } y _ { i } K ( x, x _ { i }  ) + b ^ {\star } )</script><hr>
 <p>当$K(x,z)$是正定核函数时，问题(7.95)是凸二次规划问题，解是存在的。</p>
 <h2 id="7-4-序列最小最优化算法"><a href="#7-4-序列最小最优化算法" class="headerlink" title="7.4 序列最小最优化算法"></a>7.4 序列最小最优化算法</h2><p>但是当训练样本容量很大时，这些算法往往变得非常低效，以致无法使用。所以，如何高效地实现支持向量机学习就成为一个重要的问题。目前人们已提出许多快速实现算法。</p>
 <p>本节讲述其中的<strong>序列最小最优化(sequential minimal optimization，SMO)</strong>算法，这种算法1998年由Platt提出。</p>
@@ -706,38 +686,25 @@ s.t. & \quad { \alpha _ { 1 } y _ { 1 } + \alpha _ { 2 } y _ { 2 } = - \sum _ { 
 <p> 为了求解两个变量的二次规划问题(7.101)，首先分析约束条件，然后在此约束条件下求极小。 由于只有两个变量$(\alpha_1,\alpha_2)$，约束可以用二维空间中的图形表示(如图7.8所示)。</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190802183417.png" alt="7.8"></p>
 <h3 id="7-4-2-变量的选择方法"><a href="#7-4-2-变量的选择方法" class="headerlink" title="7.4.2 变量的选择方法"></a>7.4.2 变量的选择方法</h3><p>SMO算法在每个子问题中选择两个变量优化，其中至少一个变量是违反KKT条件的。</p>
-<ol>
-<li><p>第1个变量的选择</p>
-<p>SMO称选择第1个变量的过程为外层循环。外层循环在训练样本中选取违反KKT条件最严重的样本点，并将其对应的变量作为第1个变量。</p>
-</li>
-<li><p>第2个变量的选择</p>
-<p>SMO称选择第2个变量的过程为内层循环。假设在外层循环中已经找到第1个变量$\alpha_1$，现在要在内层循环中找第2个变量$\alpha_2$，第2个变量选择的标准是希望能使$\alpha_2$有足够大的变化。</p>
-</li>
-<li><p>计算阈值$b$和差值$E_i$</p>
-<p>在每次完成两个变量的优化后，都要重新计算阈值$b$。在每次完成两个变量的优化之后，还必须更新对应的$E_i$值，并将它们保存在列表中。</p>
-</li>
-</ol>
+<p>(1) 第1个变量的选择</p>
+<p>   SMO称选择第1个变量的过程为外层循环。外层循环在训练样本中选取违反KKT条件最严重的样本点，并将其对应的变量作为第1个变量。</p>
+<p>(2) 第2个变量的选择</p>
+<p>   SMO称选择第2个变量的过程为内层循环。假设在外层循环中已经找到第1个变量$\alpha_1$，现在要在内层循环中找第2个变量$\alpha_2$，第2个变量选择的标准是希望能使$\alpha_2$有足够大的变化。</p>
+<p>(3) 计算阈值$b$和差值$E_i$</p>
+<p>   在每次完成两个变量的优化后，都要重新计算阈值$b$。在每次完成两个变量的优化之后，还必须更新对应的$E_i$值，并将它们保存在列表中。</p>
 <h3 id="7-4-3-SMO算法"><a href="#7-4-3-SMO算法" class="headerlink" title="7.4.3 SMO算法"></a>7.4.3 SMO算法</h3><hr>
 <p><strong>输入</strong>：训练数据集$T = \lbrace  ( x _ { 1 } , y _ { 1 } ) , ( x _ { 2 } , y _ { 2 } ) , \cdots,( x _ {N } , y _ {N } ) \rbrace $，$x _ { i } \in \mathcal{X} = \mathrm{R} ^ { n } , \quad y _ { i } \in \mathcal{Y}= { +1,-1 }$，$i = 1,2,\cdots, N$，精度$\varepsilon$；</p>
 <p><strong>输出</strong>：近似解$\hat \alpha$.</p>
-<ol>
-<li>取初值$\alpha^{(0)}=0$，令$k=0$；</li>
-<li>选取优化变量$\alpha_1^{(k)},\alpha_2^{(k)}$，解析求解两个变量的最优化问题(7.101)，求得最优解$\alpha_1^{(k+1)},\alpha_2^{(k+1)}$，更新$\alpha$为$\alpha^{(k+1)}$</li>
-<li>若在精度$\varepsilon$范围内满足停机条件</li>
-</ol>
+<p>(1) 取初值$\alpha^{(0)}=0$，令$k=0$；<br>(2) 选取优化变量$\alpha_1^{(k)},\alpha_2^{(k)}$，解析求解两个变量的最优化问题(7.101)，求得最优解$\alpha_1^{(k+1)},\alpha_2^{(k+1)}$，更新$\alpha$为$\alpha^{(k+1)}$<br>(3) 若在精度$\varepsilon$范围内满足停机条件</p>
 <script type="math/tex; mode=display">
 \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \tag{7.99}\\
 0\leqslant\alpha_i\leqslant C,\quad i=1,2,\cdots,N \\
 y _ { i } \cdot g ( x _ { i } ) = \left\{ \begin{array} { l l } { \geqslant 1 , } & { \{ x _ { i } | \alpha _ { i } = 0 \} } \\ { = 1 , } & { \{ x _ { i } | 0 < \alpha _ { i } < C \} } \\ { \leqslant 1 , } & { \{ x _ { i } | \alpha _ { i } = C \} } \end{array} \right.</script><p>​    其中，</p>
 <script type="math/tex; mode=display">
 g ( x _ { i } ) = \sum _ { j = 1 } ^ { N } \alpha _ { j } y _ { j } K ( x _ { j } , x _ { i } ) + b</script><p>​    则转4.；否则令$k=k+1$，转2.</p>
-<ol>
-<li>取$\hat \alpha=\alpha^{(k+1)}$</li>
-</ol>
+<p>(4) 取$\hat \alpha=\alpha^{(k+1)}$</p>
 <hr>
-<h2 id="7-5-本章概要"><a href="#7-5-本章概要" class="headerlink" title="7.5 本章概要"></a>7.5 本章概要</h2><ol>
-<li>支持向量机最简单的情况是线性可分支持向量机，或硬间隔支持向量机。构建它的条件是训练数据线性可分。其学习策略是最大间隔法。可以表示为凸二次规划问题，其原始最优化问题为</li>
-</ol>
+<h2 id="7-5-本章概要"><a href="#7-5-本章概要" class="headerlink" title="7.5 本章概要"></a>7.5 本章概要</h2><p>(1) 支持向量机最简单的情况是线性可分支持向量机，或硬间隔支持向量机。构建它的条件是训练数据线性可分。其学习策略是最大间隔法。可以表示为凸二次规划问题，其原始最优化问题为</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{w,b} & \quad \quad \frac { 1 } {2} \| w \|^2  \tag{7.13}\\
@@ -752,11 +719,8 @@ s.t. & \quad y _ { i } ( w \cdot x _ { i } + b ) - 1\geqslant 0, \quad i=1,2,\cd
 s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \tag{7.23}\\
 &\quad \alpha_i\geqslant 0,\quad i=1,2,\cdots,N \tag{7.24}
 \end{align}</script><p>​    通常，通过求解对偶问题学习线性可分支持向量机，即首先求解对偶问题的最优值$\alpha^{\star}$，然后求最优值解 $w ^ {\star }$， $b ^ {\star }$，得出分离超平面和分类决策函数。</p>
-<ol>
-<li><p>现实中训练数据是线性可分的情形较少，训练数据往往是近似线性可分的，这时使用线性支持向量机，或软间隔支持向量机。线性支持向量机是最基本的支持向量机。</p>
-<p>对于噪声或例外，通过引入松弛变量$\xi_i$，使其“可分”，得到线性支持向量机学习的凸二次规划问题，其原始最优化问题是</p>
-</li>
-</ol>
+<p>(2) 现实中训练数据是线性可分的情形较少，训练数据往往是近似线性可分的，这时使用线性支持向量机，或软间隔支持向量机。线性支持向量机是最基本的支持向量机。</p>
+<p>   对于噪声或例外，通过引入松弛变量$\xi_i$，使其“可分”，得到线性支持向量机学习的凸二次规划问题，其原始最优化问题是</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \min_{w,b} & \quad \quad \frac { 1 } { 2 } \| w \| ^ { 2 }+C\sum_{j=1}^{N}\xi_i \tag{7.32}  \\
@@ -775,20 +739,14 @@ s.t. & \quad \sum _ { i = 1 } ^ { N } \alpha _ { i } y _ { i } = 0  \tag{7.23}\\
 <p>​    对偶问题的解$\alpha^{\star}$中满足$\alpha^{\star}&gt;0$的实例点$x_i$ 称为支持向量。支持向量可在间隔边界上，也可在间隔边界与分离超平面之间，或者在分离超平面误分一侧。最优分离超平面由支持向量完全决定。 </p>
 <p>​    线性支持向量机学习等价于最小化二阶范数正则化的合页函数</p>
 <script type="math/tex; mode=display">
-\sum _ { i = 1 } ^ { N } [ 1 - y _ { i } ( w \cdot x _ { i } + b ) ] _ { + } + \lambda \| w \| ^ { 2 }</script><ol>
-<li><p>非线性支持向量机 </p>
-<p>对于输入空间中的非线性分类问题，可以通过非线性变换将它转化为某个高维特征空间中的线性分类问题，在高维特征空间中学习线性支持向量机。由于在线性支持向量机学习的对偶问题里，目标函数和分类决策函数都只涉及实例与实例之间的内积，所以不需要显式地指定非线性变换，而是用核函数来替换当中的内积。核函数表示，通过一个非线性转换后的两个实例间的内积。具体地，$K(x,z)$是一个核函数，或正定核，意味着存在一个从输入空间$x$到特征空间$\mathcal{X}$的映射$\phi(x):\mathcal{X}\rightarrow \mathcal{H}$，对任意$x,z\in \mathcal{X}$，有</p>
-</li>
-</ol>
+\sum _ { i = 1 } ^ { N } [ 1 - y _ { i } ( w \cdot x _ { i } + b ) ] _ { + } + \lambda \| w \| ^ { 2 }</script><p>(3) 非线性支持向量机 </p>
+<p>   对于输入空间中的非线性分类问题，可以通过非线性变换将它转化为某个高维特征空间中的线性分类问题，在高维特征空间中学习线性支持向量机。由于在线性支持向量机学习的对偶问题里，目标函数和分类决策函数都只涉及实例与实例之间的内积，所以不需要显式地指定非线性变换，而是用核函数来替换当中的内积。核函数表示，通过一个非线性转换后的两个实例间的内积。具体地，$K(x,z)$是一个核函数，或正定核，意味着存在一个从输入空间$x$到特征空间$\mathcal{X}$的映射$\phi(x):\mathcal{X}\rightarrow \mathcal{H}$，对任意$x,z\in \mathcal{X}$，有</p>
 <script type="math/tex; mode=display">
 K(x,z)=\phi(x)\cdot\phi(z)</script><p>​      对称函数$K(x,z)$为正定核的充要条件如下：对任意$x_i \in \mathcal{X}$，$i=1,2,\cdots,m$，任意正整数$m$，对称函数$K(x,z)$对应的Gram矩阵是半正定的。</p>
 <p>​    </p>
 <script type="math/tex; mode=display">
-f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ {\star } y _ { i } K(x,x_i) + b ^ {\star } )</script><ol>
-<li><p>SMO算法</p>
-<p>SMO算法是支持向量机学习的一种快速算法，其特点是不断地将原二次规划问题分解为只有两个变量的二次规划子问题，并对子问题进行解析求解，直到所有变量满足 KKT条件为止。这样通过启发式的方法得到原二次规划问题的最优解。因为子问题有解 析解，所以每次计算子问题都很快，虽然计算子问题次数很多，但在总体上还是高效的。</p>
-</li>
-</ol>
+f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ {\star } y _ { i } K(x,x_i) + b ^ {\star } )</script><p>(4) SMO算法</p>
+<p>   SMO算法是支持向量机学习的一种快速算法，其特点是不断地将原二次规划问题分解为只有两个变量的二次规划子问题，并对子问题进行解析求解，直到所有变量满足 KKT条件为止。这样通过启发式的方法得到原二次规划问题的最优解。因为子问题有解 析解，所以每次计算子问题都很快，虽然计算子问题次数很多，但在总体上还是高效的。</p>
 
         </div>
         
@@ -800,10 +758,10 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ 
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-02T19:43:36+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:17:25+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 2, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -885,9 +843,9 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ 
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                             <h4>
-                                <a href="/posts/4723d1ed/" rel="prev" title="统计学习方法-Ch9 EM算法及推广">
+                                <a href="/posts/f43c3bdb/" rel="prev" title="统计学习方法-Ch8 提升方法">
                                   
-                                      统计学习方法-Ch9 EM算法及推广
+                                      统计学习方法-Ch8 提升方法
                                   
                                 </a>
                             </h4>
@@ -1194,7 +1152,7 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ 
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1488,22 +1446,7 @@ f ( x ) = \operatorname { sign } ( \sum _ { i = 1 } ^ { N _ { s } } a _ { i } ^ 
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>

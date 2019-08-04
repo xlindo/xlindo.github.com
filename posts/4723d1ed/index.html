@@ -219,7 +219,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-08-02</p>
+    <p>2019-08-03</p>
   </a>
 </div>
 
@@ -323,21 +323,14 @@ q ^ { ( i + 1 ) } = \frac { \sum _ { j = 1 } ^ { n } ( 1 - \mu _ { j } ^ { ( i +
 <p><strong>算法9.1($\mathrm{EM}$算法)</strong></p>
 <p>输入：观测变量数据$Y$，隐变量数据$Z$，联合分布$P(Y,Z|\theta )$，条件分布$P(Y|Z,\theta )$； </p>
 <p>输出：模型参数$\theta$. </p>
-<ol>
-<li>选择参数的初值 $\theta^{(0)}$开始迭代；</li>
-<li><strong>E步</strong>：记$\theta^{(i)}$为第$i$次迭代参数$\theta$的估计值，在第$i+1$次迭代的E步，计算</li>
-</ol>
+<p>(1) 选择参数的初值 $\theta^{(0)}$开始迭代；<br>(2) <strong>E步</strong>：记$\theta^{(i)}$为第$i$次迭代参数$\theta$的估计值，在第$i+1$次迭代的E步，计算</p>
 <script type="math/tex; mode=display">
 \begin{align}
 Q ( \theta , \theta ^ { ( i ) } ) & = E _ { Z } [ \operatorname { log } P ( Y , Z | \theta ) | Y , \theta ^ { ( i ) } ] \\
 &= \sum _ { Z } \operatorname { log } P ( Y , Z | \theta ) P ( Z | Y , \theta ^ { ( i ) } ) \end{align} \tag{9.9}</script><p>​    这里，$P(Y|Z,\theta^{(i)} )$是在给定观测数据$Y$和当前的参数估计$\theta^{(i)}$下隐变量数据$Z$的条件概率分布；</p>
-<ol>
-<li><strong>M步</strong>：求使$Q ( \theta , \theta ^ { ( i ) } )$极大化的$\theta$，确定第$i+1$次迭代的参数的估计值$\theta^{(i+1)}$</li>
-</ol>
+<p>(3) <strong>M步</strong>：求使$Q ( \theta , \theta ^ { ( i ) } )$极大化的$\theta$，确定第$i+1$次迭代的参数的估计值$\theta^{(i+1)}$</p>
 <script type="math/tex; mode=display">
-\theta^{(i+1)} = \arg \max_\theta Q ( \theta , \theta ^ { ( i ) } )</script><ol>
-<li>重复第2. 步和第3. 步，直到收敛。</li>
-</ol>
+\theta^{(i+1)} = \arg \max_\theta Q ( \theta , \theta ^ { ( i ) } )</script><p>(4) 重复第(2) 步和第(3) 步，直到收敛。</p>
 <hr>
 <p>式(9.9)的函数$Q ( \theta , \theta ^ { ( i ) } )$是$\mathrm{EM}$算法的核心，称为<strong>$Q$函数($Q$ function)</strong>。</p>
 <hr>
@@ -390,40 +383,26 @@ P ( y | \theta ) = \sum _ { k = 1 } ^ { K } \alpha _ { k } \phi ( y | \theta _ {
 <script type="math/tex; mode=display">
 P ( y | \theta ) = \sum _ { k = 1 } ^ { K } \alpha _ { k } \phi ( y | \theta _ { k } )</script><p>其中，$\theta=(\alpha _1,\alpha _2,\cdots,\alpha _K;\theta_1,\theta_2,\cdots,\theta_K)$.</p>
 <p>我们用$\mathrm{EM}$算法估计高斯混合模型的参数 $\theta$.</p>
-<ol>
-<li><strong>明确隐变量，写出完全数据的对数似然函数</strong></li>
-</ol>
-<ol>
-<li><strong>$\mathrm{EM}$算法的E步：确定Q函数</strong></li>
-</ol>
+<p>(1) <strong>明确隐变量，写出完全数据的对数似然函数</strong></p>
+<p>(2) <strong>$\mathrm{EM}$算法的E步：确定Q函数</strong></p>
 <script type="math/tex; mode=display">
 \begin{align}
 Q(\theta,\theta ^ { ( i ) }) & =  E [ \operatorname { log } P ( y , \gamma | \theta ) | y , \theta ^ { ( i ) } ] \\
 & = E \Big\lbrace \sum _ { k = 1 } ^ { K } n _ { k } \operatorname { log } \alpha _ { k } + \sum _ { j = 1 } ^ { N } \gamma _ { j k } \big[ \operatorname { log } ( \frac { 1 } { \sqrt { 2 \pi } } ) - \operatorname { log } \sigma _ { k } - \frac { 1 } { 2 \sigma _ { k } ^ { 2 } } ( y _ { j } - \mu _ { k } ) ^ { 2 } \big] \Big\rbrace \\
 & = \sum _ { k = 1 } ^ { K } \Big\lbrace \sum _ { j = 1 } ^ { N } ( E \gamma _ { j k } ) \operatorname { log } \alpha _ { k } + \sum _ { j = 1 } ^ { N } ( E \gamma _ { j k } ) \big[ \operatorname { log } ( \frac { 1 } { \sqrt { 2 \pi } } ) - \operatorname { log } \sigma _ { k } - \frac { 1 } { 2 \sigma _ { k } ^ { 2 } } ( y _ { j } - \mu _ { k } ) ^ { 2 } \big] \Big\rbrace 
-\end{align}.</script><ol>
-<li><strong>确定$\mathrm{EM}$算法的M步</strong></li>
-</ol>
+\end{align}.</script><p>(3) <strong>确定$\mathrm{EM}$算法的M步</strong></p>
 <hr>
 <p><strong>算法9.2(高斯混合模型参数估计的$\mathrm{EM}$算法)</strong></p>
 <p><strong>输入</strong>：观测数据$y_1,y_2,…y_N$由高斯混合模型生成，</p>
 <p><strong>输出</strong>：高斯混合模型参数。</p>
-<ol>
-<li><p>取参数的初始值开始迭代。</p>
-</li>
-<li><p>E步：依据当前模型参数，计算分模型$k$对观测数据$y_j$的响应度</p>
-</li>
-</ol>
+<p>(1) 取参数的初始值开始迭代。</p>
+<p>(2) E步：依据当前模型参数，计算分模型$k$对观测数据$y_j$的响应度</p>
 <script type="math/tex; mode=display">
-\hat { \gamma } _ { j k } = \frac { \alpha _ { k } \phi ( y _ { j } | \theta _ { k } ) } { \sum _ { k = 1 } ^ { K } \alpha _ { k } \phi ( y _ { j } | \theta _ { k } ) },\quad j=1,2,\cdots,N;\quad k=1,2,\cdots,K</script><ol>
-<li>M步：计算新一轮迭代的模型参数</li>
-</ol>
+\hat { \gamma } _ { j k } = \frac { \alpha _ { k } \phi ( y _ { j } | \theta _ { k } ) } { \sum _ { k = 1 } ^ { K } \alpha _ { k } \phi ( y _ { j } | \theta _ { k } ) },\quad j=1,2,\cdots,N;\quad k=1,2,\cdots,K</script><p>(3) M步：计算新一轮迭代的模型参数</p>
 <script type="math/tex; mode=display">
  \hat  \mu  _ { k } = \frac { \sum _ { j = 1 } ^ { N }  \hat { \gamma } _ { j k } y _ { j } } { \sum _ { j = 1 } ^ { N } \hat { \gamma } _ { j k } } , \quad k = 1,2 , \cdots , K</script><script type="math/tex; mode=display">
 { \hat { \sigma } _ { k } ^ { 2 } = \frac { \sum _ { j = 1 } ^ { N } \hat { \gamma } _ { j k } ( y _ { j } - \mu _ { k } ) ^ { 2 } } { \sum _ { j = 1 } ^ { N } \hat { \gamma } _ { j k } } , \quad k = 1,2 , \cdots , K }</script><script type="math/tex; mode=display">
- \hat { \alpha } _ { k } = \frac { \sum _ { j = 1 } ^ { N } \hat { \gamma } _ { j k } } { N } , \quad k = 1,2 , \cdots , K</script><ol>
-<li>重复第2. 步和第3. 步，直到收敛。</li>
-</ol>
+ \hat { \alpha } _ { k } = \frac { \sum _ { j = 1 } ^ { N } \hat { \gamma } _ { j k } } { N } , \quad k = 1,2 , \cdots , K</script><p>(4) 重复第(2) 步和第(3) 步，直到收敛。</p>
 <hr>
 <h2 id="9-4-mathrm-EM-算法的推广"><a href="#9-4-mathrm-EM-算法的推广" class="headerlink" title="9.4 $\mathrm{EM}$算法的推广"></a>9.4 $\mathrm{EM}$算法的推广</h2><p>EM算法还可以解释为F函数(F function)的极大-极大算法(maximization maximization algorithm)，基于这个解释有若干变形与推广，如广义期望极大(generalized expectation maximization，GEM)算法。下面予以介绍。</p>
 <h3 id="9-4-1-mathrm-F-函数的极大-极大算法"><a href="#9-4-1-mathrm-F-函数的极大-极大算法" class="headerlink" title="9.4.1 $\mathrm{F}$函数的极大-极大算法"></a>9.4.1 $\mathrm{F}$函数的极大-极大算法</h3><h4 id="TODO"><a href="#TODO" class="headerlink" title="#TODO"></a>#TODO</h4><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803215947.png" alt></p>
@@ -431,22 +410,15 @@ Q(\theta,\theta ^ { ( i ) }) & =  E [ \operatorname { log } P ( y , \gamma | \th
 <p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1564862418202.png" alt="1564862418202"></p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803220030.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803220048.png" alt></p>
-<h3 id="9-4-2-mathrm-GEM-算法"><a href="#9-4-2-mathrm-GEM-算法" class="headerlink" title="9.4.2 $\mathrm{GEM}$算法"></a>9.4.2 $\mathrm{GEM}$算法</h3><h4 id="TODO-1"><a href="#TODO-1" class="headerlink" title="#TODO"></a>#TODO</h4><h2 id="9-5-本章概要"><a href="#9-5-本章概要" class="headerlink" title="9.5 本章概要"></a>9.5 本章概要</h2><ol>
-<li>$\mathrm{EM}$算法是含有隐变量的概率模型极大似然估计或极大后验概率估计的迭代算法。含有隐变量的概率模型的数据表示为$P(Y,Z|\theta)$.这里，$Y$是观测变量的数据，$Z$是隐变量的数据，$\theta$是模型参数。$\mathrm{EM}$算法通过迭代求解观测数据的对数似然函数$L ( \theta)= \log P ( Y| \theta ) $的极大化，实现极大似然估计。每次迭代包括两步：E步，求期望，即求$P(Y,Z|\theta)$关于$P(Z|Y,\theta ^ { ( i ) )}$的期望：</li>
-</ol>
+<h3 id="9-4-2-mathrm-GEM-算法"><a href="#9-4-2-mathrm-GEM-算法" class="headerlink" title="9.4.2 $\mathrm{GEM}$算法"></a>9.4.2 $\mathrm{GEM}$算法</h3><h4 id="TODO-1"><a href="#TODO-1" class="headerlink" title="#TODO"></a>#TODO</h4><h2 id="9-5-本章概要"><a href="#9-5-本章概要" class="headerlink" title="9.5 本章概要"></a>9.5 本章概要</h2><p>(1) $\mathrm{EM}$算法是含有隐变量的概率模型极大似然估计或极大后验概率估计的迭代算法。含有隐变量的概率模型的数据表示为$P(Y,Z|\theta)$.这里，$Y$是观测变量的数据，$Z$是隐变量的数据，$\theta$是模型参数。$\mathrm{EM}$算法通过迭代求解观测数据的对数似然函数$L ( \theta)= \log P ( Y| \theta ) $的极大化，实现极大似然估计。每次迭代包括两步：E步，求期望，即求$P(Y,Z|\theta)$关于$P(Z|Y,\theta ^ { ( i ) )}$的期望：</p>
 <script type="math/tex; mode=display">
 Q ( \theta , \theta ^ { ( i ) } )  = E _ { Z } [ \operatorname { log } P ( Y , Z | \theta ) | Y , \theta ^ { ( i ) } ] \tag{9.11}</script><p>​        称为$Q$函数，这里$\theta ^ { ( i ) )}$是参数的现估计值；M步，求极大，即极大化$Q$函数得到参数的新估计值：</p>
 <script type="math/tex; mode=display">
 \theta^{(i+1)} = \arg \max_\theta Q ( \theta , \theta ^ { ( i ) } )</script><p>​        在构建具体的$\mathrm{EM}$算法时，重要的是定义$Q$函数。每次迭代中，$\mathrm{EM}$算法通过极大化$Q$函数来增大对数似然函数$L ( \theta)$.</p>
-<ol>
-<li>EM算法在每次迭代后均提高观测数据的似然函数值，即</li>
-</ol>
+<p>(2) EM算法在每次迭代后均提高观测数据的似然函数值，即</p>
 <script type="math/tex; mode=display">
 P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script><p>​    在一般条件下$\mathrm{EM}$算法是收敛的，但不能保证收敛到全局最优。</p>
-<ol>
-<li>$\mathrm{EM}$算法应用极其广泛，主要应用于含有隐变量的概率模型的学习。高斯混合模型的参数估计是EM算法的一个重要应用，下一章将要介绍的隐马尔可夫模型的非监督学习也是$\mathrm{EM}$算法的一个重要应用。</li>
-<li>$\mathrm{EM}$算法还可以解释为$\mathrm{F}$函数的极大-极大算法。$\mathrm{EM}$算法有许多变形，如$\mathrm{GEM}$算法。$\mathrm{GEM}$算法的特点是每次迭代增加$\mathrm{F}$函数值(并不一定是极大化$\mathrm{F}$函数)，从而增加似然函数值。</li>
-</ol>
+<p>(3) $\mathrm{EM}$算法应用极其广泛，主要应用于含有隐变量的概率模型的学习。高斯混合模型的参数估计是EM算法的一个重要应用，下一章将要介绍的隐马尔可夫模型的非监督学习也是$\mathrm{EM}$算法的一个重要应用。<br>(4) $\mathrm{EM}$算法还可以解释为$\mathrm{F}$函数的极大-极大算法。$\mathrm{EM}$算法有许多变形，如$\mathrm{GEM}$算法。$\mathrm{GEM}$算法的特点是每次迭代增加$\mathrm{F}$函数值(并不一定是极大化$\mathrm{F}$函数)，从而增加似然函数值。</p>
 
         </div>
         
@@ -458,10 +430,10 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-03T22:17:51+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:22:59+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 3, 2019</p>
+    <p>last updated at Aug 4, 2019</p>
   </a>
 </div>
 
@@ -543,9 +515,9 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
                             <h4>
-                                <a href="/posts/f43c3bdb/" rel="prev" title="统计学习方法-Ch8 提升方法">
+                                <a href="/posts/e9b76bf4/" rel="prev" title="统计学习方法-Ch10 隐马尔可夫模型">
                                   
-                                      统计学习方法-Ch8 提升方法
+                                      统计学习方法-Ch10 隐马尔可夫模型
                                   
                                 </a>
                             </h4>
@@ -563,9 +535,9 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
                         <span class="art-item-right" aria-hidden="true">
                             <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/posts/860bfa84/" rel="prev" title="统计学习方法-Ch7 SVM">
+                                <a href="/posts/f43c3bdb/" rel="prev" title="统计学习方法-Ch8 提升方法">
                                     
-                                        统计学习方法-Ch7 SVM
+                                        统计学习方法-Ch8 提升方法
                                     
                                 </a>
                             </h4>
@@ -852,7 +824,7 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1146,22 +1118,7 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
 
 
 
-  <script>setLoadingBarProgress(100);</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
