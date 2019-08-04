@@ -275,11 +275,11 @@
 <p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> License.</p>
 </blockquote>
 <p><strong><u>由于这一章跟我目前做的事关系不大， 所以以了解概念为主，等用到了再回来看。</u></strong></p>
-<h1 id="10-隐马尔可夫模型"><a href="#10-隐马尔可夫模型" class="headerlink" title="10 隐马尔可夫模型"></a>10 隐马尔可夫模型</h1><p>隐马尔可夫模型（hidden Markov model,HMM）是可用于标注问题的统计学习模型，描述由隐藏的马尔可夫链随机生成观测序列的过程，属于生成模型。</p>
+<h1 id="10-隐马尔可夫模型"><a href="#10-隐马尔可夫模型" class="headerlink" title="10 隐马尔可夫模型"></a>10 隐马尔可夫模型</h1><p>隐马尔可夫模型(hidden Markov model,HMM) 是可用于标注问题的统计学习模型，描述由隐藏的马尔可夫链随机生成观测序列的过程，属于生成模型。</p>
 <h2 id="10-1-隐马尔可夫模型的基本概念"><a href="#10-1-隐马尔可夫模型的基本概念" class="headerlink" title="10.1 隐马尔可夫模型的基本概念"></a>10.1 隐马尔可夫模型的基本概念</h2><h3 id="10-1-1-隐马尔可夫模型的定义"><a href="#10-1-1-隐马尔可夫模型的定义" class="headerlink" title="10.1.1 隐马尔可夫模型的定义"></a>10.1.1 隐马尔可夫模型的定义</h3><hr>
-<p><strong>定义10.1（隐马尔可夫模型）</strong> </p>
+<p><strong>定义10.1(隐马尔可夫模型) </strong> </p>
 <p>隐马尔可夫模型是关于时序的概率模型，描述由一个隐藏的马尔可夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测而产生观测随机序列的过程。</p>
-<p>隐藏的马尔可夫链随机生成的状态的序列，称为<strong>状态序列（state sequence）</strong>；每个状态生成一个观测，而由此产生的观测的随机序列，称为<strong>观测序列（observation sequence）</strong>。序列的每一个位置又可以看作是一个<strong>时刻</strong>。</p>
+<p>隐藏的马尔可夫链随机生成的状态的序列，称为<strong>状态序列(state sequence) </strong>；每个状态生成一个观测，而由此产生的观测的随机序列，称为<strong>观测序列(observation sequence) </strong>。序列的每一个位置又可以看作是一个<strong>时刻</strong>。</p>
 <hr>
 <p>隐马尔可夫模型由初始概率分布、状态转移概率分布以及观测概率分布确定。</p>
 <p><strong>隐马尔可夫模型的形式定义如下：</strong></p>
@@ -331,13 +331,13 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 <hr>
 <h3 id="10-1-2-观测序列的生成过程"><a href="#10-1-2-观测序列的生成过程" class="headerlink" title="10.1.2 观测序列的生成过程"></a>10.1.2 观测序列的生成过程</h3><p>根据隐马尔可夫模型定义，可以将一个长度为$T$的观测序列$O = (o_1,o_2,\cdots,o_T)$的生成过程描述如下：</p>
 <hr>
-<p><strong>算法10.1（观测序列的生成）</strong></p>
+<p><strong>算法10.1(观测序列的生成) </strong></p>
 <p>输入：隐马尔可夫模型$\lambda = (A,B,\pi)$，观测序列长度$T$；</p>
 <p>输出：观测序列$O = (o_1,o_2,\cdots,o_T)$.</p>
-<p>（1）按照初始状态分布$\pi$产生状态$i_1$</p>
-<p>（2）令$t＝1$</p>
-<p>（3）按照状态$i_t$的观测概率分布$b_{i_t}(k)$生成$o_t$</p>
-<p>（4）按照状态$i_t$的状态转移概率分布$\lbrace a_{i_t,i_{t+1}}\rbrace$产生状态$i_{t+1}$，$i_{t+1} ＝1,2,\cdots,N$<br>（5）令$t＝t+1$；如果$t&lt;T$，转步（3）；否则，终止</p>
+<p>(1) 按照初始状态分布$\pi$产生状态$i_1$</p>
+<p>(2) 令$t＝1$</p>
+<p>(3) 按照状态$i_t$的观测概率分布$b_{i_t}(k)$生成$o_t$</p>
+<p>(4) 按照状态$i_t$的状态转移概率分布$\lbrace a_{i_t,i_{t+1}}\rbrace$产生状态$i_{t+1}$，$i_{t+1} ＝1,2,\cdots,N$<br>(5) 令$t＝t+1$；如果$t&lt;T$，转步(3) ；否则，终止</p>
 <hr>
 <h3 id="10-1-3-隐马尔可夫模型的3个基本问题"><a href="#10-1-3-隐马尔可夫模型的3个基本问题" class="headerlink" title="10.1.3 隐马尔可夫模型的3个基本问题"></a>10.1.3 隐马尔可夫模型的3个基本问题</h3><p>隐马尔可夫模型有3个基本问题：</p>
 <ol>
@@ -345,31 +345,31 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 </li>
 <li><p>学习问题。已知观测序列$O = (o_1,o_2,\cdots,o_T)$，估计模型$\lambda = (A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda )$最大。即用极大似然估计的方法估计参数。</p>
 </li>
-<li><p>预测问题，也称为解码（decoding）问题。已知模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I = (i_1,i_2,\cdots,i_T)$. 即给定观测序列，求最有可能的对应的状态序列。</p>
+<li><p>预测问题，也称为解码(decoding) 问题。已知模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I = (i_1,i_2,\cdots,i_T)$. 即给定观测序列，求最有可能的对应的状态序列。</p>
 </li>
 </ol>
-<h2 id="10-2-概率计算算法"><a href="#10-2-概率计算算法" class="headerlink" title="10.2 概率计算算法"></a>10.2 概率计算算法</h2><p>本节介绍计算观测序列概率$P(O|\lambda )$的前向（forward）与后向（backward）算法。先介绍<strong>概念上可行但计算上不可行的直接计算法</strong>。</p>
+<h2 id="10-2-概率计算算法"><a href="#10-2-概率计算算法" class="headerlink" title="10.2 概率计算算法"></a>10.2 概率计算算法</h2><p>本节介绍计算观测序列概率$P(O|\lambda )$的前向(forward) 与后向(backward) 算法。先介绍<strong>概念上可行但计算上不可行的直接计算法</strong>。</p>
 <h3 id="10-2-1-直接计算法"><a href="#10-2-1-直接计算法" class="headerlink" title="10.2.1 直接计算法"></a>10.2.1 直接计算法</h3><p>给定模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda )$。</p>
 <p>最直接的方法是按概率公式直接计算。通过列举所有可能的长度为T的状态序列$I = (i_1,i_2,\cdots,i_T)$，求各个状态序列I与观测序列$O = (o_1,o_2,\cdots,o_T)$的联合概率$P(O,I|\lambda )$，然后对所有可能的状态序列求和，得到$P(O|\lambda )$.</p>
 <p>计算量很大，是$O(TN^T)$阶的，这种算法不可行。</p>
 <h3 id="10-2-2-前向算法"><a href="#10-2-2-前向算法" class="headerlink" title="10.2.2 前向算法"></a>10.2.2 前向算法</h3><hr>
-<p><strong>定义10.2（前向概率）</strong> </p>
+<p><strong>定义10.2(前向概率) </strong> </p>
 <p>给定隐马尔可夫模型$\lambda$，定义到时刻$t$部分观测序列为$o_1,o_2,\cdots,o_t$且状态为$q_i$的概率为前向概率，记作</p>
 <script type="math/tex; mode=display">
 \alpha _ { t } ( i ) = P ( o _ { 1 } , o _ { 2 } , \cdots , o _ { t } , i _ { t } = q _ { i } | \lambda )</script><hr>
 <p>可以递推地求得前向概率$\alpha _ { t } ( i )$及观测序列概率$P(O|\lambda )$.</p>
 <hr>
-<p><strong>算法10.2（观测序列概率的前向算法）</strong></p>
+<p><strong>算法10.2(观测序列概率的前向算法) </strong></p>
 <p><strong>输入</strong>：隐马尔可夫模型$\lambda$，观测序列$O$； </p>
 <p><strong>输出</strong>：观测序列概率$P(O|\lambda )$.</p>
-<p>（1）初值</p>
+<p>(1) 初值</p>
 <script type="math/tex; mode=display">
-\alpha _ { 1 } ( i ) =\pi_i b_i(o_1),\quad i = 1,2 , \cdots , N</script><p>（2）递推 对$t = 1,2 , \cdots , T-1$</p>
+\alpha _ { 1 } ( i ) =\pi_i b_i(o_1),\quad i = 1,2 , \cdots , N</script><p>(2) 递推 对$t = 1,2 , \cdots , T-1$</p>
 <script type="math/tex; mode=display">
-\alpha _ { t + 1 } ( i ) = \Big[ \sum _ { j = 1 } ^ { N } \alpha _ { t } ( j ) a _ { j i } \Big] b _ { i } ( o _ { t + 1 } ),\quad i = 1,2 , \cdots , N</script><p>（3）终止</p>
+\alpha _ { t + 1 } ( i ) = \Big[ \sum _ { j = 1 } ^ { N } \alpha _ { t } ( j ) a _ { j i } \Big] b _ { i } ( o _ { t + 1 } ),\quad i = 1,2 , \cdots , N</script><p>(3) 终止</p>
 <script type="math/tex; mode=display">
 P(O|\lambda )=\sum _ { i = 1 } ^ { N }\alpha _ { T } ( i ) \tag{10.17}</script><hr>
-<p>前向算法，步骤（1）<strong>初始化</strong>前向概率，是初始时刻的状态$i_1=q_i$和观测$o_1$的联合概率。步骤（2）是前向概率的<strong>递推公式</strong>，计算到时刻$t+1$部分观测序列为$o_1,o_2,\cdots,o_{t+1}$且在时刻$t+1$处于状态$q_i$的前向概率，如图10.1所示。（2）即对所有可能的$N$个状态$q_j$求和，其与$b _ { i } ( o _ { t + 1 } )$的乘积恰好是前向概率。</p>
+<p>前向算法，步骤(1) <strong>初始化</strong>前向概率，是初始时刻的状态$i_1=q_i$和观测$o_1$的联合概率。步骤(2) 是前向概率的<strong>递推公式</strong>，计算到时刻$t+1$部分观测序列为$o_1,o_2,\cdots,o_{t+1}$且在时刻$t+1$处于状态$q_i$的前向概率，如图10.1所示。(2) 即对所有可能的$N$个状态$q_j$求和，其与$b _ { i } ( o _ { t + 1 } )$的乘积恰好是前向概率。</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804102237.png" alt="10.1"></p>
 <p>如图10.2所示，前向算法实际是基于“状态序列的路径结构”递推计算$P(O|\lambda )$的算法。前向算法高效的关键是其<strong>局部计算前向概率，然后利用路径结构将前向概率“递推”到全局</strong>，得到$P(O|\lambda )$. </p>
 <p>具体地，在时刻$t＝1$，计算$\alpha _ { 1 } ( i ) $的$N$个值$i = 1,2 , \cdots , N$；在各个时刻$t = 1,2 , \cdots , T-1$，计算$\alpha _ { t + 1 } ( i )$的$N$个值$i = 1,2 , \cdots , N$，而且每个$\alpha _ { t + 1 } ( i )$的计算利用前一时刻的$N$个$\alpha _ { t } ( j )$.</p>
@@ -395,51 +395,150 @@ B=\left[ \begin{matrix}
 \pi = (0.2,0.4,0.4)^T</script><p>设$T＝3$，$O＝(红,白,红)$，试用前向算法计算$P(O|\lambda )$.。</p>
 <p><strong>解</strong> :</p>
 <p>按照算法10.2</p>
-<p>（1）计算初值</p>
+<p>(1) 计算初值</p>
 <script type="math/tex; mode=display">
 \alpha_1(1)=\pi_1 b_1 (o_1)=0.10 \\
 \alpha_1(2)=\pi_2 b_2 (o_1)=0.16 \\
-\alpha_1(3)=\pi_3 b_3 (o_1)=0.28</script><p>（2）递推计算</p>
+\alpha_1(3)=\pi_3 b_3 (o_1)=0.28</script><p>(2) 递推计算</p>
 <script type="math/tex; mode=display">
 \alpha _ { 2 } ( 1 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 1 } ( i ) a _ { i1 } \Big] b _ { 1 } ( o _ { 2 } )=0.154\times0.5=0.077 \\
 \alpha _ { 2 } ( 2 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 1 } ( i ) a _ { i2 } \Big] b _ { 2 } ( o _ { 2 } )=0.184\times0.6=0.1104 \\
 \alpha _ { 2 } ( 3 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 1 } ( i ) a _ { i3 } \Big] b _ { 3 } ( o _ { 2 } )=0.202\times0.3=0.0606 \\
 \alpha _ { 3 } ( 1 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 2 } ( i ) a _ { i1 } \Big] b _ { 1 } ( o _ { 3 } )= 0.04184\\
 \alpha _ { 3 } ( 2 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 2 } ( i ) a _ { i2 } \Big] b _ { 2 } ( o _ { 3 } )= 0.03551\\
-\alpha _ { 3 } ( 3 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 2 } ( i ) a _ { i3 } \Big] b _ { 3 } ( o _ { 3 } )= 0.05284</script><p>（3）终止</p>
+\alpha _ { 3 } ( 3 ) = \Big[ \sum _ { i = 1 } ^ { 3 } \alpha _ { 2 } ( i ) a _ { i3 } \Big] b _ { 3 } ( o _ { 3 } )= 0.05284</script><p>(3) 终止</p>
 <script type="math/tex; mode=display">
 P(O|\lambda ) = \sum _ { i = 1 } ^ { 3 } \alpha_3(i)=0.13022</script><hr>
 <h3 id="10-2-3-后向算法"><a href="#10-2-3-后向算法" class="headerlink" title="10.2.3 后向算法"></a>10.2.3 后向算法</h3><hr>
-<p><strong>定义10.3（后向概率）</strong> </p>
+<p><strong>定义10.3(后向概率) </strong> </p>
 <p>给定隐马尔可夫模型$\lambda$，定义到时刻$t$状态为$q_i$的条件下，从$t+1$到$T$的部分观测序列为$o _ { t+1 } , o _ { t+2 } , \cdots , o _ { T }$的概率为后向概率，记作</p>
 <script type="math/tex; mode=display">
 \beta _ { t } ( i ) = P ( o _ { t+1 } , o _ { t+2 } , \cdots , o _ { T } , i _ { t } = q _ { i } | \lambda )</script><hr>
 <p>可以递推地求得前向概率$\beta_ { t } ( i )$及观测序列概率$P(O|\lambda )$.</p>
 <hr>
-<p><strong>算法10.3 （观测序列概率的后向算法）</strong></p>
+<p><strong>算法10.3 (观测序列概率的后向算法) </strong></p>
 <p><strong>输入</strong>：隐马尔可夫模型$\lambda$，观测序列$O$； </p>
 <p><strong>输出</strong>：观测序列概率$P(O|\lambda )$.</p>
-<p>（1）初值</p>
+<p>(1) 初值</p>
 <script type="math/tex; mode=display">
-\beta _ { T } ( i ) =1,\quad i = 1,2 , \cdots , N</script><p>（2）递推 对$t = T-1,T-2 , \cdots , 1$</p>
+\beta _ { T } ( i ) =1,\quad i = 1,2 , \cdots , N</script><p>(2) 递推 对$t = T-1,T-2 , \cdots , 1$</p>
 <script type="math/tex; mode=display">
-\beta _ { t  } ( i ) =  \sum _ { j = 1 } ^ { N } a _ { ij }  b _ { j } ( o _ { t + 1 } )\beta _ { t +1 } ( j ),\quad i = 1,2 , \cdots , N</script><p>（3）终止</p>
+\beta _ { t  } ( i ) =  \sum _ { j = 1 } ^ { N } a _ { ij }  b _ { j } ( o _ { t + 1 } )\beta _ { t +1 } ( j ),\quad i = 1,2 , \cdots , N</script><p>(3) 终止</p>
 <script type="math/tex; mode=display">
 P(O|\lambda )=\sum _ { i = 1 } ^ { N }\pi_i b_i(o_1)\beta_1(i) \tag{10.21}</script><hr>
-<p>步骤（1）对最终时刻的所有状态$q_i$初始化后向概率。骤（2）是后向概率的递推公式。如图10.3所示，</p>
+<p>步骤(1) 对最终时刻的所有状态$q_i$初始化后向概率。骤(2) 是后向概率的递推公式。如图10.3所示，</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804113210.png" alt="10.3"></p>
 <p>利用前向概率和后向概率的定义可以将观测序列概率$P(O|\lambda )$统一写成</p>
 <script type="math/tex; mode=display">
-P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { t } ( i ) a _ { i j } b _ { j } ( o _ { t + 1 } ) \beta _ { t + 1 } ( j ) , \quad t = 1,2 , \cdots , T - 1</script><p>此式当$t＝1$和$t＝T-1$时分别为式（10.17）和式（10.21）。</p>
+P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { t } ( i ) a _ { i j } b _ { j } ( o _ { t + 1 } ) \beta _ { t + 1 } ( j ) , \quad t = 1,2 , \cdots , T - 1</script><p>此式当$t＝1$和$t＝T-1$时分别为式(10.17) 和式(10.21) 。</p>
 <h3 id="10-2-4-一些概率与期望值的计算"><a href="#10-2-4-一些概率与期望值的计算" class="headerlink" title="10.2.4 一些概率与期望值的计算"></a>10.2.4 一些概率与期望值的计算</h3><p>利用前向概率和后向概率，可以得到关于单个状态和两个状态概率的计算公式。</p>
 <p>(1) 给定模型$\lambda$和观测$O$，在时刻$t$处于状态$q_i$的概率。记</p>
-<p>(2) 给定模型$\lambda$和观测$O$，在时刻$t$处于状态$q_i$且在时刻$t+1$处于状态qj 可以通过前向后向概率计算： 的概率。记</p>
-<p>(3) 将 t(i)和 t(i,j)对各个时刻t求和，可以得到一些有用的期望值：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\gamma _ { t } ( i ) & = P ( i_t = q_i| O, \lambda ) \\
+& =\frac{ P ( i_t = q_i ,O |\lambda ) }{ P ( O|\lambda ) }\\
+& = \frac { \alpha _ { t } ( i ) \beta _ { t } ( i ) } { P ( O | \lambda ) }\\
+& = \frac { \alpha _ { t } ( i ) \beta _ { t } ( i ) } { \sum _ { j = 1 } ^ { N } \alpha _ { t } ( j ) \beta _ { t } ( j ) }
+\end{align} \tag{10.24}</script><p>(2) 给定模型$\lambda$和观测$O$，在时刻$t$处于状态$q_i$且在时刻$t+1$处于状态$q_j$可以通过前向后向概率计算： 的概率。记</p>
+<script type="math/tex; mode=display">
+\xi _ { t } ( i , j ) = P ( i_t = q_i,i_{t+1}= q_j| O, \lambda ) = \frac { \alpha _ { t } ( i ) a _ { ij } b _ { j } ( o _ { t + 1 } ) \beta _ { t + 1 } ( j ) } { \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ { t } ( i ) a _ { i j } b _ { j } ( o _ { t + 1 } ) \beta _ { t + 1 } ( j ) } \tag{10.26}</script><p>(3) 将$\gamma_t(i)$和$\xi_t(i,j)$对各个时刻$t$求和，可以得到一些有用的期望值：</p>
 <ol>
-<li>在观测$O$下状态i出现的期望值 $\sum_{t=1)^T \gamma_t (i)$ </li>
-<li>在观测$O$下由状态i转移的期望值 $\sum_{t=1)^{T-1} \gamma_t (i)$</li>
-<li>在观测$O$下由状态i转移到状态j的期望值 $\sum_{t=1)^{T-1} \xi_t (i,j)$</li>
+<li>在观测$O$下状态$i$出现的期望值 $\sum_{t=1}^{T} \gamma_t(i)$</li>
+<li>在观测$O$下由状态$i$转移的期望值 $\sum_{t=1}^{T-1} \gamma_t (i)$</li>
+<li>在观测$O$下由状态$i$转移到状态j的期望值 $\sum_{t=1}^{T-1} \xi_t (i,j)$</li>
 </ol>
+<h2 id="10-3-学习算法"><a href="#10-3-学习算法" class="headerlink" title="10.3 学习算法"></a>10.3 学习算法</h2><p>隐马尔可夫模型的学习，根据<strong>训练数据</strong>是<strong>包括观测序列和对应的状态序列</strong>还是<strong>只有观测序列</strong>，可以分别由监督学习与非监督学习(Baum-Welch算法)实现。</p>
+<h3 id="10-3-1-监督学习方法"><a href="#10-3-1-监督学习方法" class="headerlink" title="10.3.1 监督学习方法"></a>10.3.1 监督学习方法</h3><p>假设已给训练数据包含$S$个长度相同的<strong>观测序列和对应的状态序列</strong>$\lbrace(O_1,I_1),(O_2,I_2),\cdots,(O_S,I_S)\rbrace$，那么可以利用<strong>极大似然估计法</strong>来估计隐马尔可夫模型的参数。具体方法如下。</p>
+<p><strong>(1) 转移概率$a_{ij}$的估计</strong></p>
+<p>设样本中时刻$t$处于状态i时刻$t+1$转移到状态$j$的<strong>频数</strong>为$A_{ij}$，则</p>
+<script type="math/tex; mode=display">
+\hat a_{ij} = \frac{A_{ij}}{\sum_{j=1}^{N} A_{ij}}, \quad i = 1,2 , \cdots , N ;  \quad  j = 1,2 , \cdots , N</script><p><strong>(2) 观测概率$b_{j}(k)$的估计</strong> </p>
+<p>设样本中状态为$j$并观测为$k$的频数是$B_{jk}$</p>
+<script type="math/tex; mode=display">
+\hat b_{j}(k) = \frac{B_{jk}}{\sum_{k=1}^{M} B_{jk}}, \quad i = 1,2 , \cdots , N ;  \quad  k = 1,2 , \cdots , M</script><p><strong>(3) 初始状态概率$\pi_i$的估计$\hat \pi_i$为$S$个样本中初始状态为$q_i$的频率</strong>。</p>
+<h3 id="10-3-2-Baum-Welch算法"><a href="#10-3-2-Baum-Welch算法" class="headerlink" title="10.3.2 Baum-Welch算法"></a>10.3.2 Baum-Welch算法</h3><p>假设给定训练数据只包含$S$个长度为$T$的观测序列$\lbrace O_1,O_2,\cdots,O_S\rbrace$而没有对应的状态序列，目标是学习隐马尔可夫模型$\lambda = (A,B,\pi)$的参数。我们将观测序列数据看作观测数据$O$，<strong>状态序列数据看作不可观测的隐数据</strong>$I$，那么隐马尔可夫模型事实上是一个含有隐变量的概率模型</p>
+<script type="math/tex; mode=display">
+P(O|\lambda )=\sum _ { I } P(O|I,\lambda )P(I|\lambda )</script><p>它的参数学习可以由$\mathrm{EM}$算法实现。</p>
+<p><strong>(1) 确定完全数据的对数似然函数</strong></p>
+<p>所有观测数据写成$O=( o_1,o_2,\cdots,o_T)$，所有隐数据写成$I=(i_1,i_2,\cdots,i_T)$，完全数据是$(O,I)=( o_1,o_2,\cdots,o_T,i_1,i_2,\cdots,i_T)$. 完全数据的对数似然函数是$\log P(O,I|\lambda )$</p>
+<p><strong>(2) EM算法的E步：求Q函数</strong> </p>
+<script type="math/tex; mode=display">
+Q(\lambda,\bar \lambda)=\sum _ { I } \log P(O,I|\lambda )P(O,I|\bar \lambda )</script><p>其中，$\bar \lambda$是隐马尔可夫模型参数的当前估计值，$\lambda$是要极大化的隐马尔可夫模型参数。</p>
+<script type="math/tex; mode=display">
+P(O,I|\lambda) = \pi_{i_1}b_{i_1}(o_1)a_{i_1 i_2}b_{i_2}(o_2)\cdots a_{i_{T-1}i_T}b_{i_T}(o_T)</script><p>于是$Q$函数可以写成，</p>
+<script type="math/tex; mode=display">
+Q(\lambda,\bar \lambda)=\sum _ { I } \pi_{i_1} P(O,I|\bar \lambda )\\
++ \sum _ { I } ( \sum _ { t = 1 } ^ { T-1 } \operatorname { log } a _ { i_t,i_{t+1} } ) P ( O , I | \overline { \lambda } ) +\sum _ { I } ( \sum _ { t = 1 } ^ { T } \operatorname { log } b _ { i _ { t } } ( o _ { t } ) ) P ( O , I | \overline { \lambda } )\tag{10.34}</script><p>式中求和都是对所有训练数据的序列总长度$T$进行的。</p>
+<p><strong>(3) EM算法的M步：极大化$Q$函数$Q(\lambda,\bar \lambda)$求模型参数$A,B,\pi$</strong></p>
+<p>由于要极大化的参数在式(10.34) 中单独地出现在3个项中，所以只需对各项分别极大化。得出，</p>
+<script type="math/tex; mode=display">
+a _ { i j } = \frac {  \sum _ { i = 1 } ^ { T-1 } P ( O ,i_{t} = i, i_{t+1} = j | \overline { \lambda } )} {  \sum _ { t = 1 } ^ { T -1} P ( O , i _ { t } = i | \overline { \lambda } ) }</script><script type="math/tex; mode=display">
+b _ { j } ( k ) = \frac { \sum _ { t = 1 } ^ { T } P ( O , i_t = j | \overline { \lambda } ) I ( o _ { i } = v _ { k } ) } { \sum _ { t = 1 } ^ { T } P ( O , i _ { t } = j | \overline { \lambda } ) }</script><script type="math/tex; mode=display">
+\pi_i = \frac{P ( O , i _ { 1 } = i | \overline { \lambda } ) }{P ( O | \overline { \lambda } ) }</script><hr>
+<h3 id="10-3-3-Baum-Welch模型参数估计公式"><a href="#10-3-3-Baum-Welch模型参数估计公式" class="headerlink" title="10.3.3 Baum-Welch模型参数估计公式"></a>10.3.3 Baum-Welch模型参数估计公式</h3><p>用$\gamma_t(i), \xi_t(i,j)$代入10.3.2，得出参数估计公式，</p>
+<script type="math/tex; mode=display">
+a _ { i j } = \frac { \sum _ { t = 1 } ^ { T - 1 } \xi _ { t } ( i , j ) } { \sum _ { t = 1 } ^ { T - 1 } \gamma _ { t } ( i ) }</script><script type="math/tex; mode=display">
+b_{j}(k) = \frac { \sum _ { t = 1,o_t=v_k } ^ { T } \gamma_t( j ) } { \sum _ { i = 1 } ^ { T } \gamma _ { t } ( i ) }</script><script type="math/tex; mode=display">
+\pi_i = \gamma_1(i)</script><hr>
+<p><strong>算法10.4(Baum-Welch算法) </strong> </p>
+<p><strong>输入</strong>：观测数据$O=( o_1,o_2,\cdots,o_T)$；<br><strong>输出</strong>：隐马尔可夫模型参数。</p>
+<p>(1) 初始化</p>
+<p>对$n=0$，选取$a _ { i j }^0$，$b_{j}(k)^{0}$，$\pi_i^{0}$，得到模型$\lambda^{0} = (A^{0},B^{0},\pi^{0})$</p>
+<p>(2) 递推 对$n=1,2,\cdots$</p>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3><script type="math/tex; mode=display">
+a _ { i j }^{n+1} = \frac { \sum _ { t = 1 } ^ { T - 1 } \xi _ { t } ( i , j ) } { \sum _ { t = 1 } ^ { T - 1 } \gamma _ { t } ( i ) }</script><script type="math/tex; mode=display">
+b_{j}(k)^{n+1}  = \frac { \sum _ { t = 1,o_t=v_k } ^ { T } \gamma_t( j ) } { \sum _ { i = 1 } ^ { T } \gamma _ { t } ( i ) }</script><script type="math/tex; mode=display">
+\pi_i^{n+1} = \gamma_1(i)</script><p>右端各值按观测$O=( o_1,o_2,\cdots,o_T)$和模型$\lambda^{n} = (A^{n},B^{n},\pi^{n})$计算，式中$\gamma_t(i), \xi_t(i,j)$由(10.24) 和式(10.26) 给出。</p>
+<p>(3) 终止。得到模型参数$\lambda^{n+1} = (A^{n+1},B^{n+1},\pi^{n+1})$</p>
+<hr>
+<h2 id="10-4-预测算法"><a href="#10-4-预测算法" class="headerlink" title="10.4 预测算法"></a>10.4 预测算法</h2><p>下面介绍隐马尔可夫模型预测的两种算法：<strong>近似算法</strong>与<strong>维特比算法(Viterbi algorithm) </strong>。</p>
+<h3 id="10-4-1-近似算法"><a href="#10-4-1-近似算法" class="headerlink" title="10.4.1 近似算法"></a>10.4.1 近似算法</h3><p>近似算法的想法是，在每个时刻$t$选择在该时刻最有可能出现的状态$i_t^{\star}$，从而得到一个状态序列$I^{\star}=(i_1^{\star},i_2^{\star},\cdots,i_T^{\star})$，将它作为预测的结果，即给定观测序列后，在时刻$t$出于状态$q_i$的概率</p>
+<script type="math/tex; mode=display">
+\gamma _ { t } ( i ) = \frac { \alpha _ { t } ( i ) \beta _ { t } ( i ) } { \sum _ { j = 1 } ^ { N } \alpha _ { t } ( j ) \beta _ { t } ( j ) }</script><p>在每一时刻$t$最有可能的状态$i_t^{\star}$是</p>
+<script type="math/tex; mode=display">
+i_t^{\star} = \arg \max_{1\leqslant i \leqslant N}[\gamma _ { t } ( i )],\quad t = 1,2,\cdots,T</script><p>从而得到状态序列$I^{\star}=(i_1^{\star},i_2^{\star},\cdots,i_T^{\star})$.</p>
+<p>近似算法的优点是计算简单，其缺点是不能保证预测的状态序列整体是最有可能的状态序列，因为预测的状态序列可能有实际不发生的部分。</p>
+<h3 id="10-4-2-维特比算法"><a href="#10-4-2-维特比算法" class="headerlink" title="10.4.2 维特比算法"></a>10.4.2 维特比算法</h3><p>维特比算法实际是用动态规划解隐马尔可夫模型预测问题，即用动态规划(dynamic programming) 求概率最大路径(最优路径) 。这时一条路径对应着一个状态序列。</p>
+<p>首先导入两个变量$\delta$和$\Psi$。定义在时刻$t$状态为$i$的所有单个路径$(i_1,i_2,\cdots,i_t)$中概率最大值为</p>
+<script type="math/tex; mode=display">
+\delta _ { t } ( i ) = \operatorname { max } _ { i , i , \cdots , i _ { t- 1 } } P ( i _ { t } = i , i _ { t - 1 } , \cdots , i _ { 1 } , o _ { t } , \cdots , o _ { 1 } | \lambda ),\quad i = 1,2 , \cdots , N</script><p>由定义可得变量$\delta$的<strong>递推公式</strong>：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\delta _ { t+1 } ( i ) & = \max _ { i , i , \cdots , i _ { t } } P ( i _ { t +1} = i , i _ { t} , \cdots , i _ { 1 } , o _ { t+1 } , \cdots , o _ { 1 } | \lambda ) \\
+& = \max  _ { 1 \leqslant j \leqslant N } [ \delta _ { t  } ( j ) a _ { j i } ]b_i(o_{t+1})\\
+&i = 1,2 , \cdots , N;\quad t = 1,2 , \cdots , T-1
+\end{align}</script><p>定义在时刻$t$状态为$i$的所有单个路径$(i_1,i_2,\cdots,i_{t-1},i)$中概率最大的路径的第$t-1$个结点为</p>
+<script type="math/tex; mode=display">
+\Psi _ { t } ( i ) = \operatorname { arg } \operatorname { max } _ { 1 \leqslant j \leqslant N } [ \delta _ { t - 1 } ( j ) a _ { j i } ],\quad i = 1,2 , \cdots , N</script><hr>
+<p><strong>算法10.5(维特比算法) </strong></p>
+<p><strong>输入</strong>：隐马尔可夫模型$\lambda$，观测序列$O$； </p>
+<p><strong>输出</strong>：最优路径$I^{\star}=(i_1^{\star},i_2^{\star},\cdots,i_T^{\star})$.</p>
+<p>(1) 初始化</p>
+<script type="math/tex; mode=display">
+\delta_1(i) = \pi_i b_i (o_1),\quad i = 1,2 , \cdots , N\\
+\Psi_1(i)=0,\quad i = 1,2 , \cdots , N</script><p>(2) 递推 对$t=2,3,\cdots,T$</p>
+<script type="math/tex; mode=display">
+\delta _ { t} ( i ) =  \max  _ { 1 \leqslant j \leqslant N } [ \delta _ { t-1 } ( j ) a _ { j i } ]b_i(o_{t})\\
+\Psi _ { t } ( i ) = \arg \max _ { 1 \leqslant j \leqslant N } [ \delta _ { t - 1 } ( j ) a _ { j i } ],\quad i = 1,2 , \cdots , N</script><p>(3) 终止</p>
+<script type="math/tex; mode=display">
+P^{\star} = \max  _ { 1 \leqslant i \leqslant N }\delta _ { T} ( i ) \\
+i _ { T }^{\star}= \arg \max  _ { 1 \leqslant i \leqslant N } [ \delta _ { T} ( i ) ]</script><p>(4) 最优路径回溯。对$t＝T-1,T-2,…,1$</p>
+<script type="math/tex; mode=display">
+i _ { t }^{\star} = \Psi_{t+1}(i _ { t+1 }^{\star})</script><p>求得最优路径$I^{\star}=(i_1^{\star},i_2^{\star},\cdots,i_T^{\star})$.</p>
+<hr>
+<hr>
+<p><strong>例3</strong></p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804163901.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804163931.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804164013.png" alt></p>
+<h2 id="10-5-本章概要"><a href="#10-5-本章概要" class="headerlink" title="10.5 本章概要"></a>10.5 本章概要</h2><p>(1) 隐马尔可夫模型是关于时序的概率模型，描述由一个隐藏的马尔可夫链随机生成不可观测的状态的序列，再由各个状态随机生成一个观测而产生观测的序列的过程。</p>
+<p>隐马尔可夫模型由<strong>初始状态概率向量$\pi$，状态转移概率矩阵$A$和观测概率矩阵$B$决定</strong>。$\pi$和$A$决定状态序列，$B$决定观测序列。因此，隐马尔可夫模型可以写成$\lambda = (A,B,\pi)$.</p>
+<p>隐马尔可夫模型是一个生成模型，表示状态序列和观测序列的联合分布，但是状态序列是隐藏的，不可观测的。</p>
+<p>隐马尔可夫模型可以用于标注，这时状态对应着标记。标注问题是给定观测序列预测其对应的标记序列。</p>
+<p>(2) 概率计算问题。给定模型$\lambda = (A,B,\pi)$和观测序列$O=( o_1,o_2,\cdots,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda)$. 前向-后向算法是通过递推地计算前向-后向概率可以高效地进行隐马尔可夫模型的概率计算。</p>
+<p>(3) 学习问题。已知观测序列$O=( o_1,o_2,\cdots,o_T)$，估计模型$\lambda = (A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda)$最大。即用极大似然估计的方法估计参数。Baum-Welch算法，也就是EM算法可以高效地对隐马尔可夫模型进行训练。它是一种非监督学习算法。</p>
+<p>(4) 预测问题。已知模型$\lambda = (A,B,\pi)$和观测序列$O=( o_1,o_2,\cdots,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I=(i_1,i_2,\cdots,i_T)$. 维特比算法应用动态规划高效地求解最优路径，即概率最大的状态序列。</p>
+<p>动态贝叶斯网络 (dynamic Bayesian network)是定义在时序数据上的贝叶斯网络,它包含隐马尔可夫模 型，是一种特例[6]。<br>[6] Ghahramani Z. Learning Dynamic Bayesian Networks. Lecture Notes in Computer Science,Vol. 1387,1997,168–197</p>
 
         </div>
         
@@ -451,7 +550,7 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T11:49:45+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T16:49:42+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 4, 2019</p>
@@ -531,6 +630,25 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
         
         
             <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/posts/94cff455/" rel="prev" title="统计学习方法-Ch11 条件随机场">
+                                  
+                                      统计学习方法-Ch11 条件随机场
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/机器学习/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>机器学习</a> <a class="tag" href="/tags/统计学习方法/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>统计学习方法</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -728,7 +846,7 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-2-观测序列的生成过程"><span class="toc-text">10.1.2 观测序列的生成过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-3-隐马尔可夫模型的3个基本问题"><span class="toc-text">10.1.3 隐马尔可夫模型的3个基本问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-概率计算算法"><span class="toc-text">10.2 概率计算算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-1-直接计算法"><span class="toc-text">10.2.1 直接计算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-2-前向算法"><span class="toc-text">10.2.2 前向算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-3-后向算法"><span class="toc-text">10.2.3 后向算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-4-一些概率与期望值的计算"><span class="toc-text">10.2.4 一些概率与期望值的计算</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-2-观测序列的生成过程"><span class="toc-text">10.1.2 观测序列的生成过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-3-隐马尔可夫模型的3个基本问题"><span class="toc-text">10.1.3 隐马尔可夫模型的3个基本问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-概率计算算法"><span class="toc-text">10.2 概率计算算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-1-直接计算法"><span class="toc-text">10.2.1 直接计算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-2-前向算法"><span class="toc-text">10.2.2 前向算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-3-后向算法"><span class="toc-text">10.2.3 后向算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-4-一些概率与期望值的计算"><span class="toc-text">10.2.4 一些概率与期望值的计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-3-学习算法"><span class="toc-text">10.3 学习算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-1-监督学习方法"><span class="toc-text">10.3.1 监督学习方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-2-Baum-Welch算法"><span class="toc-text">10.3.2 Baum-Welch算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-3-Baum-Welch模型参数估计公式"><span class="toc-text">10.3.3 Baum-Welch模型参数估计公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-4-预测算法"><span class="toc-text">10.4 预测算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-1-近似算法"><span class="toc-text">10.4.1 近似算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-2-维特比算法"><span class="toc-text">10.4.2 维特比算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-5-本章概要"><span class="toc-text">10.5 本章概要</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -771,7 +889,7 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
         
           <li><a class="flat-box" title="/categories/机器人/" href="/categories/机器人/"><div class='name'>机器人</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(19)</div></a></li>
+          <li><a class="flat-box" title="/categories/机器学习/" href="/categories/机器学习/"><div class='name'>机器学习</div><div class='badge'>(20)</div></a></li>
         
           <li><a class="flat-box" title="/categories/经验之谈/" href="/categories/经验之谈/"><div class='name'>经验之谈</div><div class='badge'>(9)</div></a></li>
         
@@ -806,7 +924,7 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
 </header>
 
     <div class='content dark'>
-      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 15px; color: #929292">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 15px; color: #929292">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15px; color: #929292">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17px; color: #858585">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15px; color: #929292">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 24px; color: #555">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15px; color: #929292">leetcode</a> <a href="/tags/linux/" style="font-size: 16px; color: #8b8b8b">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 17px; color: #858585">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18px; color: #7e7e7e">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20px; color: #707070">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15px; color: #929292">建模</a> <a href="/tags/微积分/" style="font-size: 16px; color: #8b8b8b">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 16px; color: #8b8b8b">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16px; color: #8b8b8b">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19px; color: #777">最优化</a> <a href="/tags/机器人/" style="font-size: 15px; color: #929292">机器人</a> <a href="/tags/机器学习/" style="font-size: 23px; color: #5c5c5c">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18px; color: #7e7e7e">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 16px; color: #8b8b8b">程序</a> <a href="/tags/笔记/" style="font-size: 20px; color: #707070">笔记</a> <a href="/tags/算法/" style="font-size: 15px; color: #929292">算法</a> <a href="/tags/系统辨识/" style="font-size: 16px; color: #8b8b8b">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16px; color: #8b8b8b">经验</a> <a href="/tags/统计学习方法/" style="font-size: 21px; color: #696969">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22px; color: #636363">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18px; color: #7e7e7e">设计模式</a> <a href="/tags/辨识/" style="font-size: 15px; color: #929292">辨识</a> <a href="/tags/随笔/" style="font-size: 17px; color: #858585">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15px; color: #929292">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
+      <a href="/tags/AVL/" style="font-size: 14px; color: #999">AVL</a> <a href="/tags/DOE/" style="font-size: 14px; color: #999">DOE</a> <a href="/tags/MAS/" style="font-size: 14px; color: #999">MAS</a> <a href="/tags/MATLAB/" style="font-size: 15.11px; color: #919191">MATLAB</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TSA/" style="font-size: 15.11px; color: #919191">TSA</a> <a href="/tags/aufDeutsch/" style="font-size: 15.11px; color: #919191">aufDeutsch</a> <a href="/tags/c-cpp/" style="font-size: 17.33px; color: #828282">c-cpp</a> <a href="/tags/gitlab/" style="font-size: 15.11px; color: #919191">gitlab</a> <a href="/tags/inEnglish/" style="font-size: 24px; color: #555">inEnglish</a> <a href="/tags/kNN/" style="font-size: 14px; color: #999">kNN</a> <a href="/tags/k近邻/" style="font-size: 14px; color: #999">k近邻</a> <a href="/tags/leetcode/" style="font-size: 15.11px; color: #919191">leetcode</a> <a href="/tags/linux/" style="font-size: 16.22px; color: #8a8a8a">linux</a> <a href="/tags/numpy/" style="font-size: 14px; color: #999">numpy</a> <a href="/tags/paper/" style="font-size: 14px; color: #999">paper</a> <a href="/tags/python/" style="font-size: 17.33px; color: #828282">python</a> <a href="/tags/redis/" style="font-size: 14px; color: #999">redis</a> <a href="/tags/research/" style="font-size: 14px; color: #999">research</a> <a href="/tags/web/" style="font-size: 14px; color: #999">web</a> <a href="/tags/人机交互/" style="font-size: 14px; color: #999">人机交互</a> <a href="/tags/内功/" style="font-size: 18.44px; color: #7b7b7b">内功</a> <a href="/tags/动态系统/" style="font-size: 14px; color: #999">动态系统</a> <a href="/tags/备查手册/" style="font-size: 20.67px; color: #6c6c6c">备查手册</a> <a href="/tags/多智能体/" style="font-size: 14px; color: #999">多智能体</a> <a href="/tags/学习/" style="font-size: 14px; color: #999">学习</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/建模/" style="font-size: 15.11px; color: #919191">建模</a> <a href="/tags/微积分/" style="font-size: 16.22px; color: #8a8a8a">微积分</a> <a href="/tags/控制/" style="font-size: 24px; color: #555">控制</a> <a href="/tags/数据分析/" style="font-size: 16.22px; color: #8a8a8a">数据分析</a> <a href="/tags/数据结构与算法/" style="font-size: 16.22px; color: #8a8a8a">数据结构与算法</a> <a href="/tags/新能源/" style="font-size: 14px; color: #999">新能源</a> <a href="/tags/最优化/" style="font-size: 19.56px; color: #737373">最优化</a> <a href="/tags/机器人/" style="font-size: 15.11px; color: #919191">机器人</a> <a href="/tags/机器学习/" style="font-size: 24px; color: #555">机器学习</a> <a href="/tags/树/" style="font-size: 14px; color: #999">树</a> <a href="/tags/树莓派/" style="font-size: 18.44px; color: #7b7b7b">树莓派</a> <a href="/tags/核能/" style="font-size: 14px; color: #999">核能</a> <a href="/tags/生活/" style="font-size: 14px; color: #999">生活 </a> <a href="/tags/程序/" style="font-size: 16.22px; color: #8a8a8a">程序</a> <a href="/tags/笔记/" style="font-size: 20.67px; color: #6c6c6c">笔记</a> <a href="/tags/算法/" style="font-size: 15.11px; color: #919191">算法</a> <a href="/tags/系统辨识/" style="font-size: 16.22px; color: #8a8a8a">系统辨识</a> <a href="/tags/线性代数/" style="font-size: 14px; color: #999">线性代数</a> <a href="/tags/经验/" style="font-size: 16.22px; color: #8a8a8a">经验</a> <a href="/tags/统计学习方法/" style="font-size: 21.78px; color: #646464">统计学习方法</a> <a href="/tags/编程/" style="font-size: 22.89px; color: #5d5d5d">编程</a> <a href="/tags/计算机视觉/" style="font-size: 14px; color: #999">计算机视觉</a> <a href="/tags/设计模式/" style="font-size: 18.44px; color: #7b7b7b">设计模式</a> <a href="/tags/辨识/" style="font-size: 15.11px; color: #919191">辨识</a> <a href="/tags/随笔/" style="font-size: 17.33px; color: #828282">随笔</a> <a href="/tags/随笔/" style="font-size: 14px; color: #999">随笔 </a> <a href="/tags/集体智慧/" style="font-size: 15.11px; color: #919191">集体智慧</a> <a href="/tags/非线性系统/" style="font-size: 14px; color: #999">非线性系统</a>
     </div>
   </section>
 
@@ -826,7 +944,7 @@ P ( O | \lambda ) = \sum _ { i = 1 } ^ { N } \sum _ { j = 1 } ^ { N } \alpha _ {
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\4723d1ed\" title="统计学习方法-Ch9 EM算法及推广" rel="bookmark">统计学习方法-Ch9 EM算法及推广</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\94cff455\" title="统计学习方法-Ch11 条件随机场" rel="bookmark">统计学习方法-Ch11 条件随机场</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
     </div>
   </section>
 
