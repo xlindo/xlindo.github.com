@@ -336,8 +336,43 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 <p>输出：观测序列$O = (o_1,o_2,\cdots,o_T)$.</p>
 <p>（1）按照初始状态分布$\pi$产生状态$i_1$</p>
 <p>（2）令$t＝1$</p>
-<p>（3）按照状态$i_t$的观测概率分布bi</p>
-<p>（4）按照状态it的状态转移概率分布{ }产生状态it+1 ，it+1 ＝1,2,…,N<br>（5）令t＝t+1；如果t&lt;T，转步（3）；否则，终止</p>
+<p>（3）按照状态$i_t$的观测概率分布$b_{i_t}(k)$生成$o_t$</p>
+<p>（4）按照状态$i_t$的状态转移概率分布$\lbrace a_{i_t,i_{t+1}}\rbrace$产生状态$i_{t+1}$，$i_{t+1} ＝1,2,\cdots,N$<br>（5）令$t＝t+1$；如果$t&lt;T$，转步（3）；否则，终止</p>
+<hr>
+<h3 id="10-1-3-隐马尔可夫模型的3个基本问题"><a href="#10-1-3-隐马尔可夫模型的3个基本问题" class="headerlink" title="10.1.3 隐马尔可夫模型的3个基本问题"></a>10.1.3 隐马尔可夫模型的3个基本问题</h3><p>隐马尔可夫模型有3个基本问题：</p>
+<ol>
+<li><p>概率计算问题。给定模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda )$。</p>
+</li>
+<li><p>学习问题。已知观测序列$O = (o_1,o_2,\cdots,o_T)$，估计模型$\lambda = (A,B,\pi)$参数，使得在该模型下观测序列概率$P(O|\lambda )$最大。即用极大似然估计的方法估计参数。</p>
+</li>
+<li><p>预测问题，也称为解码（decoding）问题。已知模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，求对给定观测序列条件概率$P(I|O)$最大的状态序列$I = (i_1,i_2,\cdots,i_T)$. 即给定观测序列，求最有可能的对应的状态序列。</p>
+</li>
+</ol>
+<h2 id="10-2-概率计算算法"><a href="#10-2-概率计算算法" class="headerlink" title="10.2 概率计算算法"></a>10.2 概率计算算法</h2><p>本节介绍计算观测序列概率$P(O|\lambda )$的前向（forward）与后向（backward）算法。先介绍<strong>概念上可行但计算上不可行的直接计算法</strong>。</p>
+<h3 id="10-2-1-直接计算法"><a href="#10-2-1-直接计算法" class="headerlink" title="10.2.1 直接计算法"></a>10.2.1 直接计算法</h3><p>给定模型$\lambda = (A,B,\pi)$ 和观测序列$O = (o_1,o_2,\cdots,o_T)$，计算在模型$\lambda$下观测序列$O$出现的概率$P(O|\lambda )$。</p>
+<p>最直接的方法是按概率公式直接计算。通过列举所有可能的长度为T的状态序列$I = (i_1,i_2,\cdots,i_T)$，求各个状态序列I与观测序列$O = (o_1,o_2,\cdots,o_T)$的联合概率$P(O,I|\lambda )$，然后对所有可能的状态序列求和，得到$P(O|\lambda )$.</p>
+<p>计算量很大，是$O(TN^T)$阶的，这种算法不可行。</p>
+<h3 id="10-2-2-前向算法"><a href="#10-2-2-前向算法" class="headerlink" title="10.2.2 前向算法"></a>10.2.2 前向算法</h3><hr>
+<p><strong>定义10.2（前向概率）</strong> </p>
+<p>给定隐马尔可夫模型$\lambda$，定义到时刻$t$部分观测序列为$o_1,o_2,\cdots,o_t$且状态为$q_i$的概率为前向概率，记作</p>
+<script type="math/tex; mode=display">
+\alpha _ { t } ( i ) = P ( o _ { 1 } , o _ { 2 } , \cdots , o _ { t } , i _ { t } = q _ { i } | \lambda )</script><hr>
+<p>可以递推地求得前向概率$\alpha _ { t } ( i )$及观测序列概率$P(O|\lambda )$.</p>
+<hr>
+<p><strong>算法10.2（观测序列概率的前向算法）</strong></p>
+<p><strong>输入</strong>：隐马尔可夫模型$\lambda$，观测序列$O$； </p>
+<p><strong>输出</strong>：观测序列概率$P(O|\lambda )$.</p>
+<p>（1）初值</p>
+<script type="math/tex; mode=display">
+\alpha _ { 1 } ( i ) =\pi_i b_i(o_1),\quad i = 1,2 , \cdots , N</script><p>（2）递推 对$t = 1,2 , \cdots , T-1$</p>
+<script type="math/tex; mode=display">
+\alpha _ { t + 1 } ( i ) = \Big[ \sum _ { j = 1 } ^ { N } \alpha _ { t } ( j ) a _ { j i } \Big] b _ { i } ( o _ { t + 1 } ),\quad i = 1,2 , \cdots , N</script><p>（3）终止</p>
+<script type="math/tex; mode=display">
+P(O|\lambda )=\sum _ { i = 1 } ^ { N }\alpha _ { T } ( i )</script><hr>
+<p>前向算法，步骤（1）<strong>初始化</strong>前向概率，是初始时刻的状态$i_1=q_i$和观测$o_1$的联合概率。步骤（2）是前向概率的递推公式，计算到时刻$t+1$部分观测序列为$o_1,o_2,\cdots,o_{t+1}$且在时刻$t+1$处于状态$q_i$的前向概率，如图10.1所示。（2）即对所有可能的$N$个状态$q_j$求和，其与$b _ { i } ( o _ { t + 1 } )$的乘积恰好是前向概率。</p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804102237.png" alt="10.1"></p>
+<p>如图10.2所示，前向算法实际是基于“状态序列的路径结构”递推计算$P(O|\lambda )$的算法。前向算法高效的关键是其<strong>局部计算前向概率，然后利用路径结构将前向概率“递推”到全局</strong>，得到$P(O|\lambda )$. </p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190804103239.png" alt="10.2"></p>
 
         </div>
         
@@ -349,7 +384,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T09:16:15+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T10:33:15+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Aug 4, 2019</p>
@@ -626,7 +661,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-2-观测序列的生成过程"><span class="toc-text">10.1.2 观测序列的生成过程</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10-隐马尔可夫模型"><span class="toc-text">10 隐马尔可夫模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-隐马尔可夫模型的基本概念"><span class="toc-text">10.1 隐马尔可夫模型的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-1-隐马尔可夫模型的定义"><span class="toc-text">10.1.1 隐马尔可夫模型的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-2-观测序列的生成过程"><span class="toc-text">10.1.2 观测序列的生成过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-3-隐马尔可夫模型的3个基本问题"><span class="toc-text">10.1.3 隐马尔可夫模型的3个基本问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-概率计算算法"><span class="toc-text">10.2 概率计算算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-1-直接计算法"><span class="toc-text">10.2.1 直接计算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-2-前向算法"><span class="toc-text">10.2.2 前向算法</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -724,7 +759,7 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bf88569f\" title="统计学习方法-Ch6 Logistic回归与最大熵模型" rel="bookmark">统计学习方法-Ch6 Logistic回归与最大熵模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\860bfa84\" title="统计学习方法-Ch7 SVM" rel="bookmark">统计学习方法-Ch7 SVM</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1018,7 +1053,22 @@ P ( o _ { t } | i _ { T } , o _ { T } , i _ { T - 1 } , o _ { T - 1 } , \cdots ,
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
