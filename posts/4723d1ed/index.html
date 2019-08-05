@@ -406,8 +406,8 @@ Q(\theta,\theta ^ { ( i ) }) & =  E [ \operatorname { log } P ( y , \gamma | \th
 <hr>
 <h2 id="9-4-mathrm-EM-算法的推广"><a href="#9-4-mathrm-EM-算法的推广" class="headerlink" title="9.4 $\mathrm{EM}$算法的推广"></a>9.4 $\mathrm{EM}$算法的推广</h2><p>EM算法还可以解释为F函数(F function)的极大-极大算法(maximization maximization algorithm)，基于这个解释有若干变形与推广，如广义期望极大(generalized expectation maximization，GEM)算法。下面予以介绍。</p>
 <h3 id="9-4-1-mathrm-F-函数的极大-极大算法"><a href="#9-4-1-mathrm-F-函数的极大-极大算法" class="headerlink" title="9.4.1 $\mathrm{F}$函数的极大-极大算法"></a>9.4.1 $\mathrm{F}$函数的极大-极大算法</h3><h4 id="TODO"><a href="#TODO" class="headerlink" title="#TODO"></a>#TODO</h4><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803215947.png" alt></p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1564862408068.png" alt="1564862408068"></p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1564862418202.png" alt="1564862418202"></p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190805105443.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190805105523.png" alt>)</p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803220030.png" alt></p>
 <p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190803220048.png" alt></p>
 <h3 id="9-4-2-mathrm-GEM-算法"><a href="#9-4-2-mathrm-GEM-算法" class="headerlink" title="9.4.2 $\mathrm{GEM}$算法"></a>9.4.2 $\mathrm{GEM}$算法</h3><h4 id="TODO-1"><a href="#TODO-1" class="headerlink" title="#TODO"></a>#TODO</h4><h2 id="9-5-本章概要"><a href="#9-5-本章概要" class="headerlink" title="9.5 本章概要"></a>9.5 本章概要</h2><p>(1) $\mathrm{EM}$算法是含有隐变量的概率模型极大似然估计或极大后验概率估计的迭代算法。含有隐变量的概率模型的数据表示为$P(Y,Z|\theta)$.这里，$Y$是观测变量的数据，$Z$是隐变量的数据，$\theta$是模型参数。$\mathrm{EM}$算法通过迭代求解观测数据的对数似然函数$L ( \theta)= \log P ( Y| \theta ) $的极大化，实现极大似然估计。每次迭代包括两步：E步，求期望，即求$P(Y,Z|\theta)$关于$P(Z|Y,\theta ^ { ( i ) )}$的期望：</p>
@@ -430,10 +430,10 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-04T16:48:37+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-05T11:06:00+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 4, 2019</p>
+    <p>last updated at Aug 5, 2019</p>
   </a>
 </div>
 
@@ -824,7 +824,7 @@ P ( Y | \theta ^ { ( i + 1 ) } ) \geqslant P ( Y | \theta ^ { ( i ) } )</script>
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\94cff455\" title="统计学习方法-Ch11 条件随机场" rel="bookmark">统计学习方法-Ch11 条件随机场</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c1862ad3\" title="统计学习方法-Ch12 统计学习方法总结" rel="bookmark">统计学习方法-Ch12 统计学习方法总结</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\576d889a\" title="统计学习方法-Ch4 朴素贝叶斯" rel="bookmark">统计学习方法-Ch4 朴素贝叶斯</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\5dc92bff\" title="DL-book 3 Probability and Information Theory" rel="bookmark">DL-book 3 Probability and Information Theory</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c1862ad3\" title="统计学习方法-Ch12 统计学习方法总结" rel="bookmark">统计学习方法-Ch12 统计学习方法总结</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a59bd45b\" title="统计学习方法-Ch3 k近邻" rel="bookmark">统计学习方法-Ch3 k近邻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\10b80194\" title="统计学习方法-Ch1 概论" rel="bookmark">统计学习方法-Ch1 概论</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\836ddfd5\" title="统计学习方法-Ch2 感知机" rel="bookmark">统计学习方法-Ch2 感知机</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\94cff455\" title="统计学习方法-Ch11 条件随机场" rel="bookmark">统计学习方法-Ch11 条件随机场</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\e9b76bf4\" title="统计学习方法-Ch10 隐马尔可夫模型" rel="bookmark">统计学习方法-Ch10 隐马尔可夫模型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ca2d15a0\" title="统计学习方法-Ch5 决策树" rel="bookmark">统计学习方法-Ch5 决策树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f43c3bdb\" title="统计学习方法-Ch8 提升方法" rel="bookmark">统计学习方法-Ch8 提升方法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li></ul>
     </div>
   </section>
 
