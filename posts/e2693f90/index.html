@@ -305,7 +305,51 @@ s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
 \begin{aligned} \min _{\boldsymbol{x}} \max _{\boldsymbol{\alpha}, \boldsymbol{\beta}} \mathcal{L}(\boldsymbol{x}, \boldsymbol{\alpha}, \boldsymbol{\beta}) = & \min _{\boldsymbol{x}}\left(f(\boldsymbol{x})+\max _{\boldsymbol{\alpha}, \boldsymbol{\beta}}\left(\sum_{i=1}^{m} \alpha_{i} g_{i}(\boldsymbol{x})+\sum_{j=1}^{n} \beta_{j} h_{j}(\boldsymbol{x})\right)\right) \\[1ex]
  = & \min_{\boldsymbol{x}}\left(f(\boldsymbol{x})+\left\{\begin{array}{l}{0}\,, &  \boldsymbol{x} \, \text{meet constraints} \\ {\infty}\,, &  \text{otherwise}\end{array}\right.\right) \\[1ex]
  = & \min_{\boldsymbol{x}} f(\boldsymbol{x}), \;\;\boldsymbol{x} \, \text{meet constraints}
-\end{aligned}</script>
+\end{aligned}</script><h2 id="Softmax-vs-Sigmoid"><a href="#Softmax-vs-Sigmoid" class="headerlink" title="Softmax vs Sigmoid"></a>Softmax vs Sigmoid</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Softmax</th>
+<th style="text-align:center">Sigmoid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">formular</td>
+<td style="text-align:center">$\sigma (\mathbf {z} )_{j}={\frac {e^{z_{j}}}{\sum _{k=1}^{K}e^{z_{k}}}}$</td>
+<td style="text-align:center">$S(x)={\frac {1}{1+e^{-x}}}$</td>
+</tr>
+<tr>
+<td style="text-align:center">Essential</td>
+<td style="text-align:center">离散概率分布</td>
+<td style="text-align:center">非线性映射</td>
+</tr>
+<tr>
+<td style="text-align:center">Task</td>
+<td style="text-align:center">多分类</td>
+<td style="text-align:center">二分类</td>
+</tr>
+<tr>
+<td style="text-align:center">定义域</td>
+<td style="text-align:center">某个一维向量</td>
+<td style="text-align:center">单个数值</td>
+</tr>
+<tr>
+<td style="text-align:center">值域</td>
+<td style="text-align:center">[0,1]</td>
+<td style="text-align:center">(0,1)</td>
+</tr>
+<tr>
+<td style="text-align:center">结果之和</td>
+<td style="text-align:center">一定为 1</td>
+<td style="text-align:center">为某个正数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Sigmoid is a special case (2 categories) of Softmax.</p>
+
         </div>
         
           
@@ -316,10 +360,10 @@ s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-01T20:04:23+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-07T20:50:24+02:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Aug 1, 2019</p>
+    <p>last updated at Aug 7, 2019</p>
   </a>
 </div>
 
@@ -430,7 +474,7 @@ s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/建模/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>建模</a> <a class="tag" href="/tags/辨识/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>辨识</a> <a class="tag" href="/tags/动态系统/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>动态系统</a>
+                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/建模/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>建模</a> <a class="tag" href="/tags/动态系统/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>动态系统</a> <a class="tag" href="/tags/辨识/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>辨识</a>
                                 </h6>
                             
                         </span>
@@ -612,7 +656,7 @@ s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
 </header>
 
     <div class='content dark'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Effects-of-Poles-and-Zeros"><span class="toc-text">Effects of Poles and Zeros</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QR-decomposition"><span class="toc-text">QR decomposition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autocovariance"><span class="toc-text">Autocovariance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trace-of-a-matrix-and-eigenvalues"><span class="toc-text">Trace of a matrix and eigenvalues</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lagrange-function"><span class="toc-text">Lagrange function</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Effects-of-Poles-and-Zeros"><span class="toc-text">Effects of Poles and Zeros</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QR-decomposition"><span class="toc-text">QR decomposition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Autocovariance"><span class="toc-text">Autocovariance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trace-of-a-matrix-and-eigenvalues"><span class="toc-text">Trace of a matrix and eigenvalues</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lagrange-function"><span class="toc-text">Lagrange function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Softmax-vs-Sigmoid"><span class="toc-text">Softmax vs Sigmoid</span></a></li></ol>
     </div>
   </section>
 
@@ -710,7 +754,7 @@ s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d0a3516b\" title="ML - Andrew Ng - Machine Learning #notes" rel="bookmark">ML - Andrew Ng - Machine Learning #notes</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c0aebc2\" title="Math - Fisher Information" rel="bookmark">Math - Fisher Information</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1276bcb3\" title="DL-book 1 Introduction" rel="bookmark">DL-book 1 Introduction</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\82c92d21\" title="DL-book 5 Machine Learning Basics" rel="bookmark">DL-book 5 Machine Learning Basics</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\59bc05b2\" title="SysId - System Identification #draft" rel="bookmark">SysId - System Identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\affea27a\" title="TSA-Analysis of the serial correlation" rel="bookmark">TSA-Analysis of the serial correlation</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d662707\" title="Modeling - Dynamic system modeling intro" rel="bookmark">Modeling - Dynamic system modeling intro</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\55c9fa91\" title="SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt" rel="bookmark">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\70ce389f\" title="SysId - Unit step response in system identification #draft" rel="bookmark">SysId - Unit step response in system identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\12e09ac1\" title="SysId - Input signals in system identification" rel="bookmark">SysId - Input signals in system identification</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\affea27a\" title="TSA-Analysis of the serial correlation" rel="bookmark">TSA-Analysis of the serial correlation</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\28331d12\" title="DL-book 4 Numerical Computation " rel="bookmark">DL-book 4 Numerical Computation </a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\6845b935\" title="DL-book 2 Linear Algebra" rel="bookmark">DL-book 2 Linear Algebra</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c0aebc2\" title="Math - Fisher Information" rel="bookmark">Math - Fisher Information</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\59bc05b2\" title="SysId - System Identification #draft" rel="bookmark">SysId - System Identification #draft</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7e7ea6c7\" title="TSA - Time Series Analysis in System Identification" rel="bookmark">TSA - Time Series Analysis in System Identification</a></h3></div></li></ul>
     </div>
   </section>
 
