@@ -749,9 +749,9 @@
             
             <tag> aufDeutsch </tag>
             
-            <tag> 机器人 </tag>
-            
             <tag> 人机交互 </tag>
+            
+            <tag> 机器人 </tag>
             
         </tags>
       
@@ -894,9 +894,9 @@
             
             <tag> inEnglish </tag>
             
-            <tag> 控制 </tag>
-            
             <tag> 系统辨识 </tag>
+            
+            <tag> 控制 </tag>
             
         </tags>
       
@@ -1062,13 +1062,13 @@
             
             <tag> inEnglish </tag>
             
-            <tag> 控制 </tag>
-            
             <tag> 笔记 </tag>
             
             <tag> 系统辨识 </tag>
             
             <tag> 建模 </tag>
+            
+            <tag> 控制 </tag>
             
         </tags>
       
@@ -2343,9 +2343,9 @@
             
             <tag> inEnglish </tag>
             
-            <tag> 数据分析 </tag>
-            
             <tag> 系统辨识 </tag>
+            
+            <tag> 数据分析 </tag>
             
             <tag> TSA </tag>
             
