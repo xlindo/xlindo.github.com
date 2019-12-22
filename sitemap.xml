@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xlindo.com/about/index.html</loc>
+    
+    <lastmod>2019-12-22T23:00:27.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xlindo.com/posts/d99b2e93/</loc>
     
     <lastmod>2019-08-23T14:06:39.246Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://xlindo.com/posts/2d4d0a06/</loc>
     
     <lastmod>2019-08-13T14:24:39.693Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xlindo.com/about/index.html</loc>
-    
-    <lastmod>2019-08-10T08:46:44.424Z</lastmod>
     
   </url>
   
