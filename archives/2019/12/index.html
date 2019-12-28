@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: 计算机视觉 | Xlindo is here!</title>
+  <title>Archives: 2019/12 | Xlindo is here!</title>
   
   
 
@@ -171,11 +171,9 @@
 
   <div class="l_body nocover">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
-  
-    
-      
+      <div class='l_main'>
+	
+		
   <section class="post-list">
     
       
@@ -199,8 +197,8 @@
       
         
   <h2 class="title">
-    <a href="/posts/ce270a1a/">
-      Robotics - Robotvision Kurs
+    <a href="/posts/bbc9cd78/">
+      Python-ipdb速查表-Spyder调试
     </a>
   </h2>
 
@@ -228,7 +226,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-10</p>
+    <p>2019-12-28</p>
   </a>
 </div>
 
@@ -238,9 +236,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/机器人/' rel="nofollow">
+    <a href='/categories/编程之路/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>机器人</p>
+      <p>编程之路</p>
     </a>
   </div>
 
@@ -267,10 +265,10 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      Auf Deutsch verfasst. Die Verzeichnisstruktur des Kurses Robotvision.
+      使用*Spyder*时，默认的调试方式是使用`ipdb`，`ipdb`是`pdb`的增强版，提供了补全、语法高亮等补充内容。这里列出了使用其进行调试的常用参数表。
       
         <div class="readmore">
-          <a href="/posts/ce270a1a/" class="flat-box">
+          <a href="/posts/bbc9cd78/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             Read More
           </a>
@@ -280,13 +278,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/笔记/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>笔记</a>
+          <a href="/tags/编程/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>编程</a>
         
-          <a href="/tags/aufDeutsch/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>aufDeutsch</a>
-        
-          <a href="/tags/机器人/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>机器人</a>
-        
-          <a href="/tags/计算机视觉/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>计算机视觉</a>
+          <a href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Python</a>
         
       </div>
     
@@ -345,8 +339,7 @@
   
 
 
-    
-  
+	
 </div>
 <aside class='l_side'>
   
@@ -597,6 +590,52 @@
   })();
   </script>
   
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
+	    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	
+
 
       <script>setLoadingBarProgress(60);</script>
     </div>

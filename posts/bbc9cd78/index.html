@@ -4,8 +4,10 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: 计算机视觉 | Xlindo is here!</title>
+  <title>Python-ipdb速查表-Spyder调试 | Xlindo is here!</title>
   
+  
+  <meta name="description" content="使用*Spyder*时，默认的调试方式是使用`ipdb`，`ipdb`是`pdb`的增强版，提供了补全、语法高亮等补充内容。这里列出了使用其进行调试的常用参数表。">
   
 
   
@@ -171,25 +173,12 @@
 
   <div class="l_body nocover">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -198,11 +187,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/posts/ce270a1a/">
-      Robotics - Robotvision Kurs
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/posts/bbc9cd78/">
+        Python-ipdb速查表-Spyder调试
+      </a>
+    </h1>
+  
 
 
       
@@ -228,7 +219,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-10</p>
+    <p>2019-12-28</p>
   </a>
 </div>
 
@@ -238,9 +229,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/机器人/' rel="nofollow">
+    <a href='/categories/编程之路/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>机器人</p>
+      <p>编程之路</p>
     </a>
   </div>
 
@@ -249,6 +240,19 @@
         
           
             
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -265,45 +269,249 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      Auf Deutsch verfasst. Die Verzeichnisstruktur des Kurses Robotvision.
-      
-        <div class="readmore">
-          <a href="/posts/ce270a1a/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。</p>
+</blockquote>
+<p>使用<em>Spyder</em>时，默认的调试方式是使用<code>ipdb</code>，<code>ipdb</code>是<code>pdb</code>的增强版，提供了补全、语法高亮等补充内容。本文提供了<code>ipdb</code>的常用参数速查，并在后文中也给出了<code>pdb</code>的常用参数速查。两者大体相同。</p>
+<h2 id="1-ipdb"><a href="#1-ipdb" class="headerlink" title="1 ipdb"></a>1 <code>ipdb</code></h2><blockquote>
+<p>参考：<a href="http://wulc.me/2018/12/21/ipdb%20%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/" target="_blank" rel="noopener">http://wulc.me/2018/12/21/ipdb%20%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</a></p>
+</blockquote>
+<h3 id="1-1-使用"><a href="#1-1-使用" class="headerlink" title="1.1 使用"></a>1.1 使用</h3><ul>
+<li>在程序内使用<code>ipdb</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ipdb</span><br><span class="line"></span><br><span class="line">ipdb.set_trace()</span><br></pre></td></tr></table></figure>
+<p>但这种方式会破坏原有代码。   </p>
+<ul>
+<li>在代码外部使用<code>ipdb</code>。<ul>
+<li><strong>注意</strong>，由于本文目的是使用<code>Spyder</code>下的<code>ipdb</code>，如果不想单独安装<code>ipdb</code>，可以通过自带的<code>pdb</code>完成下述命令测试。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -<span class="keyword">m</span> ipdb &lt;<span class="keyword">file</span>.<span class="keyword">py</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-常用命令"><a href="#1-2-常用命令" class="headerlink" title="1.2 常用命令"></a>1.2 常用命令</h3><ul>
+<li><code>&lt;ENTER&gt;</code> <ul>
+<li>重复上次命令    </li>
+</ul>
+</li>
+<li><code>p(rint)</code> <ul>
+<li>打印某个变量  </li>
+</ul>
+</li>
+<li><code>c(ontinue)</code> <ul>
+<li>继续</li>
+</ul>
+</li>
+<li><code>b(reak)</code> <ul>
+<li>打断点   </li>
+</ul>
+</li>
+<li><code>cl(ear)</code> <ul>
+<li>清除断点</li>
+</ul>
+</li>
+<li><code>n(ext)</code> <ul>
+<li>让程序运行下一行，如果当前语句有一个函数调用，不会进入被调用的函数体中      </li>
+</ul>
+</li>
+<li><code>s(tep)</code> <ul>
+<li>跟 <code>n</code> 相似，但是如果当前有一个函数调用，那么 <code>s</code> 会进入被调用的函数体中 </li>
+</ul>
+</li>
+<li><code>l(ist)</code> <ul>
+<li>显示当前行的上下文 </li>
+</ul>
+</li>
+<li><code>r(eturn)</code> <ul>
+<li>运行直到子程序结束   </li>
+</ul>
+</li>
+<li><code>!&lt;python 命令&gt;</code>   </li>
+<li><code>h(elp)</code> <ul>
+<li>帮助   </li>
+</ul>
+</li>
+<li><code>a(rgs)</code> <ul>
+<li>打印当前函数的参数   </li>
+</ul>
+</li>
+<li><code>j(ump)</code> <ul>
+<li>让程序跳转到指定的行数   </li>
+</ul>
+</li>
+<li><code>l(ist)</code> <ul>
+<li>可以列出当前将要运行的代码块    </li>
+</ul>
+</li>
+<li><code>q(uit)</code> <ul>
+<li>退出调试    </li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-调试中的帮助"><a href="#1-3-调试中的帮助" class="headerlink" title="1.3 调试中的帮助"></a>1.3 调试中的帮助</h3><p>调试时，使用 <code>h</code> ，可以查看所有命令。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ipdb&gt; h</span><br><span class="line"></span><br><span class="line">Documented commands (<span class="built_in">type</span> <span class="keyword">help</span> <span class="symbol">&lt;topic&gt;</span>):</span><br><span class="line">========================================</span><br><span class="line">EOF    <span class="keyword">cl</span>         <span class="keyword">debug</span>    ignore    n       <span class="keyword">pp</span>       run      undisplay</span><br><span class="line"><span class="keyword">a</span>      clear      disable  interact  <span class="keyword">next</span>    psource  <span class="keyword">rv</span>       unt      </span><br><span class="line">alias  commands   <span class="keyword">display</span>  <span class="keyword">j</span>         <span class="keyword">p</span>       q        s        until    </span><br><span class="line"><span class="keyword">args</span>   <span class="built_in">complete</span>   down     jump      pdef    <span class="keyword">quit</span>     <span class="keyword">source</span>   <span class="keyword">up</span>       </span><br><span class="line"><span class="keyword">b</span>      condition  enable   <span class="keyword">l</span>         pdoc    r        step     <span class="keyword">w</span>        </span><br><span class="line"><span class="keyword">break</span>  cont       <span class="keyword">exit</span>     <span class="keyword">list</span>      pfile   restart  tbreak   whatis   </span><br><span class="line">bt     <span class="keyword">continue</span>   h        <span class="keyword">ll</span>        pinfo   <span class="keyword">return</span>   <span class="keyword">u</span>        where    </span><br><span class="line"><span class="keyword">c</span>      d          <span class="keyword">help</span>     longlist  pinfo2  retval   unalias</span><br><span class="line"></span><br><span class="line">Miscellaneous <span class="keyword">help</span> topic<span class="variable">s:</span></span><br><span class="line">==========================</span><br><span class="line">exec  pdb</span><br></pre></td></tr></table></figure>
+<p>使用 <code>h &lt;cmd&gt;</code> 可以查看具体命令的使用。<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipdb&gt; h p</span><br><span class="line">p expression</span><br><span class="line">        Print <span class="keyword">the</span> <span class="built_in">value</span> <span class="keyword">of</span> <span class="keyword">the</span> expression.</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-pdb"><a href="#2-pdb" class="headerlink" title="2 pdb"></a>2 <code>pdb</code></h2><blockquote>
+<p><code>pdb</code>的命令集：<a href="https://docs.python.org/3/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/3/library/pdb.html</a><br>出处：<a href="https://github.com/nblock/pdb-cheatsheet" target="_blank" rel="noopener">https://github.com/nblock/pdb-cheatsheet</a></p>
+</blockquote>
+<h3 id="2-1-Getting-started"><a href="#2-1-Getting-started" class="headerlink" title="2.1 Getting started"></a>2.1 Getting started</h3><p>start <code>pdb</code> from within a script:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pdb</span><br><span class="line"></span><br><span class="line">pdb.set_trace()</span><br></pre></td></tr></table></figure>
+<p>start <code>pdb</code> from the commandline:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> -<span class="keyword">m</span> pdb &lt;<span class="keyword">file</span>.<span class="keyword">py</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Basics"><a href="#2-2-Basics" class="headerlink" title="2.2 Basics"></a>2.2 Basics</h3><p><code>h(elp)</code> print available commands<br><code>h(elp)</code> command print help about command<br><code>q(quit)</code> quit debugger   </p>
+<h3 id="2-3-Examine"><a href="#2-3-Examine" class="headerlink" title="2.3 Examine"></a>2.3 Examine</h3><p><code>p(rint)</code> expr print the value of expr<br><code>pp expr</code> pretty-print the value of expr<br><code>w(here)</code> print current position (including stack trace)<br><code>l(ist)</code> list 11 lines of code around the current line<br><code>l(ist)</code> first, last list from first to last line number<br><code>a(rgs)</code> print the args of the current function   </p>
+<h3 id="2-4-Movement"><a href="#2-4-Movement" class="headerlink" title="2.4 Movement"></a>2.4 Movement</h3><p><code>&lt;ENTER&gt;</code> repeat the last command<br><code>n(ext)</code> execute the current statement (step over)<br><code>s(tep)</code> execute and step into function<br><code>r(eturn)</code> continue execution until the current function returns<br><code>c(ontinue)</code> continue execution until a breakpoint is encountered<br><code>u(p)</code> move one level up in the stack trace<br><code>d(own)</code> move one level down in the stack trace   </p>
+<h3 id="2-5-Breakpoints"><a href="#2-5-Breakpoints" class="headerlink" title="2.5 Breakpoints"></a>2.5 Breakpoints</h3><p><code>b(reak)</code> show all breakpoints<br><code>b(reak)</code> lineno set a breakpoint at lineno<br><code>b(reak)</code> func set a breakpoint at the first line of a func    </p>
+<h3 id="2-6-Manipulation"><a href="#2-6-Manipulation" class="headerlink" title="2.6 Manipulation"></a>2.6 Manipulation</h3><p><code>!stmt</code> treat stmt as a Python statement instead of a pdb command</p>
+
         </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-28T12:26:51+01:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Dec 28, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/编程/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>编程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Python</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3ay27DMAxE0fz/T7vbAo6UmaETQOTVqkj90PGCoEi+XvK6buv/7/vr90+4P2f1zAcWDBgwjmVc27V6zWoryr3ue/fXwIABYw5jFcFW1+jUepje7w0GDBgwFIYbZCvvhQEDBoz94/TtZinjjwIuDBgwjmXoh8l9vatSpMsOujBgwJjA0Kvuv//7K/0NGDBgHMW4zKWHVz311MPrclcwYMBozai0MN2hCp2nfJo3T4ABA0ZTRn2jzyZ/7kEXBgwYExhZY0AvwLnDGVkbFQYMGL0ZSqndfYFbvn+g6A8DBowxDPdgmY1lZIdbo2oIAwaMdgy3WJ8NWLjDE8r1YQiGAQPGgQy9uZgV7vWDcdZCeFM1hAEDRmuG/lA9sLrJoh7ul/VCGDBgNGXUh8Cy1qNypXQvDBgwWjPcbWX/1RPQMODCgAGjNcNQuhMccpuhHpphwIAxgaG0JJVU0j2mhsnffecwYMBozajErkoq6Zbz7FYEDBgw2jGUrdRHNHS225CAAQPGHIYb7LKGZVZWk5oQMGDAGMBw07isbVlPN+36HAwYMFow9OOlUg7Lim76Rj/wYMCA0Y5xmcs9oFYipBF2YcCA0ZpRH31wU0m9oKY3U2HAgDGBkY1NGFmnMI7mfjKp3AYDBox2DCXwZVtU7n3gLA4DBgwYUQj+xljYh3ohDBgwYJgh2E0lS8U1GDBgDGC4h1h9LEwv+uuf6bFyGwwYMA5hZEE5K/ErYxb67zBgwBjA+APP+zzi6pkwZQAAAABJRU5ErkJggg=='>
+        
+          <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png">
+        
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xlindo.com/posts/bbc9cd78/&title=Python-ipdb速查表-Spyder调试 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xlindo.com/posts/bbc9cd78/&title=Python-ipdb速查表-Spyder调试 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xlindo.com/posts/bbc9cd78/&title=Python-ipdb速查表-Spyder调试 | Xlindo is here!&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/笔记/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>笔记</a>
-        
-          <a href="/tags/aufDeutsch/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>aufDeutsch</a>
-        
-          <a href="/tags/机器人/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>机器人</a>
-        
-          <a href="/tags/计算机视觉/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>计算机视觉</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
+
         
-      
-    
-  </section>
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/posts/d99b2e93/" rel="prev" title="Math- Gradient, Jacobian matrix and Hessian matrix">
+                                    
+                                        Math- Gradient, Jacobian matrix and Hessian matrix
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/inEnglish/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>inEnglish</a> <a class="tag" href="/tags/线性代数/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>线性代数</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-      <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     "HTML-CSS": {
@@ -340,13 +548,17 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-    
-
-  
 
 
-    
-  
+
+  <script>
+    window.subData = {
+      title: 'Python-ipdb速查表-Spyder调试',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -430,6 +642,20 @@
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='dark'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content dark'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ipdb"><span class="toc-text">1 ipdb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用"><span class="toc-text">1.1 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-常用命令"><span class="toc-text">1.2 常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-调试中的帮助"><span class="toc-text">1.3 调试中的帮助</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-pdb"><span class="toc-text">2 pdb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Getting-started"><span class="toc-text">2.1 Getting started</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Basics"><span class="toc-text">2.2 Basics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Examine"><span class="toc-text">2.3 Examine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Movement"><span class="toc-text">2.4 Movement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-Breakpoints"><span class="toc-text">2.5 Breakpoints</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-Manipulation"><span class="toc-text">2.6 Manipulation</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
           
         
@@ -516,6 +742,18 @@
           
           
             
+  <section class='widget related_posts'>
+    
+<header class='dark'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Related Posts</div>
+  
+</header>
+
+    <div class="content dark">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebf9ee07\" title="C-Cpp-Cpp标准库学习笔记" rel="bookmark">C-Cpp-Cpp标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\f6d74cc5\" title="C-Cpp-C标准库学习笔记" rel="bookmark">C-Cpp-C标准库学习笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\d1132df8\" title="C-Cpp-public_private_protected" rel="bookmark">C-Cpp-public_private_protected</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\2d4d0a06\" title="MATLAB-Symbolic Math Toolbox 符号计算" rel="bookmark">MATLAB-Symbolic Math Toolbox 符号计算</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7d197d0\" title="MATLAB - Design of experiments" rel="bookmark">MATLAB - Design of experiments</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1415d286\" title="C-Cpp-CPP的STL学习" rel="bookmark">C-Cpp-CPP的STL学习</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         
@@ -659,6 +897,36 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "4Ti3a12rTrLGvL4dj8dQV4Dw-gzGzoHsz",
+    appKey: "uheEEcLs7IfX3nf7kAY6kSro",
+    placeholder: "Let us talk!",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'',
+    highlight:'true'
+  })
+  </script>
 
 
 
