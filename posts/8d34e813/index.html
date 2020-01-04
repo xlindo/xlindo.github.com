@@ -378,7 +378,7 @@
 </ul>
 </li>
 <li><strong>多次匹配（情况3）：</strong> 例如<code>s = &quot;aaa&quot;, p = &quot;a*&quot;</code>，这里<code>&#39;a*&#39;</code>匹配了<code>3</code>次<code>&#39;a&#39;</code>。<ul>
-<li>前一例，只要<code>s[i] == s[i-1]</code>，那么<code>p</code>中<code>&#39;[]*&#39;</code>组合要是能匹配前一个位置的<code>s[i-1]</code>，就也能匹配当前位置的<code>s[i]</code>。所以<code>res[j][i]</code>的结果不变，<strong>即<code>res[j][i] = res[j][i-1]</code>。</strong></li>
+<li>此时，只要<code>s[i] == s[i-1]</code>，那么<code>p</code>中<code>&#39;[]*&#39;</code>组合要是能匹配前一个位置的<code>s[i-1]</code>，就也能匹配当前位置的<code>s[i]</code>。所以<code>res[j][i]</code>的结果不变，<strong>即<code>res[j][i] = res[j][i-1]</code>。</strong></li>
 </ul>
 </li>
 </ul>
@@ -485,7 +485,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-04T17:02:17+01:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-04T17:08:48+01:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Jan 4, 2020</p>
@@ -860,7 +860,7 @@
 </header>
 
     <div class="content dark">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bc97063b\" title="python-PySide2问题 Available platform plugins" rel="bookmark">python-PySide2问题 Available platform plugins</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\525d3c8f\" title="Win10下Ubuntu(WSL)中Python环境配置笔记" rel="bookmark">Win10下Ubuntu(WSL)中Python环境配置笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a67471c7\" title="网络 - TCP学习" rel="bookmark">网络 - TCP学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a7a8dc40\" title="MATLAB-加速MATLAB代码" rel="bookmark">MATLAB-加速MATLAB代码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\1415d286\" title="C-Cpp-CPP的STL学习" rel="bookmark">C-Cpp-CPP的STL学习</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\c2f51570\" title="DnA - LeetCode_1_hash" rel="bookmark">DnA - LeetCode_1_hash</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\7c76f197\" title="DnA - LeetCode Easy Collection -- Array" rel="bookmark">DnA - LeetCode Easy Collection -- Array</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\bc97063b\" title="python-PySide2问题 Available platform plugins" rel="bookmark">python-PySide2问题 Available platform plugins</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\973716ad\" title="DnA - AVL树" rel="bookmark">DnA - AVL树</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\dd36c850\" title="Python-让numpy慢的原因" rel="bookmark">Python-让numpy慢的原因</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\525d3c8f\" title="Win10下Ubuntu(WSL)中Python环境配置笔记" rel="bookmark">Win10下Ubuntu(WSL)中Python环境配置笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a67471c7\" title="网络 - TCP学习" rel="bookmark">网络 - TCP学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\a7a8dc40\" title="MATLAB-加速MATLAB代码" rel="bookmark">MATLAB-加速MATLAB代码</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\posts\ebf9ee07\" title="C-Cpp-Cpp标准库学习笔记" rel="bookmark">C-Cpp-Cpp标准库学习笔记</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1163,7 +1163,22 @@
 
 
 
-  <script>setLoadingBarProgress(100);</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script>setLoadingBarProgress(100);</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
