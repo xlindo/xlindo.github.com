@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Tag: inEnglish - Xlindo is here!</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Xlindo is here!"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Xlindo is here!"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Xlindo is here!"><meta property="og:url" content="http://xlindo.com/"><meta property="og:site_name" content="Xlindo is here!"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://xlindo.com/img/og_image.png"><meta property="article:author" content="xlindo"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://xlindo.com"},"headline":"Xlindo is here!","image":["http://xlindo.com/img/og_image.png"],"author":{"@type":"Person","name":"xlindo"},"description":null}</script><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xlindo is here!" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Xlindo is here!" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">inEnglish</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-07-05T07:38:38.000Z" title="7/5/2019, 3:38:38 PM">2019-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:50.803Z" title="7/24/2019, 1:42:50 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">a minute read (About 117 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/70ce389f/">SysId - Unit step response in system identification #draft</a></h1><div class="content"><blockquote>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<p>Unit step response, also simply known as step response, is a basic concept in control system analysis. In simple terms, the step response is easy to implement but includes all the information of the control system.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av26448770">https://www.bilibili.com/video/av26448770</a></p>
+</blockquote>
+<h2 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h2><h3 id="First-order-linear-time-invariant-system"><a href="#First-order-linear-time-invariant-system" class="headerlink" title="First-order linear time invariant system"></a>First-order linear time invariant system</h3><script type="math/tex; mode=display">\dot{x}+ax=au,</script><p>While for $t\geq 0, u=1$. Then, $\dot{x}=a(1-x)$. —&gt; Phase portrait</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-07-05T06:47:10.000Z" title="7/5/2019, 2:47:10 PM">2019-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-25T13:32:46.334Z" title="7/25/2019, 9:32:46 PM">2019-07-25</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">8 minutes read (About 1186 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/12e09ac1/">SysId - Input signals in system identification</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<p>Recently, when I implemented some algorithms in papers, the design of input signals confused me a lot. As for the common design of experiments, it is not that complicated as in Ljung’s book. So I decided to do a easy but systematical study mainly for practice.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://jitkomut.eng.chula.ac.th/ee531/signal.pdf">pdf1</a><br><a target="_blank" rel="noopener" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-435-system-identification-spring-2005/lecture-notes/lec4_6_435.pdf">pdf2</a><br><a target="_blank" rel="noopener" href="https://www.it.uu.se/edu/course/homepage/systemid/vt10/SYSID10_c03.pdf">pdf3</a></p>
+</blockquote>
+<h1 id="Preliminary"><a href="#Preliminary" class="headerlink" title="Preliminary"></a>Preliminary</h1><p>This blog is based on the slide mentioned above. This words below in “<strong>Bold</strong>“ is what I concern more. Of course I will also do some additions and deletions and my understandings.</p>
+<h1 id="0-Main-concepts"><a href="#0-Main-concepts" class="headerlink" title="0 Main concepts"></a>0 Main concepts</h1><ul>
+<li>Common input signals $u(t)$ in system identification <ul>
+<li>step function</li>
+<li><strong>sum of sinusoids</strong></li>
+<li>ARMA sequences</li>
+<li>pseudo random binary sequence (PRBS)</li>
+</ul>
+</li>
+<li>spectral characteristics</li>
+<li><strong>persistent excitation</strong></li>
+</ul>
+<h1 id="1-Common-input-signals"><a href="#1-Common-input-signals" class="headerlink" title="1 Common input signals"></a>1 Common input signals</h1><p>Most often the input signal is characterized by its first and second moments:</p>
+<script type="math/tex; mode=display">\left\{\begin{array}{l}{m=E[u(t)]} \\ {r(\tau)=E\left[(u(t)-m)(u(t)-m)^{T}\right]}\end{array}\right.</script><p>and/or its spectral density:</p>
+<script type="math/tex; mode=display">\phi(\omega)=\frac{1}{2 \pi} \sum_{\tau=-\infty}^{\infty} r(\tau) e^{-i \tau \omega}</script><h2 id="1-1-Step-function"><a href="#1-1-Step-function" class="headerlink" title="1.1 Step function"></a>1.1 Step function</h2><blockquote>
+<p>why step signal? (todo in <a href="http://xlindo.com/posts/70ce389f/">Unit step response in system identification</a>) In simple terms, the step response includes all information of the control systems.</p>
+</blockquote>
+<script type="math/tex; mode=display">u(t)=\left\{\begin{array}{ll}{0,} & {t<0} \\ {u_{0},} & {t \geq 0}\end{array}\right.</script><p>where the amplitude $u_{0}$ is arbitrarily chosen</p>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<li>Mostly used for transient analysis: overshoot, static gain, major time-constants, rise time.</li>
+<li><strong>Limited use for parametric modeling.</strong></li>
+</ul>
+<h2 id="1-2-Sum-of-sinusoids"><a href="#1-2-Sum-of-sinusoids" class="headerlink" title="1.2 Sum of sinusoids"></a>1.2 Sum of sinusoids</h2><blockquote>
+<p>why sinusoids? Orthonormal basis. $\frac{du(t)}{dt}$ and $\int{u(t)}dt$ both are itself multiplied by a (feature) number.</p>
+</blockquote>
+<script type="math/tex; mode=display">u(t)=\sum_{m=1}^{M} a_{m} \sin \left(\omega_{m} t+\varphi_{m}\right)</script><h3 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<li><p>User parameters $a_{m}, \omega_{m}, \varphi_{m}$</p>
+</li>
+<li><p>Covariance function given as </p>
+<script type="math/tex; mode=display">R(\tau)=\sum_{m=1}^{M} \frac{a_{m}^{2}}{2} \cos \left(\omega_{m} t+\varphi_{m}\right)</script></li>
+<li><p>Spectral Density function given as</p>
+<script type="math/tex; mode=display">\Phi(\omega)=\sum_{m=1}^{M} \frac{a_{m}^{2}}{2}\left[\delta\left(\omega-\omega_{m}\right)+\delta\left(\omega-\omega_{m}\right)\right]</script><ul>
+<li>It means that with the spectrum analysis, the <strong>different sinusoid inputs will be at the related positions with distinct frequencies</strong>. (Fig. Sum of 2 sinusoids. Realization (left), Spectral density (right).)<img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190706111429.png" alt="Sum of 2 sinusoids. Realization (left), Spectral density(right)."></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-Autoregressive-Moving-Average-sequence-ARMA"><a href="#1-3-Autoregressive-Moving-Average-sequence-ARMA" class="headerlink" title="1.3 Autoregressive Moving Average sequence (ARMA)"></a>1.3 Autoregressive Moving Average sequence (ARMA)</h2><script type="math/tex; mode=display">\frac{1}{N} \sum_{t=1}^{N} e(t) e(t+\tau) \rightarrow 0</script><p>as $N \rightarrow \infty$, and where $e(t)$ a pseudorandom sequence similar to white noise, </p>
+<p>then $u(t)$ can be obatained by linear filtering</p>
+<script type="math/tex; mode=display">u(t)+c_{1} u(t-1)+\ldots c_{p} u(t-p)=e(t)+d_{1} e(t-1)+\ldots+d_{q} e(t-p)</script><ul>
+<li>$u(t)$ is called ARMA (autoregressive moving average) process</li>
+<li>when all $c_i = 0$ it is called MA (moving average) process</li>
+<li>when all $d_i = 0$ it is called AR (autoregressive) process</li>
+<li>the user gets to choose $c_{i}, d_{i}$ and the random generator of $e(t)$</li>
+</ul>
+<p>In general, the transfer function of ARMA(p,q) is</p>
+<script type="math/tex; mode=display">U(z)=\frac{D(q)}{C(p)} E(z)</script><p>where </p>
+<ul>
+<li>$C(z) =1+c_{1} z^{-1}+c_{2} z^{-2}+\ldots +c_{p} z^{-p}$</li>
+<li>$D(z) =1+d_{1} z^{-1}+d_{2} z^{-2}+\ldots +d_{q} z^{-q}$</li>
+</ul>
+<h3 id="Properties-2"><a href="#Properties-2" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<li>The signal $u(t)$ can be obtained by filtering $e(t)$.</li>
+<li><p>different choices of $c_{i}, d_{i}$ lead to inputs with various spectral characteristics.</p>
+</li>
+<li><p>Spectrum of ARMA process</p>
+<ul>
+<li>let $e(t)$ be a white noise with variance $\lambda^{2}$, then the spectral density of ARMA process is<script type="math/tex; mode=display">S(\omega)=\lambda^{2}\left|\frac{D(\omega)}{C(\omega)}\right|^{2}</script></li>
+<li>(Fig. ARMA process. Realization (left), Spectral density (right).) <img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190706111600.png" alt="ARMA process. Realization (left), Spectral density (right)."></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-4-Pseudorandom-Binary-Sequence-PRBS"><a href="#1-4-Pseudorandom-Binary-Sequence-PRBS" class="headerlink" title="1.4 Pseudorandom Binary Sequence (PRBS)"></a>1.4 Pseudorandom Binary Sequence (PRBS)</h2><p>A PRBS $(u(t))_t$ is a periodic, deterministic signal with white noise-like properties.</p>
+<script type="math/tex; mode=display">u(t)=\operatorname{rem}\left(A\left(q^{-1}\right) e(t), 2\right)=\operatorname{rem}\left(a_{1} u(t-1)+\ldots+a_{n} u(t-n), 2\right)</script><h3 id="Properties-3"><a href="#Properties-3" class="headerlink" title="Properties"></a>Properties</h3><ul>
+<li>The signal takes values ${0, 1}$ in a fashion dictated by $A$.</li>
+<li>Spectral properties are determined by $A(q)$ and in particular by the period length $M = 2^n − 1$.</li>
+<li>Deterministic sequence behaving as noise (reproducible). </li>
+<li>(Fig. PRBS signal taking values in {−1, 1}, M = ∞. Realization (left), Spectral density (right).) <img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/images/picgo/20190706113452.png" alt=""></li>
+</ul>
+<h1 id="2-Persistent-excitation"><a href="#2-Persistent-excitation" class="headerlink" title="2 Persistent excitation"></a>2 Persistent excitation</h1><p>a signal $u(t)$ is persistently exciting of order $n$ if</p>
+<ul>
+<li>the following limit exists:</li>
+</ul>
+<script type="math/tex; mode=display">R_{u}(\tau)=\lim _{N \rightarrow \infty} \frac{1}{N} \sum_{t=1}^{N} u(t+\tau) u^{T}(t)</script><ul>
+<li>the following matrix is positive definite</li>
+</ul>
+<script type="math/tex; mode=display">\mathbf{R}_{n}=\left[\begin{array}{cccc}{R_{u}(0)} & {R_{u}(1)} & {\dots} & {R_{u}(n-1)} \\ {R_{u}(-1)} & {R_{u}(0)} & {\cdots} & {R_{u}(n-2)} \\ {\vdots} & {} & {\cdots} & {\vdots} \\ {R_{u}(1-n)} & {R_{u}(2-n)} & {\cdots} & {R_{u}(0)}\end{array}\right]</script><h2 id="2-1-Examining-the-order-of-persistent-excitation"><a href="#2-1-Examining-the-order-of-persistent-excitation" class="headerlink" title="2.1 Examining the order of persistent excitation"></a>2.1 Examining the order of persistent excitation</h2><h3 id="2-1-1-white-noise-input-of-zero-mean-and-variance-lambda-2"><a href="#2-1-1-white-noise-input-of-zero-mean-and-variance-lambda-2" class="headerlink" title="2.1.1 white noise input of zero mean and variance $\lambda^{2}$"></a>2.1.1 white noise input of zero mean and variance $\lambda^{2}$</h3><script type="math/tex; mode=display">R(\tau)=\lambda^{2} \delta(\tau), \quad \Longrightarrow \quad \mathbf{R}_{n}=\lambda^{2} I_{n}</script><p>thus, white noise is persistently exciting of all orders</p>
+<h3 id="2-1-2-step-input-of-magnitude-lambda"><a href="#2-1-2-step-input-of-magnitude-lambda" class="headerlink" title="2.1.2 step input of magnitude $\lambda$"></a>2.1.2 step input of magnitude $\lambda$</h3><script type="math/tex; mode=display">R(\tau)=\lambda^{2}, \quad \forall \tau \quad \Longrightarrow \quad \mathbf{R}_{n}=\lambda^{2} \mathbf{1}_{n}</script><p>so, a step function is persistently exciting of order 1</p>
+<h3 id="2-1-3-impulse-input-u-t-1-for-t-0-and-0-otherwise"><a href="#2-1-3-impulse-input-u-t-1-for-t-0-and-0-otherwise" class="headerlink" title="2.1.3 impulse input: u(t) = 1 for t = 0 and 0 otherwise"></a>2.1.3 impulse input: u(t) = 1 for t = 0 and 0 otherwise</h3><script type="math/tex; mode=display">R(\tau)=0, \quad \forall \tau \quad \Longrightarrow \quad \mathbf{R}_{n}=0</script><p>so, an impulse is not persistently exciting of any order</p>
+<h2 id="2-2-Some-results"><a href="#2-2-Some-results" class="headerlink" title="2.2 Some results"></a>2.2 Some results</h2><ul>
+<li>An input signal is persistently exciting of order $2n$ can be used to consistently estimate parameters of a model of order $\leq n$.</li>
+<li>A <strong>step function</strong> that is  persistently exciting of order $1$, but not of greater order.</li>
+<li>A PRBS with period $M$ is  persistently exciting of order $M$, and can generate a $2^M − 1$ full length sequence.</li>
+<li>An <strong>ARMA</strong> process is  persistently exciting of any finite order.</li>
+<li>A sum of $M$ sinusoids is  persistently exciting of order $n=2M$ (if $\omega_{m} \neq 0,-\pi, \pi$)</li>
+<li><strong>A parametric model becomes more accurate in the frequency region where the input signal has a major part of its energy.</strong></li>
+</ul>
+<h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ul>
+<li>The choice of input signals determines the quality of the estimate.</li>
+<li>The estimated model is more accurate in frequency regions where the input signal contains much energy.</li>
+<li>An input signal has to be ’rich’ enough to excite all interesting modes of the system (PE of sufficiently high order).</li>
+<li>the choice of input is imposed by the type of identification method</li>
+<li><strong>some often used signals include PRBS and ARMA processes</strong></li>
+</ul>
+<blockquote>
+<p>The choice of a signal input is important on the PE order, that it is larger than the number of parameters. —xlindo</p>
+</blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-06-10T12:37:02.000Z" title="6/10/2019, 8:37:02 PM">2019-06-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:45.917Z" title="7/24/2019, 1:42:45 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">9 minutes read (About 1298 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/55c9fa91/">SysId - Keypoints in Chapter 4, PhD Paper of Dr. Shardt</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<h1 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h1><p><img src="https://raw.githubusercontent.com/xlindo/pics_bed/master/20190526203451.png" alt=""></p>
+<h1 id="Equations"><a href="#Equations" class="headerlink" title="Equations"></a>Equations</h1><h2 id="95-T5"><a href="#95-T5" class="headerlink" title="95 - T5"></a>95 - T5</h2><ul>
+<li>In practice, the slope of the length is often determined as an averaged value using all the available data rather than as a pointwise estimate, that is, <ul>
+<li>$\hat{L}_{t}^{\prime}=\frac{\sum_{i=1}^{N}|\Gamma|_t}{N}$, </li>
+<li>where $\hat{L}_{t}^{\prime}$ is the averaged slope of the length and $N$ is the number of data points used.</li>
+</ul>
+</li>
+</ul>
+<h2 id="96-T7"><a href="#96-T7" class="headerlink" title="96 - T7"></a>96 - T7</h2><ul>
+<li>Similarly, the averaged entropy can be calculated by taking the sum of the individual instantaneous values, that is, <ul>
+<li>$\overline{H}_{t}=\frac{1}{N} \sum_{i=1}^{N} H_{i}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="97-T3"><a href="#97-T3" class="headerlink" title="97 - T3"></a>97 - T3</h2><ul>
+<li>For the remainder of this section, it will be assumed that the stochastic process is driven by normally distributed white noise and can be written as <ul>
+<li>$y_{t}=G\left(z^{-1}\right) e_{t}$</li>
+<li>where $G$ is some arbitrary transfer function.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Segmentation-Index"><a href="#Segmentation-Index" class="headerlink" title="Segmentation Index"></a>Segmentation Index</h2><ul>
+<li>A preliminary segmentation index can be written as <ul>
+<li>$\eta_{S E G}=\left|\Delta \hat{H}-\Delta H_{t}\right|$</li>
+<li>where $\Delta \hat{H}$ is the differential entropy of the current model and $\Delta H_t$ is the differential entropy of the current point.</li>
+</ul>
+</li>
+<li>Let the residual differential entropy, $\Delta H_{d a t a}(t)$, be defined as <ul>
+<li>$\Delta H_{r e s}=\left|\Delta \hat{H}-\Delta H_{d a t a}(t)\right|$</li>
+<li>where $\Delta H_{d a t a}(t)$ is the differential entropy of the original data used to fit or validate the model. </li>
+</ul>
+</li>
+<li>Irrespective of the source of data, the threshold for the detection of change can be written as<ul>
+<li>$\varepsilon_{S E G}=K+\Delta H_{r e s}$</li>
+<li>where $K$ is the sensitivity factor.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Theorems"><a href="#Theorems" class="headerlink" title="Theorems"></a>Theorems</h1><ul>
+<li><strong>Theorem 1</strong>: Consider a stochastic process, $\hat{y}_{t}$, driven by a zero-mean white noise sequence with standard deviation $\sigma_{\mathcal{w}}$. Assume that the standard deviation of $\hat{y}_{t}$ is given as $\sigma_{\mathcal{y}}$ and the autocovariance at lag $k$ is given as $\gamma(k)$. Furthermore, assume that the process of interest is given as <ul>
+<li>$\overline{y}_{t}=\left|\hat{y}_{t}\right|$,</li>
+<li>which implies that $\overline{y}_{t}$ will follow a folded normal distribution. Then, the autocovariance of $\overline{y}_{t}$ can be determined as follows, <ul>
+<li>$\gamma_{Y}(k)=\frac{2 \sqrt{\sigma_{y}^{4}-\gamma(k)^{2}}}{\pi}-\frac{\gamma(k)}{\pi}\left(\pi-2 \arctan \left(-\frac{\sqrt{\sigma_{y}^{4}-\gamma(k)^{2}}}{\gamma(k)}\right)\right)-\mu_{\bar{y}}^{2}$</li>
+<li>where the arctangent function is taken based on the sign of $\gamma(k)$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Corollary 1</strong>:  <strong>pointwise</strong><ul>
+<li>For a process $\hat{y}_{t}$ given as <ul>
+<li>$\hat{y}_{t}=\frac{\beta z^{-1}-\beta z^{-2}}{1+\alpha z^{-1}} e_{t}$</li>
+<li>with $e_{t} \sim N\left(0, \sigma_{w}^{2}\right)$ and assuming stationarity of the process, then the individual $\hat{y}_{t}\sim N\left(0, \sigma_{y}^{2}\right)$,</li>
+</ul>
+</li>
+<li>$\operatorname{cov}\left(\left|\hat{y}_{t}\right|,\left|\hat{y}_{t-k}\right|\right)=\frac{\beta^{2} \sigma_{w}^{2}}{(1-\alpha) \pi}\left(\begin{array}{l}{2 \sqrt{4-(-\alpha)^{2 k-2}(\alpha+1)^{2}}-4} \ {+(-\alpha)^{k-1}(\alpha+1)(\pi-2 \arctan (\xi))}\end{array}\right)$<ul>
+<li>where </li>
+<li>$\xi=\frac{\sqrt{4-(-\alpha)^{2 k-2}(\alpha+1)^{2}}}{(-\alpha)^{k-1}(\alpha+1)}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Theorem 2</strong>: The expected pointwise slope of the length for a process described by Equation (97) is given as <ul>
+<li>$\begin{array}{l}{E\left(L_{t}^{\prime}\right)=E\left(\left|\left(1-z^{-1}\right) G\left(z^{-1}\right) e_{t}\right|\right)=\mu_{|\hat{y}|}} \ {\operatorname{var}\left(L_{t}^{\prime}\right)=\sigma_{|\vec{y}|}^{2}}\end{array}$</li>
+</ul>
+</li>
+<li><strong>Theorem 3</strong>: The expected pointwise entropy for a process described by Equation (97) is given as<ul>
+<li>$\begin{aligned} E\left(H_{t}\right) &amp;=E\left(\log \left(L_{t}^{\prime}\right)\right)=E\left(\log \left(\left|\hat{y}_{t}\right|\right)\right) \ &amp;=-\frac{1}{2} \log 2+\log \sigma_{\hat{y}}-\frac{1}{2} \gamma \end{aligned}$</li>
+<li>where $\sigma_{\hat{y}}$ is the variance of $\hat{y}_{t}=\left(1-z^{-1}\right) G\left(z^{-1}\right) e_{t}$ and $\gamma$ is the Euler-Mascheronit constant.</li>
+</ul>
+</li>
+<li><strong>Theorem 4</strong>: The variance of the pointwise entropy is <ul>
+<li>$\operatorname{var}\left(H_{t}\right)=\frac{\pi^{2}}{8}$</li>
+</ul>
+</li>
+<li><strong>Theorem 5</strong>: The expected value of the averaged slope $\hat{L}_{t}^{\prime}$ is the same as that of the instantaneous slope ${L}_{t}^{\prime}$.</li>
+<li><strong>Theorem 6</strong>: The variance of the averaged slope $\hat{L}_{t}^{\prime}$ is different from the variance of the pointwise slope, ${L}_{t}^{\prime}$, and is given as <ul>
+<li>$\operatorname{var}\left(\hat{L}_{t}^{\prime}\right)=\frac{1}{N^{2}}\left(N \operatorname{var}\left(\left|\hat{y}_{t}\right|\right)+2 \sum_{i=1}^{N-1}(N-i) \operatorname{cov}\left(\left|\hat{y}_{t}\right|,\left|\hat{y}_{t-i}\right|\right)\right)$</li>
+</ul>
+</li>
+<li><strong>Theorem 7</strong>: The expected value of the averaged entropy is the same as the pointwise value.</li>
+<li><strong>Theorem 8</strong>: The variance of the averaged entropy is different from the variance of the pointwise entropy and is given as <ul>
+<li>$\operatorname{var}\left(\overline{H}_{t}\right)=\frac{1}{N^{2}}\left(N \operatorname{var}\left(H_{t}\right)+2 \sum_{i=1}^{N-1}(N-i) \operatorname{cov}\left(H_{t}, H_{t-i}\right)\right)$</li>
+</ul>
+</li>
+<li><strong>Theorem 9</strong>: The expected value of the differential entropy between the input and output does not depend on the standard deviation of the white noise process.</li>
+</ul>
+<h1 id="Theoretical-Result-for-a-First-Order-System"><a href="#Theoretical-Result-for-a-First-Order-System" class="headerlink" title="Theoretical Result for a First-Order System"></a>Theoretical Result for a <strong>First-Order System</strong></h1><ul>
+<li>Consider the classical, first-order process given as<ul>
+<li>$y_{t}=\frac{\beta z^{-1}}{1+\alpha z^{-1}} e_{t}$<ul>
+<li>where $e_t$ is a Gaussian signal</li>
+</ul>
+</li>
+<li>$\hat{y}_{t}=\frac{\beta z^{-1}-\beta z^{-2}}{1+\alpha z^{-1}} e_{t}$</li>
+<li>$\begin{aligned} \mu &amp;=0 \ \sigma_{\hat{y}}^{2} &amp;=\frac{2 \beta^{2}}{1-\alpha} \sigma_{w}^{2} \end{aligned}$</li>
+</ul>
+</li>
+<li>The mean and variance<ul>
+<li>$E\left(\left|\hat{y}_{t}\right|\right)=\frac{2|\beta|}{\sqrt{(1-\alpha) \pi}} \sigma_{w}$</li>
+<li>$\operatorname{var}\left(\left|\hat{y}_{t}\right|\right)=\frac{2 \beta^{2}}{1-\alpha}\left(\frac{\pi-2}{\pi}\right) \sigma_{w}^{2}$</li>
+</ul>
+</li>
+<li>from Theorem 2, <strong>the expected (either pointwise or averaged) slope of the length</strong> can be written as<ul>
+<li>$E\left(L_{t}^{\prime}\right)=\frac{2|\beta|}{\sqrt{(1-\alpha) \pi}} \sigma_{w}$</li>
+</ul>
+</li>
+<li>from Theorem 3, <strong>the expected (either pointwise or averaged) entropy</strong> can be written as<ul>
+<li>$E\left(H_{t}\right)=-\frac{1}{2} \log 2+\frac{1}{2} \log \left(\frac{2 \beta^{2}}{1-\alpha} \sigma_{w}^{2}\right)-\frac{1}{2} \gamma$</li>
+</ul>
+</li>
+<li>From Theorem 4, <strong>the variance of the pointwise entropy</strong> is<ul>
+<li>$\pi^{2} / 8$</li>
+</ul>
+</li>
+<li>The <strong>differential entropy</strong><ul>
+<li>$\Delta H_{t}=\log \left(|\beta| \sqrt{\frac{1}{(1-\alpha)}}\right)$</li>
+</ul>
+</li>
+<li>It can be noted that the simulated and predicted values are in close agreement with each other.</li>
+</ul>
+<h1 id="Theoretical-Result-for-a-Second-Order-System"><a href="#Theoretical-Result-for-a-Second-Order-System" class="headerlink" title="Theoretical Result for a Second-Order System"></a>Theoretical Result for a <strong>Second-Order System</strong></h1><ul>
+<li>Consider the standard, discrete-time, second-order system<ul>
+<li>$y_{t}=\frac{\beta_{1}+\beta_{2} z^{-1}}{\left(1+\alpha_{1} z^{-1}\right)\left(1+\alpha_{2} z^{-1}\right)} e_{t}$</li>
+<li>$\hat{y}_{t}=\frac{\beta_{1} z^{2}+\left(\beta_{2}-\beta_{1}\right) z-\beta_{2}}{z^{2}+\left(\alpha_{1}+\alpha_{2}\right) z+\alpha_{1} \alpha_{2}} e_{t}$</li>
+</ul>
+</li>
+<li>The statistical properties of $\hat{y}_{t}$ are then given as <ul>
+<li>$\begin{aligned} \mu_{|\hat{y}|} &amp;=0 \ \sigma_{|\hat{y}|}^{2} &amp;=\frac{2\left(\alpha_{1} \alpha_{2} \beta_{1} \beta_{2}-\beta_{1} \alpha_{2} \beta_{2}-\beta_{1} \alpha_{1} \beta_{2}+\beta_{1}^{2}+\beta_{2}^{2}-\beta_{2} \beta_{1}\right)}{\left(\alpha_{2}-1\right)\left(1-\alpha_{2} \alpha_{1}\right)\left(\alpha_{1}-1\right)} \sigma_{w}^{2} \end{aligned}$</li>
+</ul>
+</li>
+<li>From Theorem 2, <strong>the expected entropy</strong> can be written as<ul>
+<li>$E\left(H_{t}\right)=\log \left(2 \sigma_{w} \sqrt{\frac{\left(\alpha_{1} \alpha_{2} \beta_{1} \beta_{2}-\beta_{1} \alpha_{2} \beta_{2}-\beta_{1} \alpha_{1} \beta_{2}+\beta_{1}^{2}+\beta_{2}^{2}-\beta_{2} \beta_{1}\right)}{\pi\left(\alpha_{2}-1\right)\left(1-\alpha_{2} \alpha_{1}\right)\left(\alpha_{1}-1\right)} )}\right)$</li>
+</ul>
+</li>
+<li>The <strong>entropy change</strong> can be written as<ul>
+<li>$\Delta H_{t}=\log \left(\sqrt{\frac{\left(\alpha_{1} \alpha_{2} \beta_{1} \beta_{2}-\beta_{1} \alpha_{2} \beta_{2}-\beta_{1} \alpha_{1} \beta_{2}+\beta_{1}^{2}+\beta_{2}^{2}-\beta_{2} \beta_{1}\right)}{\left(\alpha_{2}-1\right)\left(1-\alpha_{2} \alpha_{1}\right)\left(\alpha_{1}-1\right)}}\right)$</li>
+<li>when $\alpha_2$ (or $\alpha_1$) equals zero, then Equation (181) reduces to the expected first-order equation given as Equation </li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-05-13T01:15:00.000Z" title="5/13/2019, 9:15:00 AM">2019-05-13</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-08-07T18:50:24.099Z" title="8/8/2019, 2:50:24 AM">2019-08-08</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">5 minutes read (About 810 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/e2693f90/">Keypoints in short</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+<p>Keypoints to look up. Updating…</p>
+</blockquote>
+<h2 id="Effects-of-Poles-and-Zeros"><a href="#Effects-of-Poles-and-Zeros" class="headerlink" title="Effects of Poles and Zeros"></a>Effects of Poles and Zeros</h2><p><a target="_blank" rel="noopener" href="https://en.wikibooks.org/wiki/Control_Systems/Poles_and_Zeros">/wiki/Control_Systems/Poles_and_Zeros</a></p>
+<p>As s approaches a zero, the numerator of the transfer function (and therefore the transfer function itself) approaches the value 0. When s approaches a pole, the denominator of the transfer function approaches zero, and the value of the transfer function approaches infinity. An output value of infinity should raise an alarm bell for people who are familiar with BIBO stability. We will discuss this later.</p>
+<p>As we have seen above, the locations of the poles, and the values of the real and imaginary parts of the pole determine the response of the system. Real parts correspond to exponentials, and imaginary parts correspond to sinusoidal values. <strong>Addition of poles to the transfer function has the effect of pulling the root locus to the right, making the system less stable. Addition of zeros to the transfer function has the effect of pulling the root locus to the left, making the system more stable.</strong></p>
+<h2 id="QR-decomposition"><a href="#QR-decomposition" class="headerlink" title="QR decomposition"></a>QR decomposition</h2><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/QR_decomposition">/wiki/QR_decomposition</a></p>
+<p>In linear algebra, a QR decomposition (also called a QR factorization) of a matrix is a decomposition of a matrix A into a product A = QR of an orthogonal matrix Q and an upper triangular matrix R. QR decomposition is often used to solve the linear least squares problem and is the basis for a particular eigenvalue algorithm, the QR algorithm.</p>
+<p>Any real square matrix A may be decomposed as</p>
+<script type="math/tex; mode=display">A=QR</script><p>where $Q$ is an orthogonal matrix (its columns are orthogonal unit vectors meaning $Q^TQ=QQ^T=I$ and $R$ is an upper triangular matrix (also called right triangular matrix). If $A$ is invertible, then the factorization is <strong>unique</strong> if we require the diagonal elements of $R$ to be positive.</p>
+<h2 id="Autocovariance"><a href="#Autocovariance" class="headerlink" title="Autocovariance"></a>Autocovariance</h2><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Autocovariance">/wiki/Autocovariance</a></p>
+<p>In probability theory and statistics, given a stochastic process, the autocovariance is a function that gives the covariance of the process with itself at pairs of time points. Autocovariance is closely related to the autocorrelation of the process in question.</p>
+<script type="math/tex; mode=display">\gamma(i, j)=E\left[\left(X_{i}-\mu_{i}\right)\left(X_{j}-\mu_{j}\right)\right]</script><ul>
+<li>For a time series</li>
+</ul>
+<script type="math/tex; mode=display">\gamma(k)=E\left[\left(X_{i}-\mu\right)\left(X_{i-k}-\mu\right)\right]</script><h2 id="Trace-of-a-matrix-and-eigenvalues"><a href="#Trace-of-a-matrix-and-eigenvalues" class="headerlink" title="Trace of a matrix and eigenvalues"></a>Trace of a matrix and eigenvalues</h2><p>First, </p>
+<script type="math/tex; mode=display">tr(\boldsymbol{A}) = sum(eig(\boldsymbol{A}))</script><p>Derivation: for one-dimensional n-order equation, the sum of solutions equals to the <strong>negative</strong> coefficient of the <strong>second</strong> highest order item.</p>
+<p>e.g.</p>
+<script type="math/tex; mode=display">\left(x+x_{1}\right)\left(x+x_{2}\right) \cdots\left(x+x_{n}\right)=0</script><script type="math/tex; mode=display">x^{n}+\left(x_{1}+x_{2}+\cdots+x_{n}\right) x^{n-1}+\cdots+x_{1} x_{2} \cdots x_{n}=0</script><p>We have $\det(\lambda \boldsymbol{I} - \boldsymbol{A}) = 0,$ then we get</p>
+<script type="math/tex; mode=display">\prod_i(\lambda - a_{ii}) + \cdots = 0,</script><p>which gives</p>
+<script type="math/tex; mode=display">\lambda^{n}-\left(\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}\right) \lambda^{n-1}+\cdots+\lambda_{1} \lambda_{2} \cdots \lambda_{n}=0.</script><p>The negative coefficient of the second highest item equals $\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}$, which is the trace of matrix $\boldsymbol{A}$.</p>
+<h2 id="Lagrange-function"><a href="#Lagrange-function" class="headerlink" title="Lagrange function"></a>Lagrange function</h2><script type="math/tex; mode=display">
+\begin{align}
+\max_{x} &  \quad f(x) \\
+s.t. & \quad g_i(x) \leqslant 0, \quad i=1,2,\cdots,k \\
+&\quad h_j(x)=0,\quad j=1,2,\cdots,l
+\end{align}</script><p>The Lagrange function,</p>
+<script type="math/tex; mode=display">
+\mathcal{L}(\boldsymbol{x}, \boldsymbol{\alpha}, \boldsymbol{\beta}) =f(\boldsymbol{x})+\sum_{i=1}^{m} \alpha_{i} g_{i}(\boldsymbol{x})+\sum_{j=1}^{n} \beta_{j} h_{j}(\boldsymbol{x}), \;\;\alpha \geqslant 0</script><p>then,</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \min _{\boldsymbol{x}} \max _{\boldsymbol{\alpha}, \boldsymbol{\beta}} \mathcal{L}(\boldsymbol{x}, \boldsymbol{\alpha}, \boldsymbol{\beta}) = & \min _{\boldsymbol{x}}\left(f(\boldsymbol{x})+\max _{\boldsymbol{\alpha}, \boldsymbol{\beta}}\left(\sum_{i=1}^{m} \alpha_{i} g_{i}(\boldsymbol{x})+\sum_{j=1}^{n} \beta_{j} h_{j}(\boldsymbol{x})\right)\right) \\[1ex]
+ = & \min_{\boldsymbol{x}}\left(f(\boldsymbol{x})+\left\{\begin{array}{l}{0}\,, &  \boldsymbol{x} \, \text{meet constraints} \\ {\infty}\,, &  \text{otherwise}\end{array}\right.\right) \\[1ex]
+ = & \min_{\boldsymbol{x}} f(\boldsymbol{x}), \;\;\boldsymbol{x} \, \text{meet constraints}
+\end{aligned}</script><h2 id="Softmax-vs-Sigmoid"><a href="#Softmax-vs-Sigmoid" class="headerlink" title="Softmax vs Sigmoid"></a>Softmax vs Sigmoid</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Softmax</th>
+<th style="text-align:center">Sigmoid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">formular</td>
+<td style="text-align:center">$\sigma (\mathbf {z} )_{j}={\frac {e^{z_{j}}}{\sum _{k=1}^{K}e^{z_{k}}}}$</td>
+<td style="text-align:center">$S(x)={\frac {1}{1+e^{-x}}}$</td>
+</tr>
+<tr>
+<td style="text-align:center">Essential</td>
+<td style="text-align:center">离散概率分布</td>
+<td style="text-align:center">非线性映射</td>
+</tr>
+<tr>
+<td style="text-align:center">Task</td>
+<td style="text-align:center">多分类</td>
+<td style="text-align:center">二分类</td>
+</tr>
+<tr>
+<td style="text-align:center">定义域</td>
+<td style="text-align:center">某个一维向量</td>
+<td style="text-align:center">单个数值</td>
+</tr>
+<tr>
+<td style="text-align:center">值域</td>
+<td style="text-align:center">[0,1]</td>
+<td style="text-align:center">(0,1)</td>
+</tr>
+<tr>
+<td style="text-align:center">结果之和</td>
+<td style="text-align:center">一定为 1</td>
+<td style="text-align:center">为某个正数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Sigmoid is a special case (2 categories) of Softmax.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-05-12T08:02:57.000Z" title="5/12/2019, 4:02:57 PM">2019-05-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:48.108Z" title="7/24/2019, 1:42:48 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">11 minutes read (About 1723 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/59bc05b2/">SysId - System Identification #draft</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+<p>System Identification #notes #sysid<br>Lennart Ljung, 1997</p>
+</blockquote>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h2><ul>
+<li>The process of going from observed data to a mathematical model is fundamental in science and engineering.</li>
+<li>dynamical models (difference or differential equations)</li>
+<li>System Identification covers the problem of building models of systems where both when insignificant prior information is available and when the system’s properties are known, up to a few parameters (physical constants). Accordingly, one talks about <strong>black box</strong> and <strong>gray box</strong> models.</li>
+<li><strong>black box</strong> models there are familiar <ul>
+<li>linear models such as ARX and ARMAX,</li>
+<li>and among non-linear black box models we have, e.g.,  Artificial Neural Networks (ANN).</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-The-Problem"><a href="#1-1-The-Problem" class="headerlink" title="1.1 The Problem"></a>1.1 The Problem</h3><ul>
+<li>The area of system identification begins and ends with real data. Data are required to build and to validate models.</li>
+<li>So, the bottom line of these examples is that we have collected input-output data from a process or a plant, and we need to extract information from these to find out (something about) the process’s dynamical properties.</li>
+</ul>
+<h3 id="1-2-Background-and-Literature-System"><a href="#1-2-Background-and-Literature-System" class="headerlink" title="1.2 Background and Literature System"></a>1.2 Background and Literature System</h3><ul>
+<li>System Identification has its roots in standard statistical techniques and many of the basic routines have direct interpretations as well known statistical methods such as Least Squares and Maximum Likelihood.</li>
+<li>Maximum likelihood estimation was applied to difference equations (ARMAX models) [1965] and thereafter a wide range of estimation techniques and model parameterizations flourished.</li>
+<li>The literature on System Identification is extensive.<ul>
+<li>except approaches in this book:<ul>
+<li>estimation of models from given frequency response measurement [Schoukens and Pintelon, 1991]</li>
+<li>on-line model estimation [Ljung and Söderström, 1983]</li>
+<li>non-parametric frequency domain methods [Brillinger, 1981]</li>
+</ul>
+</li>
+<li>IFAC series of Symposia on System Identification</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Outline"><a href="#1-3-Outline" class="headerlink" title="1.3 Outline"></a>1.3 Outline</h3><ul>
+<li>The system identification procedure is characterized by four basic ingredients:<ul>
+<li>The observed data</li>
+<li>A set of candidate models</li>
+<li>A criterion of fit </li>
+<li>Validation</li>
+</ul>
+</li>
+<li>The problem can be expressed as finding that model in the candidate set, that best describes the data, according to the criterion, and then evaluate and validate that model’s properties.</li>
+<li>In general terms, a model will be a predictor of the next output $y(t)$ from the process, given past observations $Z^{t-1}$ and parameterized in terms of a finite-dimensional parameter vector, $\hat{y}(t | \theta)=g\left(\theta, Z^{t-1}\right)$</li>
+<li>TOC<ul>
+<li>2 a preview of the whole process</li>
+<li>3,4 display and discuss the most common sets of candidate models<ul>
+<li><script type="math/tex; mode=display">\hat{y}(t | \theta)=g\left(\theta, Z^{t-1}\right) \tag{1}</script></li>
+</ul>
+</li>
+<li>5 discuss the criterion of fit for general model sets<ul>
+<li><script type="math/tex; mode=display">V_{N}(\theta)=\sum\|y(t)-\hat{y}(t | \theta)\|^{2} \tag{2}</script></li>
+</ul>
+</li>
+<li>6 describe special methods for linear black-box models</li>
+<li>7 to assure good quality of the data by proper experiment design</li>
+<li>8 how to decide upon a good model structure</li>
+<li>9 how to deal with the data</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Displaying-the-Basic-Ideas-ARX-Models-and-the-Linear-Least-Squares-Method"><a href="#2-Displaying-the-Basic-Ideas-ARX-Models-and-the-Linear-Least-Squares-Method" class="headerlink" title="2 Displaying the Basic Ideas: ARX Models and the Linear Least Squares Method"></a>2 Displaying the Basic Ideas: ARX Models and the Linear Least Squares Method</h2><h3 id="2-1-The-Model"><a href="#2-1-The-Model" class="headerlink" title="2.1 The Model"></a>2.1 The Model</h3><ul>
+<li>We shall generally denote the system’s input and output at time $t$ by $u(t)$ and $y(t)$ respectively. Perhaps the most basic relationship between the input and output is the <strong>linear difference equation</strong> <ul>
+<li><script type="math/tex; mode=display">y(t)+a_{1} y(t-1)+\ldots+a_{n} y(t-n)=b_{1} u(t-1)+\ldots+b_{m} u(t-m) \tag{3}</script></li>
+</ul>
+</li>
+<li>We have chosen to represent the system in <strong>discrete time</strong>, primarily since observed data are always collected by sampling.</li>
+<li>A pragmatic and useful way to see (3) is to view it as a way of <strong>determining the next output value</strong> given previous observations:<script type="math/tex; mode=display">y(t)=-a_{1} y(t-1)-\ldots-a_{n} y(t-n)+b_{1} u(t-1)+\ldots+b_{m} u(t-m) \tag{4}</script></li>
+<li>For more compact notation we introduce the vectors<script type="math/tex; mode=display">\theta=\left[a_{1} \ \ldots \ a_{n} \ b_{1} \ \ldots \ b_{m}\right]^{T} \tag{5}</script><script type="math/tex; mode=display">\varphi(t)=[-y(t-1) \ \ldots \ -y(t-n) \ u(t-1) \ \ldots \ u(t-m)]^{T} \tag{6}</script></li>
+<li>With these (4) can be rewritten as <ul>
+<li>$y(t)=\varphi^{T}(t) \theta$</li>
+</ul>
+</li>
+<li>To emphasize that the calculation of $y(t)$ from past data indeed depends on the parameters in $\theta$, we shall rather call this calculated value $\hat{y}(t | \theta)$ and write<script type="math/tex; mode=display">\hat{y}(t | \theta)=\varphi^{T}(t) \theta \tag{7}</script></li>
+</ul>
+<h3 id="2-2-The-Least-Squares-Method"><a href="#2-2-The-Least-Squares-Method" class="headerlink" title="2.2 The Least Squares Method"></a>2.2 The Least Squares Method</h3><ul>
+<li>…, we have recorded inputs and outputs over a time interval $1 \leq t \leq N$:<script type="math/tex; mode=display">Z^{N}=\{u(1), y(1), \ldots, u(N), y(N)\} \tag{8}</script></li>
+<li>An obvious approach is then to select $\theta$ in (3) through (7) so as to fit the calculated values $\hat{y}(t | \theta)$ as well as possible to the measured outputs by the least squares method:<script type="math/tex; mode=display">\min _{\theta} V_{N}\left(\theta, Z^{N}\right) \tag{9}</script>where <script type="math/tex; mode=display">V_{N}\left(\theta, Z^{N}\right)=\frac{1}{N} \sum_{t=1}^{N}(y(t)-\hat{y}(t | \theta))^{2}=\frac{1}{N} \sum_{t=1}^{N}\left(y(t)-\varphi^{T}(t) \theta\right)^{2} \tag{10}</script></li>
+<li>We shall denote the value of $\theta$ that minimizes (9) by $\hat{\theta}_{N}$:<script type="math/tex; mode=display">\hat{\theta}_{N}=\arg \min _{\theta} V_{N}\left(\theta, Z^{N}\right)</script></li>
+<li>we can find the minimum value easily by setting the derivative to zero:<script type="math/tex; mode=display">0=\frac{d}{d \theta} V_{N}\left(\theta, Z^{N}\right)=\frac{2}{N} \sum_{t=1}^{N} \varphi(t)\left(y(t)-\varphi^{T}(t) \theta\right)</script><ul>
+<li>which gives<script type="math/tex; mode=display">\sum_{t=1}^{N} \varphi(t) y(t)=\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t) \theta</script></li>
+<li>or<script type="math/tex; mode=display">\hat{\theta}_{N}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) y(t) \tag{13}</script></li>
+</ul>
+</li>
+<li>Once the vectors $\varphi(t)$ are defined, the solution can easily be found bymodern numerical software, such as MATLAB.</li>
+<li><strong>#Example 3 First order difference equation</strong><ul>
+<li>Consider the simple model<script type="math/tex; mode=display">y(t)+a y(t-1)=b u(t-1)</script></li>
+<li>This gives us the estimate according to (5), (6) and (13)<script type="math/tex; mode=display">\left[ \begin{array}{c}{\hat{a}_{N}} \\ {\hat{b}_{N}}\end{array}\right]=\left[ \begin{array}{c}{\sum y^{2}(t-1) \quad -\sum y(t-1) u(t-1)} \\ {-\sum y(t-1) u(t-1) \quad \sum u^{2}(t-1)}\end{array}\right]^{-1} \left[ \begin{array}{c}{-\sum y(t) y(t-1)} \\ {\sum y(t) u(t-1)}\end{array}\right]</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-Some-Statistical-Remarks-Model"><a href="#2-3-Some-Statistical-Remarks-Model" class="headerlink" title="2.3 Some Statistical Remarks Model"></a>2.3 Some Statistical Remarks Model</h3><ul>
+<li>Model structures, such as (7) that are linear in $\theta$ are known in statistics as <strong>linear regression</strong> and the vector $\varphi (t)$ is called the <strong>regression vector</strong> (its components are the <strong>regressors</strong>).</li>
+<li>Models such as (3) where the regression vector -$\varphi (t)$- contains old values of the variable to be explained -$y(t)$- are then partly <strong>auto-regressions</strong>. For that reason the model structure (3) has the standard name <strong>ARX-model</strong> (Auto-regression with extra inputs).</li>
+<li>So far we have just viewed (9) and (10) as “<strong>curve-fitting</strong>“.</li>
+</ul>
+<h3 id="2-4-Model-Quality-and-Experiment-Design"><a href="#2-4-Model-Quality-and-Experiment-Design" class="headerlink" title="2.4 Model Quality and Experiment Design"></a>2.4 Model Quality and Experiment Design</h3><ul>
+<li>Finite Impulse Response (FIR) model: That is obtained from (3) by taking $n=0$:<script type="math/tex; mode=display">y(t)=b_{1} u(t-1)+\ldots b_{m} u(t-m) \tag{14}</script></li>
+<li>Suppose that the observed data really have been generated by a similar mechanism<script type="math/tex; mode=display">y(t)=b_{1}^{0} u(t-1)+\ldots b_{m}^{0} u(t-m)+e(t)</script><ul>
+<li>where $e(t)$ is a white noise sequence with variance $\lambda$ but otherwise unknown.<ul>
+<li>That is, $e(t)$ can be described as a sequence of independent random variables with <strong>zero mean values</strong> and variances $\lambda$.</li>
+</ul>
+</li>
+<li>Analogous to (7) we can write this as <script type="math/tex; mode=display">y(t)=\varphi^{T}(t) \theta_{0}+e(t) \tag{16}</script></li>
+</ul>
+</li>
+<li><p>We can now replace $y(t)$ in (13) by the above expression, and obtain</p>
+<script type="math/tex; mode=display">\hat{\theta}_{N}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) y(t)=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1}\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t) \theta_{0}+\sum_{t=1}^{N} \varphi(t) e(t)\right]</script><script type="math/tex; mode=display">\tilde{\theta}_{N}=\hat{\theta}_{N}-\theta_{0}=\left[\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)\right]^{-1} \sum_{t=1}^{N} \varphi(t) e(t) \tag{17}</script><script type="math/tex; mode=display">E \tilde{\theta}_{N}=0</script></li>
+<li>Denote the matrix within brackets by $R_N$, We can also form the expectation of $\tilde{\theta}_{N} \tilde{\theta}_{N}^{T}$, i.e., the covariance matrix of the parameter error.<script type="math/tex; mode=display">R(N)=\sum_{t=1}^{N} \varphi(t) \varphi^{T}(t)</script><script type="math/tex; mode=display">P_{N}=E \tilde{\theta}_{N} \tilde{\theta}_{N}^{T}=R_{N}^{-1} \sum_{t, s=1}^{N} \varphi(t) \varphi^{T}(s) E e(t) e(s) R_{N}^{-1}=\lambda R_{N}^{-1}</script></li>
+<li>Moreover define<script type="math/tex; mode=display">\overline{R}=\lim _{N \rightarrow \infty} \frac{1}{N} R_{N}</script><ul>
+<li>This will be the <strong>covariance matrix</strong> of the input, i.e., the $i-j$-element of $\bar R$ is $\lim _{N \rightarrow \infty} \frac{1}{N} \sum_{t=1}^{N} u(t-i) u(t-j)$.</li>
+</ul>
+</li>
+<li>If the matrix R is non-singular, we find that the covariance matrix of the parameter estimate is approximately<script type="math/tex; mode=display">P_{N}=\frac{\lambda}{N} \bar{R}^{-1}</script></li>
+<li>A number of things follow from this. All of them are typical of the general properties to be described in Section 5.2:<ul>
+<li>The covariance decays like $1/N$, so the parameters approach the limiting value at the rate $1/\sqrt N$.</li>
+<li>The covariance is proportional to the Noise-To-Signal ratio. That is, it is proportional to the noise variance and inversely proportional to the input power.</li>
+<li>The covariance does not depend on the input’s or noise’s signal shapes, only on their variance/covariance properties.</li>
+<li>Experiment design, i.e., the selection of the input $u$ aims at making the matrix $\bar{R}^{-1}$ “as small as possible”. Note that the same $\bar R$ can be obtained for many different signals $u$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Model-structures-I-Linear-Models"><a href="#3-Model-structures-I-Linear-Models" class="headerlink" title="3 Model structures I: Linear Models"></a>3 Model structures I: Linear Models</h2><h3 id="3-1-Output-error-models"><a href="#3-1-Output-error-models" class="headerlink" title="3.1 Output error models"></a>3.1 Output error models</h3><ul>
+<li>Starting from (3) there is actually another, quite dfferent, way to approach the calculation of good values of $a_i$ and $b_i$ from observed data (8). Equation (3) describes a linear, discrete0time system with transfer function<script type="math/tex; mode=display">G(z)=\frac{b_{1} z^{n-1}+b_{2} z^{n-2}+\ldots+b_{m} z^{n-m}}{z^{n}+a_{1} z^{n-1}+\ldots+a_{n}} \tag{21}</script><ul>
+<li>(assuming $n\geq m$)</li>
+</ul>
+</li>
+<li>shift operator $q$ has the properties<ul>
+<li>$q u(t)=u(t+1)$</li>
+</ul>
+</li>
+<li>Given only an input sequence<ul>
+<li>${u(t), t=1, \dots, N}$</li>
+</ul>
+</li>
+<li>we could then calculate the output for system (21) by running $u$ as input to this system:<script type="math/tex; mode=display">\hat{y}(t | \theta)=G(q) u(t) \tag{23}</script></li>
+</ul>
+<h2 id="4-Model-Structures-II-Non-linear-Black-Box-Models"><a href="#4-Model-Structures-II-Non-linear-Black-Box-Models" class="headerlink" title="4 Model Structures II: Non-linear Black Box Models"></a>4 Model Structures II: Non-linear Black Box Models</h2><h2 id="5-General-Parameter-Estimation-Techniques"><a href="#5-General-Parameter-Estimation-Techniques" class="headerlink" title="5 General Parameter Estimation Techniques"></a>5 General Parameter Estimation Techniques</h2><h2 id="6-Special-Estimation-Techniques-for-Linear-Black-Box-Models"><a href="#6-Special-Estimation-Techniques-for-Linear-Black-Box-Models" class="headerlink" title="6 Special Estimation Techniques for Linear Black Box Models"></a>6 Special Estimation Techniques for Linear Black Box Models</h2><h2 id="7-Data-Quality"><a href="#7-Data-Quality" class="headerlink" title="7 Data Quality"></a>7 Data Quality</h2><h2 id="8-Model-Validation-and-Model-Selection"><a href="#8-Model-Validation-and-Model-Selection" class="headerlink" title="8 Model Validation and Model Selection"></a>8 Model Validation and Model Selection</h2><h2 id="9-Back-to-Data-The-Practical-Side-of-Identification"><a href="#9-Back-to-Data-The-Practical-Side-of-Identification" class="headerlink" title="9 Back to Data: The Practical Side of Identification"></a>9 Back to Data: The Practical Side of Identification</h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-05-10T10:23:52.000Z" title="5/10/2019, 6:23:52 PM">2019-05-10</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:20.632Z" title="7/24/2019, 1:42:20 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/System-Identification/">System Identification</a></span><span class="level-item">5 minutes read (About 739 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/2d662707/">Modeling - Dynamic system modeling intro</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av41278439">动态系统的建模与分析 DR_CAN bilibili</a></li>
+<li>Hung V. Vu, Dynamic Systems: Modeling and Analysis</li>
+</ul>
+<h2 id="0-Intro"><a href="#0-Intro" class="headerlink" title="0 Intro"></a>0 Intro</h2><p>Mathematical Modeling and Dynamic Analysis -&gt; Controller Design -&gt; Testing</p>
+<h2 id="1-Modeling"><a href="#1-Modeling" class="headerlink" title="1 Modeling"></a>1 Modeling</h2><h3 id="1-1-Electrical-Electronic-and-Electromechanical-Systems"><a href="#1-1-Electrical-Electronic-and-Electromechanical-Systems" class="headerlink" title="1.1 Electrical, Electronic, and Electromechanical Systems"></a>1.1 Electrical, Electronic, and Electromechanical Systems</h3><h4 id="Kirchhoff’s-Current-Law-KCL"><a href="#Kirchhoff’s-Current-Law-KCL" class="headerlink" title="Kirchhoff’s Current Law (KCL)"></a>Kirchhoff’s Current Law (KCL)</h4><ul>
+<li>$i_{in} = i_{out}$</li>
+</ul>
+<h4 id="Kirchhoff’s-Voltage-Law-KVL"><a href="#Kirchhoff’s-Voltage-Law-KVL" class="headerlink" title="Kirchhoff’s Voltage Law (KVL)"></a>Kirchhoff’s Voltage Law (KVL)</h4><ul>
+<li>$\sum{e_i}=0$</li>
+</ul>
+<h4 id="6-main-elements"><a href="#6-main-elements" class="headerlink" title="6 main elements"></a>6 main elements</h4><ul>
+<li>Voltage, V, e</li>
+<li>Current, A, i</li>
+<li>Capacitor, F, C</li>
+<li>Resistor, Ω, R</li>
+<li>Inductor, H, L </li>
+<li>electric charge, C, q</li>
+</ul>
+<h4 id="Main-Relationships"><a href="#Main-Relationships" class="headerlink" title="Main Relationships"></a>Main Relationships</h4><ul>
+<li>$e = i \cdot R$</li>
+<li>$e_L = L \cdot \frac{di}{dt}$</li>
+<li>$q = C \cdot e_C$</li>
+<li>$e_C = \frac{1}{C} \cdot \int_0^t{i}{dt}$</li>
+<li>$i = \frac{dq}{dt}$</li>
+</ul>
+<h3 id="1-2-Fluid-and-Thermal-Systems"><a href="#1-2-Fluid-and-Thermal-Systems" class="headerlink" title="1.2 Fluid and Thermal Systems"></a>1.2 Fluid and Thermal Systems</h3><h4 id="Precondition"><a href="#Precondition" class="headerlink" title="Precondition"></a>Precondition</h4><ul>
+<li>$\rho == const$</li>
+</ul>
+<h4 id="Main-Elements"><a href="#Main-Elements" class="headerlink" title="Main Elements"></a>Main Elements</h4><ul>
+<li>Flow rate, q, $m^3/s$</li>
+<li>Volume, V, $m^3$</li>
+<li>Height, h, $m$</li>
+<li>Pressure, P, $N/m^3, Pascal$</li>
+<li>Hydrostatic Pressure, $P_{Hydro} = \frac{F_{Hydro}}{A}=\frac{mg}{A}=\frac{\rho gAh}{A}=\rho gh$</li>
+<li>Absolute Pressure, $P_{Abs} = P_a + P_{Hydro}$</li>
+<li>Gauge Pressure, $P_{Gauge} = P_{Abs}-P_{Ref}, =\rho gh$</li>
+<li>Fluid Resistence, $R, P_1-P_2 = \rho qR$</li>
+</ul>
+<h4 id="Basic-Law-Conservation-of-Mass"><a href="#Basic-Law-Conservation-of-Mass" class="headerlink" title="Basic Law: Conservation of Mass"></a>Basic Law: Conservation of Mass</h4><ul>
+<li>$\frac{dm}{dt}=\dot{m}_{in}-\dot{m}_{out}$</li>
+<li>$\frac{dV}{dt} = q_{in}-q_{out} \Rightarrow \frac{dh}{dt} = \frac{1}{A}(q_{in}-q_{out})$</li>
+<li>$\frac{dh}{dt} = \frac{1}{A}(q_{in}-\frac{gh}{R})$</li>
+<li>$\frac{dP}{dt}=  \frac{\rho g}{A}(q_{in}-q_{out})$</li>
+</ul>
+<h3 id="1-3-Mechanical-Systems"><a href="#1-3-Mechanical-Systems" class="headerlink" title="1.3 Mechanical Systems"></a>1.3 Mechanical Systems</h3><h4 id="Mass-Damping-Spring"><a href="#Mass-Damping-Spring" class="headerlink" title="Mass-Damping-Spring"></a>Mass-Damping-Spring</h4><ul>
+<li>Examples: “System Response” below</li>
+</ul>
+<h2 id="2-Analysis"><a href="#2-Analysis" class="headerlink" title="2 Analysis"></a>2 Analysis</h2><h3 id="2-1-Fundamentals"><a href="#2-1-Fundamentals" class="headerlink" title="2.1 Fundamentals"></a>2.1 Fundamentals</h3><h4 id="Laplace-Transformation"><a href="#Laplace-Transformation" class="headerlink" title="Laplace Transformation"></a>Laplace Transformation</h4><ul>
+<li>Existence of LT: Region of Convergence: $e^{-at}, Re(s)&gt;a$</li>
+<li>$s = \delta + j\omega$</li>
+<li>$F(s)=\mathcal {L{f(t)}}=\int _{-\infty }^{\infty }e^{-st}f(t)\,dt$</li>
+<li>IFT: $f(t)={\mathcal {L}}^{-1}{F(t)}$</li>
+</ul>
+<h4 id="Differential-Equations"><a href="#Differential-Equations" class="headerlink" title="Differential Equations"></a>Differential Equations</h4><h4 id="Transfer-Function"><a href="#Transfer-Function" class="headerlink" title="Transfer Function"></a>Transfer Function</h4><ul>
+<li>$\frac{X(s)}{U(s)}=G(s)$</li>
+<li>e.g., $u(t)=C, \mathcal L[u(t)] = C\frac{1}{s}$</li>
+</ul>
+<h3 id="2-2-System-Response"><a href="#2-2-System-Response" class="headerlink" title="2.2 System Response"></a>2.2 System Response</h3><h4 id="2-2-1-First-Order-Systems-Unit-Step-Response"><a href="#2-2-1-First-Order-Systems-Unit-Step-Response" class="headerlink" title="2.2.1 First-Order Systems Unit-Step Response"></a>2.2.1 First-Order Systems Unit-Step Response</h4><ul>
+<li><p>Time Constant</p>
+<ul>
+<li>$t=\tau=\frac{1}{a}, x(\tau)=0.63$</li>
+</ul>
+</li>
+<li><p>Settling Time</p>
+<ul>
+<li>$T_{ss}=4\tau=\frac{4}{a}, x(T_{ss})=0.98$</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-2-Second-Order-Systems-Unit-Step-Response"><a href="#2-2-2-Second-Order-Systems-Unit-Step-Response" class="headerlink" title="2.2.2 Second-Order Systems Unit-Step Response"></a>2.2.2 Second-Order Systems Unit-Step Response</h4><h5 id="Mass-Damping-Spring-1"><a href="#Mass-Damping-Spring-1" class="headerlink" title="Mass-Damping-Spring"></a>Mass-Damping-Spring</h5><ul>
+<li>$\ddot x+\frac{B}{m}\dot x+\frac{K}{m}x=F$<ul>
+<li>$\omega_n=\sqrt{\frac{K}{m}}$, Natural Frequency</li>
+<li>$\zeta = \frac{B}{2\sqrt{Km}}$, Damping Ratio</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-Characteristic-Equation"><a href="#1-Characteristic-Equation" class="headerlink" title="1. Characteristic Equation"></a><strong>1. Characteristic Equation</strong></h5><ul>
+<li>For response to initial condition: $F=0, x(0)=x_0, \dot x(0)=\dot x_0$</li>
+<li>$\ddot x+2\zeta\omega_n\dot x+\omega_n^2x=0$</li>
+<li>with $x(t)=e^{\lambda t}, \dot x(t)=\lambda e^{\lambda t}, \ddot x(t)=\lambda^2e^{\lambda t}$, obtain <strong>characteristic equation</strong> and solve and get characteristic roots $\lambda_{1,2}$ with $\zeta$ in the expression</li>
+<li>Situations<ul>
+<li>Overdamped,$\zeta &gt;1$</li>
+<li>Critically damped, $\zeta =1$</li>
+<li>Underdamped, $0&lt;\zeta &lt;1$</li>
+<li>Undamped, $\zeta =0$</li>
+</ul>
+</li>
+</ul>
+<h5 id="2-Tranfer-Function"><a href="#2-Tranfer-Function" class="headerlink" title="2. Tranfer Function"></a><strong>2. Tranfer Function</strong></h5><ul>
+<li>For Unit-Step Input, $U(s)=\frac{1}{s}$<ul>
+<li>$X(s)=U(s)G(s)=\frac{1}{s}G(s)$</li>
+<li>$x(t)=\mathcal L^{-1}[X(s)]=1-e^{-\zeta\omega_n t}\sqrt{\frac{1}{1-\zeta^2}}sin(\omega_d t+\phi)$</li>
+<li>Focus on <strong>underdamped</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-3-Assessment"><a href="#2-2-3-Assessment" class="headerlink" title="2.2.3 Assessment"></a>2.2.3 Assessment</h4><ul>
+<li>$T_d$: Delay time, the time for rise to 50%</li>
+<li>$T_r$: Rise time, the time for the first arrival to    the final value</li>
+<li>$M_p^\%$, Maximum percent overshoot, the vertical distance between the maximum peak</li>
+<li>$T_{ss}$, settling time, the time required for the response curve to reach and stay within a certain strip(2%~$4\tau$, 5%~$3\tau$) about the final value is referred to as the settling time.</li>
+<li>$T_p$, peak time</li>
+</ul>
+<h4 id="2-2-4-Frequency-Response"><a href="#2-2-4-Frequency-Response" class="headerlink" title="2.2.4 Frequency Response"></a>2.2.4 Frequency Response</h4><ul>
+<li>$G(j\omega)$</li>
+<li>Magnitude Response<ul>
+<li>$\frac{M_o}{M_i}=M$</li>
+</ul>
+</li>
+<li>Phase Response<ul>
+<li>$\phi_o - \phi_i = \phi$</li>
+</ul>
+</li>
+<li>Sinusoidal signal: invariable frequency<ul>
+<li>$u(t)=Asin{\omega t} + Bcos{\omega t} \sim M_i sin(\omega t+\phi_i)$</li>
+</ul>
+</li>
+<li>Frequency response actually is steady state response:<ul>
+<li>$x_{ss}(t) = K_1 e^{-j\omega t}+K_2 e^{j\omega t}$</li>
+<li>$K_1, K_2$ are conjugate</li>
+</ul>
+</li>
+<li>$M_G=|G(j\omega)|$, if in $20log|G(j\omega)|\sim \omega\,\Rightarrow$<strong>Bode Plot</strong></li>
+<li>$\phi_G=\angle G(j\omega)$</li>
+<li>Cut-Off Frequency<ul>
+<li>For Low-Pass Filter, $G(s)=\frac{a}{s+a}, s=j\omega$:<ul>
+<li>$|G(j\omega)|=\sqrt{\frac{1}{1+(\frac{\omega}{a})^2}}$</li>
+<li>Cut-Off Freaquency: $\omega = a, |G(j\omega)| = 0.707$</li>
+</ul>
+</li>
+<li>For High-Pass Filter, $G(s)=\frac{s}{s+a}, s=j\omega$:<ul>
+<li>$|G(j\omega)|=\sqrt{\frac{1}{1+(\frac{a}{\omega})^2}}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-04-22T03:10:01.000Z" title="4/22/2019, 11:10:01 AM">2019-04-22</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:05.550Z" title="7/24/2019, 1:42:05 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></span><span class="level-item">11 minutes read (About 1577 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/7c76f197/">DnA - LeetCode Easy Collection -- Array</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/">Top Interview Questions [Easy Collection] English</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/">初级算法 数组</a></li>
+</ul>
+<p>Just start to solve some questions on <strong>LeetCode</strong> as for the job interview.</p>
+<p>I will follow the route of <strong>Top Interview Questions</strong>, and try to program in <strong>Python</strong> and <strong>C++</strong>.</p>
+<p>This article will be about <strong>Array</strong>.</p>
+<h2 id="0-TOC-of-Array"><a href="#0-TOC-of-Array" class="headerlink" title="0. TOC of Array"></a>0. TOC of Array</h2><ol>
+<li>[26] Remove Duplicates from Sorted Array  </li>
+<li>[122] Best Time to Buy and Sell Stock II  </li>
+<li>[189] Rotate Array  </li>
+<li>[217] Contains Duplicate  </li>
+<li>[136] Single Number  </li>
+<li>[350] Intersection of Two Arrays II  </li>
+<li>[66] Plus One  </li>
+<li>[283] Move Zeroes  </li>
+<li>[1] Two Sum  </li>
+<li>[36] Valid Sudoku  </li>
+<li>[43] Rotate Image</li>
+</ol>
+<h2 id="1-26-Remove-Duplicates-from-Sorted-Array"><a href="#1-26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="1. [26] Remove Duplicates from Sorted Array"></a>1. [26] Remove Duplicates from Sorted Array</h2><p>Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Example <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">Given nums = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>],</span><br><span class="line"></span><br><span class="line">Your <span class="keyword">function</span> <span class="title">should</span> <span class="keyword">return</span> <span class="type">length</span> = <span class="number">2</span>, <span class="keyword">with</span> the first two elements <span class="keyword">of</span> nums being <span class="number">1</span> <span class="keyword">and</span> <span class="number">2</span> respectively.</span><br><span class="line"></span><br><span class="line">It doesn<span class="symbol">&#x27;t</span> matter what you leave beyond the returned length.</span><br></pre></td></tr></table></figure>
+<h3 id="1-0-Ideas"><a href="#1-0-Ideas" class="headerlink" title="1.0 Ideas"></a>1.0 Ideas</h3><p>Delete the value at the static position.</p>
+<h3 id="1-1-Python"><a href="#1-1-Python" class="headerlink" title="1.1 Python"></a>1.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        pos = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[pos+<span class="number">1</span>]!=nums[pos]:</span><br><span class="line">                pos += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">del</span> nums[pos]</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-C"><a href="#1-2-C" class="headerlink" title="1.2 C++"></a>1.2 C++</h3><p>I stuck at here, because I forget the usages of stl…</p>
+<h4 id="❌-wrong-version"><a href="#❌-wrong-version" class="headerlink" title="❌ wrong version"></a>❌ wrong version</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/////////////////////</span></span><br><span class="line"><span class="comment">/// wrong version ///</span></span><br><span class="line"><span class="comment">/////////////////////</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pos=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;nums.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[pos+<span class="number">1</span>]==nums[pos])</span><br><span class="line">            &#123;</span><br><span class="line">                nums.erase(nums.begin()+pos);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> nums.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="✔-correct-version"><a href="#✔-correct-version" class="headerlink" title="✔ correct version"></a>✔ correct version</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(empty(nums))</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pos=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i_end = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;i_end;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[pos+<span class="number">1</span>]==nums[pos])</span><br><span class="line">            &#123;</span><br><span class="line">                nums.erase(nums.begin()+pos);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> nums.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-Summary"><a href="#1-3-Summary" class="headerlink" title="1.3 Summary"></a>1.3 Summary</h3><ul>
+<li>The answer by C++ even runs slower than Python.</li>
+<li>As a delete with space operation in Python, use del; in C++, use vec.erase(vec.begin()+pos). </li>
+</ul>
+<p>There is a better cpp answer:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(empty(nums))</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> writeIndex = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[writeIndex<span class="number">-1</span>]!=nums[i])&#123;</span><br><span class="line">                nums[writeIndex++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> writeIndex;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-122-Best-Time-to-Buy-and-Sell-Stock-II"><a href="#2-122-Best-Time-to-Buy-and-Sell-Stock-II" class="headerlink" title="2. [122] Best Time to Buy and Sell Stock II"></a>2. [122] Best Time to Buy and Sell Stock II</h2><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
+<p><strong>Note</strong>: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Example</span> <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line"><span class="attribute">Input</span>:<span class="meta"> [7,1,5,3,6,4]</span></span><br><span class="line"><span class="attribute">Output</span>: <span class="number">7</span></span><br><span class="line"><span class="attribute">Explanation</span>: Buy <span class="literal">on</span> day <span class="number">2</span> (price = <span class="number">1</span>) and sell <span class="literal">on</span> day <span class="number">3</span> (price = <span class="number">5</span>), profit = <span class="number">5</span>-<span class="number">1</span> = <span class="number">4</span>.</span><br><span class="line">             <span class="attribute">Then</span> buy <span class="literal">on</span> day <span class="number">4</span> (price = <span class="number">3</span>) and sell <span class="literal">on</span> day <span class="number">5</span> (price = <span class="number">6</span>), profit = <span class="number">6</span>-<span class="number">3</span> = <span class="number">3</span>.</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-0-Ideas"><a href="#2-0-Ideas" class="headerlink" title="2.0 Ideas"></a>2.0 Ideas</h3><p>Actually, I didn’t have any ideas. So I searched the answer in Internet, and found that it can be solved with greedy algorithm.</p>
+<h3 id="2-1-Python"><a href="#2-1-Python" class="headerlink" title="2.1 Python"></a>2.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        max_prod = <span class="number">0</span></span><br><span class="line">        tmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(prices)):</span><br><span class="line">            tmp = prices[i] - prices[i-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> tmp&gt;<span class="number">0</span>:</span><br><span class="line">                max_prod += tmp</span><br><span class="line">        <span class="keyword">return</span> max_prod</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-C"><a href="#2-2-C" class="headerlink" title="2.2 C++"></a>2.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> max_prod = <span class="number">0</span>, tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.size(); ++i) &#123;</span><br><span class="line">            tmp = prices[i] - prices[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span> (tmp &gt; <span class="number">0</span>)</span><br><span class="line">                max_prod += tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_prod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Summary"><a href="#2-3-Summary" class="headerlink" title="2.3 Summary"></a>2.3 Summary</h3><p>A small trick.</p>
+<h2 id="3-189-Rotate-Array"><a href="#3-189-Rotate-Array" class="headerlink" title="3. [189] Rotate Array"></a>3. [189] Rotate Array</h2><p>Given an array, rotate the array to the right by k steps, where k is non-negative.<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Example <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">Input: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>] <span class="keyword">and</span> k = <span class="number">3</span></span><br><span class="line">Output: [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">Explanation:</span><br><span class="line">rotate <span class="number">1</span> steps <span class="built_in">to</span> <span class="keyword">the</span> <span class="literal">right</span>: [<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">rotate <span class="number">2</span> steps <span class="built_in">to</span> <span class="keyword">the</span> <span class="literal">right</span>: [<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">rotate <span class="number">3</span> steps <span class="built_in">to</span> <span class="keyword">the</span> <span class="literal">right</span>: [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-0-Ideas"><a href="#3-0-Ideas" class="headerlink" title="3.0 Ideas"></a>3.0 Ideas</h3><p>Simple but difficult to get high scores.</p>
+<h3 id="3-1-Python"><a href="#3-1-Python" class="headerlink" title="3.1 Python"></a>3.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># beats 37.54 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], k: <span class="built_in">int</span></span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment">### beats 20... %</span></span><br><span class="line">        <span class="comment"># for i in range(k):</span></span><br><span class="line">        <span class="comment">#     nums.insert(0,nums.pop())</span></span><br><span class="line">        <span class="comment">###</span></span><br><span class="line"></span><br><span class="line">        k = k % <span class="built_in">len</span>(nums)</span><br><span class="line">        nums[:] = nums[-k:] + nums[:-k]</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-C"><a href="#3-2-C" class="headerlink" title="3.2 C++"></a>3.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># beats 18.44 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            nums.insert(nums.begin(),nums.back());</span><br><span class="line">            nums.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-Summary"><a href="#3-3-Summary" class="headerlink" title="3.3 Summary"></a>3.3 Summary</h3><p>Notice that there will be a k&gt;len(nums), so do k%len(nums).</p>
+<h2 id="4-217-Contains-Duplicate"><a href="#4-217-Contains-Duplicate" class="headerlink" title="4 [217] Contains Duplicate"></a>4 [217] Contains Duplicate</h2><p>Given an array of integers, find if the array contains any duplicates.</p>
+<p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Example 1:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Input:</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line"><span class="attr">Output:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-0-Ideas"><a href="#4-0-Ideas" class="headerlink" title="4.0 Ideas"></a>4.0 Ideas</h3><p>Use <code>set</code> to transform the list in set, and judge the two lengths.</p>
+<h3 id="4-1-Python"><a href="#4-1-Python" class="headerlink" title="4.1 Python"></a>4.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># runtime beats 93.56 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">containsDuplicate</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-C"><a href="#4-2-C" class="headerlink" title="4.2 C++"></a>4.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># runtime beats 95.01 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = nums.size();</span><br><span class="line">        <span class="keyword">if</span>(l&lt;<span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.size()<span class="number">-1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-Summary"><a href="#4-3-Summary" class="headerlink" title="4.3 Summary"></a>4.3 Summary</h3><p>With C++, use built-in function <code>sort</code> for the preprocessing.</p>
+<h2 id="5-136-Single-Number"><a href="#5-136-Single-Number" class="headerlink" title="5. [136] Single Number"></a>5. [136] Single Number</h2><p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.</p>
+<p>Note:</p>
+<p>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Example</span> <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line"><span class="attribute">Input</span>:<span class="meta"> [2,2,1]</span></span><br><span class="line"><span class="attribute">Output</span>: <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-0-Ideas"><a href="#5-0-Ideas" class="headerlink" title="5.0 Ideas"></a>5.0 Ideas</h3><p>Do the sort first, and then judge the number where not in couple exists.</p>
+<h3 id="5-1-Python"><a href="#5-1-Python" class="headerlink" title="5.1 Python"></a>5.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># runtime beats 45.08 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)//<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[<span class="number">2</span>*i]!=nums[<span class="number">2</span>*i+<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">return</span> nums[<span class="number">2</span>*i]</span><br><span class="line">        <span class="keyword">return</span> nums[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-C"><a href="#5-2-C" class="headerlink" title="5.2 C++"></a>5.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># runtime beats 38.97 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i &lt; nums.size()/<span class="number">2</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[<span class="number">2</span>*i] != nums[<span class="number">2</span>*i+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> nums[<span class="number">2</span>*i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> *(nums.end()<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-Summary"><a href="#5-3-Summary" class="headerlink" title="5.3 Summary"></a>5.3 Summary</h3><p>In <code>vector</code>, the <code>v.end()</code> point at the next position of the end of the vector. So you need to use <code>*(v.end()-1)</code> to read the last element.</p>
+<h2 id="6-350-Intersection-of-Two-Arrays-II"><a href="#6-350-Intersection-of-Two-Arrays-II" class="headerlink" title="6. [350] Intersection of Two Arrays II"></a>6. [350] Intersection of Two Arrays II</h2><p>Given two arrays, write a function to compute their intersection.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Example</span> <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line"><span class="attribute">Input</span>: nums<span class="number">1</span> =<span class="meta"> [1,2,2,1], nums2 = [2,2]</span></span><br><span class="line"><span class="attribute">Output</span>:<span class="meta"> [2,2]</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-0-Ideas"><a href="#6-0-Ideas" class="headerlink" title="6.0 Ideas"></a>6.0 Ideas</h3><ol>
+<li>With Python, there are built-in functions by <code>set()</code>.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="built_in">set</span>(<span class="string">&#x27;abracadabra&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="built_in">set</span>(<span class="string">&#x27;alacazam&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a                                  </span><br><span class="line">&#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a - b                              <span class="comment"># 集合a中包含而集合b中不包含的元素</span></span><br><span class="line">&#123;<span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a | b                              <span class="comment"># 集合a或b中包含的所有元素</span></span><br><span class="line">&#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;l&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a &amp; b                              <span class="comment"># 集合a和b中都包含了的元素</span></span><br><span class="line">&#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a ^ b                              <span class="comment"># 不同时包含于a和b的元素</span></span><br><span class="line">&#123;<span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;l&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>But here we need to count the duplicated numbers. So it is not useful.</strong></p>
+<ol>
+<li>Use list expression.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> [it <span class="keyword">for</span> it <span class="keyword">in</span> nums1 <span class="keyword">if</span> it <span class="keyword">in</span> nums2]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>It is also useless because of the duplication.<br>But it is near to a correct answer.</p>
+<ol>
+<li>Sort and compare the numbers.</li>
+</ol>
+<h3 id="6-1-Python"><a href="#6-1-Python" class="headerlink" title="6.1 Python"></a>6.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># runtime beats 22.56 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">intersect</span>(<span class="params">self, nums1: List[<span class="built_in">int</span>], nums2: List[<span class="built_in">int</span>]</span>) -&gt; List[int]:</span></span><br><span class="line">        r = []</span><br><span class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> nums1:</span><br><span class="line">            <span class="keyword">if</span> it <span class="keyword">in</span> nums2:</span><br><span class="line">                r.append(it)</span><br><span class="line">                nums2.remove(it)</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># runtime beats 61.23 %</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">intersect</span>(<span class="params">self, nums1: List[<span class="built_in">int</span>], nums2: List[<span class="built_in">int</span>]</span>) -&gt; List[int]:</span></span><br><span class="line">        nums1.sort()</span><br><span class="line">        nums2.sort()</span><br><span class="line">        r = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums1)+<span class="built_in">len</span>(nums2)):</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">min</span>(<span class="built_in">len</span>(nums1),<span class="built_in">len</span>(nums2)) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> r</span><br><span class="line">            <span class="keyword">elif</span> nums1[-<span class="number">1</span>] &gt; nums2[-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">del</span> nums1[-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">elif</span> nums1[-<span class="number">1</span>] &lt; nums2[-<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">del</span> nums2[-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r.append(nums1.pop())</span><br><span class="line">                <span class="keyword">del</span> nums2[-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-C"><a href="#6-2-C" class="headerlink" title="6.2 C++"></a>6.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">intersect</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        sort(nums1.begin(),nums1.end());</span><br><span class="line">        sort(nums2.begin(),nums2.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r;</span><br><span class="line">        <span class="keyword">int</span> l = nums1.size()+nums2.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums1.size()*nums2.size()==<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">return</span> r;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums1.back() &gt; nums2.back())</span><br><span class="line">                nums1.pop_back();</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums1.back() &lt; nums2.back())</span><br><span class="line">                nums2.pop_back();</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                r.push_back(nums1.back());</span><br><span class="line">                nums1.pop_back();</span><br><span class="line">                nums2.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-Summary"><a href="#6-3-Summary" class="headerlink" title="6.3 Summary"></a>6.3 Summary</h3><p>See ideas.</p>
+<h2 id="7-66-Plus-One"><a href="#7-66-Plus-One" class="headerlink" title="7. [66] Plus One"></a>7. [66] Plus One</h2><p>Given a non-empty array of digits representing a non-negative integer, plus one to the integer.</p>
+<p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.</p>
+<p>You may assume the integer does not contain any leading zero, except the number 0 itself.<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: [1,2,3]</span><br><span class="line">Output: [1,2,4]</span><br><span class="line">Explanation: The<span class="built_in"> array </span>represents the integer 123.</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-0-Ideas"><a href="#7-0-Ideas" class="headerlink" title="7.0 Ideas"></a>7.0 Ideas</h3><h3 id="7-1-Python"><a href="#7-1-Python" class="headerlink" title="7.1 Python"></a>7.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plusOne</span>(<span class="params">self, digits: List[<span class="built_in">int</span>]</span>) -&gt; List[int]:</span></span><br><span class="line">        digits.reverse()</span><br><span class="line">        r = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(digits)):</span><br><span class="line">            r = r + digits[i] * (<span class="number">10</span> ** i)</span><br><span class="line">        r += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> [<span class="built_in">int</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">str</span>(r)]</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+<h3 id="7-2-C"><a href="#7-2-C" class="headerlink" title="7.2 C++"></a>7.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="7-3-Summary"><a href="#7-3-Summary" class="headerlink" title="7.3 Summary"></a>7.3 Summary</h3><h2 id="8-283-Move-Zeroes"><a href="#8-283-Move-Zeroes" class="headerlink" title="8. [283] Move Zeroes"></a>8. [283] Move Zeroes</h2><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Example:</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">Input:</span> [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">12</span>]</span><br><span class="line"><span class="symbol">Output:</span> [<span class="number">1</span>,<span class="number">3</span>,<span class="number">12</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>Note:</p>
+<p>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
+<h3 id="8-0-Ideas"><a href="#8-0-Ideas" class="headerlink" title="8.0 Ideas"></a>8.0 Ideas</h3><h3 id="8-1-Python"><a href="#8-1-Python" class="headerlink" title="8.1 Python"></a>8.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveZeroes</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        c = nums.count(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(c):</span><br><span class="line">            nums.remove(<span class="number">0</span>)</span><br><span class="line">            nums.append(<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># i=0</span></span><br><span class="line">        <span class="comment"># j=0</span></span><br><span class="line">        <span class="comment"># while i&lt;len(nums) and j&lt;len(nums):</span></span><br><span class="line">        <span class="comment">#     if nums[i]==0 and nums[j]!=0:</span></span><br><span class="line">        <span class="comment">#         nums[i],nums[j]=nums[j],nums[i]</span></span><br><span class="line">        <span class="comment">#     if nums[i]!=0:</span></span><br><span class="line">        <span class="comment">#         i+=1</span></span><br><span class="line">        <span class="comment">#     if nums[j]==0 or j&lt;i:</span></span><br><span class="line">        <span class="comment">#         j+=1</span></span><br></pre></td></tr></table></figure>
+<h3 id="8-2-C"><a href="#8-2-C" class="headerlink" title="8.2 C++"></a>8.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="8-3-Summary"><a href="#8-3-Summary" class="headerlink" title="8.3 Summary"></a>8.3 Summary</h3><h2 id="9-1-Two-Sum"><a href="#9-1-Two-Sum" class="headerlink" title="9. [1] Two Sum"></a>9. [1] Two Sum</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Example</span>:</span><br><span class="line"></span><br><span class="line"><span class="symbol">Given</span> nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line"><span class="symbol">Because</span> nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line">return [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-0-Ideas"><a href="#9-0-Ideas" class="headerlink" title="9.0 Ideas"></a>9.0 Ideas</h3><h3 id="9-1-Python"><a href="#9-1-Python" class="headerlink" title="9.1 Python"></a>9.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums: List[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; List[int]:</span></span><br><span class="line">        hash_map = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target-num <span class="keyword">in</span> hash_map:</span><br><span class="line">                <span class="keyword">return</span>([hash_map[target-num], i])</span><br><span class="line">            hash_map[num] = i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="9-2-C"><a href="#9-2-C" class="headerlink" title="9.2 C++"></a>9.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="9-3-Summary"><a href="#9-3-Summary" class="headerlink" title="9.3 Summary"></a>9.3 Summary</h3><h2 id="10-36-Valid-Sudoku"><a href="#10-36-Valid-Sudoku" class="headerlink" title="10. [36] Valid Sudoku"></a>10. [36] Valid Sudoku</h2><p>Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:</p>
+<ol>
+<li>Each row must contain the digits 1-9 without repetition.</li>
+<li>Each column must contain the digits 1-9 without repetition.</li>
+<li>Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.</li>
+</ol>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" alt="pic"></p>
+<p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Example <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[<span class="meta"></span></span><br><span class="line"><span class="meta">  [<span class="meta-string">&quot;5&quot;</span>,<span class="meta-string">&quot;3&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;7&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;6&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;1&quot;</span>,<span class="meta-string">&quot;9&quot;</span>,<span class="meta-string">&quot;5&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;9&quot;</span>,<span class="meta-string">&quot;8&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;6&quot;</span>,<span class="meta-string">&quot;.&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;8&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;6&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;3&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;4&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;8&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;3&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;1&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;7&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;2&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;6&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;6&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;2&quot;</span>,<span class="meta-string">&quot;8&quot;</span>,<span class="meta-string">&quot;.&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;4&quot;</span>,<span class="meta-string">&quot;1&quot;</span>,<span class="meta-string">&quot;9&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;5&quot;</span></span>],</span><br><span class="line">  [<span class="meta"><span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;8&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;.&quot;</span>,<span class="meta-string">&quot;7&quot;</span>,<span class="meta-string">&quot;9&quot;</span></span>]</span><br><span class="line">]</span><br><span class="line">Output: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="10-0-Ideas"><a href="#10-0-Ideas" class="headerlink" title="10.0 Ideas"></a>10.0 Ideas</h3><h3 id="10-1-Python"><a href="#10-1-Python" class="headerlink" title="10.1 Python"></a>10.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span>(<span class="params">self, board: List[List[<span class="built_in">str</span>]]</span>) -&gt; bool:</span></span><br><span class="line">        cols = [[] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>)]</span><br><span class="line">        blocks = [[] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>)]</span><br><span class="line">        i_row = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> board:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> row <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>]) != <span class="built_in">len</span>(<span class="built_in">set</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> row <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>])):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>):</span><br><span class="line">                cols[i].append(row[i])</span><br><span class="line">                blocks[<span class="number">3</span>*(i_row//<span class="number">3</span>) + i//<span class="number">3</span>].append(row[i])</span><br><span class="line">            i_row += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> col <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>]) != <span class="built_in">len</span>(<span class="built_in">set</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> col <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>])):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> block <span class="keyword">in</span> blocks:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> block <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>]) != <span class="built_in">len</span>(<span class="built_in">set</span>([c <span class="keyword">for</span> c <span class="keyword">in</span> block <span class="keyword">if</span> c &gt; <span class="string">&quot;0&quot;</span>])):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+<h3 id="10-2-C"><a href="#10-2-C" class="headerlink" title="10.2 C++"></a>10.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="10-3-Summary"><a href="#10-3-Summary" class="headerlink" title="10.3 Summary"></a>10.3 Summary</h3><h2 id="11-43-Rotate-Image"><a href="#11-43-Rotate-Image" class="headerlink" title="11. [43] Rotate Image"></a>11. [43] Rotate Image</h2><p>You are given an n x n 2D matrix representing an image.</p>
+<p>Rotate the image by 90 degrees (clockwise).</p>
+<p>Note:</p>
+<p>You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Given input matrix = </span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  <span class="comment">[1,2,3]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[4,5,6]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[7,8,9]</span></span></span><br><span class="line"><span class="comment">]</span>,</span><br><span class="line"></span><br><span class="line">rotate the input matrix in-place such that it becomes:</span><br><span class="line"><span class="comment">[</span></span><br><span class="line"><span class="comment">  <span class="comment">[7,4,1]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[8,5,2]</span>,</span></span><br><span class="line"><span class="comment">  <span class="comment">[9,6,3]</span></span></span><br><span class="line"><span class="comment">]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="11-0-Ideas"><a href="#11-0-Ideas" class="headerlink" title="11.0 Ideas"></a>11.0 Ideas</h3><h3 id="11-1-Python"><a href="#11-1-Python" class="headerlink" title="11.1 Python"></a>11.1 Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">self, matrix: List[List[<span class="built_in">int</span>]]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        len_m = <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> matrix:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(len_m):</span><br><span class="line">                p = row.pop(i-len_m)</span><br><span class="line">                matrix[i].insert(<span class="number">0</span>,p)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="11-2-C"><a href="#11-2-C" class="headerlink" title="11.2 C++"></a>11.2 C++</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="11-3-Summary"><a href="#11-3-Summary" class="headerlink" title="11.3 Summary"></a>11.3 Summary</h3></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2018-12-26T14:35:15.000Z" title="12/26/2018, 10:35:15 PM">2018-12-26</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:38.509Z" title="7/24/2019, 1:42:38 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/Research/">Research</a></span><span class="level-item">3 minutes read (About 451 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/92fd6741/">Scientific Writing</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+<p>内容提炼自<a target="_blank" rel="noopener" href="http://yuri.shardt.me">Yuri A.W. Shardt老师</a></p>
+</blockquote>
+<h1 id="1-structure"><a href="#1-structure" class="headerlink" title="1 structure"></a>1 structure</h1><p>The <strong>structure</strong> of a scientific Paper, Report, or Thesis</p>
+<ul>
+<li><strong>Abstract</strong>: Summarises</li>
+<li><strong>Introduction</strong>: Motivation &amp; Objectives</li>
+<li><strong>Theory</strong>: theoretical underpinning or new theoretical perspective</li>
+<li><strong>Experimental / Simulation</strong> procedure : how it is tested or validated</li>
+<li><strong>Result &amp; Discussion</strong> : outcomes of Experiments/Simulation → theory </li>
+<li><strong>Conclusions</strong>: Summarize the paper &amp; clearly state overall results</li>
+<li><strong>References</strong></li>
+<li><strong>Acknowledgements</strong>. Appendices</li>
+</ul>
+<h2 id="1-1-Abstract-Summarises"><a href="#1-1-Abstract-Summarises" class="headerlink" title="1.1 Abstract: Summarises"></a>1.1 Abstract: Summarises</h2><ul>
+<li>Background Motivation + Objectives: <ul>
+<li>1~2 S</li>
+</ul>
+</li>
+<li>Theoretical Underpinning: <ul>
+<li>1~2 S</li>
+</ul>
+</li>
+<li>Experimental Explanation<ul>
+<li>0.5 S (in control) ~ 2+ (certain fields)</li>
+</ul>
+</li>
+<li>Results &amp; Discussion<ul>
+<li>at least 0.5 S per objective (忌废话)</li>
+</ul>
+</li>
+<li>Conclusions/Future work<ul>
+<li>~1 S</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-Introduction-Motivation-amp-Objectives"><a href="#1-2-Introduction-Motivation-amp-Objectives" class="headerlink" title="1.2 Introduction: Motivation &amp; Objectives"></a>1.2 Introduction: Motivation &amp; Objectives</h2><ul>
+<li>Background/General Motivation<ul>
+<li>1 P briefly states:<ul>
+<li>Why the field of research is important</li>
+<li>give some bgs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Literature Review: <ul>
+<li>2~3 P<ul>
+<li>what has been done </li>
+<li>deficiencies or holes<ul>
+<li>analysed &amp; discussed together</li>
+<li>use transition words to show the relationship</li>
+<li>2 Styles: <ul>
+<li>Indirect: (present tense) emphasise results</li>
+<li>Direct: (past tense) emphasize author</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>objectives:<ul>
+<li>1 P states the point<ul>
+<li>1~4 objectives</li>
+<li>signposts &amp; efficiencies in the current advanced</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-Theory-theoretical-basis"><a href="#1-3-Theory-theoretical-basis" class="headerlink" title="1.3 Theory: theoretical basis"></a>1.3 Theory: theoretical basis</h2><ul>
+<li>Background:<ul>
+<li>explains key notation, concepts &amp; results required to understand work</li>
+<li>used to speed up on readers’ knowledge</li>
+<li>range from a single figure &amp; a few lines of text to a long sections with many subsections</li>
+</ul>
+</li>
+<li>relevant theory: <ul>
+<li>important or new info</li>
+<li>a section per theoretical objective</li>
+<li>(carefully) write to bring the reader to conclusion</li>
+<li>Theorem’s proof:<ul>
+<li>State <strong>assumptions</strong>: limitations</li>
+<li>State the <strong>fundamentals</strong>: previously accepted</li>
+<li>combine the 2 above → new conclusion</li>
+<li>State the <strong>conclusion</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-4-Procedure-how-experiments-simulation-was-performed"><a href="#1-4-Procedure-how-experiments-simulation-was-performed" class="headerlink" title="1.4 Procedure: how experiments/simulation was performed"></a>1.4 Procedure: how experiments/simulation was performed</h2><ul>
+<li>sequentially arrange, so that it can be reproduced</li>
+<li>a schematic is helpful to explain what is going on.</li>
+</ul>
+<h2 id="1-5-Results-amp-Discussion-answer-the-objs-or-questions-raised-in-the-paper"><a href="#1-5-Results-amp-Discussion-answer-the-objs-or-questions-raised-in-the-paper" class="headerlink" title="1.5 Results &amp; Discussion: answer the objs or questions raised in the paper."></a>1.5 Results &amp; Discussion: answer the objs or questions raised in the paper.</h2><ul>
+<li>fundamental unit is some result: equation, formula, figure, or table<ul>
+<li>1 P per unit</li>
+<li>Structure:<ul>
+<li>Introduction: obj of interest . <ul>
+<li>1 S</li>
+</ul>
+</li>
+<li>Description: how it was created<ul>
+<li>1+ S</li>
+</ul>
+</li>
+<li>Result<ul>
+<li>1 S</li>
+</ul>
+</li>
+<li>Discuss: Meaning<ul>
+<li>1+S</li>
+<li>Multi results can be combined into a single discussion</li>
+</ul>
+</li>
+<li>Conclusion<h2 id="1-6-Conclusions-summary-with-detailed-results"><a href="#1-6-Conclusions-summary-with-detailed-results" class="headerlink" title="1.6 Conclusions: summary with detailed results"></a>1.6 Conclusions: summary with detailed results</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Overall Summary: including motivation &amp; methods</li>
+<li>Summary of the objs: quantitative summary for each obj with actual numbers &amp; figures</li>
+<li>Extension: future or implication</li>
+</ul>
+<h2 id="1-7-Acknowledgements-Thanks"><a href="#1-7-Acknowledgements-Thanks" class="headerlink" title="1.7 Acknowledgements : Thanks."></a>1.7 Acknowledgements : Thanks.</h2><ul>
+<li>for all authors</li>
+<li>Separate</li>
+</ul>
+<h2 id="1-8-References"><a href="#1-8-References" class="headerlink" title="1.8 References"></a>1.8 References</h2><h1 id="2-ResearchSeminar-principles"><a href="#2-ResearchSeminar-principles" class="headerlink" title="2 ResearchSeminar-principles"></a>2 ResearchSeminar-principles</h1><ul>
+<li>Coherent<ul>
+<li>average reader in your field can understand the concepts</li>
+</ul>
+</li>
+<li>Comprehensive<ul>
+<li>cover all the relevant information</li>
+</ul>
+</li>
+<li>Concise<ul>
+<li>only have the required information and no more</li>
+</ul>
+</li>
+<li>Consistent<ul>
+<li>same notation, spelling, style of paper</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-others"><a href="#3-others" class="headerlink" title="3 others"></a>3 others</h1><ul>
+<li>figures<ul>
+<li>Figure 2 shows that…</li>
+<li>In Figure 3, it can be seen that…</li>
+<li>From Figure 4, it can be shown that…</li>
+<li>(see Table 1 for details)</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2018-12-09T12:54:38.000Z" title="12/9/2018, 8:54:38 PM">2018-12-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:01.911Z" title="7/24/2019, 1:42:01 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></span><span class="level-item">5 minutes read (About 734 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/c2f51570/">DnA - LeetCode_1_hash</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<h1 id="1-Question"><a href="#1-Question" class="headerlink" title="1 Question"></a>1 Question</h1><p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">1 Two Sum</a></p>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Example</span>:</span><br><span class="line"></span><br><span class="line"><span class="symbol">Given</span> nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line"><span class="symbol">Because</span> nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span>,</span><br><span class="line">return [<span class="number">0</span>, <span class="number">1</span>].</span><br></pre></td></tr></table></figure>
+<h1 id="2-Solutions"><a href="#2-Solutions" class="headerlink" title="2 Solutions"></a>2 Solutions</h1><h2 id="2-1-我的代码"><a href="#2-1-我的代码" class="headerlink" title="2.1 我的代码"></a>2.1 我的代码</h2><p>下面是我的代码，1208ms，beats 33%。当头棒喝=。=但是这就是转行必经之路啊！慢慢理解个中差别，然后开始尝试并且习惯用新tricks。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums, target</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        b_find = <span class="number">0</span></span><br><span class="line">        l_find = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            b_find = target - nums[i]</span><br><span class="line">            print(i,b_find)</span><br><span class="line">            <span class="keyword">if</span> b_find <span class="keyword">in</span> nums[i+<span class="number">1</span>:]:</span><br><span class="line">                l_find = [i, nums[i+<span class="number">1</span>:].index(b_find)+i+<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">return</span> l_find</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">S = Solution()</span><br><span class="line">nums = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line">target = <span class="number">6</span></span><br><span class="line">print(S.twoSum(nums,target))</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-参考代码"><a href="#2-2-参考代码" class="headerlink" title="2.2 参考代码"></a>2.2 参考代码</h2><p>下面使用hashmap的代码，24ms，beats 86%,而后详解python中hashmap的技术细节。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums, target</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        hash_map = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target-num <span class="keyword">in</span> hash_map:</span><br><span class="line">                <span class="keyword">return</span>([hash_map[target-num], i])</span><br><span class="line">            hash_map[num] = i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">S = Solution()</span><br><span class="line">nums = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line">target = <span class="number">6</span></span><br><span class="line">print(S.twoSum(nums,target))</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-hashmap-in-Python"><a href="#3-hashmap-in-Python" class="headerlink" title="3 hashmap in Python"></a>3 hashmap in Python</h1><p>Python内部很多地方都使用着dict这种结构，所以对其效率要求很高。所以dict采用了hash表，发生哈希冲突的时候采用了开放寻址法，使其最短能在O(1)内完成搜索。</p>
+<p>dict的内置函数及方法：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmp(dict1, dict2)</td>
+<td>比较两个字典元素。</td>
+</tr>
+<tr>
+<td>len(dict)</td>
+<td>计算字典元素个数，即键的总数。</td>
+</tr>
+<tr>
+<td>str(dict)</td>
+<td>输出字典可打印的字符串表示。</td>
+</tr>
+<tr>
+<td>type(variable)</td>
+<td>返回输入的变量类型，如果变量是字典就返回字典类型。</td>
+</tr>
+<tr>
+<td>dict.clear()</td>
+<td>删除字典内所有元素</td>
+</tr>
+<tr>
+<td>dict.copy()</td>
+<td>返回一个字典的浅复制</td>
+</tr>
+<tr>
+<td>dict.fromkeys(seq[, val])</td>
+<td>创建一个新字典，以序列 seq 中元素做字典的键，val 为字典所有键对应的初始值</td>
+</tr>
+<tr>
+<td>dict.get(key, default=None)</td>
+<td>返回指定键的值，如果值不在字典中返回default值</td>
+</tr>
+<tr>
+<td>dict.has_key(key)</td>
+<td>如果键在字典dict里返回true，否则返回false</td>
+</tr>
+<tr>
+<td>dict.items()</td>
+<td>以列表返回可遍历的(键, 值) 元组数组</td>
+</tr>
+<tr>
+<td>dict.keys()</td>
+<td>以列表返回一个字典所有的键</td>
+</tr>
+<tr>
+<td>dict.setdefault(key, default=None)</td>
+<td>和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default</td>
+</tr>
+<tr>
+<td>dict.update(dict2)</td>
+<td>把字典dict2的键/值对更新到dict里</td>
+</tr>
+<tr>
+<td>dict.values()</td>
+<td>以列表返回字典中的所有值</td>
+</tr>
+<tr>
+<td>pop(key[,default])</td>
+<td>删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。</td>
+</tr>
+<tr>
+<td>popitem()</td>
+<td>随机返回并删除字典中的一对键和值。</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2018-11-21T08:02:35.000Z" title="11/21/2018, 4:02:35 PM">2018-11-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-23T17:42:18.248Z" title="7/24/2019, 1:42:18 AM">2019-07-24</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span><span class="level-item">6 minutes read (About 842 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/posts/d0a3516b/">ML - Andrew Ng - Machine Learning #notes</a></h1><div class="content"><blockquote>
+<p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+<p>Andrew Ng - Machine Learning 课程笔记, 估计只有我自己能看得懂</p>
+</blockquote>
+<h2 id="2-Gradient-descent"><a href="#2-Gradient-descent" class="headerlink" title="2. Gradient descent"></a>2. Gradient descent</h2><ul>
+<li>$\theta_j := \theta_j - \alpha \frac{d}{d_\theta}J(\theta)$<ul>
+<li>work correctly</li>
+<li>choose learning rate alpha</li>
+</ul>
+</li>
+<li>Multivariate linear regression<ul>
+<li>feature scaling: skewed elliptical shape -&gt; circle<ul>
+<li>$-1 &lt;= x_j &lt;= 1$</li>
+<li>mean normalization<ul>
+<li>$x_j = \frac{x_j - mu}{s}$ ; s:range</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>learning rate</li>
+<li>polynomial regression</li>
+</ul>
+</li>
+<li>Normal equation<ul>
+<li>$\theta = pinv(X’<em>X)</em>X’*y$</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Logistical-Regression"><a href="#3-Logistical-Regression" class="headerlink" title="3. Logistical Regression:"></a>3. Logistical Regression:</h2><ul>
+<li>classification : $y=0\ or\ 1$; $0 &lt;= h_\theta(x) &lt;= 1$</li>
+<li>sigmoid function: $h_\theta(x) =\theta^Tx$ -&gt; $g(\theta^Tx) = g(z) = \frac{1}{1+e^{-z}}$</li>
+<li>LinearRegressiong cost function:<ul>
+<li>$ J(\theta) = \frac{1}{m}\sum_{i=1}^{m}\frac{1}{2}(h_\theta(x^{(i)})- y^{(i)})^2)$</li>
+</ul>
+</li>
+<li>Cost Function:<ul>
+<li>$cost(h_\theta(x),y) = -y\log(h_\theta(x))-(1-y)\log(1-h_\theta(x))$</li>
+<li>$J(\theta)=-\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}\log(h_\theta(x))+(1-y^{(i)})\log(1-h_\theta(x))]$</li>
+</ul>
+</li>
+<li>Gradien Descent<ul>
+<li>$\theta_j := \theta_j - \alpha\frac{\partial}{\partial\theta}J(\theta)$</li>
+<li>Repeat{ $\theta_j := \theta_j - \alpha\sum(h_\theta(x^{(i)})-y^{(i)})x^{(j)}_j$ }</li>
+<li>Vectorized implementation</li>
+</ul>
+</li>
+<li><strong>Process</strong>:<ul>
+<li>Given $\theta$, compute:<ul>
+<li>$J(\theta)$</li>
+<li>$\frac{\partial}{\partial\theta_j}J(\theta)$</li>
+<li><strong>Regularization</strong>(except i=0) <ul>
+<li>$J(\theta)=\frac{1}{2m}[\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2+\lambda\sum_{j=1}^{n}\theta_j^2]$</li>
+<li>$\theta_j := \theta_j - \alpha[\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}_j+\frac{\lambda}{m}\theta_j]$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Optimization algorithms<ul>
+<li>Gradient descent</li>
+<li>Conjugate gradient</li>
+<li>BFGS</li>
+<li>L-BFGS</li>
+</ul>
+</li>
+<li><strong>Pros</strong><ul>
+<li>Not need to manually pick $\alpha$</li>
+<li>Often faster than gradient descent</li>
+</ul>
+</li>
+<li><strong>Cons</strong><ul>
+<li>More complex</li>
+</ul>
+</li>
+<li>Octave<ul>
+<li><code>fminunc</code>:function minimization unconstrained</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-Neural-Networks"><a href="#4-Neural-Networks" class="headerlink" title="4. Neural Networks"></a>4. Neural Networks</h2><ul>
+<li>Notations<ul>
+<li>$a_i^{(j)}$: “activation” of unit i in layer j</li>
+<li>$\theta^{(j)}$: matrix of weights controlling function mapping from layer j to layer j+1<ul>
+<li>e.g. $a_1^{(2)}=g(\theta_{10}^{(1)}x_0+\theta_{11}^{(1)}x_1+\theta_{12}^{(1)}x_2+\theta_{13}^{(1)}x_3)$</li>
+<li>$h_\theta(x) = a_1^{(3)}$</li>
+<li>$z^{(2)}=\Theta^{(1)}x=\Theta^{(1)}a^{(1)}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-NN-BP"><a href="#5-NN-BP" class="headerlink" title="5. NN BP"></a>5. NN BP</h2><ul>
+<li>Logistic Regression: $J(\theta) = -\frac{1}{m}\sum_{i=1}^{m}[y^{(i)}\log((h_\theta(x^{(i)}))+(1-y^{(i)})\log(1-h_\theta(x^{(i)}))]+\frac{\lambda}{2m}\sum_{j=1}^{n}\theta^2_j$</li>
+<li>Denote $h_\theta(x)_k$as $k^{th}$ -&gt; NN: $J(\Theta)$<ul>
+<li><strong>L</strong>: sum of layers; <strong>$s_l$</strong>:no. of units; <strong>k</strong>: no. of output units</li>
+<li>Logistic Regression: $J(\Theta) = -\frac{1}{m}\sum_{i=1}^{m}\sum_{k=1}^{K}[y_k^{(i)}\log((h_\theta(x^{(i)})_k)+(1-y_k^{(i)})\log(1-(h_\theta(x^{(i)})_k))] + \frac{\lambda}{2m}\sum_{l=1}^{L-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_{l+1}}(\Theta_{j,i}^{(l)})^2$</li>
+</ul>
+</li>
+<li><strong>Forward propagation</strong><ul>
+<li>$a^{(1)}=x$</li>
+<li>$z^{(2)}=\Theta^{(1)}a^{(1)}$</li>
+<li>$a^{(2)}=g(z^{(2)})$; (add $a_0^{(2)}$)</li>
+<li>$z^{(3)}=\Theta^{(2)}a^{(2)}$</li>
+<li>$a^{(3)}=g(z^{(3)})$;(add $a_0^{(3)}$)</li>
+<li>$z^{(4)}=\Theta^{(3)}a^{(3)}$</li>
+<li>$a^{(4)}=g(z^{(4)})$</li>
+</ul>
+</li>
+<li><strong>Backpropagration</strong><ul>
+<li>intuition: $\delta_j^{(l)}$ = “error” of node <code>j</code> in layer <code>l</code></li>
+<li><strong>PROCESS</strong><ul>
+<li><ol>
+<li>Given data set</li>
+</ol>
+</li>
+<li><ol>
+<li>set$\Delta_{ij}^{(l)}:=0$ for all i,j</li>
+</ol>
+</li>
+<li><ol>
+<li>for t=1 to m:<ul>
+<li>(1) set $a^{(1)}=x$</li>
+<li>(2) <strong>FP</strong>-&gt; compute $a^{(l)}$ for l=2,3,…,L</li>
+<li>(3) compute $\delta^{(L)}=a^{(L)}-y^{(t)}$</li>
+<li>(4) compute $\delta^{(L-1)},\delta^{(L-2)},\dots,\delta^{(2)}$, using $\delta^{(l)}=((\Theta^{(l)})^T\delta^{(l+1)}.<em>a^{(l)}.</em>(1-a^{(l)})$</li>
+<li>(5) $\Delta_{ij}^{(l)}:=\Delta_{ij}^{(l)} +a_{j}^{(l)}\delta_{i}^{(l)}$</li>
+<li></li>
+<li>e.g. $\delta^{(3)}=(\Theta^{(3)})^T\delta^{(4)}.*g^{‘}(z^{(3)})$</li>
+<li>e.g $g^{‘}(z^{(3)}) = a^{(3)}.*(1-a^{(3)})$</li>
+<li>$\delta^{(4)}\rightarrow\delta^{(3)}\rightarrow\delta^{(2)}\rightarrow\delta^{(1)}$</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>if $j\neq0$, $D_{i,j}^{(l)}:=\frac{1}{m}(\Delta_{ij}^{(l)} + \lambda\Theta_{ij}^{(l)})$; if $j=0$, $D_{i,j}^{(l)}:=\frac{1}{m}\Delta_{ij}^{(l)}$</li>
+</ol>
+</li>
+<li><ol>
+<li>$\frac{\partial}{\partial\Theta_{i,j}^{(l)}}J(\Theta)=D_{i,j}^{(l)}$</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Gradient checking<ul>
+<li>$\frac{\partial}{\partial\theta}J(\theta)\approx\frac{J(\theta+\epsilon)-J(\theta-\epsilon)}{2\epsilon}; \epsilon=10^{-4}$</li>
+<li><strong>delete these checking code when implement</strong></li>
+</ul>
+</li>
+<li>Train a NN<ul>
+<li><ol>
+<li>randomly initialize weights, cannot be set as 0</li>
+</ol>
+</li>
+<li><ol>
+<li>FP to get $h_\theta(x^{(i)})$</li>
+</ol>
+</li>
+<li><ol>
+<li>compute $J(\Theta)$</li>
+</ol>
+</li>
+<li><ol>
+<li>compute $\frac{\partial}{\partial\Theta_{i,j}^{(l)}}J(\Theta)$</li>
+</ol>
+</li>
+<li><ol>
+<li>use gradient check to compare BP vs. numerical estimate</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-Evaluation"><a href="#6-Evaluation" class="headerlink" title="6. Evaluation"></a>6. Evaluation</h2><ul>
+<li>how to improve?<ul>
+<li>fix high variance:<ul>
+<li>get more training examples</li>
+<li>try smaller sets of features</li>
+<li>try increasing $\lambda$</li>
+</ul>
+</li>
+<li>fix high bias:<ul>
+<li>try getting additional features</li>
+<li>try getting polynominal features</li>
+<li>try decreasing $\lambda$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>evaluate<ul>
+<li>split, train:test = 7:3</li>
+<li>split, train:cv:test = 6:2:2</li>
+<li>compute error</li>
+<li>learning curve</li>
+<li>precision/recall</li>
+<li>F1-score</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-SVM"><a href="#7-SVM" class="headerlink" title="7. SVM"></a>7. SVM</h2><ul>
+<li>$\min \limits_{\theta}  C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^Tf^{(i)})+(1-y^{(i)})cost_0(\theta^Tf^{(i)})] + \frac{1}{2}\sum_{i=1}^{n}\theta_j^2$</li>
+<li>$\rightarrow A+\lambda B$</li>
+<li>hypothesis: y=1 if $\theta^Tf \geq 0$</li>
+<li>f: kernel<ul>
+<li>e.g. Gauss: $f=e^{(-\frac{|x_1-x_2|^2}{2\sigma^2})}$</li>
+</ul>
+</li>
+<li>SVM vs. Logistic Regression<ul>
+<li>n: features; m: training examples</li>
+<li>n &gt;&gt; m, LR or SVM without kernel</li>
+<li>n &lt;&lt; m, add features</li>
+<li>n is small, m intermediate, SVM with kernel</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-Unsupervised-Learning"><a href="#8-Unsupervised-Learning" class="headerlink" title="8. Unsupervised Learning"></a>8. Unsupervised Learning</h2><ul>
+<li>K means</li>
+<li>PCA(also can help to find K)</li>
+</ul>
+<h2 id="9-Anormaly-Detection"><a href="#9-Anormaly-Detection" class="headerlink" title="9. Anormaly Detection"></a>9. Anormaly Detection</h2><h2 id="10-online-learning"><a href="#10-online-learning" class="headerlink" title="10. online learning"></a>10. online learning</h2></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/tags/inEnglish/">Previous</a></div><div class="pagination-next"><a href="/tags/inEnglish/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/tags/inEnglish/">1</a></li><li><a class="pagination-link is-current" href="/tags/inEnglish/page/2/">2</a></li><li><a class="pagination-link" href="/tags/inEnglish/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.jpg" alt="xlindo"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">xlindo</p><p class="is-size-6 is-block">A scienthusiast.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">87</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">56</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://weibo.com/mrdo" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="http://weibo.com/mrdo"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="http://www.zhihu.com/people/xlindo"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Mail" href="mailto:hi@xlindo.com"><i class="fas fa-envelope"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Research/"><span class="level-start"><span class="level-item">Research</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/System-Identification/"><span class="level-start"><span class="level-item">System Identification</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%B7%A1%E6%B8%B8%E8%AE%B0/"><span class="level-start"><span class="level-item">巡游记</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/"><span class="level-start"><span class="level-item">控制理论</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/"><span class="level-start"><span class="level-item">数学与统计</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/"><span class="level-start"><span class="level-item">机器人</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/"><span class="level-start"><span class="level-item">经验之谈</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/"><span class="level-start"><span class="level-item">编程之路</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-02T16:09:28.000Z">2021-03-03</time></p><p class="title"><a href="/posts/7d4bbc2/">三年一瞥</a></p><p class="categories"><a href="/categories/%E5%B7%A1%E6%B8%B8%E8%AE%B0/">巡游记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-01-04T08:54:38.000Z">2020-01-04</time></p><p class="title"><a href="/posts/8d34e813/">DnA-LeetCode-10-正则表达式匹配-动态规划</a></p><p class="categories"><a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-12-28T01:31:00.000Z">2019-12-28</time></p><p class="title"><a href="/posts/bbc9cd78/">Python-ipdb速查表-Spyder调试</a></p><p class="categories"><a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-08-23T04:04:42.000Z">2019-08-23</time></p><p class="title"><a href="/posts/d99b2e93/">Math- Gradient, Jacobian matrix and Hessian matrix</a></p><p class="categories"><a href="/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/">数学与统计</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-08-21T11:34:51.000Z">2019-08-21</time></p><p class="title"><a href="/posts/b70ba34f/">SysId - Prediction with shift operator</a></p><p class="categories"><a href="/categories/System-Identification/">System Identification</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">January 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">December 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/08/"><span class="level-start"><span class="level-item">August 2019</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">July 2019</span></span><span class="level-end"><span class="level-item tag">25</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">June 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">April 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">January 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/12/"><span class="level-start"><span class="level-item">December 2018</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/11/"><span class="level-start"><span class="level-item">November 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/10/"><span class="level-start"><span class="level-item">October 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/09/"><span class="level-start"><span class="level-item">September 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/08/"><span class="level-start"><span class="level-item">August 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/12/"><span class="level-start"><span class="level-item">December 2017</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/11/"><span class="level-start"><span class="level-item">November 2017</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/10/"><span class="level-start"><span class="level-item">October 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/05/"><span class="level-start"><span class="level-item">May 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/01/"><span class="level-start"><span class="level-item">January 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/08/"><span class="level-start"><span class="level-item">August 2015</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/04/"><span class="level-start"><span class="level-item">April 2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/03/"><span class="level-start"><span class="level-item">March 2015</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2009/07/"><span class="level-start"><span class="level-item">July 2009</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AVL/"><span class="tag">AVL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOE/"><span class="tag">DOE</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MAS/"><span class="tag">MAS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MATLAB/"><span class="tag">MATLAB</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TCP/"><span class="tag">TCP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TSA/"><span class="tag">TSA</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/aufDeutsch/"><span class="tag">aufDeutsch</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c-cpp/"><span class="tag">c-cpp</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gitlab/"><span class="tag">gitlab</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/inEnglish/"><span class="tag">inEnglish</span><span class="tag">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kNN/"><span class="tag">kNN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k%E8%BF%91%E9%82%BB/"><span class="tag">k近邻</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/leetcode/"><span class="tag">leetcode</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/numpy/"><span class="tag">numpy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/paper/"><span class="tag">paper</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/research/"><span class="tag">research</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"><span class="tag">人机交互</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%85%E5%8A%9F/"><span class="tag">内功</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E7%B3%BB%E7%BB%9F/"><span class="tag">动态系统</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%87%E6%9F%A5%E6%89%8B%E5%86%8C/"><span class="tag">备查手册</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/"><span class="tag">多智能体</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0/"><span class="tag">学习</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BB%BA%E6%A8%A1/"><span class="tag">建模</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"><span class="tag">微积分</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%A7%E5%88%B6/"><span class="tag">控制</span><span class="tag">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="tag">数据分析</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="tag">数据结构与算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B0%E8%83%BD%E6%BA%90/"><span class="tag">新能源</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96/"><span class="tag">最优化</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"><span class="tag">机器人</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tag">机器学习</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91/"><span class="tag">树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="tag">树莓派</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%B8%E8%83%BD/"><span class="tag">核能</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%9F%E6%B4%BB/"><span class="tag">生活 </span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A8%8B%E5%BA%8F/"><span class="tag">程序</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86/"><span class="tag">系统辨识</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%8F%E9%AA%8C/"><span class="tag">经验</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"><span class="tag">统计学习方法</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B/"><span class="tag">编程</span><span class="tag">18</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"><span class="tag">计算机视觉</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BE%A8%E8%AF%86/"><span class="tag">辨识</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔 </span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9B%86%E4%BD%93%E6%99%BA%E6%85%A7/"><span class="tag">集体智慧</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F/"><span class="tag">非线性系统</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Xlindo is here!" height="28"></a><p class="is-size-7"><span>&copy; 2021 xlindo</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>

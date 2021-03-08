@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>DL-book 4 Numerical Computation  - Xlindo is here!</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Xlindo is here!"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Xlindo is here!"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="The notes of deep learning book. Chapter 4."><meta property="og:type" content="blog"><meta property="og:title" content="DL-book 4 Numerical Computation "><meta property="og:url" content="http://xlindo.com/posts/28331d12/"><meta property="og:site_name" content="Xlindo is here!"><meta property="og:description" content="The notes of deep learning book. Chapter 4."><meta property="og:locale" content="en_US"><meta property="og:image" content="http://xlindo.com/img/og_image.png"><meta property="article:published_time" content="2019-07-15T13:54:09.000Z"><meta property="article:modified_time" content="2019-07-25T08:03:07.404Z"><meta property="article:author" content="xlindo"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="inEnglish"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://xlindo.com/posts/28331d12/"},"headline":"DL-book 4 Numerical Computation ","image":["http://xlindo.com/img/og_image.png"],"datePublished":"2019-07-15T13:54:09.000Z","dateModified":"2019-07-25T08:03:07.404Z","author":{"@type":"Person","name":"xlindo"},"description":"The notes of deep learning book. Chapter 4."}</script><link rel="canonical" href="http://xlindo.com/posts/28331d12/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/custom_css_source.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Xlindo is here!" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Xlindo is here!" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-07-15T13:54:09.000Z" title="7/15/2019, 9:54:09 PM">2019-07-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2019-07-25T08:03:07.404Z" title="7/25/2019, 4:03:07 PM">2019-07-25</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span><span class="level-item">14 minutes read (About 2037 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">DL-book 4 Numerical Computation </h1><div class="content"><blockquote>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p><a href="http://xlindo.com">http://xlindo.com</a><br>所有文章遵循<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>许可协议。请按许可使用。<br>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a> License.</p>
+</blockquote>
+<h2 id="4-1-Overﬂow-and-Underﬂow"><a href="#4-1-Overﬂow-and-Underﬂow" class="headerlink" title="4.1 Overﬂow and Underﬂow"></a>4.1 Overﬂow and Underﬂow</h2><ul>
+<li>The fundamental difficulty in performing continuous math on a digital computer is that <strong>we need to represent infinitely</strong> many real numbers <strong>with a finite number of bit patterns</strong>.<ul>
+<li>we incur some <strong>approximation error</strong><ul>
+<li>In many cases, this is just <strong>rounding error</strong> 舍入误差<ul>
+<li>can cause algorithms that <strong>work in theory to fail in practice</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Underflow</strong> 下溢 occurs when numbers near zero are rounded to zero. <ul>
+<li>e.g. divided by zero</li>
+</ul>
+</li>
+<li><strong>Overflow</strong> 上溢 occurs when numbers with large magnitude are approximated as $\infty$ or $-\infty$.</li>
+<li>One example of a function that must be <strong>stabilized against</strong> underflow and overflow is <strong>the softmax function</strong>, which is often used to <strong>predict the probabilities</strong> associated with a <strong>multinoulli distribution</strong>.<ul>
+<li>$\operatorname{softmax}(\boldsymbol{x})_{i}=\frac{\exp \left(x_{i}\right)}{\sum_{j=1}^{n} \exp \left(x_{j}\right)}$</li>
+<li>Both of these difficulties can be <strong>resolved</strong> by instead evaluating $\operatorname{softmax}(\boldsymbol{z})$ where $\boldsymbol{z}=\boldsymbol{x}-\max _{i} x_{i}$.<ul>
+<li>Subtracting $\max _{i} x_{i}$ results in the largest argument to exp being $0$, which rules out the possibility of <strong>overflow</strong>.</li>
+<li>Likewise, at least one term in the denominator has a value of $1$, which rules out the possibility of <strong>underflow</strong> in the denominator leading to a division by zero.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Developers of low-level libraries</strong> should keep numerical issues in mind when implementing deep learning algorithms. </li>
+</ul>
+<h2 id="4-2-Poor-Conditioning"><a href="#4-2-Poor-Conditioning" class="headerlink" title="4.2 Poor Conditioning"></a>4.2 Poor Conditioning</h2><ul>
+<li><strong>Conditioning</strong> refers to how rapidly a function changes with respect to small changes in its inputs.<ul>
+<li><strong>rounding errors</strong> in the inputs can result in large changes in the output.</li>
+</ul>
+</li>
+<li>Consider the function $f(\boldsymbol{x})=\boldsymbol{A}^{-1} \boldsymbol{x}$. When $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ has an <strong>eigenvalue decomposition</strong>, its <strong>condition number</strong> is<ul>
+<li>$\max _{i, j}\left|\frac{\lambda_{i}}{\lambda_{j}}\right|$</li>
+<li>When this number is large, matrix inversion is particularly sensitive to error in the input.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-Gradient-Based-Optimization"><a href="#4-3-Gradient-Based-Optimization" class="headerlink" title="4.3 Gradient-Based Optimization"></a>4.3 Gradient-Based Optimization</h2><ul>
+<li>We usually phrase most optimization problems in terms of <strong>minimizing $f(x)$</strong>.</li>
+<li>The function we want to minimize or maximize is called the <strong>objective function</strong> , or <strong>criterion</strong> . When we are minimizing it, we may also call it the <strong>cost function, loss function , or error function</strong> .</li>
+<li>We often denote the value that minimizes or maximizes a function with a superscript $∗$.<ul>
+<li>$\boldsymbol{x}^{*}=\arg \min f(\boldsymbol{x})$</li>
+</ul>
+</li>
+<li>Suppose we have a function $y = f(x )$<ul>
+<li><strong>derivative</strong>, $f^{\prime}(x)$ or as $\frac{d y}{d x}$ gives the <strong>slope</strong> of $ f(x )$ at the point $x$<ul>
+<li>it specifies how to <strong>scale</strong> a small change in the input to obtain the <strong>corresponding change</strong> in the output</li>
+<li>$f(x+\epsilon) \approx f(x)+\epsilon f^{\prime}(x)$</li>
+</ul>
+</li>
+<li><strong>gradient descent</strong>， We can thus reduce $f(x )$ by moving $x$ in small steps with the opposite sign of the derivative.</li>
+<li>Points where $f^{\prime}(x)=0$ are known as <strong>critical points</strong> , or <strong>stationary points</strong> . </li>
+<li>A <strong>local minimum</strong> is a point where $f(x )$ is lower than at all neighboring points, so it is no longer possible to decrease $f(x )$ by making <strong>infinitesimal</strong> steps.<ul>
+<li>vice versa, <strong>local maximum</strong></li>
+<li>or a <strong>saddle point</strong>, which has neighbors that are both higher and lower than the point itself.</li>
+</ul>
+</li>
+<li>A point that obtains the absolute lowest value of $f(x )$ is a <strong>global minimum</strong>.</li>
+<li>The <strong>gradient</strong> generalizes the notion of derivative to the case where the derivative is with respect to a vector:<ul>
+<li>the gradient of $f$ is the vector containing all the <strong>partial derivatives</strong>, denoted $\nabla_{\boldsymbol{x}} f(\boldsymbol{x})$<ul>
+<li>Element $i$ of the gradient is the partial derivative of $f$ with respect to $x_i$.</li>
+</ul>
+</li>
+<li>The <strong>directional derivative</strong> in direction $\boldsymbol{u}$  (a unit vector) is the slope of the function $f$ in direction $\boldsymbol{u}$ .<ul>
+<li>$\frac{\partial}{\partial \alpha} f(\boldsymbol{x}+\alpha \boldsymbol{u}) = \boldsymbol{u}^{\top} \nabla_{\boldsymbol{x}} f(\boldsymbol{x})$, when $\alpha= 0$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To minimize $f$ , we would like to find the direction in which $f$ decreases the fastest.<ul>
+<li>$\min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1} \boldsymbol{u}^{\top} \nabla_{\boldsymbol{x}} f(\boldsymbol{x}) = \min _{\boldsymbol{u}, \boldsymbol{u}^{\top} \boldsymbol{u}=1}|\boldsymbol{u}|_{2}\left|\nabla_{\boldsymbol{x}} f(\boldsymbol{x})\right|_{2} \cos \theta$</li>
+<li>Substituting in $|\boldsymbol{u}|_{2}=1$ and ignoring factors that do not depend on $\boldsymbol{u}$, this simplifies to<ul>
+<li>$\min _{\boldsymbol{u}} \cos \theta$</li>
+<li>This is minimized when $\boldsymbol{u}$ points in the <strong>opposite</strong> direction as the gradient.<ul>
+<li>In other words, the gradient points directly uphill, and the negative gradient points directly downhill.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This is known as the <strong>method of steepest descent</strong>, or <strong>gradient descent</strong>.</li>
+</ul>
+</li>
+<li>Steepest descent proposes a new point<ul>
+<li>$\boldsymbol{x}^{\prime}=\boldsymbol{x}-\epsilon \nabla_{\boldsymbol{x}} f(\boldsymbol{x})$<ul>
+<li>where $\epsilon$ is the learning rate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Steepest descent converges when every element of the gradient is zero (or, inpractice, very close to zero).</strong></li>
+<li>Ascending an objective function of discrete parameters is called <strong>hill climbing</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-1-Beyond-the-Gradient-Jacobian-and-Hessian-Matrices"><a href="#4-3-1-Beyond-the-Gradient-Jacobian-and-Hessian-Matrices" class="headerlink" title="4.3.1 Beyond the Gradient: Jacobian and Hessian Matrices"></a>4.3.1 Beyond the Gradient: Jacobian and Hessian Matrices</h3><ul>
+<li><strong>Jacobian matrix</strong>： Sometimes we need to find all the partial derivatives of a function whose input and output are both vectors. The matrix containing all such partial derivatives is known as a Jacobian matrix.<ul>
+<li>Specifically, if we have a function $\boldsymbol{f} : \mathbb{R}^{m} \rightarrow \mathbb{R}^{n}$, then the Jacobian matrix $\boldsymbol{J} \in \mathbb{R}^{n\times m} $ of $\boldsymbol{f}$ is defined such that <ul>
+<li>$J_{i, j}=\frac{\partial}{\partial x_{j}} f(\boldsymbol{x})_{i}$</li>
+</ul>
+</li>
+<li><strong>second derivative</strong>: a derivative of a derivative<ul>
+<li>$\frac{\partial^{2}}{\partial x_{i} \partial x_{j}} f$</li>
+<li>In a single dimension<ul>
+<li>$\frac{d^{2}}{d x^{2}} f$ by $f^{\prime \prime}(x)$</li>
+</ul>
+</li>
+<li>We can think of the second derivative as measuring <strong>curvature</strong> .<ul>
+<li>With <strong>negative</strong> curvature, the cost function actually <strong>decreases faster</strong> than the gradient predicts. </li>
+<li>With <strong>no</strong> curvature, the gradient predicts the decrease correctly. </li>
+<li>With <strong>positive</strong> curvature, the function <strong>decreases more slowly</strong> than expected and eventually begins to increase, so steps that are too large can actually increase the function inadvertently.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hessian matrix</strong>: When our function has multiple input dimensions, there are many second derivatives.<ul>
+<li>$\boldsymbol{H}(f)(\boldsymbol{x})_{i, j}=\frac{\partial^{2}}{\partial x_{i} \partial x_{j}} f(\boldsymbol{x})$</li>
+<li><strong>Equivalently, the Hessian is the Jacobian of the gradient.</strong></li>
+<li>Because the Hessian matrix is <strong>real and symmetric</strong>, we can <strong>decompose</strong> it into <strong>a set of real eigenvalues</strong> and <strong>an orthogonal basis of eigenvectors</strong>.                            <ul>
+<li>The <strong>maximum eigenvalue</strong> determines the <strong>maximum second derivative</strong>, and the minimum eigenvalue determines the minimum second derivative.</li>
+</ul>
+</li>
+<li>The (directional) second derivative tells us <strong>how well we can expect a gradient descent step</strong> to perform.</li>
+<li>We can make a second-order Taylor series approximation to the function $f(\boldsymbol{x})$ aroungd the current point $\boldsymbol{x}^{(0)}$:<ul>
+<li>$f(\boldsymbol{x}) \approx f\left(\boldsymbol{x}^{(0)}\right)+\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)^{\top} \boldsymbol{g}+\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)^{\top} \boldsymbol{H}\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)$</li>
+<li>with learning rate $\epsilon$ </li>
+<li>$f\left(\boldsymbol{x}^{(0)}-\epsilon \boldsymbol{g}\right) \approx f\left(\boldsymbol{x}^{(0)}\right)-\epsilon \boldsymbol{g}^{\top} \boldsymbol{g}+\frac{1}{2} \epsilon^{2} \boldsymbol{g}^{\top} \boldsymbol{H} \boldsymbol{g}$</li>
+<li>There are three terms here: <strong>the original value</strong> of the function, <strong>the expected improvement</strong> due to the slope of the function, and <strong>the correction</strong> we must apply to account for the curvature of the function.</li>
+<li>When $\boldsymbol{g}^{\top} \boldsymbol{H} \boldsymbol{g}$ is positive, the optimal stepsoze yields<ul>
+<li>$\epsilon^{*}=\frac{\boldsymbol{g}^{\top} \boldsymbol{g}}{\boldsymbol{g}^{\top} \boldsymbol{H} \boldsymbol{g}}$</li>
+<li>worst case, optimal step is given by $\frac{1}{\lambda_{\max }}$,determined by the eigenvalues of the Hessian</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In multiple dimensions, <strong>the condition number of the Hessian</strong> at this point measures how much the second derivatives differ from each other.<ul>
+<li>When the Hessian has a <strong>poor condition number</strong>, <strong>gradient descent</strong> performs poorly.</li>
+<li>Poor condition number also makes choosing a <strong>good step size difficult</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Newton’s method</strong>, using information from the Hessian matrix to guide the search<ul>
+<li>is based on using a second-order Taylor series expansion to approximate $f(\boldsymbol{x}) $ near some point $\boldsymbol{x}^{(0)}$ :<ul>
+<li>$f(\boldsymbol{x}) \approx f\left(\boldsymbol{x}^{(0)}\right)+\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)^{\top} \nabla_{\boldsymbol{x}} f\left(\boldsymbol{x}^{(0)}\right)+\frac{1}{2}\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)^{\top} \boldsymbol{H}(f)\left(\boldsymbol{x}^{(0)}\right)\left(\boldsymbol{x}-\boldsymbol{x}^{(0)}\right)$</li>
+<li>$\boldsymbol{x}^{*}=\boldsymbol{x}^{(0)}-\boldsymbol{H}(f)\left(\boldsymbol{x}^{(0)}\right)^{-1} \nabla_{\boldsymbol{x}} f\left(\boldsymbol{x}^{(0)}\right)$</li>
+<li>When $f$ is a <strong>positive definite quadratic</strong> function, Newton’s method consists of applying equation <strong>once</strong> to jump to the minimum of the function directly.</li>
+<li><strong>Only for PD Hessian</strong>: Iteratively updating the approximation and jumping to the minimum of the approximation can reach the critical point <strong>much faster</strong> than gradient descent would. <ul>
+<li>This is a useful property near a local minimum, <strong>but it can be a harmful property</strong> near a <strong>saddle point</strong>, <strong>whereas gradient descent is not attracted to saddle points unless the gradient points toward them.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong> First-order optimization algorithms</strong>, optimization algorithms that use only the gradient, such as gradient descent</li>
+<li><strong>Second-order optimization algorithms</strong>, optimization algorithms that also use the Hessian matrix, such as Newton’s method </li>
+<li><strong>Lipschitz continuous</strong><ul>
+<li>A <strong>Lipschitz continuous function</strong> is a function $f$ whose <strong>rate of change</strong> is bounded by a <strong>Lipschitz constant</strong> $\mathcal{L}$:</li>
+<li>$\forall \boldsymbol{x}, \forall \boldsymbol{y},|f(\boldsymbol{x})-f(\boldsymbol{y})| \leq \mathcal{L}|\boldsymbol{x}-\boldsymbol{y}|_{2}$</li>
+<li>quantify our assumption that a small change in the input made by an algorithm will have a small change in the output.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-4-Constrained-Optimization"><a href="#4-4-Constrained-Optimization" class="headerlink" title="4.4 Constrained Optimization"></a>4.4 Constrained Optimization</h2><ul>
+<li><strong>constrained optimization</strong>: we may wish to find the maximal or minimal value of $f(\boldsymbol{x})$ for values of $\boldsymbol{x}$ in some set $\mathbb{S}$ . </li>
+<li>Points $\boldsymbol{x}$ that lie within the set $\mathbb{S}$ are called <strong>feasible points</strong> 可行点 in constrained optimization terminology.</li>
+<li>When possible, this method can be made <strong>more efficient</strong> by <strong>projecting the gradient into the tangent space of the feasible region</strong> before taking the step or beginning the line search.</li>
+<li>The <strong>Karush–Kuhn–Tucker (KKT)</strong> approach provides a very general solution to constrained optimization.<ul>
+<li>we introduce a new function called the generalized Lagrangian or <strong>generalized Lagrange function</strong>. <ul>
+<li>$L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})=f(\boldsymbol{x})+\sum_{i} \lambda_{i} g^{(i)}(\boldsymbol{x})+\sum_{j} \alpha_{j} h^{(j)}(\boldsymbol{x})$</li>
+</ul>
+</li>
+<li>and $\mathbb{S}=\lbrace\boldsymbol{x} | \forall i, g^{(i)}(\boldsymbol{x})=0 \text { and } \forall j, h^{(j)}(\boldsymbol{x}) \leq 0\rbrace$ with equality constraints $g^{(j)}$ and inequality constraints $h^{(j)}$</li>
+<li>then<ul>
+<li>$\min _{\boldsymbol{x}} \max _{\boldsymbol{\lambda}} \max _{\boldsymbol{\alpha}, \boldsymbol{\alpha} \geq 0} L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})$</li>
+</ul>
+</li>
+<li>has the same optimal objective function value and set of optimal points $\boldsymbol{x}$ as <ul>
+<li>$\min _{\boldsymbol{x} \in \mathbb{S}} f(\boldsymbol{x})$</li>
+</ul>
+</li>
+<li>This follows because any time the constraints are satisfied,<ul>
+<li>$\max _{\lambda} \max _{\boldsymbol{\alpha}, \boldsymbol{\alpha} \geq 0} L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})=f(\boldsymbol{x})$</li>
+</ul>
+</li>
+<li>while any time a constraint is violated,<ul>
+<li>$\max _{\boldsymbol{\lambda}} \max _{\boldsymbol{\alpha}, \boldsymbol{\alpha} \geq 0} L(\boldsymbol{x}, \boldsymbol{\lambda}, \boldsymbol{\alpha})=\infty$</li>
+</ul>
+</li>
+<li>These properties guarantee that no infeasible point can be optimal, and that the optimum within the feasible points is unchanged.</li>
+</ul>
+</li>
+<li><strong>KKT conditions</strong><ul>
+<li>The gradient of the generalized Lagrangian is zero. </li>
+<li>All constraints on both $\boldsymbol{x}$ and the KKT multipliers are satisfied.</li>
+<li>The inequality constraints exhibit “complementary slackness”: $\boldsymbol{\alpha} \odot \boldsymbol{h}(\boldsymbol{x})=\mathbf{0}$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-5-Example-Linear-Least-Squares"><a href="#4-5-Example-Linear-Least-Squares" class="headerlink" title="4.5 Example: Linear Least Squares"></a>4.5 Example: Linear Least Squares</h2><ul>
+<li>$f(\boldsymbol{x})=\frac{1}{2}|\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b}|_{2}^{2}$<ul>
+<li>Gradient descent</li>
+<li>Newton’s method</li>
+</ul>
+</li>
+<li>suppose subject to the constraint $\boldsymbol{x}^{\top} \boldsymbol{x} \leq 1$<ul>
+<li>we introduce the Lagrangian<ul>
+<li>$L(\boldsymbol{x}, \lambda)=f(\boldsymbol{x})+\lambda\left(\boldsymbol{x}^{\top} \boldsymbol{x}-1\right)$</li>
+<li>$\min _{\boldsymbol{x}} \max _{\lambda, \lambda \geq 0} L(\boldsymbol{x}, \lambda)$<ul>
+<li>We can find this value by performing gradient ascent on $\lambda$. To do so, observe</li>
+<li>$\frac{\partial}{\partial \lambda} L(\boldsymbol{x}, \lambda)=\boldsymbol{x}^{\top} \boldsymbol{x}-1$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>DL-book 4 Numerical Computation </p><p><a href="http://xlindo.com/posts/28331d12/">http://xlindo.com/posts/28331d12/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>xlindo</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2019-07-15</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2019-07-25</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><a class="link-muted mr-2" rel="tag" href="/tags/inEnglish/">inEnglish</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/posts/82c92d21/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">DL-book 5 Machine Learning Basics</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/posts/5dc92bff/"><span class="level-item">DL-book 3 Probability and Information Theory</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.jpg" alt="xlindo"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">xlindo</p><p class="is-size-6 is-block">A scienthusiast.</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">87</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">56</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://weibo.com/mrdo" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="http://weibo.com/mrdo"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Zhihu" href="http://www.zhihu.com/people/xlindo"><i class="fab fa-zhihu"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Mail" href="mailto:hi@xlindo.com"><i class="fas fa-envelope"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Research/"><span class="level-start"><span class="level-item">Research</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/System-Identification/"><span class="level-start"><span class="level-item">System Identification</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%B7%A1%E6%B8%B8%E8%AE%B0/"><span class="level-start"><span class="level-item">巡游记</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/"><span class="level-start"><span class="level-item">控制理论</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/"><span class="level-start"><span class="level-item">数学与统计</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/"><span class="level-start"><span class="level-item">机器人</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/"><span class="level-start"><span class="level-item">经验之谈</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/"><span class="level-start"><span class="level-item">编程之路</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-02T16:09:28.000Z">2021-03-03</time></p><p class="title"><a href="/posts/7d4bbc2/">三年一瞥</a></p><p class="categories"><a href="/categories/%E5%B7%A1%E6%B8%B8%E8%AE%B0/">巡游记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-01-04T08:54:38.000Z">2020-01-04</time></p><p class="title"><a href="/posts/8d34e813/">DnA-LeetCode-10-正则表达式匹配-动态规划</a></p><p class="categories"><a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-12-28T01:31:00.000Z">2019-12-28</time></p><p class="title"><a href="/posts/bbc9cd78/">Python-ipdb速查表-Spyder调试</a></p><p class="categories"><a href="/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF/">编程之路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-08-23T04:04:42.000Z">2019-08-23</time></p><p class="title"><a href="/posts/d99b2e93/">Math- Gradient, Jacobian matrix and Hessian matrix</a></p><p class="categories"><a href="/categories/%E6%95%B0%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1/">数学与统计</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-08-21T11:34:51.000Z">2019-08-21</time></p><p class="title"><a href="/posts/b70ba34f/">SysId - Prediction with shift operator</a></p><p class="categories"><a href="/categories/System-Identification/">System Identification</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">January 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">December 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/08/"><span class="level-start"><span class="level-item">August 2019</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">July 2019</span></span><span class="level-end"><span class="level-item tag">25</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">June 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">April 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">January 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/12/"><span class="level-start"><span class="level-item">December 2018</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/11/"><span class="level-start"><span class="level-item">November 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/10/"><span class="level-start"><span class="level-item">October 2018</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/09/"><span class="level-start"><span class="level-item">September 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/08/"><span class="level-start"><span class="level-item">August 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/12/"><span class="level-start"><span class="level-item">December 2017</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/11/"><span class="level-start"><span class="level-item">November 2017</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/10/"><span class="level-start"><span class="level-item">October 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/05/"><span class="level-start"><span class="level-item">May 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/01/"><span class="level-start"><span class="level-item">January 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/08/"><span class="level-start"><span class="level-item">August 2015</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/04/"><span class="level-start"><span class="level-item">April 2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/03/"><span class="level-start"><span class="level-item">March 2015</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2009/07/"><span class="level-start"><span class="level-item">July 2009</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AVL/"><span class="tag">AVL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOE/"><span class="tag">DOE</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MAS/"><span class="tag">MAS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MATLAB/"><span class="tag">MATLAB</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TCP/"><span class="tag">TCP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TSA/"><span class="tag">TSA</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/aufDeutsch/"><span class="tag">aufDeutsch</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c-cpp/"><span class="tag">c-cpp</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gitlab/"><span class="tag">gitlab</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/inEnglish/"><span class="tag">inEnglish</span><span class="tag">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kNN/"><span class="tag">kNN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k%E8%BF%91%E9%82%BB/"><span class="tag">k近邻</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/leetcode/"><span class="tag">leetcode</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/linux/"><span class="tag">linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/numpy/"><span class="tag">numpy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/paper/"><span class="tag">paper</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/research/"><span class="tag">research</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"><span class="tag">人机交互</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%85%E5%8A%9F/"><span class="tag">内功</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8A%A8%E6%80%81%E7%B3%BB%E7%BB%9F/"><span class="tag">动态系统</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%87%E6%9F%A5%E6%89%8B%E5%86%8C/"><span class="tag">备查手册</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/"><span class="tag">多智能体</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0/"><span class="tag">学习</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag">工具</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BB%BA%E6%A8%A1/"><span class="tag">建模</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"><span class="tag">微积分</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%A7%E5%88%B6/"><span class="tag">控制</span><span class="tag">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="tag">数据分析</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="tag">数据结构与算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%B0%E8%83%BD%E6%BA%90/"><span class="tag">新能源</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%80%E4%BC%98%E5%8C%96/"><span class="tag">最优化</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"><span class="tag">机器人</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tag">机器学习</span><span class="tag">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91/"><span class="tag">树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="tag">树莓派</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%B8%E8%83%BD/"><span class="tag">核能</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%9F%E6%B4%BB/"><span class="tag">生活 </span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A8%8B%E5%BA%8F/"><span class="tag">程序</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AC%94%E8%AE%B0/"><span class="tag">笔记</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86/"><span class="tag">系统辨识</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%8F%E9%AA%8C/"><span class="tag">经验</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"><span class="tag">统计学习方法</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B/"><span class="tag">编程</span><span class="tag">18</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"><span class="tag">计算机视觉</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="tag">设计模式</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BE%A8%E8%AF%86/"><span class="tag">辨识</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔 </span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9B%86%E4%BD%93%E6%99%BA%E6%85%A7/"><span class="tag">集体智慧</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F/"><span class="tag">非线性系统</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Xlindo is here!" height="28"></a><p class="is-size-7"><span>&copy; 2021 xlindo</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>
